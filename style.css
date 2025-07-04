@@ -24,7 +24,7 @@ section {
 
 /* Cover Page Specific Styles */
 #cover-page {
-    background-color: #F8F0E3; /* Warna latar belakang cover */
+    background-color: #bcb4a3; /* Warna latar belakang cover */
     overflow: hidden; /* Mencegah scrollbar saat animasi */
 }
 
@@ -40,6 +40,7 @@ section {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
     animation: slideInFromTop 1s ease-out forwards;
     opacity: 0;
+    text-align: center;
 }
 
 .name-ampersand {
