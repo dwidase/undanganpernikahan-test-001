@@ -52,10 +52,10 @@ section {
     line-height: 1.25;
     font-family: 'Great Vibes', cursive; /* Script font */
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1); /* Subtle text shadow */
-    color: #DB2777; /* Pink color */
+    color: #ffffff; /* Pink color */
     animation: slideInFromTop 1s ease-out forwards; /* Animation from top */
     opacity: 0; /* Start invisible */
-    text-align: left;
+    text-align: center;
 }
 /* Responsive font sizes for Dinda's name */
 @media (min-width: 768px) {
@@ -73,10 +73,10 @@ section {
 .name-ampersand {
     font-size: 3rem;
     font-family: 'Garamond', serif; /* Serif font */
-    color: #4B5563; /* Gray color */
+    color: #000000; /* Gray color */
     animation: slideInFromTop 1s ease-out 0.3s forwards; /* Animation with delay */
     opacity: 0;
-    text-align: left;
+    text-align: center;
 }
 /* Responsive font sizes for ampersand */
 @media (min-width: 768px) {
@@ -96,10 +96,10 @@ section {
     line-height: 1.25;
     font-family: 'Great Vibes', cursive;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-    color: #8B5CF6; /* Purple color */
+    color: #ffffff; /* Purple color */
     animation: slideInFromTop 1s ease-out forwards;
     opacity: 0;
-    text-align: left;
+    text-align: center;
 }
 /* Responsive font sizes for Angga's name */
 @media (min-width: 768px) {
