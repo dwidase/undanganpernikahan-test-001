@@ -11,33 +11,59 @@
 
 /* Base Styling for Body */
 body {
+    /* Menggunakan @apply untuk base styling dari Tailwind */
     @apply bg-gray-50 text-gray-800 flex flex-col min-h-screen;
     font-family: 'Garamond', serif; /* Default font */
 }
 
 /* Section Styling */
 section {
+    /* Menggunakan @apply untuk layout dasar section */
     @apply flex flex-col items-center justify-center min-h-screen p-4;
 }
 
 /* Cover Page Specific Styles */
 #cover-page {
-    @apply bg-gradient-to-br from-pink-100 to-purple-100; /* Soft gradient background */
-    overflow: hidden; /* Ensure overflow is hidden on the cover page to prevent scrollbars during animation */
+    background-color: #F8F0E3; /* Warna latar belakang cover */
+    overflow: hidden; /* Mencegah scrollbar saat animasi */
 }
 
-#cover-page h1 {
-    @apply text-6xl md:text-8xl lg:text-9xl text-center leading-tight;
+.cover-content {
+    /* Mengatur konten di tengah halaman cover */
+    @apply text-center;
+}
+
+.name-dinda {
+    /* Gaya untuk nama Dinda di cover */
+    @apply text-6xl md:text-8xl lg:text-9xl text-pink-700 leading-tight;
+    font-family: 'Great Vibes', cursive;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    animation: slideInFromTop 1s ease-out forwards;
+    opacity: 0;
 }
 
-#cover-page h1.font-garamond {
-    @apply text-5xl md:text-7xl lg:text-8xl;
+.name-ampersand {
+    /* Gaya untuk simbol & di cover */
+    @apply text-5xl md:text-7xl lg:text-8xl text-gray-600;
+    font-family: 'Garamond', serif;
+    animation: slideInFromTop 1s ease-out 0.3s forwards;
+    opacity: 0;
 }
 
-/* Gaya tombol "Buka Undangan" dipindahkan ke sini untuk kemudahan modifikasi */
-.cover-button-style {
+.name-angga {
+    /* Gaya untuk nama Angga di cover */
+    @apply text-6xl md:text-8xl lg:text-9xl text-purple-700 leading-tight;
+    font-family: 'Great Vibes', cursive;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    animation: slideInFromTop 1s ease-out forwards;
+    opacity: 0;
+}
+
+.open-button {
+    /* Gaya tombol "Buka Undangan" */
     @apply mt-4 px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-bold rounded-full shadow-lg hover:from-pink-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105;
+    animation: slideInFromBottom 1s ease-out 0.6s forwards;
+    opacity: 0;
 }
 
 /* Main Invitation Page Specific Styles */
@@ -46,50 +72,121 @@ section {
 }
 
 .section-content {
+    /* Kontainer umum untuk setiap bagian isi undangan */
     @apply w-full max-w-4xl mx-auto py-8 px-4 md:px-8;
 }
 
-.section-content h2 {
+/* Bagian 1: Halaman Mempelai */
+.main-name-dinda, .main-name-angga {
     @apply text-5xl md:text-7xl lg:text-8xl text-center leading-tight;
+    font-family: 'Great Vibes', cursive;
+}
+.main-name-dinda { color: #DB2777; } /* pink-700 */
+.main-name-angga { color: #8B5CF6; } /* purple-700 */
+
+.main-name-ampersand {
+    @apply text-4xl md:text-6xl lg:text-7xl text-center;
+    font-family: 'Garamond', serif;
+    color: #4B5563; /* gray-600 */
 }
 
-.section-content h2.font-garamond {
-    @apply text-4xl md:text-6xl lg:text-7xl;
+.invitation-text {
+    @apply text-lg md:text-xl text-center mt-4 leading-relaxed;
+    font-family: 'Garamond', serif;
+    color: #374151; /* gray-700 */
 }
 
-.section-content h3 {
-    @apply text-3xl md:text-4xl text-center leading-tight;
+.event-date {
+    @apply text-3xl text-center mt-2;
+    font-family: 'Garamond', serif;
+    color: #374151; /* gray-700 */
 }
 
-.section-content p {
-    @apply text-lg md:text-xl text-center leading-relaxed;
+/* Bagian 2: Kalimat Mutiara */
+.quote-text {
+    @apply text-lg md:text-xl text-center italic leading-relaxed;
+    font-family: 'Garamond', serif;
+    color: #374151; /* gray-700 */
 }
 
-.section-content p.text-align-right {
-    @apply text-right; /* Kept for potential future use or if specific text needs to be right-aligned */
+.quote-source {
+    @apply text-sm text-center mt-4; /* Diubah ke center sesuai permintaan sebelumnya */
+    font-family: 'Garamond', serif;
+    color: #4B5563; /* gray-600 */
 }
 
-.section-content .font-size-large {
-    @apply text-4xl md:text-5xl lg:text-6xl;
+/* Bagian 3: Pembuka & Detail Mempelai */
+.opening-greeting {
+    @apply text-4xl md:text-5xl lg:text-6xl text-center;
+    font-family: 'Great Vibes', cursive;
+    color: #EC4899; /* pink-600 */
 }
 
-.section-content .font-size-larger-ampersand {
-    @apply text-5xl md:text-6xl lg:text-7xl; /* Larger for the ampersand */
+.opening-invitation {
+    @apply text-lg md:text-xl text-center mt-4;
+    font-family: 'Garamond', serif;
+    color: #374151; /* gray-700 */
 }
 
 .image-placeholder {
-    @apply w-4/5 max-w-xs h-40 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500 text-sm italic mx-auto my-8 shadow-md;
+    @apply w-4/5 max-w-xs h-40 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500 text-sm italic shadow-md;
 }
 
-.gallery-image-placeholder {
-    @apply w-full h-48 md:h-64 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500 text-sm italic shadow-md;
+.profile-placeholder {
+    @apply mx-auto my-8; /* Memastikan placeholder foto tetap di tengah */
 }
 
-hr {
-    @apply w-1/2 md:w-1/3 mx-auto my-12 border-t-2 border-pink-300 opacity-50;
+.full-name-dinda, .full-name-angga {
+    @apply text-4xl md:text-5xl lg:text-6xl text-center mt-4;
+    font-family: 'Great Vibes', cursive;
+}
+.full-name-dinda { color: #DB2777; } /* pink-700 */
+.full-name-angga { color: #8B5CF6; } /* purple-700 */
+
+.parent-name {
+    @apply text-lg md:text-xl text-center;
+    font-family: 'Garamond', serif;
+    color: #374151; /* gray-700 */
 }
 
-/* Countdown specific styles */
+.ampersand-divider {
+    @apply text-5xl md:text-6xl lg:text-7xl text-center mt-8 mb-8;
+    font-family: 'Garamond', serif;
+    color: #4B5563; /* gray-600 */
+}
+
+/* Bagian 4: Cerita Cinta Kami */
+.story-title {
+    @apply text-5xl md:text-7xl lg:text-8xl text-center mb-8;
+    font-family: 'Great Vibes', cursive;
+    color: #8B5CF6; /* purple-700 */
+}
+
+.story-subtitle {
+    @apply text-3xl md:text-4xl text-center mt-8;
+    font-family: 'Great Vibes', cursive;
+    color: #EC4899; /* pink-600 */
+}
+
+.story-date {
+    @apply text-xl text-center mt-2;
+    font-family: 'Garamond', serif;
+    color: #374151; /* gray-700 */
+}
+
+.story-paragraph {
+    @apply text-lg md:text-xl text-center mt-4 leading-relaxed;
+    font-family: 'Garamond', serif;
+    color: #374151; /* gray-700 */
+}
+
+/* Bagian 5: Acara */
+.event-section-title {
+    @apply text-5xl md:text-7xl lg:text-8xl text-center mb-8;
+    font-family: 'Great Vibes', cursive;
+    color: #8B5CF6; /* purple-700 */
+}
+
 .countdown-container {
     @apply flex justify-center items-center space-x-4 mt-8;
 }
@@ -99,20 +196,117 @@ hr {
 }
 
 .countdown-number {
-    @apply text-5xl md:text-6xl lg:text-7xl font-montserrat text-purple-700;
+    @apply text-5xl md:text-6xl lg:text-7xl;
+    font-family: 'Montserrat', sans-serif;
+    color: #8B5CF6; /* purple-700 */
 }
 
 .countdown-label {
-    @apply text-base md:text-lg font-garamond text-gray-600 mt-2;
+    @apply text-base md:text-lg mt-2;
+    font-family: 'Garamond', serif;
+    color: #4B5563; /* gray-600 */
 }
 
-/* Action Buttons */
+.event-subtitle {
+    @apply text-3xl md:text-4xl text-center mt-8;
+    font-family: 'Great Vibes', cursive;
+    color: #EC4899; /* pink-600 */
+}
+
+.event-detail {
+    @apply text-xl text-center mt-2;
+    font-family: 'Garamond', serif;
+    color: #374151; /* gray-700 */
+}
+
+.button-wrapper {
+    @apply text-center mt-6; /* Untuk menengahkan tombol */
+}
+
 .action-button {
-    @apply mt-6 px-6 py-3 bg-gradient-to-r from-blue-500 to-teal-600 text-white font-bold rounded-full shadow-lg hover:from-blue-600 hover:to-teal-700 transition-all duration-300 transform hover:scale-105;
+    @apply px-6 py-3 bg-gradient-to-r from-blue-500 to-teal-600 text-white font-bold rounded-full shadow-lg hover:from-blue-600 hover:to-teal-700 transition-all duration-300 transform hover:scale-105;
+}
+
+.rsvp-title {
+    @apply text-3xl md:text-4xl text-center mt-8;
+    font-family: 'Great Vibes', cursive;
+    color: #8B5CF6; /* purple-700 */
 }
 
 .rsvp-button {
-    @apply mt-6 px-8 py-4 bg-gradient-to-r from-green-500 to-lime-600 text-white font-bold rounded-full shadow-lg hover:from-green-600 hover:to-lime-700 transition-all duration-300 transform hover:scale-105;
+    @apply px-8 py-4 bg-gradient-to-r from-green-500 to-lime-600 text-white font-bold rounded-full shadow-lg hover:from-green-600 hover:to-lime-700 transition-all duration-300 transform hover:scale-105;
+    @apply mb-8; /* Menambahkan margin-bottom untuk jarak dari divider berikutnya */
+}
+
+/* Bagian 6: Galeri */
+.gallery-title {
+    @apply text-5xl md:text-7xl lg:text-8xl text-center mb-8;
+    font-family: 'Great Vibes', cursive;
+    color: #8B5CF6; /* purple-700 */
+}
+
+.gallery-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+.gallery-image-placeholder {
+    @apply w-full h-48 md:h-64 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500 text-sm italic shadow-md;
+}
+
+/* Bagian 7: Penutup */
+.closing-section {
+    @apply pb-16;
+}
+
+.closing-quote {
+    @apply text-xl text-center leading-relaxed mb-8;
+    font-family: 'Garamond', serif;
+    color: #374151; /* gray-700 */
+}
+
+.closing-signature-intro {
+    @apply text-xl text-center mt-4;
+    font-family: 'Garamond', serif;
+    color: #374151; /* gray-700 */
+}
+
+.closing-name-dinda, .closing-name-angga {
+    @apply text-5xl md:text-7xl lg:text-8xl text-center leading-tight;
+    font-family: 'Great Vibes', cursive;
+}
+.closing-name-dinda { color: #DB2777; } /* pink-700 */
+.closing-name-angga { color: #8B5CF6; } /* purple-700 */
+
+.closing-name-ampersand {
+    @apply text-4xl md:text-6xl lg:text-7xl text-center;
+    font-family: 'Garamond', serif;
+    color: #4B5563; /* gray-600 */
+}
+
+.closing-greeting-final {
+    @apply text-4xl md:text-5xl lg:text-6xl text-center mt-8;
+    font-family: 'Great Vibes', cursive;
+    color: #EC4899; /* pink-600 */
+}
+
+/* Bagian 8: Promosi */
+.promotion-section {
+    @apply pb-16;
+}
+
+.promotion-text {
+    @apply text-base text-center;
+    font-family: 'Montserrat', sans-serif;
+    color: #4B5563; /* gray-600 */
+}
+
+/* Pembatas antar bagian */
+.section-divider {
+    @apply w-1/2 md:w-1/3 mx-auto my-12 border-t-2 border-pink-300 opacity-50;
+}
+
+.section-divider-large {
+    @apply my-16; /* Lebih banyak ruang untuk detail acara */
 }
 
 /* --- ANIMATIONS FOR COVER PAGE --- */
