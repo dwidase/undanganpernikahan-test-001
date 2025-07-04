@@ -1,4 +1,4 @@
-/* Custom Font Definitions */
+/* Font definitions for easy use */
 .font-great-vibes {
     font-family: 'Great Vibes', cursive;
 }
@@ -9,345 +9,794 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-/* Base Styling for Body */
+/* Body styling: background, text color, flex layout for full height */
 body {
-    /* Menggunakan @apply untuk base styling dari Tailwind */
-    @apply bg-gray-50 text-gray-800 flex flex-col min-h-screen;
+    background-color: #F9FAFB; /* Light gray background */
+    color: #1F2937; /* Dark gray text */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Minimum height of viewport */
     font-family: 'Garamond', serif; /* Default font */
 }
 
-/* Section Styling */
+/* Section styling: flex layout, alignment, padding */
 section {
-    /* Menggunakan @apply untuk layout dasar section */
-    @apply flex flex-col items-center justify-center min-h-screen p-4;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align content to the start (left) */
+    justify-content: flex-start; /* Justify content to the start (top) */
+    min-height: 100vh; /* Each section takes at least full viewport height */
+    padding: 1rem; /* Padding around sections */
 }
 
-/* Cover Page Specific Styles */
+/* Cover page specific styling */
 #cover-page {
-    background-color: #bcb4a3; /* Warna latar belakang cover */
-    overflow: hidden; /* Mencegah scrollbar saat animasi */
+    background-color: #F8F0E3; /* Light beige background for cover */
+    overflow: hidden; /* Hide overflow for animations */
+    width: 100%; /* Ensure cover page takes full width */
+    display: flex; /* Use flex to center content */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
 }
 
 .cover-content {
-    /* Mengatur konten di tengah halaman cover */
-    @apply text-center;
+    text-align: left; /* Text alignment for cover content */
+    width: 100%; /* Full width within its container */
+    max-width: 48rem; /* Max width for content */
+    padding: 2rem 1rem; /* Padding for content */
 }
 
+/* Styling for Dinda's name on cover page */
 .name-dinda {
-    /* Gaya untuk nama Dinda di cover */
-    @apply text-6xl md:text-8xl lg:text-9xl text-center text-pink-700 leading-tight;
+    font-size: 4rem; /* Large font size */
+    line-height: 1.25;
+    font-family: 'Great Vibes', cursive; /* Script font */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1); /* Subtle text shadow */
+    color: #DB2777; /* Pink color */
+    animation: slideInFromTop 1s ease-out forwards; /* Animation from top */
+    opacity: 0; /* Start invisible */
+    text-align: left;
+}
+/* Responsive font sizes for Dinda's name */
+@media (min-width: 768px) {
+    .name-dinda {
+        font-size: 6rem;
+    }
+}
+@media (min-width: 1024px) {
+    .name-dinda {
+        font-size: 8rem;
+    }
+}
+
+/* Styling for ampersand on cover page */
+.name-ampersand {
+    font-size: 3rem;
+    font-family: 'Garamond', serif; /* Serif font */
+    color: #4B5563; /* Gray color */
+    animation: slideInFromTop 1s ease-out 0.3s forwards; /* Animation with delay */
+    opacity: 0;
+    text-align: left;
+}
+/* Responsive font sizes for ampersand */
+@media (min-width: 768px) {
+    .name-ampersand {
+        font-size: 5rem;
+    }
+}
+@media (min-width: 1024px) {
+    .name-ampersand {
+        font-size: 6rem;
+    }
+}
+
+/* Styling for Angga's name on cover page */
+.name-angga {
+    font-size: 4rem;
+    line-height: 1.25;
     font-family: 'Great Vibes', cursive;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    color: #8B5CF6; /* Purple color */
+    animation: slideInFromTop 1s ease-out forwards;
+    opacity: 0;
+    text-align: left;
+}
+/* Responsive font sizes for Angga's name */
+@media (min-width: 768px) {
+    .name-angga {
+        font-size: 6rem;
+    }
+}
+@media (min-width: 1024px) {
+    .name-angga {
+        font-size: 8rem;
+    }
+}
+
+/* Styling for the "Open Invitation" button */
+.open-button {
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    background: linear-gradient(to right, #EC4899, #8B5CF6); /* Gradient background */
+    color: white;
+    font-weight: bold;
+    border-radius: 9999px; /* Fully rounded */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Shadow */
+    transition: all 0.3s ease-in-out; /* Smooth transitions */
+    transform: scale(1);
+    animation: slideInFromBottom 1s ease-out 0.6s forwards; /* Animation from bottom with delay */
+    opacity: 0;
+    display: inline-block; /* Ensure button behaves correctly with animation */
+}
+.open-button:hover {
+    background: linear-gradient(to right, #DB2777, #7C3AED); /* Darker gradient on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Main invitation page styling */
+#main-invitation-page {
+    background-color: white; /* White background for main page */
+    width: 100%; /* Ensure it takes full width */
+    align-items: flex-start; /* Align content to the start (left) */
+}
+
+/* Content wrapper for sections */
+.section-content {
+    width: 100%;
+    max-width: 48rem; /* Max width for content */
+    padding: 2rem 1rem; /* Padding for content */
+    margin-left: 0; /* Align to left */
+    margin-right: auto; /* Push content to left */
+}
+@media (min-width: 768px) {
+    .section-content {
+        padding: 2rem;
+    }
+}
+
+/* Styling for names on main invitation page */
+.main-name-dinda, .main-name-angga {
+    font-size: 3rem;
+    line-height: 1.25;
+    font-family: 'Great Vibes', cursive;
+    text-align: left;
+}
+/* Responsive font sizes for main names */
+@media (min-width: 768px) {
+    .main-name-dinda, .main-name-angga {
+        font-size: 4.5rem;
+    }
+}
+@media (min-width: 1024px) {
+    .main-name-dinda, .main-name-angga {
+        font-size: 6rem;
+    }
+}
+.main-name-dinda { color: #DB2777; } /* Pink color for Dinda */
+.main-name-angga { color: #8B5CF6; } /* Purple color for Angga */
+
+/* Styling for ampersand on main page */
+.main-name-ampersand {
+    font-size: 2.25rem;
+    font-family: 'Garamond', serif;
+    color: #4B5563;
+    text-align: left;
+}
+/* Responsive font sizes for main ampersand */
+@media (min-width: 768px) {
+    .main-name-ampersand {
+        font-size: 3.75rem;
+    }
+}
+@media (min-width: 1024px) {
+    .main-name-ampersand {
+        font-size: 4.5rem;
+    }
+}
+
+/* Styling for invitation text */
+.invitation-text {
+    font-size: 1.125rem;
+    margin-top: 1rem;
+    line-height: 1.625;
+    font-family: 'Garamond', serif;
+    color: #374151;
+    text-align: left;
+}
+@media (min-width: 768px) {
+    .invitation-text {
+        font-size: 1.25rem;
+    }
+}
+
+/* Styling for event date */
+.event-date {
+    font-size: 1.875rem;
+    margin-top: 0.5rem;
+    font-family: 'Garamond', serif;
+    color: #374151;
+    text-align: left;
+}
+
+/* Styling for quote text */
+.quote-text {
+    font-size: 1.125rem;
+    font-style: italic;
+    line-height: 1.625;
+    font-family: 'Garamond', serif;
+    color: #374151;
+    text-align: left;
+}
+@media (min-width: 768px) {
+    .quote-text {
+        font-size: 1.25rem;
+    }
+}
+
+/* Styling for quote source */
+.quote-source {
+    font-size: 0.875rem;
+    margin-top: 1rem;
+    font-family: 'Garamond', serif;
+    color: #4B5563;
+    text-align: left;
+}
+
+/* Styling for opening greeting */
+.opening-greeting {
+    font-size: 2.25rem;
+    font-family: 'Great Vibes', cursive;
+    color: #EC4899; /* Pink color */
+    text-align: left;
+}
+/* Responsive font sizes for opening greeting */
+@media (min-width: 768px) {
+    .opening-greeting {
+        font-size: 3rem;
+    }
+}
+@media (min-width: 1024px) {
+    .opening-greeting {
+        font-size: 3.75rem;
+    }
+}
+
+/* Styling for opening invitation text */
+.opening-invitation {
+    font-size: 1.125rem;
+    margin-top: 1rem;
+    font-family: 'Garamond', serif;
+    color: #374151;
+    text-align: left;
+}
+@media (min-width: 768px) {
+    .opening-invitation {
+        font-size: 1.25rem;
+    }
+}
+
+/* Styling for image placeholders */
+.image-placeholder {
+    width: 80%; /* Responsive width */
+    max-width: 12rem; /* Max width for image */
+    height: 10rem; /* Fixed height */
+    background-color: #E5E7EB; /* Light gray background */
+    border-radius: 0.5rem; /* Rounded corners */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6B7280; /* Gray text */
+    font-size: 0.875rem;
+    font-style: italic;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Shadow */
+}
+
+/* Specific styling for profile image placeholders */
+.profile-placeholder {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 0; /* Align to left */
+    margin-right: auto; /* Push to left */
+}
+
+/* Styling for full names */
+.full-name-dinda, .full-name-angga {
+    font-size: 2.25rem;
+    margin-top: 1rem;
+    font-family: 'Great Vibes', cursive;
+    text-align: left;
+}
+/* Responsive font sizes for full names */
+@media (min-width: 768px) {
+    .full-name-dinda, .full-name-angga {
+        font-size: 3rem;
+    }
+}
+@media (min-width: 1024px) {
+    .full-name-dinda, .full-name-angga {
+        font-size: 3.75rem;
+    }
+}
+.full-name-dinda { color: #DB2777; }
+.full-name-angga { color: #8B5CF6; }
+
+/* Styling for parent names */
+.parent-name {
+    font-size: 1.125rem;
+    font-family: 'Garamond', serif;
+    color: #374151;
+    text-align: left;
+}
+@media (min-width: 768px) {
+    .parent-name {
+        font-size: 1.25rem;
+    }
+}
+
+/* Styling for ampersand divider */
+.ampersand-divider {
+    font-size: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-family: 'Garamond', serif;
+    color: #4B5563;
+    text-align: left;
+}
+/* Responsive font sizes for ampersand divider */
+@media (min-width: 768px) {
+    .ampersand-divider {
+        font-size: 3.75rem;
+    }
+}
+@media (min-width: 1024px) {
+    .ampersand-divider {
+        font-size: 4.5rem;
+    }
+}
+
+/* Styling for story title */
+.story-title {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    font-family: 'Great Vibes', cursive;
+    color: #8B5CF6;
+    text-align: left;
+}
+/* Responsive font sizes for story title */
+@media (min-width: 768px) {
+    .story-title {
+        font-size: 4.5rem;
+    }
+}
+@media (min-width: 1024px) {
+    .story-title {
+        font-size: 6rem;
+    }
+}
+
+/* Styling for story subtitles */
+.story-subtitle {
+    font-size: 1.875rem;
+    margin-top: 2rem;
+    font-family: 'Great Vibes', cursive;
+    color: #EC4899;
+    text-align: left;
+}
+/* Responsive font sizes for story subtitles */
+@media (min-width: 768px) {
+    .story-subtitle {
+        font-size: 2.25rem;
+    }
+}
+@media (min-width: 1024px) {
+    .story-subtitle {
+        font-size: 2.5rem;
+    }
+}
+
+/* Styling for story dates */
+.story-date {
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
+    font-family: 'Garamond', serif;
+    color: #374151;
+    text-align: left;
+}
+
+/* Styling for story paragraphs */
+.story-paragraph {
+    font-size: 1.125rem;
+    margin-top: 1rem;
+    line-height: 1.625;
+    font-family: 'Garamond', serif;
+    color: #374151;
+    text-align: left;
+}
+@media (min-width: 768px) {
+    .story-paragraph {
+        font-size: 1.25rem;
+    }
+}
+
+/* Styling for event section title */
+.event-section-title {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    font-family: 'Great Vibes', cursive;
+    color: #8B5CF6;
+    text-align: left;
+}
+/* Responsive font sizes for event section title */
+@media (min-width: 768px) {
+    .event-section-title {
+        font-size: 4.5rem;
+    }
+}
+@media (min-width: 1024px) {
+    .event-section-title {
+        font-size: 6rem;
+    }
+}
+
+/* Styling for countdown container */
+.countdown-container {
+    display: flex;
+    gap: 1rem; /* Space between countdown items */
+    margin-top: 2rem;
+    justify-content: flex-start; /* Align items to the start */
+    align-items: flex-start; /* Align items to the start */
+    width: 100%;
+}
+
+/* Styling for individual countdown items */
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align text to the start */
+}
+
+/* Styling for countdown numbers */
+.countdown-number {
+    font-size: 3rem;
+    font-family: 'Montserrat', sans-serif;
+    color: #8B5CF6; /* Purple color */
+}
+/* Responsive font sizes for countdown numbers */
+@media (min-width: 768px) {
+    .countdown-number {
+        font-size: 3.75rem;
+    }
+}
+@media (min-width: 1024px) {
+    .countdown-number {
+        font-size: 4.5rem;
+    }
+}
+
+/* Styling for countdown labels */
+.countdown-label {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    font-family: 'Garamond', serif;
+    color: #4B5563;
+}
+@media (min-width: 768px) {
+    .countdown-label {
+        font-size: 1.125rem;
+    }
+}
+
+/* Styling for event subtitles */
+.event-subtitle {
+    font-size: 1.875rem;
+    margin-top: 2rem;
+    font-family: 'Great Vibes', cursive;
+    color: #EC4899;
+    text-align: left;
+}
+/* Responsive font sizes for event subtitles */
+@media (min-width: 768px) {
+    .event-subtitle {
+        font-size: 2.25rem;
+    }
+}
+@media (min-width: 1024px) {
+    .event-subtitle {
+        font-size: 2.5rem;
+    }
+}
+
+/* Styling for event details */
+.event-detail {
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
+    font-family: 'Garamond', serif;
+    color: #374151;
+    text-align: left;
+}
+
+/* Wrapper for buttons to control alignment */
+.button-wrapper {
+    margin-top: 1.5rem;
+    text-align: left;
+}
+
+/* Styling for action buttons (e.g., "Detail Lokasi") */
+.action-button {
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(to right, #3B82F6, #14B8A6); /* Blue-green gradient */
+    color: white;
+    font-weight: bold;
+    border-radius: 9999px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease-in-out;
+    transform: scale(1);
+    display: inline-block; /* Ensure it behaves like a button */
+}
+.action-button:hover {
+    background: linear-gradient(to right, #2563EB, #0D9488); /* Darker gradient on hover */
+    transform: scale(1.05);
+}
+
+/* Styling for RSVP title */
+.rsvp-title {
+    font-size: 1.875rem;
+    margin-top: 2rem;
+    font-family: 'Great Vibes', cursive;
+    color: #8B5CF6;
+    text-align: left;
+}
+/* Responsive font sizes for RSVP title */
+@media (min-width: 768px) {
+    .rsvp-title {
+        font-size: 2.25rem;
+    }
+}
+@media (min-width: 1024px) {
+    .rsvp-title {
+        font-size: 2.5rem;
+    }
+}
+
+/* Styling for RSVP button */
+.rsvp-button {
+    padding: 1rem 2rem;
+    background: linear-gradient(to right, #22C55E, #84CC16); /* Green-lime gradient */
+    color: white;
+    font-weight: bold;
+    border-radius: 9999px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease-in-out;
+    transform: scale(1);
+    margin-bottom: 2rem;
+    display: inline-block; /* Ensure it behaves like a button */
+}
+.rsvp-button:hover {
+    background: linear-gradient(to right, #16A34A, #65A30D); /* Darker gradient on hover */
+    transform: scale(1.05);
+}
+
+/* Styling for gallery title */
+.gallery-title {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    font-family: 'Great Vibes', cursive;
+    color: #8B5CF6;
+    text-align: left;
+}
+/* Responsive font sizes for gallery title */
+@media (min-width: 768px) {
+    .gallery-title {
+        font-size: 4.5rem;
+    }
+}
+@media (min-width: 1024px) {
+    .gallery-title {
+        font-size: 6rem;
+    }
+}
+
+/* Styling for gallery grid layout */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr)); /* Single column on small screens */
+    gap: 1.5rem; /* Gap between grid items */
+    margin-left: 0; /* Align to left */
+    margin-right: auto; /* Push to left */
+    width: 100%;
+}
+/* Two columns on medium screens */
+@media (min-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+/* Three columns on large screens */
+@media (min-width: 1024px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* Styling for gallery image placeholders */
+.gallery-image-placeholder {
+    width: 100%;
+    height: 12rem; /* Fixed height */
+    background-color: #E5E7EB;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6B7280;
+    font-size: 0.875rem;
+    font-style: italic;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+@media (min-width: 768px) {
+    .gallery-image-placeholder {
+        height: 16rem;
+    }
+}
+
+/* Styling for closing section */
+.closing-section {
+    padding-bottom: 4rem; /* Extra padding at the bottom */
+}
+
+/* Styling for closing quote */
+.closing-quote {
+    font-size: 1.25rem;
+    line-height: 1.625;
+    margin-bottom: 2rem;
+    font-family: 'Garamond', serif;
+    color: #374151;
+    text-align: left;
+}
+
+/* Styling for closing signature intro */
+.closing-signature-intro {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+    font-family: 'Garamond', serif;
+    color: #374151;
+    text-align: left;
+}
+
+/* Styling for names in closing section */
+.closing-name-dinda, .closing-name-angga {
+    font-size: 3rem;
+    line-height: 1.25;
+    font-family: 'Great Vibes', cursive;
+    text-align: left;
+}
+/* Responsive font sizes for closing names */
+@media (min-width: 768px) {
+    .closing-name-dinda, .closing-name-angga {
+        font-size: 4.5rem;
+    }
+}
+@media (min-width: 1024px) {
+    .closing-name-dinda, .closing-name-angga {
+        font-size: 6rem;
+    }
+}
+.closing-name-dinda { color: #DB2777; }
+.closing-name-angga { color: #8B5CF6; }
+
+/* Styling for ampersand in closing section */
+.closing-name-ampersand {
+    font-size: 2.25rem;
+    font-family: 'Garamond', serif;
+    color: #4B5563;
+    text-align: left;
+}
+/* Responsive font sizes for closing ampersand */
+@media (min-width: 768px) {
+    .closing-name-ampersand {
+        font-size: 3.75rem;
+    }
+}
+@media (min-width: 1024px) {
+    .closing-name-ampersand {
+        font-size: 4.5rem;
+    }
+}
+
+/* Styling for final closing greeting */
+.closing-greeting-final {
+    font-size: 2.25rem;
+    margin-top: 2rem;
+    font-family: 'Great Vibes', cursive;
+    color: #EC4899;
+    text-align: left;
+}
+/* Responsive font sizes for final closing greeting */
+@media (min-width: 768px) {
+    .closing-greeting-final {
+        font-size: 3rem;
+    }
+}
+@media (min-width: 1024px) {
+    .closing-greeting-final {
+        font-size: 3.75rem;
+    }
+}
+
+/* Styling for promotion section */
+.promotion-section {
+    padding-bottom: 4rem;
+}
+
+/* Styling for promotion text */
+.promotion-text {
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    color: #4B5563;
+    text-align: left;
+}
+
+/* Styling for section dividers */
+.section-divider {
+    width: 50%; /* Half width on small screens */
+    max-width: 33.333333%; /* Max width for consistency */
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    border-top-width: 2px; /* 2px top border */
+    border-color: #FBCFE8; /* Light pink color */
+    opacity: 0.5; /* Semi-transparent */
+    margin-left: 0; /* Align to left */
+    margin-right: auto; /* Push to left */
+}
+@media (min-width: 768px) {
+    .section-divider {
+        width: 33.333333%; /* One-third width on medium screens */
+    }
+}
+
+/* Styling for larger section dividers */
+.section-divider-large {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    margin-left: 0; /* Align to left */
+    margin-right: auto; /* Push to left */
+}
+
+/* Keyframe animation for sliding in from top */
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-100%); /* Start above */
+        opacity: 0; /* Start invisible */
+    }
+    100% {
+        transform: translateY(0); /* End at original position */
+        opacity: 1; /* End visible */
+    }
+}
+
+/* Keyframe animation for sliding in from bottom */
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%); /* Start below */
+        opacity: 0; /* Start invisible */
+    }
+    100% {
+        transform: translateY(0); /* End at original position */
+        opacity: 1; /* End visible */
+    }
+}
+
+/* Animation classes for elements */
+.animate-slide-in-top {
     animation: slideInFromTop 1s ease-out forwards;
     opacity: 0;
 }
 
-.name-ampersand {
-    /* Gaya untuk simbol & di cover */
-    @apply text-5xl md:text-7xl lg:text-8xl text-gray-600;
-    font-family: 'Garamond', serif;
+.animate-slide-in-top-ampersand {
     animation: slideInFromTop 1s ease-out 0.3s forwards;
     opacity: 0;
 }
 
-.name-angga {
-    /* Gaya untuk nama Angga di cover */
-    @apply text-6xl md:text-8xl lg:text-9xl text-purple-700 leading-tight;
-    font-family: 'Great Vibes', cursive;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-    animation: slideInFromTop 1s ease-out forwards;
-    opacity: 0;
-}
-
-.open-button {
-    /* Gaya tombol "Buka Undangan" */
-    @apply mt-4 px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-bold rounded-full shadow-lg hover:from-pink-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105;
+.animate-slide-in-bottom {
     animation: slideInFromBottom 1s ease-out 0.6s forwards;
     opacity: 0;
-}
-
-/* Main Invitation Page Specific Styles */
-#main-invitation-page {
-    @apply bg-white;
-}
-
-.section-content {
-    /* Kontainer umum untuk setiap bagian isi undangan */
-    @apply w-full max-w-4xl mx-auto py-8 px-4 md:px-8;
-}
-
-/* Bagian 1: Halaman Mempelai */
-.main-name-dinda, .main-name-angga {
-    @apply text-5xl md:text-7xl lg:text-8xl text-center leading-tight;
-    font-family: 'Great Vibes', cursive;
-}
-.main-name-dinda { color: #DB2777; } /* pink-700 */
-.main-name-angga { color: #8B5CF6; } /* purple-700 */
-
-.main-name-ampersand {
-    @apply text-4xl md:text-6xl lg:text-7xl text-center;
-    font-family: 'Garamond', serif;
-    color: #4B5563; /* gray-600 */
-}
-
-.invitation-text {
-    @apply text-lg md:text-xl text-center mt-4 leading-relaxed;
-    font-family: 'Garamond', serif;
-    color: #374151; /* gray-700 */
-}
-
-.event-date {
-    @apply text-3xl text-center mt-2;
-    font-family: 'Garamond', serif;
-    color: #374151; /* gray-700 */
-}
-
-/* Bagian 2: Kalimat Mutiara */
-.quote-text {
-    @apply text-lg md:text-xl text-center italic leading-relaxed;
-    font-family: 'Garamond', serif;
-    color: #374151; /* gray-700 */
-}
-
-.quote-source {
-    @apply text-sm text-center mt-4; /* Diubah ke center sesuai permintaan sebelumnya */
-    font-family: 'Garamond', serif;
-    color: #4B5563; /* gray-600 */
-}
-
-/* Bagian 3: Pembuka & Detail Mempelai */
-.opening-greeting {
-    @apply text-4xl md:text-5xl lg:text-6xl text-center;
-    font-family: 'Great Vibes', cursive;
-    color: #EC4899; /* pink-600 */
-}
-
-.opening-invitation {
-    @apply text-lg md:text-xl text-center mt-4;
-    font-family: 'Garamond', serif;
-    color: #374151; /* gray-700 */
-}
-
-.image-placeholder {
-    @apply w-4/5 max-w-xs h-40 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500 text-sm italic shadow-md;
-}
-
-.profile-placeholder {
-    @apply mx-auto my-8; /* Memastikan placeholder foto tetap di tengah */
-}
-
-.full-name-dinda, .full-name-angga {
-    @apply text-4xl md:text-5xl lg:text-6xl text-center mt-4;
-    font-family: 'Great Vibes', cursive;
-}
-.full-name-dinda { color: #DB2777; } /* pink-700 */
-.full-name-angga { color: #8B5CF6; } /* purple-700 */
-
-.parent-name {
-    @apply text-lg md:text-xl text-center;
-    font-family: 'Garamond', serif;
-    color: #374151; /* gray-700 */
-}
-
-.ampersand-divider {
-    @apply text-5xl md:text-6xl lg:text-7xl text-center mt-8 mb-8;
-    font-family: 'Garamond', serif;
-    color: #4B5563; /* gray-600 */
-}
-
-/* Bagian 4: Cerita Cinta Kami */
-.story-title {
-    @apply text-5xl md:text-7xl lg:text-8xl text-center mb-8;
-    font-family: 'Great Vibes', cursive;
-    color: #8B5CF6; /* purple-700 */
-}
-
-.story-subtitle {
-    @apply text-3xl md:text-4xl text-center mt-8;
-    font-family: 'Great Vibes', cursive;
-    color: #EC4899; /* pink-600 */
-}
-
-.story-date {
-    @apply text-xl text-center mt-2;
-    font-family: 'Garamond', serif;
-    color: #374151; /* gray-700 */
-}
-
-.story-paragraph {
-    @apply text-lg md:text-xl text-center mt-4 leading-relaxed;
-    font-family: 'Garamond', serif;
-    color: #374151; /* gray-700 */
-}
-
-/* Bagian 5: Acara */
-.event-section-title {
-    @apply text-5xl md:text-7xl lg:text-8xl text-center mb-8;
-    font-family: 'Great Vibes', cursive;
-    color: #8B5CF6; /* purple-700 */
-}
-
-.countdown-container {
-    @apply flex justify-center items-center space-x-4 mt-8;
-}
-
-.countdown-item {
-    @apply flex flex-col items-center;
-}
-
-.countdown-number {
-    @apply text-5xl md:text-6xl lg:text-7xl;
-    font-family: 'Montserrat', sans-serif;
-    color: #8B5CF6; /* purple-700 */
-}
-
-.countdown-label {
-    @apply text-base md:text-lg mt-2;
-    font-family: 'Garamond', serif;
-    color: #4B5563; /* gray-600 */
-}
-
-.event-subtitle {
-    @apply text-3xl md:text-4xl text-center mt-8;
-    font-family: 'Great Vibes', cursive;
-    color: #EC4899; /* pink-600 */
-}
-
-.event-detail {
-    @apply text-xl text-center mt-2;
-    font-family: 'Garamond', serif;
-    color: #374151; /* gray-700 */
-}
-
-.button-wrapper {
-    @apply text-center mt-6; /* Untuk menengahkan tombol */
-}
-
-.action-button {
-    @apply px-6 py-3 bg-gradient-to-r from-blue-500 to-teal-600 text-white font-bold rounded-full shadow-lg hover:from-blue-600 hover:to-teal-700 transition-all duration-300 transform hover:scale-105;
-}
-
-.rsvp-title {
-    @apply text-3xl md:text-4xl text-center mt-8;
-    font-family: 'Great Vibes', cursive;
-    color: #8B5CF6; /* purple-700 */
-}
-
-.rsvp-button {
-    @apply px-8 py-4 bg-gradient-to-r from-green-500 to-lime-600 text-white font-bold rounded-full shadow-lg hover:from-green-600 hover:to-lime-700 transition-all duration-300 transform hover:scale-105;
-    @apply mb-8; /* Menambahkan margin-bottom untuk jarak dari divider berikutnya */
-}
-
-/* Bagian 6: Galeri */
-.gallery-title {
-    @apply text-5xl md:text-7xl lg:text-8xl text-center mb-8;
-    font-family: 'Great Vibes', cursive;
-    color: #8B5CF6; /* purple-700 */
-}
-
-.gallery-grid {
-    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
-}
-
-.gallery-image-placeholder {
-    @apply w-full h-48 md:h-64 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500 text-sm italic shadow-md;
-}
-
-/* Bagian 7: Penutup */
-.closing-section {
-    @apply pb-16;
-}
-
-.closing-quote {
-    @apply text-xl text-center leading-relaxed mb-8;
-    font-family: 'Garamond', serif;
-    color: #374151; /* gray-700 */
-}
-
-.closing-signature-intro {
-    @apply text-xl text-center mt-4;
-    font-family: 'Garamond', serif;
-    color: #374151; /* gray-700 */
-}
-
-.closing-name-dinda, .closing-name-angga {
-    @apply text-5xl md:text-7xl lg:text-8xl text-center leading-tight;
-    font-family: 'Great Vibes', cursive;
-}
-.closing-name-dinda { color: #DB2777; } /* pink-700 */
-.closing-name-angga { color: #8B5CF6; } /* purple-700 */
-
-.closing-name-ampersand {
-    @apply text-4xl md:text-6xl lg:text-7xl text-center;
-    font-family: 'Garamond', serif;
-    color: #4B5563; /* gray-600 */
-}
-
-.closing-greeting-final {
-    @apply text-4xl md:text-5xl lg:text-6xl text-center mt-8;
-    font-family: 'Great Vibes', cursive;
-    color: #EC4899; /* pink-600 */
-}
-
-/* Bagian 8: Promosi */
-.promotion-section {
-    @apply pb-16;
-}
-
-.promotion-text {
-    @apply text-base text-center;
-    font-family: 'Montserrat', sans-serif;
-    color: #4B5563; /* gray-600 */
-}
-
-/* Pembatas antar bagian */
-.section-divider {
-    @apply w-1/2 md:w-1/3 mx-auto my-12 border-t-2 border-pink-300 opacity-50;
-}
-
-.section-divider-large {
-    @apply my-16; /* Lebih banyak ruang untuk detail acara */
-}
-
-/* --- ANIMATIONS FOR COVER PAGE --- */
-
-/* Keyframes for sliding in from top */
-@keyframes slideInFromTop {
-    0% {
-        transform: translateY(-100%); /* Start 100% above its normal position */
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0); /* End at its normal position */
-        opacity: 1;
-    }
-}
-
-/* Keyframes for sliding in from bottom */
-@keyframes slideInFromBottom {
-    0% {
-        transform: translateY(100%); /* Start 100% below its normal position */
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0); /* End at its normal position */
-        opacity: 1;
-    }
-}
-
-/* Animation classes */
-.animate-slide-in-top {
-    animation: slideInFromTop 1s ease-out forwards; /* 1s duration, ease-out timing, stay at end state */
-    opacity: 0; /* Hidden initially */
-}
-
-/* Specific animation for the ampersand to add a slight delay */
-.animate-slide-in-top-ampersand {
-    animation: slideInFromTop 1s ease-out 0.3s forwards; /* 0.3s delay */
-    opacity: 0; /* Hidden initially */
-}
-
-.animate-slide-in-bottom {
-    animation: slideInFromBottom 1s ease-out 0.6s forwards; /* 0.6s delay for button */
-    opacity: 0; /* Hidden initially */
 }
