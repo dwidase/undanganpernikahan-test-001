@@ -69,7 +69,7 @@ section {
     }
 }
 
-/* Styling for ampersand on cover page */
+/* Styling for ampersand (&) on cover page */
 .name-ampersand {
     font-size: 3rem;
     font-family: 'Garamond', serif; /* Serif font */
@@ -129,13 +129,13 @@ section {
     display: inline-block; /* Ensure button behaves correctly with animation */
 }
 .open-button:hover {
-    background-color: #9c815c; /* Solid color on hover */
+    background-color: #b59669; /* Solid color on hover */
     transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
 /* Main invitation page styling */
 #main-invitation-page {
-    background-color: white; /* White background for main page */
+    background-color: #CBA979; /* White background for main page */
     width: 100%; /* Ensure it takes full width */
     align-items: flex-start; /* Align content to the start (left) */
 }
@@ -159,7 +159,7 @@ section {
     font-size: 3rem;
     line-height: 1.25;
     font-family: 'Great Vibes', cursive;
-    text-align: left;
+    text-align: center;
 }
 /* Responsive font sizes for main names */
 @media (min-width: 768px) {
@@ -180,7 +180,7 @@ section {
     font-size: 2.25rem;
     font-family: 'Garamond', serif;
     color: #4B5563;
-    text-align: left;
+    text-align: center;
 }
 /* Responsive font sizes for main ampersand */
 @media (min-width: 768px) {
@@ -201,7 +201,7 @@ section {
     line-height: 1.625;
     font-family: 'Garamond', serif;
     color: #374151;
-    text-align: left;
+    text-align: center;
 }
 @media (min-width: 768px) {
     .invitation-text {
@@ -215,7 +215,7 @@ section {
     margin-top: 0.5rem;
     font-family: 'Garamond', serif;
     color: #374151;
-    text-align: left;
+    text-align: center;
 }
 
 /* Styling for quote text */
@@ -225,7 +225,7 @@ section {
     line-height: 1.625;
     font-family: 'Garamond', serif;
     color: #374151;
-    text-align: left;
+    text-align: center;
 }
 @media (min-width: 768px) {
     .quote-text {
@@ -239,7 +239,7 @@ section {
     margin-top: 1rem;
     font-family: 'Garamond', serif;
     color: #4B5563;
-    text-align: left;
+    text-align: center;
 }
 
 /* Styling for opening greeting */
@@ -267,7 +267,7 @@ section {
     margin-top: 1rem;
     font-family: 'Garamond', serif;
     color: #374151;
-    text-align: left;
+    text-align: center;
 }
 @media (min-width: 768px) {
     .opening-invitation {
@@ -304,7 +304,7 @@ section {
     font-size: 2.25rem;
     margin-top: 1rem;
     font-family: 'Great Vibes', cursive;
-    text-align: left;
+    text-align: center;
 }
 /* Responsive font sizes for full names */
 @media (min-width: 768px) {
@@ -340,7 +340,7 @@ section {
     margin-bottom: 2rem;
     font-family: 'Garamond', serif;
     color: #4B5563;
-    text-align: left;
+    text-align: center;
 }
 /* Responsive font sizes for ampersand divider */
 @media (min-width: 768px) {
@@ -356,11 +356,11 @@ section {
 
 /* Styling for story title */
 .story-title {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 2rem;
     font-family: 'Great Vibes', cursive;
     color: #8B5CF6;
-    text-align: left;
+    text-align: center;
 }
 /* Responsive font sizes for story title */
 @media (min-width: 768px) {
@@ -380,7 +380,7 @@ section {
     margin-top: 2rem;
     font-family: 'Great Vibes', cursive;
     color: #EC4899;
-    text-align: left;
+    text-align: center;
 }
 /* Responsive font sizes for story subtitles */
 @media (min-width: 768px) {
@@ -400,7 +400,7 @@ section {
     margin-top: 0.5rem;
     font-family: 'Garamond', serif;
     color: #374151;
-    text-align: left;
+    text-align: center;
 }
 
 /* Styling for story paragraphs */
@@ -410,7 +410,7 @@ section {
     line-height: 1.625;
     font-family: 'Garamond', serif;
     color: #374151;
-    text-align: left;
+    text-align: center;
 }
 @media (min-width: 768px) {
     .story-paragraph {
@@ -424,7 +424,7 @@ section {
     margin-bottom: 2rem;
     font-family: 'Great Vibes', cursive;
     color: #8B5CF6;
-    text-align: left;
+    text-align: center;
 }
 /* Responsive font sizes for event section title */
 @media (min-width: 768px) {
@@ -492,7 +492,7 @@ section {
     margin-top: 2rem;
     font-family: 'Great Vibes', cursive;
     color: #EC4899;
-    text-align: left;
+    text-align: center;
 }
 /* Responsive font sizes for event subtitles */
 @media (min-width: 768px) {
@@ -512,13 +512,13 @@ section {
     margin-top: 0.5rem;
     font-family: 'Garamond', serif;
     color: #374151;
-    text-align: left;
+    text-align: center;
 }
 
 /* Wrapper for buttons to control alignment */
 .button-wrapper {
     margin-top: 1.5rem;
-    text-align: left;
+    text-align: center;
 }
 
 /* Styling for action buttons (e.g., "Detail Lokasi") */
@@ -544,7 +544,7 @@ section {
     margin-top: 2rem;
     font-family: 'Great Vibes', cursive;
     color: #8B5CF6;
-    text-align: left;
+    text-align: center;
 }
 /* Responsive font sizes for RSVP title */
 @media (min-width: 768px) {
@@ -582,7 +582,7 @@ section {
     margin-bottom: 2rem;
     font-family: 'Great Vibes', cursive;
     color: #8B5CF6;
-    text-align: left;
+    text-align: center;
 }
 /* Responsive font sizes for gallery title */
 @media (min-width: 768px) {
@@ -650,7 +650,7 @@ section {
     margin-bottom: 2rem;
     font-family: 'Garamond', serif;
     color: #374151;
-    text-align: left;
+    text-align: center;
 }
 
 /* Styling for closing signature intro */
@@ -659,7 +659,7 @@ section {
     margin-top: 1rem;
     font-family: 'Garamond', serif;
     color: #374151;
-    text-align: left;
+    text-align: center;
 }
 
 /* Styling for names in closing section */
@@ -667,7 +667,7 @@ section {
     font-size: 3rem;
     line-height: 1.25;
     font-family: 'Great Vibes', cursive;
-    text-align: left;
+    text-align: center;
 }
 /* Responsive font sizes for closing names */
 @media (min-width: 768px) {
@@ -688,7 +688,7 @@ section {
     font-size: 2.25rem;
     font-family: 'Garamond', serif;
     color: #4B5563;
-    text-align: left;
+    text-align: center;
 }
 /* Responsive font sizes for closing ampersand */
 @media (min-width: 768px) {
@@ -708,7 +708,7 @@ section {
     margin-top: 2rem;
     font-family: 'Great Vibes', cursive;
     color: #EC4899;
-    text-align: left;
+    text-align: center;
 }
 /* Responsive font sizes for final closing greeting */
 @media (min-width: 768px) {
@@ -732,7 +732,7 @@ section {
     font-size: 1rem;
     font-family: 'Montserrat', sans-serif;
     color: #4B5563;
-    text-align: left;
+    text-align: center;
 }
 
 /* Styling for section dividers */
