@@ -73,7 +73,7 @@ section {
 .name-ampersand {
     font-size: 3rem;
     font-family: 'Garamond', serif; /* Serif font */
-    color: #000000; /* Gray color */
+    color: #CBA979; /* Gray color */
     animation: slideInFromTop 1s ease-out 0.3s forwards; /* Animation with delay */
     opacity: 0;
     text-align: center;
@@ -356,7 +356,7 @@ section {
 
 /* Styling for story title */
 .story-title {
-    font-size: 2.5rem;
+    font-size: 1.875rem;
     margin-bottom: 2rem;
     font-family: 'Great Vibes', cursive;
     color: #8B5CF6;
@@ -376,7 +376,7 @@ section {
 
 /* Styling for story subtitles */
 .story-subtitle {
-    font-size: 1.875rem;
+    font-size: 1.35rem;
     margin-top: 2rem;
     font-family: 'Great Vibes', cursive;
     color: #EC4899;
@@ -396,7 +396,7 @@ section {
 
 /* Styling for story dates */
 .story-date {
-    font-size: 1.25rem;
+    font-size: 0.875rem;
     margin-top: 0.5rem;
     font-family: 'Garamond', serif;
     color: #374151;
@@ -405,7 +405,7 @@ section {
 
 /* Styling for story paragraphs */
 .story-paragraph {
-    font-size: 1.125rem;
+    font-size: 0.875rem;
     margin-top: 1rem;
     line-height: 1.625;
     font-family: 'Garamond', serif;
@@ -420,7 +420,7 @@ section {
 
 /* Styling for event section title */
 .event-section-title {
-    font-size: 3rem;
+    font-size: 1.875rem;
     margin-bottom: 2rem;
     font-family: 'Great Vibes', cursive;
     color: #8B5CF6;
@@ -488,7 +488,7 @@ section {
 
 /* Styling for event subtitles */
 .event-subtitle {
-    font-size: 1.875rem;
+    font-size: 1.35rem;
     margin-top: 2rem;
     font-family: 'Great Vibes', cursive;
     color: #EC4899;
@@ -508,7 +508,7 @@ section {
 
 /* Styling for event details */
 .event-detail {
-    font-size: 1.25rem;
+    font-size: 0.875rem;
     margin-top: 0.5rem;
     font-family: 'Garamond', serif;
     color: #374151;
@@ -578,7 +578,7 @@ section {
 
 /* Styling for gallery title */
 .gallery-title {
-    font-size: 3rem;
+    font-size: 1.875rem;
     margin-bottom: 2rem;
     font-family: 'Great Vibes', cursive;
     color: #8B5CF6;
@@ -645,7 +645,7 @@ section {
 
 /* Styling for closing quote */
 .closing-quote {
-    font-size: 1.25rem;
+    font-size: 0.875rem;
     line-height: 1.625;
     margin-bottom: 2rem;
     font-family: 'Garamond', serif;
@@ -655,7 +655,7 @@ section {
 
 /* Styling for closing signature intro */
 .closing-signature-intro {
-    font-size: 1.25rem;
+    font-size: 0.875rem;
     margin-top: 1rem;
     font-family: 'Garamond', serif;
     color: #374151;
@@ -664,7 +664,7 @@ section {
 
 /* Styling for names in closing section */
 .closing-name-dinda, .closing-name-angga {
-    font-size: 3rem;
+    font-size: 1.35rem;
     line-height: 1.25;
     font-family: 'Great Vibes', cursive;
     text-align: center;
@@ -704,7 +704,7 @@ section {
 
 /* Styling for final closing greeting */
 .closing-greeting-final {
-    font-size: 2.25rem;
+    font-size: 0.875rem;
     margin-top: 2rem;
     font-family: 'Great Vibes', cursive;
     color: #EC4899;
