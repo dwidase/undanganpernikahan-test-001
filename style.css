@@ -136,3 +136,44 @@ hr {
     /* Tailwind classes are used here for button styling */
     @apply mt-6 px-8 py-4 bg-gradient-to-r from-green-500 to-lime-600 text-white font-bold rounded-full shadow-lg hover:from-green-600 hover:to-lime-700 transition-all duration-300 transform hover:scale-105;
 }
+/* --- ANIMATIONS FOR COVER PAGE --- */
+
+/* Keyframes for sliding in from top */
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-100%); /* Start 100% above its normal position */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); /* End at its normal position */
+        opacity: 1;
+    }
+}
+
+/* Keyframes for sliding in from bottom */
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%); /* Start 100% below its normal position */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); /* End at its normal position */
+        opacity: 1;
+    }
+}
+
+/* Animation classes */
+.animate-slide-in-top {
+    animation: slideInFromTop 1s ease-out forwards; /* 1s duration, ease-out timing, stay at end state */
+    opacity: 0; /* Hidden initially */
+}
+
+/* Specific animation for the ampersand to add a slight delay */
+.animate-slide-in-top-ampersand {
+    animation: slideInFromTop 1s ease-out 0.3s forwards; /* 0.3s delay */
+    opacity: 0; /* Hidden initially */
+}
+
+.animate-slide-in-bottom {
+    animation: slideInFromBottom 1s ease-out 0.6s forwards; /* 0.6s delay for button */
+    opacity: 0; /* Hidden initially */
