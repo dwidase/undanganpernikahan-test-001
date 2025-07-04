@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan Dinda & Angga</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Import -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Garamond:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Halaman Cover -->
+    <section id="cover-page" class="flex flex-col items-center justify-center min-h-screen p-4">
+        <div class="text-center">
+            <h1 class="font-great-vibes text-pink-700">Dinda</h1>
+            <h1 class="font-garamond text-gray-600">&</h1>
+            <h1 class="font-great-vibes text-purple-700">Angga</h1>
+            <button id="open-invitation-button">Buka Undangan</button>
+        </div>
+    </section>
+
+    <!-- Halaman Isi Undangan (Awalnya Tersembunyi) -->
+    <section id="main-invitation-page" class="hidden">
+        <!-- Bagian 1: Halaman Mempelai -->
+        <div class="section-content">
+            <h2 class="font-great-vibes text-center text-pink-700">Dinda</h2>
+            <h2 class="font-garamond text-center text-gray-600">&</h2>
+            <h2 class="font-great-vibes text-center text-purple-700">Angga</h2>
+            <p class="font-garamond text-center text-gray-700 mt-4">Kami mengundang anda untuk berbagi kebahagiaan</p>
+            <p class="font-garamond text-center text-gray-700 text-3xl mt-2">30 05 2025</p>
+        </div>
+
+        <hr>
+
+        <!-- Bagian 2: Kalimat Mutiara -->
+        <div class="section-content">
+            <p class="font-garamond text-gray-700 text-center italic">
+                “Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berpikir.”
+            </p>
+            <p class="font-garamond text-gray-600 text-sm mt-4 text-center">
+                – QS ar-rum ayat 21
+            </p>
+        </div>
+
+        <hr>
+
+        <!-- Bagian 3: Pembuka & Detail Mempelai -->
+        <div class="section-content">
+            <p class="font-great-vibes text-pink-600 text-center font-size-large">Assalamualaikum warahmatullahi wabarakatuh</p>
+            <p class="font-garamond text-gray-700 text-center mt-4">
+                Dengan penuh rasa syukur, kami mengundang bapak/ibu/saudara/i untuk menghadiri pernikahan kami.
+            </p>
+
+            <!-- Placeholder Foto Dinda -->
+            <div class="image-placeholder">
+                <p>Foto Dinda di sini</p>
+            </div>
+            <p class="font-great-vibes text-pink-700 text-center font-size-large mt-4">Dinda Nadira Maharani</p>
+            <p class="font-garamond text-gray-700 text-center">Putri bapak ABC dan ibu EFG</p>
+
+            <p class="font-garamond text-gray-600 text-center font-size-larger-ampersand mt-8 mb-8">&</p>
+
+            <!-- Placeholder Foto Angga -->
+            <div class="image-placeholder">
+                <p>Foto Angga di sini</p>
+            </div>
+            <p class="font-great-vibes text-purple-700 text-center font-size-large mt-4">Angga Pratama Putra</p>
+            <p class="font-garamond text-gray-700 text-center">Putra bapak WXY dan ibu ZAA</p>
+        </div>
+
+        <hr>
+
+        <!-- Bagian 4: Cerita Cinta Kami -->
+        <div class="section-content">
+            <h2 class="font-great-vibes text-purple-700 text-center mb-8">Cerita Cinta Kami</h2>
+
+            <!-- Awal Pertemuan -->
+            <h3 class="font-great-vibes text-pink-600 text-center text-3xl md:text-4xl mt-8">Awal Pertemuan</h3>
+            <p class="font-garamond text-gray-700 text-center text-xl mt-2">Mei 2021</p>
+            <p class="font-garamond text-gray-700 text-center mt-4 leading-relaxed">
+                Takdir mempertemukan kami secara daring di bulan Mei 2021. Dari sebuah percakapan acak anonim, obrolan berlanjut ke pesan pribadi. Saling bertukar kabar hingga akhirnya di tahun 2022, sepakat untuk bertemu. Setelahnya, pertemuan semakin sering terjadi, dan...
+            </p>
+
+            <!-- Perkenalan Lebih Dalam -->
+            <h3 class="font-great-vibes text-pink-600 text-center text-3xl md:text-4xl mt-12">Perkenalan Lebih Dalam</h3>
+            <p class="font-garamond text-gray-700 text-center text-xl mt-2">Maret 2023</p>
+            <p class="font-garamond text-gray-700 text-center mt-4 leading-relaxed">
+                ...di bulan Maret 2023, kami berdua sepakat untuk saling mengenal lebih jauh, menapaki perjalanan bersama tanpa status pacaran. Hingga...
+            </p>
+
+            <!-- Ikatan Janji -->
+            <h3 class="font-great-vibes text-pink-600 text-center text-3xl md:text-4xl mt-12">Ikatan Janji</h3>
+            <p class="font-garamond text-gray-700 text-center text-xl mt-2">13 Agustus 2024</p>
+            <p class="font-garamond text-gray-700 text-center mt-4 leading-relaxed">
+                ...tibalah bulan Agustus 2024. Tepat di tanggal 13 Agustus, yang juga bertepatan dengan ulang tahun Dinda, pertunangan kami resmi terlaksana.
+            </p>
+
+            <!-- Pernikahan -->
+            <h3 class="font-great-vibes text-pink-600 text-center text-3xl md:text-4xl mt-12">Pernikahan</h3>
+            <p class="font-garamond text-gray-700 text-center text-xl mt-2">30 Mei 2025</p>
+            <p class="font-garamond text-gray-700 text-center mt-4 leading-relaxed">
+                Dan kini, tiba di hari yang paling bahagia, 30 Mei 2025. Kisah cinta kami "berakhir" sekaligus dimulai dengan langkah yang lebih serius, mengikat janji suci di hadapan Tuhan dan keluarga.
+            </p>
+        </div>
+
+        <hr>
+
+        <!-- Bagian 5: Acara -->
+        <div class="section-content">
+            <h2 class="font-great-vibes text-purple-700 text-center mb-8">Menjelang Hari Bahagia</h2>
+
+            <!-- Countdown Timer -->
+            <div class="countdown-container">
+                <div class="countdown-item">
+                    <span id="days" class="countdown-number">00</span>
+                    <span class="countdown-label">Hari</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="hours" class="countdown-number">00</span>
+                    <span class="countdown-label">Jam</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="minutes" class="countdown-number">00</span>
+                    <span class="countdown-label">Menit</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="seconds" class="countdown-number">00</span>
+                    <span class="countdown-label">Detik</span>
+                </div>
+            </div>
+
+            <hr class="my-16"> <!-- More space for event details -->
+
+            <!-- Acara: Akad Nikah -->
+            <h3 class="font-great-vibes text-pink-600 text-center text-3xl md:text-4xl mt-8">Akad Nikah</h3>
+            <p class="font-garamond text-gray-700 text-center text-xl mt-2">Sabtu, 30 Mei 2025</p>
+            <p class="font-garamond text-gray-700 text-center text-xl mt-2">Pukul 10.00 WIB</p>
+            <p class="font-garamond text-gray-700 text-center text-xl mt-2">Jalan Mawar no.64 Kec.Teweh tengah Kab.Muara Teweh</p>
+            <div class="text-center mt-6">
+                <a href="https://maps.app.goo.gl/rvRPcHJjP3oDrgcK6" target="_blank" class="action-button">Detail Lokasi</a>
+            </div>
+
+            <hr class="my-16">
+
+            <!-- Acara: Resepsi Pernikahan (assuming the second "Akad Nikah" was for reception) -->
+            <h3 class="font-great-vibes text-pink-600 text-center text-3xl md:text-4xl mt-8">Resepsi Pernikahan</h3>
+            <p class="font-garamond text-gray-700 text-center text-xl mt-2">Minggu, 31 Mei 2025</p>
+            <p class="font-garamond text-gray-700 text-center text-xl mt-2">Pukul 10.00 WIB</p>
+            <p class="font-garamond text-gray-700 text-center text-xl mt-2">Jalan Mawar no.64 Kec.Teweh tengah Kab.Muara Teweh</p>
+            <div class="text-center mt-6">
+                <a href="https://maps.app.goo.gl/rvRPcHJjP3oDrgcK6" target="_blank" class="action-button">Detail Lokasi</a>
+            </div>
+
+            <hr class="my-16">
+
+            <!-- Konfirmasi Kehadiran -->
+            <h3 class="font-great-vibes text-purple-700 text-center text-3xl md:text-4xl mt-8">Konfirmasi Kehadiran</h3>
+            <div class="text-center mt-6 mb-8">
+                <a href="https://forms.gle/DKc8dLxuXcqDXvnT7" target="_blank" class="rsvp-button">RSVP</a>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Bagian 6: Galeri -->
+        <div class="section-content">
+            <h2 class="font-great-vibes text-purple-700 text-center mb-8">Galeri</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="gallery-image-placeholder">
+                    <p>Foto 1</p>
+                </div>
+                <div class="gallery-image-placeholder">
+                    <p>Foto 2</p>
+                </div>
+                <div class="gallery-image-placeholder">
+                    <p>Foto 3</p>
+                </div>
+                <div class="gallery-image-placeholder">
+                    <p>Foto 4</p>
+                </div>
+                <div class="gallery-image-placeholder">
+                    <p>Foto 5</p>
+                </div>
+                <div class="gallery-image-placeholder">
+                    <p>Foto 6</p>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Bagian 7: Penutup -->
+        <div class="section-content pb-16">
+            <p class="font-garamond text-gray-700 text-center text-xl leading-relaxed mb-8">
+                Kehadiran, doa, dan restu bapak/ibu/saudara/i<br>
+                adalah suatu kehormatan dan kebahagiaan yang tak ternilai.
+            </p>
+            <p class="font-garamond text-gray-700 text-center text-xl mt-4">Kami yang berbahagia</p>
+            <h2 class="font-great-vibes text-pink-700">Dinda</h2>
+            <h2 class="font-garamond text-gray-600">&</h2>
+            <h2 class="font-great-vibes text-purple-700">Angga</h2>
+            <p class="font-great-vibes text-pink-600 text-center font-size-large mt-8">Waalaikumussalam warahmatullahi wabarakatuh</p>
+        </div>
+
+        <hr>
+
+        <!-- Bagian 8: Promosi -->
+        <div class="section-content pb-16">
+            <p class="font-montserrat text-gray-600 text-center text-base">Didesain oleh Niseja</p>
+        </div>
+    </section>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
