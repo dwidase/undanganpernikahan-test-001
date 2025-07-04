@@ -244,7 +244,7 @@ section {
 
 /* Styling for opening greeting */
 .opening-greeting {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-family: 'Great Vibes', cursive;
     color: #EC4899; /* Pink color */
     text-align: center;
@@ -458,7 +458,7 @@ section {
 /* Styling for countdown numbers */
 .countdown-number {
     font-size: 3rem;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Garamond', serif;
     color: #8B5CF6; /* Purple color */
 }
 /* Responsive font sizes for countdown numbers */
