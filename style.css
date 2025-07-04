@@ -196,7 +196,7 @@ section {
 
 /* Styling for invitation text */
 .invitation-text {
-    font-size: 1.125rem;
+    font-size: 0.875rem;
     margin-top: 1rem;
     line-height: 1.625;
     font-family: 'Garamond', serif;
@@ -220,7 +220,7 @@ section {
 
 /* Styling for quote text */
 .quote-text {
-    font-size: 1.125rem;
+    font-size: 0.875rem;
     font-style: italic;
     line-height: 1.625;
     font-family: 'Garamond', serif;
@@ -244,10 +244,10 @@ section {
 
 /* Styling for opening greeting */
 .opening-greeting {
-    font-size: 2.25rem;
+    font-size: 0.875rem;
     font-family: 'Great Vibes', cursive;
     color: #EC4899; /* Pink color */
-    text-align: left;
+    text-align: center;
 }
 /* Responsive font sizes for opening greeting */
 @media (min-width: 768px) {
@@ -263,7 +263,7 @@ section {
 
 /* Styling for opening invitation text */
 .opening-invitation {
-    font-size: 1.125rem;
+    font-size: 0.875rem;
     margin-top: 1rem;
     font-family: 'Garamond', serif;
     color: #374151;
@@ -295,13 +295,13 @@ section {
 .profile-placeholder {
     margin-top: 2rem;
     margin-bottom: 2rem;
-    margin-left: 0; /* Align to left */
-    margin-right: auto; /* Push to left */
+    margin-left: auto; /* Align to center */
+    margin-right: auto; /* Align to center */
 }
 
 /* Styling for full names */
 .full-name-dinda, .full-name-angga {
-    font-size: 2.25rem;
+    font-size: 1.875rem;
     margin-top: 1rem;
     font-family: 'Great Vibes', cursive;
     text-align: center;
@@ -322,10 +322,10 @@ section {
 
 /* Styling for parent names */
 .parent-name {
-    font-size: 1.125rem;
+    font-size: 0.875rem;
     font-family: 'Garamond', serif;
     color: #374151;
-    text-align: left;
+    text-align: center;
 }
 @media (min-width: 768px) {
     .parent-name {
