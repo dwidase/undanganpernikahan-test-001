@@ -1,41 +1,74 @@
-// Get references to the open button and page sections
+// Mengambil referensi ke elemen-elemen HTML yang dibutuhkan
+// Ini adalah tombol "Buka Undangan" di halaman sampul.
 const openButton = document.getElementById('open-invitation-button');
+// Ini adalah elemen section yang mewakili halaman sampul.
 const coverPage = document.getElementById('cover-page');
+// Ini adalah elemen section yang mewakili halaman undangan utama.
 const mainInvitationPage = document.getElementById('main-invitation-page');
 
-// Add event listener to the open button
+// Menambahkan event listener (pendengar acara) ke tombol "Buka Undangan".
+// Fungsi ini akan dijalankan setiap kali tombol diklik.
 openButton.addEventListener('click', () => {
-    // Hide the cover page
+    // Menyembunyikan halaman sampul.
+    // Kode ini menambahkan kelas 'hidden' (dari Tailwind CSS) ke elemen halaman sampul,
+    // yang akan mengubah properti 'display' menjadi 'none', sehingga halaman sampul tidak terlihat.
+    // Diterapkan pada: Halaman Sampul (elemen dengan id 'cover-page').
+    // Fungsi: Mengubah tampilan halaman sampul dari terlihat menjadi tersembunyi.
     coverPage.classList.add('hidden');
-    // Show the main invitation page
+
+    // Menampilkan halaman undangan utama.
+    // Kode ini menghapus kelas 'hidden' dari elemen halaman undangan utama,
+    // sehingga halaman tersebut akan terlihat.
+    // Diterapkan pada: Halaman Undangan Utama (elemen dengan id 'main-invitation-page').
+    // Fungsi: Mengubah tampilan halaman undangan utama dari tersembunyi menjadi terlihat.
     mainInvitationPage.classList.remove('hidden');
-    // Scroll to the top of the main invitation page
+
+    // Menggulir halaman ke bagian paling atas.
+    // Ini memastikan bahwa pengguna melihat bagian atas halaman undangan utama setelah transisi.
+    // Diterapkan pada: Seluruh jendela browser.
+    // Fungsi: Mengatur posisi scroll ke koordinat (0,0), yaitu pojok kiri atas halaman.
     window.scrollTo(0, 0);
 });
 
-// Set the target date for the countdown (May 30, 2025)
+// Mengatur tanggal target untuk hitung mundur pernikahan (30 Mei 2025).
+// Tanggal ini digunakan untuk menghitung sisa waktu hingga acara.
+// Diterapkan pada: Logika hitung mundur.
+// Fungsi: Mendefinisikan titik waktu di masa depan untuk perhitungan hitung mundur.
 const countdownDate = new Date("May 30, 2025 00:00:00").getTime();
 
-// Update the countdown every 1 second
+// Memperbarui hitung mundur setiap 1 detik.
+// setInterval akan menjalankan fungsi yang diberikan secara berulang setiap interval waktu tertentu (1000 ms = 1 detik).
+// Diterapkan pada: Bagian hitung mundur di halaman isi.
+// Fungsi: Memastikan tampilan hitung mundur selalu diperbarui secara real-time.
 const x = setInterval(function() {
-    // Get the current date and time
+    // Mendapatkan tanggal dan waktu saat ini.
     const now = new Date().getTime();
-    // Calculate the distance between now and the countdown date
+    // Menghitung selisih waktu antara tanggal target dan waktu saat ini.
     const distance = countdownDate - now;
 
-    // Calculate days, hours, minutes, and seconds
+    // Menghitung hari, jam, menit, dan detik dari selisih waktu.
+    // Math.floor digunakan untuk membulatkan ke bawah ke bilangan bulat terdekat.
+    // Diterapkan pada: Perhitungan waktu hitung mundur.
+    // Fungsi: Mengubah milidetik menjadi unit waktu yang lebih mudah dibaca (hari, jam, menit, detik).
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    // Display the results in the respective elements, adding leading zeros if needed
+    // Menampilkan hasil perhitungan ke elemen-elemen HTML yang sesuai.
+    // Operator ternary (kondisi ? nilai_jika_true : nilai_jika_false) digunakan untuk menambahkan "0" di depan
+    // jika angka kurang dari 10 (misalnya, 5 menjadi "05").
+    // Diterapkan pada: Elemen span dengan id "days", "hours", "minutes", "seconds" di bagian hitung mundur.
+    // Fungsi: Memperbarui tampilan angka hitung mundur di UI.
     document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
     document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
     document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
     document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
 
-    // If the countdown is over, stop the timer and display "00"
+    // Jika waktu hitung mundur sudah habis (distance < 0), hentikan timer dan tampilkan "00" untuk semua unit.
+    // clearInterval(x) menghentikan eksekusi berulang dari setInterval.
+    // Diterapkan pada: Logika penghentian hitung mundur.
+    // Fungsi: Menghentikan pembaruan hitung mundur setelah tanggal target terlewati dan mengatur ulang tampilan.
     if (distance < 0) {
         clearInterval(x);
         document.getElementById("days").innerHTML = "00";
@@ -43,4 +76,4 @@ const x = setInterval(function() {
         document.getElementById("minutes").innerHTML = "00";
         document.getElementById("seconds").innerHTML = "00";
     }
-}, 1000); // Update every 1000 milliseconds (1 second)
+}, 1000); // Interval pembaruan: 1000 milidetik (1 detik)
