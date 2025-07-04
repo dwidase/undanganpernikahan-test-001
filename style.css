@@ -40,7 +40,7 @@ section {
 }
 
 .cover-content {
-    text-align: left; /* Text alignment for cover content */
+    text-align: center; /* Text alignment for cover content */
     width: 100%; /* Full width within its container */
     max-width: 48rem; /* Max width for content */
     padding: 2rem 1rem; /* Padding for content */
@@ -117,7 +117,7 @@ section {
 .open-button {
     margin-top: 1rem;
     padding: 1rem 2rem;
-    background: linear-gradient(to right, #EC4899, #8B5CF6); /* Gradient background */
+    background-color: #CBA979; /* solid color */
     color: white;
     font-weight: bold;
     border-radius: 9999px; /* Fully rounded */
@@ -129,7 +129,7 @@ section {
     display: inline-block; /* Ensure button behaves correctly with animation */
 }
 .open-button:hover {
-    background: linear-gradient(to right, #DB2777, #7C3AED); /* Darker gradient on hover */
+    background-color: #9c815c; /* Solid color on hover */
     transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
