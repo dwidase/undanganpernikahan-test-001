@@ -244,7 +244,7 @@ section {
 
 /* Styling for opening greeting */
 .opening-greeting {
-    font-size: 0.875rem;
+    font-size: 1.25rem;
     font-family: 'Great Vibes', cursive;
     color: #EC4899; /* Pink color */
     text-align: center;
