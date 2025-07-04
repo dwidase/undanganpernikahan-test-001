@@ -10,8 +10,7 @@ const mainInvitationPage = document.getElementById('main-invitation-page');
 // Fungsi ini akan dijalankan setiap kali tombol diklik.
 openButton.addEventListener('click', () => {
     // Menyembunyikan halaman sampul.
-    // Kode ini menambahkan kelas 'hidden' (dari Tailwind CSS) ke elemen halaman sampul,
-    // yang akan mengubah properti 'display' menjadi 'none', sehingga halaman sampul tidak terlihat.
+    // Kode ini menambahkan kelas 'hidden' ke elemen halaman sampul.
     // Diterapkan pada: Halaman Sampul (elemen dengan id 'cover-page').
     // Fungsi: Mengubah tampilan halaman sampul dari terlihat menjadi tersembunyi.
     coverPage.classList.add('hidden');
@@ -34,7 +33,7 @@ openButton.addEventListener('click', () => {
 // Tanggal ini digunakan untuk menghitung sisa waktu hingga acara.
 // Diterapkan pada: Logika hitung mundur.
 // Fungsi: Mendefinisikan titik waktu di masa depan untuk perhitungan hitung mundur.
-const countdownDate = new Date("May 30, 2025 00:00:00").getTime();
+const countdownDate = new Date("Dec 30, 2026 00:00:00").getTime();
 
 // Memperbarui hitung mundur setiap 1 detik.
 // setInterval akan menjalankan fungsi yang diberikan secara berulang setiap interval waktu tertentu (1000 ms = 1 detik).
