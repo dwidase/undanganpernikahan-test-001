@@ -802,3 +802,11 @@ section {
     animation: slideInFromBottom 1s ease-out 0.6s forwards;
     opacity: 0;
 }
+
+/* Tambahan: Definisi eksplisit untuk kelas 'hidden' */
+/* Untuk apa kode ini: Memastikan elemen tersembunyi sepenuhnya. */
+/* Diterapkan pada: Setiap elemen HTML yang memiliki kelas 'hidden'. */
+/* Fungsi: Mengubah properti tampilan elemen menjadi 'none', membuatnya tidak terlihat dan tidak memakan ruang tata letak. */
+.hidden {
+    display: none !important; /* Menggunakan !important untuk memastikan override jika ada konflik */
+}
