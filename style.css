@@ -687,6 +687,7 @@ section {
 /* Styling for ampersand in closing section */
 .closing-name-ampersand {
     font-size: 0.875rem;
+    margin-top: 1rem;
     font-family: 'Garamond', serif;
     color: #4B5563;
     text-align: center;
