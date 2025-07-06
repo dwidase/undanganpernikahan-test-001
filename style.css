@@ -364,7 +364,10 @@ section {
         font-size: 4.5rem;
     }
 }
-
+/* Warna latar belakang pembuka */
+.latarbelakang-pembuka {
+    background-color: #f5f0d5;
+{
 /* Styling for story title */
 .story-title {
     font-size: 1.875rem;
