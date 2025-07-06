@@ -374,7 +374,7 @@ section {
 .latarbelakang-pembuka {
     background-color: #f5f0d5;
     padding: 2rem; /* Tambahkan padding */
-    border-radius: 1rem; /* Sudut membulat */
+    border-radius: 0; /* Sudut membulat */
     margin-bottom: 2rem; /* Spasi di bawah */
     width: 100%; /* Pastikan lebar penuh */
 }
