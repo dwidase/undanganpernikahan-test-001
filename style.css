@@ -1,4 +1,4 @@
-/* Font definitions for easy use */
+/* Definisi font untuk penggunaan mudah */
 .font-great-vibes {
     font-family: 'Great Vibes', cursive;
 }
@@ -9,55 +9,56 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-/* Body styling: background, text color, flex layout for full height */
+/* Gaya body: latar belakang, warna teks, tata letak flex untuk tinggi penuh */
 body {
-    background-color: #F9FAFB; /* Light gray background */
-    color: #1F2937; /* Dark gray text */
+    background-color: #F9FAFB; /* Latar belakang abu-abu muda */
+    color: #1F2937; /* Teks abu-abu gelap */
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Minimum height of viewport */
-    font-family: 'Garamond', serif; /* Default font */
+    min-height: 100vh; /* Tinggi minimum viewport */
+    font-family: 'Garamond', serif; /* Font default */
 }
 
-/* Section styling: flex layout, alignment, padding */
+/* Gaya bagian: tata letak flex, perataan, padding */
 section {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Align content to the start (left) */
-    justify-content: flex-start; /* Justify content to the start (top) */
-    min-height: 100vh; /* Each section takes at least full viewport height */
-    padding: 1rem; /* Padding around sections */
+    align-items: center; /* Perataan konten ke tengah */
+    justify-content: flex-start; /* Justifikasi konten ke atas */
+    min-height: 100vh; /* Setiap bagian mengambil setidaknya tinggi viewport penuh */
+    padding: 1rem; /* Padding di sekitar bagian */
+    width: 100%; /* Pastikan bagian mengambil lebar penuh */
 }
 
-/* Cover page specific styling */
+/* Gaya khusus halaman sampul */
 #cover-page {
-    background-color: #F8F0E3; /* Light beige background for cover */
-    overflow: hidden; /* Hide overflow for animations */
-    width: 100%; /* Ensure cover page takes full width */
-    display: flex; /* Use flex to center content */
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
+    background-color: #F8F0E3; /* Latar belakang krem muda untuk sampul */
+    overflow: hidden; /* Sembunyikan overflow untuk animasi */
+    width: 100%; /* Pastikan halaman sampul mengambil lebar penuh */
+    display: flex; /* Gunakan flex untuk memusatkan konten */
+    align-items: center; /* Pusatkan secara vertikal */
+    justify-content: center; /* Pusatkan secara horizontal */
 }
 
 .cover-content {
-    text-align: center; /* Text alignment for cover content */
-    width: 100%; /* Full width within its container */
-    max-width: 48rem; /* Max width for content */
-    padding: 2rem 1rem; /* Padding for content */
+    text-align: center; /* Perataan teks untuk konten sampul */
+    width: 100%; /* Lebar penuh dalam containernya */
+    max-width: 48rem; /* Lebar maksimum untuk konten */
+    padding: 2rem 1rem; /* Padding untuk konten */
 }
 
-/* Styling for Dinda's name on cover page */
+/* Gaya untuk nama Dinda di halaman sampul */
 .name-dinda {
-    font-size: 3rem; /* Large font size */
+    font-size: 3rem; /* Ukuran font besar */
     line-height: 1.25;
-    font-family: 'Great Vibes', cursive; /* Script font */
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.1); /* Subtle text shadow */
-    color: #ffffff; /* Pink color */
-    animation: slideInFromTop 1s ease-out forwards; /* Animation from top */
-    opacity: 0; /* Start invisible */
+    font-family: 'Great Vibes', cursive; /* Font skrip */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1); /* Bayangan teks halus */
+    color: #DB2777; /* Warna pink gelap untuk Dinda */
+    animation: slideInFromTop 1s ease-out forwards; /* Animasi dari atas */
+    opacity: 0; /* Mulai tidak terlihat */
     text-align: center;
 }
-/* Responsive font sizes for Dinda's name */
+/* Ukuran font responsif untuk nama Dinda */
 @media (min-width: 768px) {
     .name-dinda {
         font-size: 6rem;
@@ -69,16 +70,16 @@ section {
     }
 }
 
-/* Styling for ampersand (&) on cover page */
+/* Gaya untuk ampersand (&) di halaman sampul */
 .name-ampersand {
     font-size: 1rem;
-    font-family: 'Garamond', serif; /* Serif font */
-    color: #CBA979; /* Gray color */
-    animation: slideInFromTop 1s ease-out 0.3s forwards; /* Animation with delay */
+    font-family: 'Garamond', serif; /* Font serif */
+    color: #4B5563; /* Warna abu-abu gelap untuk ampersand */
+    animation: slideInFromTop 1s ease-out 0.3s forwards; /* Animasi dengan penundaan */
     opacity: 0;
     text-align: center;
 }
-/* Responsive font sizes for ampersand */
+/* Ukuran font responsif untuk ampersand */
 @media (min-width: 768px) {
     .name-ampersand {
         font-size: 5rem;
@@ -90,18 +91,18 @@ section {
     }
 }
 
-/* Styling for Angga's name on cover page */
+/* Gaya untuk nama Angga di halaman sampul */
 .name-angga {
     font-size: 3rem;
     line-height: 1.25;
     font-family: 'Great Vibes', cursive;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-    color: #ffffff; /* Purple color */
+    color: #8B5CF6; /* Warna ungu gelap untuk Angga */
     animation: slideInFromTop 1s ease-out forwards;
     opacity: 0;
     text-align: center;
 }
-/* Responsive font sizes for Angga's name */
+/* Ukuran font responsif untuk nama Angga */
 @media (min-width: 768px) {
     .name-angga {
         font-size: 6rem;
@@ -113,40 +114,42 @@ section {
     }
 }
 
-/* Styling for the "Open Invitation" button */
+/* Gaya untuk tombol "Buka Undangan" */
 .open-button {
     margin-top: 2rem;
     padding: 1rem 2rem;
-    background-color: #CBA979; /* solid color */
+    background-color: #CBA979; /* Warna solid */
     color: white;
     font-weight: bold;
-    border-radius: 9999px; /* Fully rounded */
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Shadow */
-    transition: all 0.3s ease-in-out; /* Smooth transitions */
+    border-radius: 9999px; /* Sepenuhnya bulat */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Bayangan */
+    transition: all 0.3s ease-in-out; /* Transisi halus */
     transform: scale(1);
-    animation: slideInFromBottom 1s ease-out 0.6s forwards; /* Animation from bottom with delay */
-    opacity: 0;
-    display: inline-block; /* Ensure button behaves correctly with animation */
+    animation: slideInFromBottom 1s ease-out 0.6s forwards; /* Animasi dari bawah dengan penundaan */
+    opacity: 0; /* Mulai tidak terlihat */
+    display: inline-block; /* Pastikan tombol berperilaku benar dengan animasi */
 }
 .open-button:hover {
-    background-color: #b59669; /* Solid color on hover */
-    transform: scale(1.05); /* Slightly enlarge on hover */
+    background-color: #b59669; /* Warna solid saat hover */
+    transform: scale(1.05); /* Sedikit membesar saat hover */
 }
 
-/* Main invitation page styling */
+/* Gaya halaman undangan utama */
 #main-invitation-page {
-    background-color: #CBA979; /* White background for main page */
-    width: 100%; /* Ensure it takes full width */
-    align-items: flex-start; /* Align content to the start (left) */
+    background-color: #F9FAFB; /* Latar belakang putih untuk halaman utama */
+    width: 100%; /* Pastikan mengambil lebar penuh */
+    align-items: center; /* Pusatkan konten */
+    padding-bottom: 4rem; /* Tambahkan padding di bagian bawah */
 }
 
-/* Content wrapper for sections */
+/* Pembungkus konten untuk bagian */
 .section-content {
     width: 100%;
-    max-width: 48rem; /* Max width for content */
-    padding: 2rem 1rem; /* Padding for content */
-    margin-left: 0; /* Align to left */
-    margin-right: auto; /* Push content to left */
+    max-width: 48rem; /* Lebar maksimum untuk konten */
+    padding: 2rem 1rem; /* Padding untuk konten */
+    margin-left: auto; /* Pusatkan konten */
+    margin-right: auto; /* Pusatkan konten */
+    text-align: center; /* Pusatkan teks secara default */
 }
 @media (min-width: 768px) {
     .section-content {
@@ -154,14 +157,14 @@ section {
     }
 }
 
-/* Styling for names on main invitation page */
+/* Gaya untuk nama di halaman undangan utama */
 .main-name-dinda, .main-name-angga {
     font-size: 2rem;
     line-height: 1.25;
     font-family: 'Great Vibes', cursive;
     text-align: center;
 }
-/* Responsive font sizes for main names */
+/* Ukuran font responsif untuk nama utama */
 @media (min-width: 768px) {
     .main-name-dinda, .main-name-angga {
         font-size: 4.5rem;
@@ -172,17 +175,17 @@ section {
         font-size: 6rem;
     }
 }
-.main-name-dinda { color: #ffffff; } /* Pink color for Dinda */
-.main-name-angga { color: #ffffff; } /* Purple color for Angga */
+.main-name-dinda { color: #DB2777; } /* Warna pink untuk Dinda */
+.main-name-angga { color: #8B5CF6; } /* Warna ungu untuk Angga */
 
-/* Styling for ampersand on main page */
+/* Gaya untuk ampersand di halaman utama */
 .main-name-ampersand {
     font-size: 1rem;
     font-family: 'Garamond', serif;
     color: #4B5563;
     text-align: center;
 }
-/* Responsive font sizes for main ampersand */
+/* Ukuran font responsif untuk ampersand utama */
 @media (min-width: 768px) {
     .main-name-ampersand {
         font-size: 3.75rem;
@@ -194,7 +197,7 @@ section {
     }
 }
 
-/* Styling for invitation text */
+/* Gaya untuk teks undangan */
 .invitation-text {
     font-size: 0.65rem;
     margin-top: 1rem;
@@ -209,7 +212,7 @@ section {
     }
 }
 
-/* Styling for event date */
+/* Gaya untuk tanggal acara */
 .event-date {
     font-size: 1.3rem;
     margin-top: 0.5rem;
@@ -218,7 +221,7 @@ section {
     text-align: center;
 }
 
-/* Styling for quote text */
+/* Gaya untuk teks kutipan */
 .quote-text {
     font-size: 0.65rem;
     font-style: italic;
@@ -233,7 +236,7 @@ section {
     }
 }
 
-/* Styling for quote source */
+/* Gaya untuk sumber kutipan */
 .quote-source {
     font-size: 0.65rem;
     margin-top: 1rem;
@@ -253,14 +256,14 @@ section {
     box-sizing: border-box; /* Pastikan padding tidak menambah lebar total */
 }
 
-/* Styling for opening greeting */
+/* Gaya untuk salam pembuka */
 .opening-greeting {
     font-size: 1.35rem;
     font-family: 'Great Vibes', cursive;
-    color: #EC4899; /* Pink color */
+    color: #EC4899; /* Warna pink */
     text-align: center;
 }
-/* Responsive font sizes for opening greeting */
+/* Ukuran font responsif untuk salam pembuka */
 @media (min-width: 768px) {
     .opening-greeting {
         font-size: 3rem;
@@ -272,7 +275,7 @@ section {
     }
 }
 
-/* Styling for opening invitation text */
+/* Gaya untuk teks undangan pembuka */
 .opening-invitation {
     font-size: 0.875rem;
     margin-top: 1rem;
@@ -286,38 +289,38 @@ section {
     }
 }
 
-/* Styling for image placeholders */
+/* Gaya untuk placeholder gambar */
 .image-placeholder {
-    width: 80%; /* Responsive width */
-    max-width: 12rem; /* Max width for image */
-    height: 10rem; /* Fixed height */
-    background-color: #E5E7EB; /* Light gray background */
-    border-radius: 0.5rem; /* Rounded corners */
+    width: 80%; /* Lebar responsif */
+    max-width: 12rem; /* Lebar maksimum untuk gambar */
+    height: 10rem; /* Tinggi tetap */
+    background-color: #E5E7EB; /* Latar belakang abu-abu muda */
+    border-radius: 0.5rem; /* Sudut membulat */
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #6B7280; /* Gray text */
+    color: #6B7280; /* Teks abu-abu */
     font-size: 0.875rem;
     font-style: italic;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Shadow */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Bayangan */
 }
 
-/* Specific styling for profile image placeholders */
+/* Gaya khusus untuk placeholder gambar profil */
 .profile-placeholder {
     margin-top: 2rem;
     margin-bottom: 2rem;
-    margin-left: auto; /* Align to center */
-    margin-right: auto; /* Align to center */
+    margin-left: auto; /* Pusatkan */
+    margin-right: auto; /* Pusatkan */
 }
 
-/* Styling for full names */
+/* Gaya untuk nama lengkap */
 .full-name-dinda, .full-name-angga {
     font-size: 1.875rem;
     margin-top: 1rem;
     font-family: 'Great Vibes', cursive;
     text-align: center;
 }
-/* Responsive font sizes for full names */
+/* Ukuran font responsif untuk nama lengkap */
 @media (min-width: 768px) {
     .full-name-dinda, .full-name-angga {
         font-size: 3rem;
@@ -331,7 +334,7 @@ section {
 .full-name-dinda { color: #DB2777; }
 .full-name-angga { color: #8B5CF6; }
 
-/* Styling for parent names */
+/* Gaya untuk nama orang tua */
 .parent-name {
     font-size: 0.875rem;
     font-family: 'Garamond', serif;
@@ -344,7 +347,7 @@ section {
     }
 }
 
-/* Styling for ampersand divider */
+/* Gaya untuk pemisah ampersand */
 .ampersand-divider {
     font-size: 3rem;
     margin-top: 2rem;
@@ -353,7 +356,7 @@ section {
     color: #4B5563;
     text-align: center;
 }
-/* Responsive font sizes for ampersand divider */
+/* Ukuran font responsif untuk pemisah ampersand */
 @media (min-width: 768px) {
     .ampersand-divider {
         font-size: 3.75rem;
@@ -367,8 +370,12 @@ section {
 /* Warna latar belakang pembuka */
 .latarbelakang-pembuka {
     background-color: #f5f0d5;
-{
-/* Styling for story title */
+    padding: 2rem; /* Tambahkan padding */
+    border-radius: 1rem; /* Sudut membulat */
+    margin-bottom: 2rem; /* Spasi di bawah */
+}
+
+/* Gaya untuk judul cerita */
 .story-title {
     font-size: 1.875rem;
     margin-bottom: 2rem;
@@ -376,7 +383,7 @@ section {
     color: #8B5CF6;
     text-align: center;
 }
-/* Responsive font sizes for story title */
+/* Ukuran font responsif untuk judul cerita */
 @media (min-width: 768px) {
     .story-title {
         font-size: 4.5rem;
@@ -388,7 +395,7 @@ section {
     }
 }
 
-/* Styling for story subtitles */
+/* Gaya untuk subjudul cerita */
 .story-subtitle {
     font-size: 1.35rem;
     margin-top: 2rem;
@@ -396,7 +403,7 @@ section {
     color: #EC4899;
     text-align: center;
 }
-/* Responsive font sizes for story subtitles */
+/* Ukuran font responsif untuk subjudul cerita */
 @media (min-width: 768px) {
     .story-subtitle {
         font-size: 2.25rem;
@@ -408,7 +415,7 @@ section {
     }
 }
 
-/* Styling for story dates */
+/* Gaya untuk tanggal cerita */
 .story-date {
     font-size: 0.875rem;
     margin-top: 0.5rem;
@@ -417,7 +424,7 @@ section {
     text-align: center;
 }
 
-/* Styling for story paragraphs */
+/* Gaya untuk paragraf cerita */
 .story-paragraph {
     font-size: 0.875rem;
     margin-top: 1rem;
@@ -432,7 +439,7 @@ section {
     }
 }
 
-/* Styling for event section title */
+/* Gaya untuk judul bagian acara */
 .event-section-title {
     font-size: 1.875rem;
     margin-bottom: 2rem;
@@ -440,7 +447,7 @@ section {
     color: #8B5CF6;
     text-align: center;
 }
-/* Responsive font sizes for event section title */
+/* Ukuran font responsif untuk judul bagian acara */
 @media (min-width: 768px) {
     .event-section-title {
         font-size: 4.5rem;
@@ -452,30 +459,30 @@ section {
     }
 }
 
-/* Styling for countdown container */
+/* Gaya untuk container hitung mundur */
 .countdown-container {
     display: flex;
-    gap: 1rem; /* Space between countdown items */
+    gap: 1rem; /* Spasi antar item hitung mundur */
     margin-top: 2rem;
-    justify-content: center; /* Align items to the start */
-    align-items: flex-start; /* Align items to the start */
+    justify-content: center; /* Pusatkan item */
+    align-items: flex-start; /* Sejajarkan item ke awal */
     width: 100%;
 }
 
-/* Styling for individual countdown items */
+/* Gaya untuk item hitung mundur individual */
 .countdown-item {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Align text to the start */
+    align-items: center; /* Sejajarkan teks ke awal */
 }
 
-/* Styling for countdown numbers */
+/* Gaya untuk angka hitung mundur */
 .countdown-number {
     font-size: 2rem;
     font-family: 'Garamond', serif;
-    color: #8B5CF6; /* Purple color */
+    color: #8B5CF6; /* Warna ungu */
 }
-/* Responsive font sizes for countdown numbers */
+/* Ukuran font responsif untuk angka hitung mundur */
 @media (min-width: 768px) {
     .countdown-number {
         font-size: 3.75rem;
@@ -487,7 +494,7 @@ section {
     }
 }
 
-/* Styling for countdown labels */
+/* Gaya untuk label hitung mundur */
 .countdown-label {
     font-size: 1rem;
     margin-top: 0.5rem;
@@ -500,7 +507,7 @@ section {
     }
 }
 
-/* Styling for event subtitles */
+/* Gaya untuk subjudul acara */
 .event-subtitle {
     font-size: 1.35rem;
     margin-top: 2rem;
@@ -508,7 +515,7 @@ section {
     color: #EC4899;
     text-align: center;
 }
-/* Responsive font sizes for event subtitles */
+/* Ukuran font responsif untuk subjudul acara */
 @media (min-width: 768px) {
     .event-subtitle {
         font-size: 2.25rem;
@@ -520,7 +527,7 @@ section {
     }
 }
 
-/* Styling for event details */
+/* Gaya untuk detail acara */
 .event-detail {
     font-size: 0.875rem;
     margin-top: 0.5rem;
@@ -529,30 +536,30 @@ section {
     text-align: center;
 }
 
-/* Wrapper for buttons to control alignment */
+/* Pembungkus untuk tombol untuk mengontrol perataan */
 .button-wrapper {
     margin-top: 1.5rem;
     text-align: center;
 }
 
-/* Styling for action buttons (e.g., "Detail Lokasi") */
+/* Gaya untuk tombol aksi (misalnya, "Detail Lokasi") */
 .action-button {
     padding: 0.75rem 1.5rem;
-    background: linear-gradient(to right, #3B82F6, #14B8A6); /* Blue-green gradient */
+    background: linear-gradient(to right, #3B82F6, #14B8A6); /* Gradien biru-hijau */
     color: white;
     font-weight: bold;
     border-radius: 9999px;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease-in-out;
     transform: scale(1);
-    display: inline-block; /* Ensure it behaves like a button */
+    display: inline-block; /* Pastikan berperilaku seperti tombol */
 }
 .action-button:hover {
-    background: linear-gradient(to right, #2563EB, #0D9488); /* Darker gradient on hover */
+    background: linear-gradient(to right, #2563EB, #0D9488); /* Gradien lebih gelap saat hover */
     transform: scale(1.05);
 }
 
-/* Styling for RSVP title */
+/* Gaya untuk judul RSVP */
 .rsvp-title {
     font-size: 1.35rem;
     margin-top: 2rem;
@@ -560,7 +567,7 @@ section {
     color: #8B5CF6;
     text-align: center;
 }
-/* Responsive font sizes for RSVP title */
+/* Ukuran font responsif untuk judul RSVP */
 @media (min-width: 768px) {
     .rsvp-title {
         font-size: 2.25rem;
@@ -572,10 +579,10 @@ section {
     }
 }
 
-/* Styling for RSVP button */
+/* Gaya untuk tombol RSVP */
 .rsvp-button {
     padding: 1rem 2rem;
-    background: linear-gradient(to right, #22C55E, #84CC16); /* Green-lime gradient */
+    background: linear-gradient(to right, #22C55E, #84CC16); /* Gradien hijau-lime */
     color: white;
     font-weight: bold;
     border-radius: 9999px;
@@ -583,14 +590,14 @@ section {
     transition: all 0.3s ease-in-out;
     transform: scale(1);
     margin-bottom: 2rem;
-    display: inline-block; /* Ensure it behaves like a button */
+    display: inline-block; /* Pastikan berperilaku seperti tombol */
 }
 .rsvp-button:hover {
-    background: linear-gradient(to right, #16A34A, #65A30D); /* Darker gradient on hover */
+    background: linear-gradient(to right, #16A34A, #65A30D); /* Gradien lebih gelap saat hover */
     transform: scale(1.05);
 }
 
-/* Styling for gallery title */
+/* Gaya untuk judul galeri */
 .gallery-title {
     font-size: 1.875rem;
     margin-bottom: 2rem;
@@ -598,7 +605,7 @@ section {
     color: #8B5CF6;
     text-align: center;
 }
-/* Responsive font sizes for gallery title */
+/* Ukuran font responsif untuk judul galeri */
 @media (min-width: 768px) {
     .gallery-title {
         font-size: 4.5rem;
@@ -610,32 +617,32 @@ section {
     }
 }
 
-/* Styling for gallery grid layout */
+/* Gaya untuk tata letak grid galeri */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(1, minmax(0, 1fr)); /* Single column on small screens */
-    gap: 1.5rem; /* Gap between grid items */
-    margin-left: 0; /* Align to left */
-    margin-right: auto; /* Push to left */
+    grid-template-columns: repeat(1, minmax(0, 1fr)); /* Kolom tunggal di layar kecil */
+    gap: 1.5rem; /* Jarak antar item grid */
+    margin-left: auto; /* Pusatkan */
+    margin-right: auto; /* Pusatkan */
     width: 100%;
 }
-/* Two columns on medium screens */
+/* Dua kolom di layar sedang */
 @media (min-width: 768px) {
     .gallery-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
-/* Three columns on large screens */
+/* Tiga kolom di layar besar */
 @media (min-width: 1024px) {
     .gallery-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }
 
-/* Styling for gallery image placeholders */
+/* Gaya untuk placeholder gambar galeri */
 .gallery-image-placeholder {
     width: 100%;
-    height: 12rem; /* Fixed height */
+    height: 12rem; /* Tinggi tetap */
     background-color: #E5E7EB;
     border-radius: 0.5rem;
     display: flex;
@@ -652,12 +659,12 @@ section {
     }
 }
 
-/* Styling for closing section */
+/* Gaya untuk bagian penutup */
 .closing-section {
-    padding-bottom: 4rem; /* Extra padding at the bottom */
+    padding-bottom: 4rem; /* Padding ekstra di bagian bawah */
 }
 
-/* Styling for closing quote */
+/* Gaya untuk kutipan penutup */
 .closing-quote {
     font-size: 0.875rem;
     line-height: 1.625;
@@ -667,7 +674,7 @@ section {
     text-align: center;
 }
 
-/* Styling for closing signature intro */
+/* Gaya untuk intro tanda tangan penutup */
 .closing-signature-intro {
     font-size: 0.875rem;
     margin-top: 1rem;
@@ -676,7 +683,7 @@ section {
     text-align: center;
 }
 
-/* Styling for names in closing section */
+/* Gaya untuk nama di bagian penutup */
 .closing-name-dinda, .closing-name-angga {
     font-size: 1.35rem;
     line-height: 1.25;
@@ -684,7 +691,7 @@ section {
     font-family: 'Great Vibes', cursive;
     text-align: center;
 }
-/* Responsive font sizes for closing names */
+/* Ukuran font responsif untuk nama penutup */
 @media (min-width: 768px) {
     .closing-name-dinda, .closing-name-angga {
         font-size: 4.5rem;
@@ -698,7 +705,7 @@ section {
 .closing-name-dinda { color: #DB2777; }
 .closing-name-angga { color: #8B5CF6; }
 
-/* Styling for ampersand in closing section */
+/* Gaya untuk ampersand di bagian penutup */
 .closing-name-ampersand {
     font-size: 0.875rem;
     margin-top: 1rem;
@@ -706,7 +713,7 @@ section {
     color: #4B5563;
     text-align: center;
 }
-/* Responsive font sizes for closing ampersand */
+/* Ukuran font responsif untuk ampersand penutup */
 @media (min-width: 768px) {
     .closing-name-ampersand {
         font-size: 3.75rem;
@@ -718,15 +725,15 @@ section {
     }
 }
 
-/* Styling for final closing greeting */
+/* Gaya untuk salam penutup akhir */
 .closing-greeting-final {
-    font-size: 1,35rem;
+    font-size: 1.35rem; /* Perbaikan: koma diganti titik */
     margin-top: 2rem;
     font-family: 'Great Vibes', cursive;
     color: #EC4899;
     text-align: center;
 }
-/* Responsive font sizes for final closing greeting */
+/* Ukuran font responsif untuk salam penutup akhir */
 @media (min-width: 768px) {
     .closing-greeting-final {
         font-size: 3rem;
@@ -738,12 +745,12 @@ section {
     }
 }
 
-/* Styling for promotion section */
+/* Gaya untuk bagian promosi */
 .promotion-section {
     padding-bottom: 4rem;
 }
 
-/* Styling for promotion text */
+/* Gaya untuk teks promosi */
 .promotion-text {
     font-size: 1rem;
     font-family: 'Montserrat', sans-serif;
@@ -751,57 +758,57 @@ section {
     text-align: center;
 }
 
-/* Styling for section dividers */
+/* Gaya untuk pemisah bagian */
 .section-divider {
-    width: 50%; /* Half width on small screens */
-    max-width: 33.333333%; /* Max width for consistency */
+    width: 50%; /* Setengah lebar di layar kecil */
+    max-width: 33.333333%; /* Lebar maksimum untuk konsistensi */
     margin-top: 3rem;
     margin-bottom: 3rem;
-    border-top-width: 2px; /* 2px top border */
-    border-color: #FBCFE8; /* Light pink color */
-    opacity: 0.5; /* Semi-transparent */
-    margin-left: 0; /* Align to left */
-    margin-right: auto; /* Push to left */
+    border-top-width: 2px; /* Batas atas 2px */
+    border-color: #FBCFE8; /* Warna pink muda */
+    opacity: 0.5; /* Semi-transparan */
+    margin-left: auto; /* Pusatkan */
+    margin-right: auto; /* Pusatkan */
 }
 @media (min-width: 768px) {
     .section-divider {
-        width: 33.333333%; /* One-third width on medium screens */
+        width: 33.333333%; /* Sepertiga lebar di layar sedang */
     }
 }
 
-/* Styling for larger section dividers */
+/* Gaya untuk pemisah bagian yang lebih besar */
 .section-divider-large {
     margin-top: 4rem;
     margin-bottom: 4rem;
-    margin-left: 0; /* Align to left */
-    margin-right: auto; /* Push to left */
+    margin-left: auto; /* Pusatkan */
+    margin-right: auto; /* Pusatkan */
 }
 
-/* Keyframe animation for sliding in from top */
+/* Animasi keyframe untuk meluncur dari atas */
 @keyframes slideInFromTop {
     0% {
-        transform: translateY(-100%); /* Start above */
-        opacity: 0; /* Start invisible */
+        transform: translateY(-100%); /* Mulai di atas */
+        opacity: 0; /* Mulai tidak terlihat */
     }
     100% {
-        transform: translateY(0); /* End at original position */
-        opacity: 1; /* End visible */
+        transform: translateY(0); /* Berakhir di posisi asli */
+        opacity: 1; /* Berakhir terlihat */
     }
 }
 
-/* Keyframe animation for sliding in from bottom */
+/* Animasi keyframe untuk meluncur dari bawah */
 @keyframes slideInFromBottom {
     0% {
-        transform: translateY(100%); /* Start below */
-        opacity: 0; /* Start invisible */
+        transform: translateY(100%); /* Mulai di bawah */
+        opacity: 0; /* Mulai tidak terlihat */
     }
     100% {
-        transform: translateY(0); /* End at original position */
-        opacity: 1; /* End visible */
+        transform: translateY(0); /* Berakhir di posisi asli */
+        opacity: 1; /* Berakhir terlihat */
     }
 }
 
-/* Animation classes for elements */
+/* Kelas animasi untuk elemen */
 .animate-slide-in-top {
     animation: slideInFromTop 1s ease-out forwards;
     opacity: 0;
@@ -817,10 +824,7 @@ section {
     opacity: 0;
 }
 
-/* Tambahan: Definisi eksplisit untuk kelas 'hidden' */
-/* Untuk apa kode ini: Memastikan elemen tersembunyi sepenuhnya. */
-/* Diterapkan pada: Setiap elemen HTML yang memiliki kelas 'hidden'. */
-/* Fungsi: Mengubah properti tampilan elemen menjadi 'none', membuatnya tidak terlihat dan tidak memakan ruang tata letak. */
+/* Definisi eksplisit untuk kelas 'hidden' */
 .hidden {
-    display: none !important; /* Menggunakan !important untuk memastikan override jika ada konflik */
+    display: none !important;
 }
