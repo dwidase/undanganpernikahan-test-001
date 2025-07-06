@@ -17,6 +17,8 @@ body {
     flex-direction: column;
     min-height: 100vh; /* Tinggi minimum viewport */
     font-family: 'Garamond', serif; /* Font default */
+    margin: 0; /* Tambahkan: Hapus margin default browser */
+    padding: 0; /* Tambahkan: Hapus padding default browser */
 }
 
 /* Gaya bagian: tata letak flex, perataan, padding */
@@ -26,7 +28,7 @@ section {
     align-items: center; /* Perataan konten ke tengah */
     justify-content: flex-start; /* Justifikasi konten ke atas */
     min-height: 100vh; /* Setiap bagian mengambil setidaknya tinggi viewport penuh */
-    padding: 1rem; /* Padding di sekitar bagian */
+    /* Hapus: padding: 1rem; */ /* Padding ini menyebabkan jarak di sisi */
     width: 100%; /* Pastikan bagian mengambil lebar penuh */
 }
 
@@ -38,6 +40,7 @@ section {
     display: flex; /* Gunakan flex untuk memusatkan konten */
     align-items: center; /* Pusatkan secara vertikal */
     justify-content: center; /* Pusatkan secara horizontal */
+    padding: 1rem; /* Tambahkan kembali padding untuk konten cover page */
 }
 
 .cover-content {
@@ -126,7 +129,7 @@ section {
     transition: all 0.3s ease-in-out; /* Transisi halus */
     transform: scale(1);
     animation: slideInFromBottom 1s ease-out 0.6s forwards; /* Animasi dari bawah dengan penundaan */
-    opacity: 0; /* Mulai tidak terlihat */
+    opacity: 0;
     display: inline-block; /* Pastikan tombol berperilaku benar dengan animasi */
 }
 .open-button:hover {
@@ -371,9 +374,9 @@ section {
 .latarbelakang-pembuka {
     background-color: #f5f0d5;
     padding: 2rem; /* Tambahkan padding */
-    width: 100%; /*pastian lebar memenuhilaar */
     border-radius: 1rem; /* Sudut membulat */
     margin-bottom: 2rem; /* Spasi di bawah */
+    width: 100%; /* Pastikan lebar penuh */
 }
 
 /* Gaya untuk judul cerita */
