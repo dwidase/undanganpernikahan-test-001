@@ -243,7 +243,7 @@ section {
 }
 /* Bentuk latar .quote dan source */
 .quote-background-box {
-    ackground-color: rgba(255, 255, 255, 0); /* Transparan */
+    background-color: rgba(255, 255, 255, 0); /* Transparan */
     border: 2px solid white; /* Outline putih */
     border-radius: 1rem; /* Sudut melingkar 1rem */
     padding: 1.5rem; /* Padding internal agar teks tidak menempel outline */
@@ -364,7 +364,15 @@ section {
         font-size: 4.5rem;
     }
 }
-
+.pembuka-background-box {
+    background-color: #bcb4a3; /*rgba(255, 255, 255, 0); jika ingin Transparan */
+    border-radius: 1rem; /* Sudut melingkar 1rem */
+    padding: 1.5rem; /* Padding internal agar teks tidak menempel outline */
+    margin: 0 auto; /* Memusatkan persegi panjang */
+    width: 100%; /* Mengisi sebagian besar lebar yang tersedia */
+    max-width: 50rem; /* Batasi lebar maksimum agar tidak terlalu lebar di layar besar */
+    box-sizing: border-box; /* Pastikan padding tidak menambah lebar total */
+}
 /* Styling for story title */
 .story-title {
     font-size: 1.875rem;
