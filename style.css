@@ -115,7 +115,7 @@ section {
 
 /* Styling for the "Open Invitation" button */
 .open-button {
-    margin-top: 1rem;
+    margin-top: 3rem;
     padding: 1rem 2rem;
     background-color: #CBA979; /* solid color */
     color: white;
@@ -156,7 +156,7 @@ section {
 
 /* Styling for names on main invitation page */
 .main-name-dinda, .main-name-angga {
-    font-size: 3rem;
+    font-size: 2rem;
     line-height: 1.25;
     font-family: 'Great Vibes', cursive;
     text-align: center;
@@ -172,12 +172,12 @@ section {
         font-size: 6rem;
     }
 }
-.main-name-dinda { color: #DB2777; } /* Pink color for Dinda */
-.main-name-angga { color: #8B5CF6; } /* Purple color for Angga */
+.main-name-dinda { color: #ffffff; } /* Pink color for Dinda */
+.main-name-angga { color: #ffffff; } /* Purple color for Angga */
 
 /* Styling for ampersand on main page */
 .main-name-ampersand {
-    font-size: 2.25rem;
+    font-size: 1rem;
     font-family: 'Garamond', serif;
     color: #4B5563;
     text-align: center;
@@ -196,7 +196,7 @@ section {
 
 /* Styling for invitation text */
 .invitation-text {
-    font-size: 0.875rem;
+    font-size: 0.65rem;
     margin-top: 1rem;
     line-height: 1.625;
     font-family: 'Garamond', serif;
@@ -211,7 +211,7 @@ section {
 
 /* Styling for event date */
 .event-date {
-    font-size: 1.875rem;
+    font-size: 1.3rem;
     margin-top: 0.5rem;
     font-family: 'Garamond', serif;
     color: #374151;
@@ -220,7 +220,7 @@ section {
 
 /* Styling for quote text */
 .quote-text {
-    font-size: 0.875rem;
+    font-size: 0.65rem;
     font-style: italic;
     line-height: 1.625;
     font-family: 'Garamond', serif;
@@ -235,7 +235,7 @@ section {
 
 /* Styling for quote source */
 .quote-source {
-    font-size: 0.875rem;
+    font-size: 0.65rem;
     margin-top: 1rem;
     font-family: 'Garamond', serif;
     color: #4B5563;
@@ -364,15 +364,7 @@ section {
         font-size: 4.5rem;
     }
 }
-.pembuka-background-box {
-    background-color: #bcb4a3; /*rgba(255, 255, 255, 0); jika ingin Transparan */
-    border-radius: 1rem; /* Sudut melingkar 1rem */
-    padding: 1.5rem; /* Padding internal agar teks tidak menempel outline */
-    margin: 0 auto; /* Memusatkan persegi panjang */
-    width: 100%; /* Mengisi sebagian besar lebar yang tersedia */
-    max-width: 50rem; /* Batasi lebar maksimum agar tidak terlalu lebar di layar besar */
-    box-sizing: border-box; /* Pastikan padding tidak menambah lebar total */
-}
+
 /* Styling for story title */
 .story-title {
     font-size: 1.875rem;
