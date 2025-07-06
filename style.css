@@ -48,7 +48,7 @@ section {
 
 /* Styling for Dinda's name on cover page */
 .name-dinda {
-    font-size: 4rem; /* Large font size */
+    font-size: 3rem; /* Large font size */
     line-height: 1.25;
     font-family: 'Great Vibes', cursive; /* Script font */
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1); /* Subtle text shadow */
@@ -71,7 +71,7 @@ section {
 
 /* Styling for ampersand (&) on cover page */
 .name-ampersand {
-    font-size: 3rem;
+    font-size: 1rem;
     font-family: 'Garamond', serif; /* Serif font */
     color: #CBA979; /* Gray color */
     animation: slideInFromTop 1s ease-out 0.3s forwards; /* Animation with delay */
@@ -92,7 +92,7 @@ section {
 
 /* Styling for Angga's name on cover page */
 .name-angga {
-    font-size: 4rem;
+    font-size: 3rem;
     line-height: 1.25;
     font-family: 'Great Vibes', cursive;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
