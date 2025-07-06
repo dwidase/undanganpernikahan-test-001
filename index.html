@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Undangan Pernikahan Dinda & Angga</title>
-    <!-- Tailwind CSS CDN for utility classes -->
+    <!-- Tailwind CSS CDN untuk kelas utilitas -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts for custom typography -->
+    <!-- Google Fonts untuk tipografi kustom -->
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Garamond:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     
-    <!-- Link to external CSS file -->
+    <!-- Link ke file CSS eksternal -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Cover Page Section -->
+    <!-- Bagian Halaman Sampul -->
     <section id="cover-page" class="flex flex-col items-center justify-center w-full">
         <div class="cover-content">
             <h1 class="name-dinda">Dinda</h1>
@@ -24,7 +24,7 @@
         </div>
     </section>
 
-    <!-- Main Invitation Page Section (initially hidden) -->
+    <!-- Bagian Halaman Undangan Utama (awalnya tersembunyi) -->
     <section id="main-invitation-page" class="hidden flex-grow">
         <div class="section-content">
             <h2 class="main-name-dinda">Dinda</h2>
@@ -49,34 +49,36 @@
 
         <hr class="section-divider">
 
-        <div class="section-content">
-            <div class="latarbelakang-pembuka">
-            <p class="opening-greeting">Assalamualaikum warahmatullahi wabarakatuh</p>
-            <p class="opening-invitation">
-                Dengan penuh rasa syukur, kami mengundang bapak/ibu/saudara/i untuk menghadiri pernikahan kami.
-            </p>
+        <!-- Perubahan di sini: latarbelakang-pembuka sekarang di luar section-content -->
+        <div class="latarbelakang-pembuka">
+            <div class="section-content">
+                <p class="opening-greeting">Assalamualaikum warahmatullahi wabarakatuh</p>
+                <p class="opening-invitation">
+                    Dengan penuh rasa syukur, kami mengundang bapak/ibu/saudara/i untuk menghadiri pernikahan kami.
+                </p>
 
-            <!-- Dinda's Profile Section -->
-            <div class="image-placeholder profile-placeholder">
-                <p>Foto wanita di sini</p>
-            </div>
-            <p class="full-name-dinda">Dinda Nadira Maharani</p>
-            <p class="parent-name">Putri bapak ABC dan ibu EFG</p>
+                <!-- Bagian Profil Dinda -->
+                <div class="image-placeholder profile-placeholder">
+                    <p>Foto wanita di sini</p>
+                </div>
+                <p class="full-name-dinda">Dinda Nadira Maharani</p>
+                <p class="parent-name">Putri bapak ABC dan ibu EFG</p>
 
-            <p class="ampersand-divider">&</p>
+                <p class="ampersand-divider">&</p>
 
-            <!-- Angga's Profile Section -->
-            <div class="image-placeholder profile-placeholder">
-                <p>Foto Pria di sini</p>
-            </div>
-            <p class="full-name-angga">Angga Pratama Putra</p>
-            <p class="parent-name">Putra bapak WXY dan ibu ZAA</p>
+                <!-- Bagian Profil Angga -->
+                <div class="image-placeholder profile-placeholder">
+                    <p>Foto Pria di sini</p>
+                </div>
+                <p class="full-name-angga">Angga Pratama Putra</p>
+                <p class="parent-name">Putra bapak WXY dan ibu ZAA</p>
             </div>
         </div>
+        <!-- Akhir perubahan -->
 
         <hr class="section-divider">
 
-        <!-- Love Story Section -->
+        <!-- Bagian Cerita Cinta -->
         <div class="section-content">
             <h2 class="story-title">Cerita Cinta Kami</h2>
 
@@ -107,11 +109,11 @@
 
         <hr class="section-divider">
 
-        <!-- Event Details Section -->
+        <!-- Bagian Detail Acara -->
         <div class="section-content">
             <h2 class="event-section-title">Menjelang Hari Bahagia</h2>
 
-            <!-- Countdown Timer -->
+            <!-- Penghitung Waktu Mundur -->
             <div class="countdown-container">
                 <div class="countdown-item">
                     <span id="days" class="countdown-number">00</span>
@@ -133,7 +135,7 @@
 
             <hr class="section-divider-large section-divider">
 
-            <!-- Akad Nikah Details -->
+            <!-- Detail Akad Nikah -->
             <h3 class="event-subtitle">Akad Nikah</h3>
             <p class="event-detail">Sabtu, 30 Mei 2025</p>
             <p class="event-detail">Pukul 10.00 WIB</p>
@@ -144,7 +146,7 @@
 
             <hr class="section-divider-large section-divider">
 
-            <!-- Resepsi Pernikahan Details -->
+            <!-- Detail Resepsi Pernikahan -->
             <h3 class="event-subtitle">Resepsi Pernikahan</h3>
             <p class="event-detail">Minggu, 31 Mei 2025</p>
             <p class="event-detail">Pukul 10.00 WIB</p>
@@ -155,7 +157,7 @@
 
             <hr class="section-divider-large section-divider">
 
-            <!-- RSVP Section -->
+            <!-- Bagian RSVP -->
             <h3 class="rsvp-title">Konfirmasi Kehadiran</h3>
             <div class="button-wrapper">
                 <a href="https://forms.gle/DKc8dLxuXcqDXvnT7" target="_blank" class="rsvp-button">RSVP</a>
@@ -164,7 +166,7 @@
 
         <hr class="section-divider">
 
-        <!-- Gallery Section -->
+        <!-- Bagian Galeri -->
         <div class="section-content">
             <h2 class="gallery-title">Galeri</h2>
             <div class="gallery-grid">
@@ -191,7 +193,7 @@
 
         <hr class="section-divider">
 
-        <!-- Closing Section -->
+        <!-- Bagian Penutup -->
         <div class="section-content closing-section">
             <p class="closing-quote">
                 Kehadiran, doa, dan restu bapak/ibu/saudara/i<br>
@@ -206,13 +208,13 @@
 
         <hr class="section-divider">
 
-        <!-- Promotion Section -->
+        <!-- Bagian Promosi -->
         <div class="section-content promotion-section">
             <p class="promotion-text">Didesain oleh Niseja</p>
         </div>
     </section>
 
-    <!-- Link to external JavaScript file -->
+    <!-- Link ke file JavaScript eksternal -->
     <script src="script.js"></script>
 
 </body>
