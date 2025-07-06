@@ -14,7 +14,7 @@ openInvitationButton.addEventListener('click', () => {
 });
 
 // Logika penghitung waktu mundur
-const countdownDate = new Date("May 30, 2025 10:00:00").getTime();
+const countdownDate = new Date("Dec 30, 2026 10:00:00").getTime();
 
 const x = setInterval(function() {
     const now = new Date().getTime();
