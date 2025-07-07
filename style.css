@@ -208,6 +208,8 @@ section {
     font-family: 'Garamond', serif;
     color: #374151;
     text-align: center;
+    width: 25ch; /* Sesuaikan nilai ini   untuk lebar teks */
+    margin: 2rem auto 0.5rem; /* 2rem untuk atas/bawah, auto untuk kiri/kanan */
 }
 @media (min-width: 768px) {
     .invitation-text {
