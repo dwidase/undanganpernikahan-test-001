@@ -261,7 +261,7 @@ section {
 
 /* Gaya untuk salam pembuka */
 .opening-greeting {
-    font-size: 1.35rem;
+    font-size: 1rem;
     font-family: 'Great Vibes', cursive;
     color: #EC4899; /* Warna pink */
     text-align: center;
@@ -280,7 +280,7 @@ section {
 
 /* Gaya untuk teks undangan pembuka */
 .opening-invitation {
-    font-size: 0.875rem;
+    font-size: 0.65rem;
     margin-top: 1rem;
     font-family: 'Garamond', serif;
     color: #374151;
@@ -318,7 +318,7 @@ section {
 
 /* Gaya untuk nama lengkap */
 .full-name-dinda, .full-name-angga {
-    font-size: 1.875rem;
+    font-size: 1.6rem;
     margin-top: 1rem;
     font-family: 'Great Vibes', cursive;
     text-align: center;
@@ -339,7 +339,7 @@ section {
 
 /* Gaya untuk nama orang tua */
 .parent-name {
-    font-size: 0.875rem;
+    font-size: 0.65rem;
     font-family: 'Garamond', serif;
     color: #374151;
     text-align: center;
@@ -352,7 +352,7 @@ section {
 
 /* Gaya untuk pemisah ampersand */
 .ampersand-divider {
-    font-size: 3rem;
+    font-size: 0.875rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
     font-family: 'Garamond', serif;
