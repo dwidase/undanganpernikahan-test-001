@@ -62,12 +62,10 @@ section {
 
     /* ----- Properti background baru untuk foto dan gradasi ----- */
     /* Pastikan warna gradasi (rgba) sesuai dengan background-color #F8F0E3 */
-    background-image: linear-gradient(to bottom, rgba(248, 240, 227, 0) 0%, /* Warna krem transparan */
-        url('Assets/Foto.pengantin/Berdua jawa cream 0001-8.png); /* Sesuaikan path gambar Anda */
-
-    background-size: cover; /* Foto menutupi area yang dialokasikan */
-    background-position: center bottom; /* Fokuskan bagian bawah foto */
-    background-repeat: no-repeat; /* Mencegah pengulangan foto */
+    background-image: url(...'Assets/Foto.pengantin/Berdua jawa cream 0001-8.png); /* Sesuaikan path gambar Anda */
+    /*background-size: cover; /* Foto menutupi area yang dialokasikan */
+    /*background-position: center bottom; /* Fokuskan bagian bawah foto */
+    /*background-repeat: no-repeat; /* Mencegah pengulangan foto */
     /* height: 90vh; */ /* Sesuaikan tinggi halaman cover sesuai keinginan, misalnya 90% dari tinggi viewport agar ada ruang untuk transisi */
 }
 
@@ -77,11 +75,7 @@ section {
     max-width: 48rem; /* Lebar maksimum untuk konten */
     padding: 2rem 1rem; /* Padding untuk konten */
 }
-/* Gaya untuk foto di halaman sampul */
-.cover-content .cover-iamges {
-    width: 100%;
-    heigth: auto;
-    
+
 /* Gaya untuk nama Dinda di halaman sampul */
 .name-dinda {
     font-size: 3rem; /* Ukuran font besar */
