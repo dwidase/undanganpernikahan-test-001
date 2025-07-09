@@ -59,14 +59,6 @@ section {
     align-items: center; /* Pusatkan secara vertikal */
     justify-content: center; /* Pusatkan secara horizontal */
     padding: 1rem; /* Tambahkan kembali padding untuk konten cover page */
-
-    /* ----- Properti background baru untuk foto dan gradasi ----- */
-    /* Pastikan warna gradasi (rgba) sesuai dengan background-color #F8F0E3 */
-    background-image: url(...'Assets/Foto.pengantin/Berdua jawa cream 0001-8.png); /* Sesuaikan path gambar Anda */
-    /*background-size: cover; /* Foto menutupi area yang dialokasikan */
-    /*background-position: center bottom; /* Fokuskan bagian bawah foto */
-    /*background-repeat: no-repeat; /* Mencegah pengulangan foto */
-    /* height: 90vh; */ /* Sesuaikan tinggi halaman cover sesuai keinginan, misalnya 90% dari tinggi viewport agar ada ruang untuk transisi */
 }
 
 .cover-content {
