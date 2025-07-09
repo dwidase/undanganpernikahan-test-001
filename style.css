@@ -177,8 +177,14 @@ section {
     background-color: #cba979; /* Warna solid saat hover */
     transform: scale(1.05); /* Sedikit membesar saat hover */
 }
-    /* Foto sebagai latar belakang */
-    background: src=
+.cover-content .cover-image {
+    /* Gaya ini hanya akan diterapkan ke elemen dengan class="cover-image" */
+    /* yang merupakan keturunan dari elemen dengan class="cover-content" */
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    /* ... dan seterusnya */
+}
 
 /* Gaya halaman undangan utama */
 #main-invitation-page {
