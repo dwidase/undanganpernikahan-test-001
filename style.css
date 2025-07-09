@@ -768,6 +768,20 @@ section {
     }
 }
 
+/* Gaya untuk foto di galeri */
+gallery-image {
+    width: 100%; /* Membuat gambar mengisi lebar wadahnya */
+    height: 200px; /* Atur tinggi tetap untuk konsistensi (sesuaikan) */
+    object-fit: cover; /* Penting: Memastikan gambar mengisi area tanpa terdistorsi */
+    display: block; /* Menghilangkan spasi ekstra di bawah gambar */
+    transition: transform 0.3s ease-in-out; /* Efek transisi saat hover */
+}
+
+.gallery-image:hover {
+    transform: scale(1.05); /* Sedikit memperbesar gambar saat di-hover */
+    filter: brightness(0.9); /* Sedikit meredupkan gambar saat di-hover */
+}
+
 /* Gaya untuk bagian penutup */
 .closing-section {
     padding-bottom: 4rem; /* Padding ekstra di bagian bawah */
