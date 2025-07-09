@@ -754,6 +754,7 @@ section {
     height: 24rem; /* Tinggi tetap */
     background-color: #E5E7EB;
     border-radius: 0.5rem;
+    overflow: hidden; /* Penting untuk memastikan gambar tidak keluar dari border-radius */
     display: flex;
     align-items: center;
     justify-content: center;
