@@ -52,9 +52,6 @@ section {
 
 /* Gaya khusus halaman sampul */
 #cover-page {
-    /* ----- Properti background baru untuk foto dan gradasi ----- */
-    /* Pastikan warna gradasi (rgba) sesuai dengan background-color #F8F0E3 */
-    background-image: url('Assets/Foto.pengantin/Berdua jawa cream 0001-8.png'); /* Sesuaikan path gambar Anda */ linear-gradient(to bottom, rgba(248, 240, 227, 0) 0%; /* Warna krem transparan */
     background-color: #F8F0E3; /* Latar belakang krem muda untuk sampul */
     overflow: hidden; /* Sembunyikan overflow untuk animasi */
     width: 100%; /* Pastikan halaman sampul mengambil lebar penuh */
@@ -62,6 +59,47 @@ section {
     align-items: center; /* Pusatkan secara vertikal */
     justify-content: center; /* Pusatkan secara horizontal */
     padding: 1rem; /* Tambahkan kembali padding untuk konten cover page */
+
+    /* ----- Properti background baru untuk foto dan gradasi ----- */
+    /* Pastikan warna gradasi (rgba) sesuai dengan background-color #F8F0E3 */
+    background-image:
+        linear-gradient(to bottom,
+                        rgba(248, 240, 227, 0) 0%, /* Warna krem transparan */
+                        rgba(248, 240, 227, 1) 100%), /* Warna krem solid */
+        url('Assets/Foto.pengantin/Berdua jawa cream 0001-8.png'); /* Sesuaikan path gambar Anda */
+
+    background-size: cover; /* Foto menutupi area yang dialokasikan */
+    background-position: center bottom; /* Fokuskan bagian bawah foto */
+    background-repeat: no-repeat; /* Mencegah pengulangan foto */
+    /* height: 90vh; */ /* Sesuaikan tinggi halaman cover sesuai keinginan,
+                         misalnya 90% dari tinggi viewport agar ada ruang untuk transisi */
+}
+
+
+.cover-content {
+    text-align: center;
+    color: #333; /* Warna teks yang jelas di atas background krem */
+    z-index: 2; /* Di atas overlay dan background */
+    padding-bottom: 50px; /* Jarak dari bawah halaman cover */
+}
+
+/* Tambahkan juga gaya untuk main-content yang sudah dibahas */
+#main-content {
+    /* ... gaya yang sudah ada ... */
+    margin-top: -90vh; /* Sesuaikan dengan tinggi cover-page untuk menumpuknya */
+}
+
+#cover-page.slide-up {
+    transform: translateY(-100vh); /* Geser ke atas */
+    opacity: 0;
+    pointer-events: none;
+}
+
+#main-content.visible {
+    opacity: 1;
+    visibility: visible;
+    margin-top: 0; /* Kembalikan margin */
+}
 }
 
 .cover-content {
