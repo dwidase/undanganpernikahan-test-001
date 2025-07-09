@@ -29,7 +29,7 @@
 
 /* Gaya body: latar belakang, warna teks, tata letak flex untuk tinggi penuh */
 body {
-    background-color: #F9FAFB; /* Latar belakang abu-abu muda */
+    background-color: #f8f8f8; /* Latar belakang abu-abu muda */
     color: #1F2937; /* Teks abu-abu gelap */
     display: flex;
     flex-direction: column;
@@ -74,8 +74,8 @@ section {
     line-height: 1.25;
     font-family: 'Great Vibes', cursive; /* Font skrip */
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1); /* Bayangan teks halus */
-    color: #DB2777; /* Warna pink gelap untuk Dinda */
-    animation: slideInFromTop 1s ease-out forwards; /* Animasi dari atas */
+    color: #b59669; /* Warna teks untuk Dinda */
+    animation: slideInFromTopcover 1s ease-out forwards; /* Animasi dari atas */
     opacity: 0; /* Mulai tidak terlihat */
     text-align: center;
 }
@@ -96,7 +96,7 @@ section {
     font-size: 1rem;
     font-family: 'Garamond', serif; /* Font serif */
     color: #4B5563; /* Warna abu-abu gelap untuk ampersand */
-    animation: slideInFromTop 1s ease-out 0.3s forwards; /* Animasi dengan penundaan */
+    animation: slideInFromTopcover 1s ease-out 0.3s forwards; /* Animasi dengan penundaan */
     opacity: 0;
     text-align: center;
 }
@@ -118,8 +118,8 @@ section {
     line-height: 1.25;
     font-family: 'Great Vibes', cursive;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-    color: #8B5CF6; /* Warna ungu gelap untuk Angga */
-    animation: slideInFromTop 1s ease-out forwards;
+    color: #b59669; /* Warna ungu gelap untuk Angga */
+    animation: slideInFromTopcover 1s ease-out forwards;
     opacity: 0;
     text-align: center;
 }
@@ -135,29 +135,52 @@ section {
     }
 }
 
+/* Gaya untuk teks "Kepada yang terhormat bapak, ibu, saudara/i" */
+.kepada-tamu {
+  margin-top: 2rem;
+  color: #4B5563;
+  font-size: 0.7rem;
+  font-family: 'Garamond', serif;
+  animation: slideInFromBottomcover 1s ease-out forwards;
+    opacity: 0;
+}
+
+/* Gaya untuk teks "Nama Tamu" */
+.nama-tamu {
+  margin-top: 1rem;
+  color: #4B5563;
+  font-size: 0.7rem;
+  font-family: 'Garamond', serif;
+  animation: slideInFromBottomcover 1s ease-out forwards;
+    opacity: 0;
+}
+
 /* Gaya untuk tombol "Buka Undangan" */
 .open-button {
-    margin-top: 2rem;
+    margin-top: 1rem;
     padding: 1rem 2rem;
-    background-color: #CBA979; /* Warna solid */
+    background-color: #b59669; /* Warna solid */
     color: white;
     font-weight: bold;
+    border: solid;
+    border-weidth: 1rem;
+    border-color: white;
     border-radius: 9999px; /* Sepenuhnya bulat */
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Bayangan */
     transition: all 0.3s ease-in-out; /* Transisi halus */
     transform: scale(1);
-    animation: slideInFromBottom 1s ease-out 0.6s forwards; /* Animasi dari bawah dengan penundaan */
+    animation: slideInFromBottomcover 1s ease-out 0.6s forwards; /* Animasi dari bawah dengan penundaan */
     opacity: 0;
     display: inline-block; /* Pastikan tombol berperilaku benar dengan animasi */
 }
 .open-button:hover {
-    background-color: #b59669; /* Warna solid saat hover */
+    background-color: #cba979; /* Warna solid saat hover */
     transform: scale(1.05); /* Sedikit membesar saat hover */
 }
 
 /* Gaya halaman undangan utama */
 #main-invitation-page {
-    background-color: #F9FAFB; /* Latar belakang putih untuk halaman utama */
+    background-color: #f5f0d5; /* Latar belakang putih untuk halaman utama */
     width: 100%; /* Pastikan mengambil lebar penuh */
     align-items: center; /* Pusatkan konten */
     padding-bottom: 4rem; /* Tambahkan padding di bagian bawah */
@@ -184,6 +207,7 @@ section {
     line-height: 1.25;
     font-family: 'Great Vibes', cursive;
     text-align: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1); /* Bayangan teks halus */
 }
 /* Ukuran font responsif untuk nama utama */
 @media (min-width: 768px) {
@@ -196,8 +220,8 @@ section {
         font-size: 6rem;
     }
 }
-.main-name-dinda { color: #DB2777; } /* Warna pink untuk Dinda */
-.main-name-angga { color: #8B5CF6; } /* Warna ungu untuk Angga */
+.main-name-dinda { color: #cba979; } /* Warna untuk Dinda */
+.main-name-angga { color: #cba979; } /* Warna untuk Angga */
 
 /* Gaya untuk ampersand di halaman utama */
 .main-name-ampersand {
@@ -237,10 +261,10 @@ section {
 
 /* Gaya untuk tanggal acara */
 .event-date {
-    font-size: 1.3rem;
-    margin-top: 0.5rem;
+    font-size: 1rem;
+    margin-top: 1rem;
     font-family: 'Garamond', serif;
-    color: #374151;
+    color: #cba979;
     text-align: center;
 }
 
@@ -250,7 +274,7 @@ section {
     font-style: italic;
     line-height: 1.625;
     font-family: 'Garamond', serif;
-    color: #374151;
+    color: #ffffff;
     text-align: center;
 }
 @media (min-width: 768px) {
@@ -264,7 +288,7 @@ section {
     font-size: 0.65rem;
     margin-top: 1rem;
     font-family: 'Garamond', serif;
-    color: #4B5563;
+    color: #ffffff;
     text-align: center;
 }
 /* Bentuk latar .quote dan source */
@@ -274,16 +298,24 @@ section {
     border-radius: 1rem; /* Sudut melingkar 1rem */
     padding: 1.5rem; /* Padding internal agar teks tidak menempel outline */
     margin: 0 auto; /* Memusatkan persegi panjang */
-    width: 90%; /* Mengisi sebagian besar lebar yang tersedia */
+    width: 95%; /* Mengisi sebagian besar lebar yang tersedia */
     max-width: 40rem; /* Batasi lebar maksimum agar tidak terlalu lebar di layar besar */
     box-sizing: border-box; /* Pastikan padding tidak menambah lebar total */
 }
 
+/* Latar belakang quotes */
+.latarbelakang-quotes {
+    background-color: #CBA979;
+    padding: 1rem 0.5rem; /* Tambahkan padding */
+    border-radius: 0; /* Sudut membulat */
+    margin-bottom: 2rem; /* Spasi di bawah */
+    width: 100%; /* Pastikan lebar penuh */
+}
 /* Gaya untuk salam pembuka */
 .opening-greeting {
     font-size: 1rem;
     font-family: 'Great Vibes', cursive;
-    color: #EC4899; /* Warna pink */
+    color: #cba979; /* Warna */
     text-align: center;
 }
 /* Ukuran font responsif untuk salam pembuka */
@@ -354,8 +386,8 @@ section {
         font-size: 3.75rem;
     }
 }
-.full-name-dinda { color: #DB2777; }
-.full-name-angga { color: #8B5CF6; }
+.full-name-dinda { color: #cba979; }
+.full-name-angga { color: #cba979; }
 
 /* Gaya untuk nama orang tua */
 .parent-name {
@@ -404,7 +436,7 @@ section {
     font-size: 1.875rem;
     margin-bottom: 2rem;
     font-family: 'Great Vibes', cursive;
-    color: #8B5CF6;
+    color: #cba979;
     text-align: center;
 }
 /* Ukuran font responsif untuk judul cerita */
@@ -424,7 +456,7 @@ section {
     font-size: 1rem;
     margin-top: 2rem;
     font-family: 'Great Vibes', cursive;
-    color: #EC4899;
+    color: #cba979;
     text-align: center;
 }
 /* Ukuran font responsif untuk subjudul cerita */
@@ -456,6 +488,8 @@ section {
     font-family: 'Garamond', serif;
     color: #374151;
     text-align: center;
+    width: 55ch;
+    margin: 0.5rem auto 1.5rem; /* margin 1rem untuk atas, auto untuk kanan dan kiri, 1.5rem untuk bawah */
 }
 @media (min-width: 768px) {
     .story-paragraph {
@@ -468,7 +502,7 @@ section {
     font-size: 1.875rem;
     margin-bottom: 2rem;
     font-family: 'Great Vibes', cursive;
-    color: #8B5CF6;
+    color: #cba979;
     text-align: center;
 }
 /* Ukuran font responsif untuk judul bagian acara */
@@ -504,7 +538,7 @@ section {
 .countdown-number {
     font-size: 2rem;
     font-family: 'Garamond', serif;
-    color: #8B5CF6; /* Warna ungu */
+    color: #cba979; /* Warna ungu */
 }
 /* Ukuran font responsif untuk angka hitung mundur */
 @media (min-width: 768px) {
@@ -523,7 +557,8 @@ section {
     font-size: 1rem;
     margin-top: 0.5rem;
     font-family: 'Garamond', serif;
-    color: #4B5563;
+    font-weight: bold;
+    color: #cba979;
 }
 @media (min-width: 768px) {
     .countdown-label {
@@ -536,7 +571,7 @@ section {
     font-size: 1.6rem;
     margin-top: 2rem;
     font-family: 'Great Vibes', cursive;
-    color: #EC4899;
+    color: #cba979;
     text-align: center;
 }
 /* Ukuran font responsif untuk subjudul acara */
@@ -568,10 +603,11 @@ section {
 
 /* Gaya untuk tombol aksi (misalnya, "Detail Lokasi") */
 .action-button {
-    padding: 0.75rem 1.5rem;
-    background: linear-gradient(to right, #3B82F6, #14B8A6); /* Gradien biru-hijau */
+    padding: 0.5rem 1rem;
+    background: #b59669; /* Warna Solid*/ /* Jika gradien gunakan ini: linear-gradient(to right, #3B82F6, #14B8A6); /* Gradien biru-hijau */
     color: white;
     font-weight: bold;
+    font-size: 0.7rem;
     border-radius: 9999px;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease-in-out;
@@ -579,7 +615,7 @@ section {
     display: inline-block; /* Pastikan berperilaku seperti tombol */
 }
 .action-button:hover {
-    background: linear-gradient(to right, #2563EB, #0D9488); /* Gradien lebih gelap saat hover */
+    background: #cba979; /* jika gradien gunakan ini: linear-gradient(to right, #2563EB, #0D9488); /* Gradien lebih gelap saat hover */
     transform: scale(1.05);
 }
 
@@ -588,7 +624,7 @@ section {
     font-size: 1.6rem;
     margin-top: 2rem;
     font-family: 'Great Vibes', cursive;
-    color: #8B5CF6;
+    color: #cba979;
     text-align: center;
 }
 /* Ukuran font responsif untuk judul RSVP */
@@ -605,10 +641,11 @@ section {
 
 /* Gaya untuk tombol RSVP */
 .rsvp-button {
-    padding: 1rem 2rem;
-    background: linear-gradient(to right, #22C55E, #84CC16); /* Gradien hijau-lime */
+    padding: 0.5rem 1.3rem;
+    background: #b59669; /* Jika gradien gunakan ini: linear-gradient(to right, #22C55E, #84CC16); /* Gradien hijau-lime */
     color: white;
     font-weight: bold;
+    font-size: 0.7rem;
     border-radius: 9999px;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease-in-out;
@@ -617,7 +654,7 @@ section {
     display: inline-block; /* Pastikan berperilaku seperti tombol */
 }
 .rsvp-button:hover {
-    background: linear-gradient(to right, #16A34A, #65A30D); /* Gradien lebih gelap saat hover */
+    background: #cba979; /* jika gradien gunakan ini: linear-gradient(to right, #16A34A, #65A30D); /* Gradien lebih gelap saat hover */
     transform: scale(1.05);
 }
 
@@ -626,7 +663,7 @@ section {
     font-size: 1.875rem;
     margin-bottom: 2rem;
     font-family: 'Great Vibes', cursive;
-    color: #8B5CF6;
+    color: #cba979;
     text-align: center;
 }
 /* Ukuran font responsif untuk judul galeri */
@@ -726,8 +763,8 @@ section {
         font-size: 6rem;
     }
 }
-.closing-name-dinda { color: #DB2777; }
-.closing-name-angga { color: #8B5CF6; }
+.closing-name-dinda { color: #cba979; }
+.closing-name-angga { color: #cba979; }
 
 /* Gaya untuk ampersand di bagian penutup */
 .closing-name-ampersand {
@@ -754,7 +791,7 @@ section {
     font-size: 1rem; /* Perbaikan: koma diganti titik */
     margin-top: 2rem;
     font-family: 'Great Vibes', cursive;
-    color: #EC4899;
+    color: #cba979;
     text-align: center;
 }
 /* Ukuran font responsif untuk salam penutup akhir */
@@ -789,7 +826,7 @@ section {
     margin-top: 3rem;
     margin-bottom: 3rem;
     border-top-width: 2px; /* Batas atas 2px */
-    border-color: #FBCFE8; /* Warna pink muda */
+    border-color: #cba979; /* Warna pink muda */
     opacity: 0.5; /* Semi-transparan */
     margin-left: auto; /* Pusatkan */
     margin-right: auto; /* Pusatkan */
@@ -808,8 +845,12 @@ section {
     margin-right: auto; /* Pusatkan */
 }
 
+/* ====================================
+    Animasi Pada halaman sampul   
+    ==================================== */
+
 /* Animasi keyframe untuk meluncur dari atas */
-@keyframes slideInFromTop {
+@keyframes slideInFromTopcover {
     0% {
         transform: translateY(-100%); /* Mulai di atas */
         opacity: 0; /* Mulai tidak terlihat */
@@ -821,7 +862,7 @@ section {
 }
 
 /* Animasi keyframe untuk meluncur dari bawah */
-@keyframes slideInFromBottom {
+@keyframes slideInFromBottomcover {
     0% {
         transform: translateY(100%); /* Mulai di bawah */
         opacity: 0; /* Mulai tidak terlihat */
@@ -834,17 +875,17 @@ section {
 
 /* Kelas animasi untuk elemen */
 .animate-slide-in-top {
-    animation: slideInFromTop 1s ease-out forwards;
+    animation: slideInFromTopcover 1s ease-out forwards;
     opacity: 0;
 }
 
 .animate-slide-in-top-ampersand {
-    animation: slideInFromTop 1s ease-out 0.3s forwards;
+    animation: slideInFromTopcover 1s ease-out 0.3s forwards;
     opacity: 0;
 }
 
 .animate-slide-in-bottom {
-    animation: slideInFromBottom 1s ease-out 0.6s forwards;
+    animation: slideInFromBottomcover 1s ease-out 0.6s forwards;
     opacity: 0;
 }
 
