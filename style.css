@@ -71,8 +71,7 @@ section {
     background-size: cover; /* Foto menutupi area yang dialokasikan */
     background-position: center bottom; /* Fokuskan bagian bawah foto */
     background-repeat: no-repeat; /* Mencegah pengulangan foto */
-    /* height: 90vh; */ /* Sesuaikan tinggi halaman cover sesuai keinginan,
-                         misalnya 90% dari tinggi viewport agar ada ruang untuk transisi */
+    height: 90hv; /* Sesuaikan tinggi halaman cover sesuai keinginan, misalnya 90% dari tinggi viewport agar ada ruang untuk transisi */
 }
 
 
