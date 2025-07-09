@@ -67,7 +67,11 @@ section {
     max-width: 48rem; /* Lebar maksimum untuk konten */
     padding: 2rem 1rem; /* Padding untuk konten */
 }
-
+/* Gaya untuk foto di halaman sampul */
+.cover-content .cover-iamges {
+    width: 100%;
+    heigth: auto;
+    
 /* Gaya untuk nama Dinda di halaman sampul */
 .name-dinda {
     font-size: 3rem; /* Ukuran font besar */
