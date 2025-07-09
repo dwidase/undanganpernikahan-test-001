@@ -59,6 +59,28 @@ section {
     align-items: center; /* Pusatkan secara vertikal */
     justify-content: center; /* Pusatkan secara horizontal */
     padding: 1rem; /* Tambahkan kembali padding untuk konten cover page */
+
+    /* ----- Properti background baru untuk foto dan gradasi ----- */
+    /* Pastikan warna gradasi (rgba) sesuai dengan background-color #F8F0E3 */
+    background-image:
+        linear-gradient(to bottom,
+                        rgba(248, 240, 227, 0) 0%, /* Warna krem transparan */
+                        rgba(248, 240, 227, 1) 100%), /* Warna krem solid */
+        url('Assets/Foto.pengantin/Berdua jawa cream 0001-8.png); /* Sesuaikan path gambar Anda */
+
+    background-size: cover; /* Foto menutupi area yang dialokasikan */
+    background-position: center bottom; /* Fokuskan bagian bawah foto */
+    background-repeat: no-repeat; /* Mencegah pengulangan foto */
+    /* height: 90vh; */ /* Sesuaikan tinggi halaman cover sesuai keinginan,
+                         misalnya 90% dari tinggi viewport agar ada ruang untuk transisi */
+
+    /* Tambahkan transisi jika Anda memiliki animasi slide-up */
+    transition: transform 1s ease-out, opacity 1s ease-out;
+    position: fixed; /* Agar cover page di atas dan bisa digeser */
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
 }
 
 .cover-content {
@@ -181,6 +203,8 @@ section {
     background-color: #cba979; /* Warna solid saat hover */
     transform: scale(1.05); /* Sedikit membesar saat hover */
 }
+    /* Foto sebagai latar belakang */
+    background: src=
 
 /* Gaya halaman undangan utama */
 #main-invitation-page {
