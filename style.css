@@ -1,12 +1,30 @@
-/* Definisi font untuk penggunaan mudah */
-.font-great-vibes {
-    font-family: 'Great Vibes', cursive;
+
+
+/* --- Font: Great Vibes --- */
+@font-face {
+    font-family: 'Great Vibes', cursive; /* Nama font harus sama dengan yang Anda gunakan di CSS */
+    src: url('../assets/fonts/Assets/Assets/great-vibes-v20-latin-regular.woff2') format('woff2');
+    font-weight: normal; /* Great Vibes biasanya hanya memiliki satu ketebalan */
+    font-style: normal;
+    font-display: swap;
 }
-.font-garamond {
-    font-family: 'Garamond', serif;
+
+/* --- Font: Garamond --- */
+@font-face {
+    font-family: 'Garamond', serif; /* Nama font harus sama */
+    src: url('../assets/fonts/cormorant-garamond-v20-latin-regular.woff2') format('woff2');
+    font-weight: 400; /* Untuk ketebalan normal */
+    font-style: normal;
+    font-display: swap;
 }
-.font-montserrat {
-    font-family: 'Montserrat', sans-serif;
+
+/* --- Font: Montserrat --- */
+@font-face {
+    font-family: 'Montserrat', sans-serif; /* Nama font harus sama */
+    src: url('../assets/fonts/Assets/montserrat-v30-latin-regular.woff2') format('woff2');
+    font-weight: 400; /* Untuk ketebalan normal */
+    font-style: normal;
+    font-display: swap;
 }
 
 /* Gaya body: latar belakang, warna teks, tata letak flex untuk tinggi penuh */
