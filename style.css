@@ -52,16 +52,6 @@ section {
 }
 
 /* Gaya khusus halaman sampul */
-.cover-content .cover-image {
-    /* Gaya ini hanya akan diterapkan ke elemen dengan class="cover-image" */
-    /* yang merupakan keturunan dari elemen dengan class="cover-content" */
-    width: 100%;
-    max-width: 800px;
-    height: auto;
-    /* ... dan seterusnya */
-}
-
-/* Gaya khusus halaman sampul */
 #cover-page {
     background-color: #F8F0E3; /* Latar belakang krem muda untuk sampul */
     overflow: hidden; /* Sembunyikan overflow untuk animasi */
