@@ -75,15 +75,6 @@ section {
     height: 90vh; /* Sesuaikan tinggi halaman cover sesuai keinginan, misalnya 90% dari tinggi viewport agar ada ruang untuk transisi */
 }
 
-.cover-content .cover-image {
-    /* Gaya ini hanya akan diterapkan ke elemen dengan class="cover-image" */
-    /* yang merupakan keturunan dari elemen dengan class="cover-content" */
-    width: 100%;
-    max-width: 800px;
-    height: auto;
-    /* ... dan seterusnya */
-}
-
 .cover-content {
     text-align: center;
     color: #333; /* Warna teks yang jelas di atas background krem */
