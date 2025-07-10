@@ -4,7 +4,7 @@
 /* --- Font: Great Vibes --- */
 @font-face {
     font-family: 'Great Vibes', cursive; /* Nama font harus sama dengan yang Anda gunakan di CSS */
-    src: url('../assets/fonts/Assets/Assets/great-vibes-v20-latin-regular.woff2') format('woff2');
+    src: url('Assets/Fonts/great-vibes-v20-latin-regular.woff2') format('woff2');
     font-weight: normal; /* Great Vibes biasanya hanya memiliki satu ketebalan */
     font-style: normal;
     font-display: swap;
@@ -13,7 +13,7 @@
 /* --- Font: Garamond --- */
 @font-face {
     font-family: 'Garamond', serif; /* Nama font harus sama */
-    src: url('../assets/fonts/cormorant-garamond-v20-latin-regular.woff2') format('woff2');
+    src: url('Assets/Fonts/cormorant-garamond-v20-latin-regular.woff2) format('woff2');
     font-weight: 400; /* Untuk ketebalan normal */
     font-style: normal;
     font-display: swap;
@@ -22,7 +22,7 @@
 /* --- Font: Montserrat --- */
 @font-face {
     font-family: 'Montserrat', sans-serif; /* Nama font harus sama */
-    src: url('../assets/fonts/Assets/montserrat-v30-latin-regular.woff2') format('woff2');
+    src: url('Assets/Fonts/montserrat-v30-latin-regular.woff2') format('woff2');
     font-weight: 400; /* Untuk ketebalan normal */
     font-style: normal;
     font-display: swap;
@@ -77,9 +77,12 @@ section {
 
 .cover-content {
     text-align: center;
-    color: #333; /* Warna teks yang jelas di atas background krem */
-    z-index: 2; /* Di atas overlay dan background */
-    padding-bottom: 50px; /* Jarak dari bawah halaman cover */
+    color: #333;
+    z-index: 2;
+    width: 100%;
+    max-width: 48rem;
+    padding: 2rem 1rem; /* Ini akan menjadi padding utama */
+    padding-bottom: 50px; /* Jika Anda ingin padding bawah tambahan */
 }
 
 /* Tambahkan juga gaya untuk main-content yang sudah dibahas */
@@ -98,13 +101,6 @@ section {
     opacity: 1;
     visibility: visible;
     margin-top: 0; /* Kembalikan margin */
-}
-
-.cover-content {
-    text-align: center; /* Perataan teks untuk konten sampul */
-    width: 100%; /* Lebar penuh dalam containernya */
-    max-width: 48rem; /* Lebar maksimum untuk konten */
-    padding: 2rem 1rem; /* Padding untuk konten */
 }
 
 /* Gaya untuk nama Dinda di halaman sampul */
@@ -750,7 +746,7 @@ section {
 }
 
 /* Gaya untuk foto di galeri */
-gallery-image {
+.gallery-image {
     width: 90%; /* Membuat gambar mengisi lebar wadahnya */
     height: 200px; /* Atur tinggi tetap untuk konsistensi (sesuaikan) */
     object-fit: cover; /* Penting: Memastikan gambar mengisi area tanpa terdistorsi */
