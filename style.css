@@ -72,7 +72,7 @@ section {
     background-size: cover; /* Foto menutupi area yang dialokasikan */
     background-position: center bottom; /* Fokuskan bagian bawah foto */
     background-repeat: no-repeat; /* Mencegah pengulangan foto */
-    height: 90hv; /* Sesuaikan tinggi halaman cover sesuai keinginan, misalnya 90% dari tinggi viewport agar ada ruang untuk transisi */
+    height: 90vh; /* Sesuaikan tinggi halaman cover sesuai keinginan, misalnya 90% dari tinggi viewport agar ada ruang untuk transisi */
 }
 
 
@@ -99,7 +99,6 @@ section {
     opacity: 1;
     visibility: visible;
     margin-top: 0; /* Kembalikan margin */
-}
 }
 
 .cover-content {
@@ -200,7 +199,8 @@ section {
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Bayangan */
     transition: all 0.3s ease-in-out; /* Transisi halus */
     transform: scale(1);
-    
+}
+
 .open-button:hover {
     background-color: #cba979; /* Warna solid saat hover */
     transform: scale(1.05); /* Sedikit membesar saat hover */
