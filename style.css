@@ -35,7 +35,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Tinggi minimum viewport */
-    font-family: 'Garamond', serif; /* Font default */
+    font-family: 'Garamond'; /* Font default */
     margin: 0; /* Tambahkan: Hapus margin default browser */
     padding: 0; /* Tambahkan: Hapus padding default browser */
 }
@@ -107,7 +107,7 @@ section {
 .name-dinda {
     font-size: 3rem; /* Ukuran font besar */
     line-height: 1.25;
-    font-family: 'Great Vibes', cursive; /* Font skrip */
+    font-family: 'Great Vibes'; /* Font skrip */
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1); /* Bayangan teks halus */
     color: #b59669; /* Warna teks untuk Dinda */
     text-align: center;
@@ -127,7 +127,7 @@ section {
 /* Gaya untuk ampersand (&) di halaman sampul */
 .name-ampersand {
     font-size: 1rem;
-    font-family: 'Garamond', serif; /* Font serif */
+    font-family: 'Garamond'; /* Font serif */
     color: #4B5563; /* Warna abu-abu gelap untuk ampersand */
     text-align: center;
 }
@@ -147,7 +147,7 @@ section {
 .name-angga {
     font-size: 3rem;
     line-height: 1.25;
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Great Vibes';
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
     color: #b59669; /* Warna ungu gelap untuk Angga */
     text-align: center;
@@ -170,7 +170,7 @@ section {
   margin-top: 2rem;
   color: #4B5563;
   font-size: 0.7rem;
-  font-family: 'Garamond', serif;
+  font-family: 'Garamond';
   }
 
 /* Gaya untuk teks "Nama Tamu" */
@@ -178,7 +178,7 @@ section {
   margin-top: 1rem;
   color: #4B5563;
   font-size: 0.7rem;
-  font-family: 'Garamond', serif;
+  font-family: 'Garamond';
 }
 
 /* Gaya untuk tombol "Buka Undangan" */
@@ -229,7 +229,7 @@ section {
 .main-name-dinda, .main-name-angga {
     font-size: 2rem;
     line-height: 1.25;
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Great Vibes';
     text-align: center;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1); /* Bayangan teks halus */
 }
@@ -250,7 +250,7 @@ section {
 /* Gaya untuk ampersand di halaman utama */
 .main-name-ampersand {
     font-size: 1rem;
-    font-family: 'Garamond', serif;
+    font-family: 'Garamond';
     color: #4B5563;
     text-align: center;
 }
@@ -271,7 +271,7 @@ section {
     font-size: 0.65rem;
     margin-top: 1rem;
     line-height: 1.625;
-    font-family: 'Garamond', serif;
+    font-family: 'Garamond';
     color: #374151;
     text-align: center;
     width: 25ch; /* Sesuaikan nilai ini   untuk lebar teks */
@@ -287,7 +287,7 @@ section {
 .event-date {
     font-size: 1rem;
     margin-top: 1rem;
-    font-family: 'Garamond', serif;
+    font-family: 'Garamond';
     color: #cba979;
     text-align: center;
 }
@@ -297,7 +297,7 @@ section {
     font-size: 0.65rem;
     font-style: italic;
     line-height: 1.625;
-    font-family: 'Garamond', serif;
+    font-family: 'Garamond';
     color: #ffffff;
     text-align: center;
 }
@@ -311,7 +311,7 @@ section {
 .quote-source {
     font-size: 0.65rem;
     margin-top: 1rem;
-    font-family: 'Garamond', serif;
+    font-family: 'Garamond';
     color: #ffffff;
     text-align: center;
 }
@@ -338,7 +338,7 @@ section {
 /* Gaya untuk salam pembuka */
 .opening-greeting {
     font-size: 1rem;
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Great Vibes';
     color: #cba979; /* Warna */
     text-align: center;
 }
@@ -358,7 +358,7 @@ section {
 .opening-invitation {
     font-size: 0.65rem;
     margin-top: 1rem;
-    font-family: 'Garamond', serif;
+    font-family: 'Garamond';
     color: #374151;
     text-align: center;
 }
@@ -396,7 +396,7 @@ section {
 .full-name-dinda, .full-name-angga {
     font-size: 1.6rem;
     margin-top: 1rem;
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Great Vibes';
     text-align: center;
 }
 /* Ukuran font responsif untuk nama lengkap */
@@ -416,7 +416,7 @@ section {
 /* Gaya untuk nama orang tua */
 .parent-name {
     font-size: 0.65rem;
-    font-family: 'Garamond', serif;
+    font-family: 'Garamond';
     color: #374151;
     text-align: center;
 }
@@ -431,7 +431,7 @@ section {
     font-size: 0.875rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    font-family: 'Garamond', serif;
+    font-family: 'Garamond';
     color: #4B5563;
     text-align: center;
 }
@@ -459,7 +459,7 @@ section {
 .story-title {
     font-size: 1.875rem;
     margin-bottom: 2rem;
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Great Vibes';
     color: #cba979;
     text-align: center;
 }
@@ -479,7 +479,7 @@ section {
 .story-subtitle {
     font-size: 1rem;
     margin-top: 2rem;
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Great Vibes';
     color: #cba979;
     text-align: center;
 }
@@ -499,7 +499,7 @@ section {
 .story-date {
     font-size: 0.65rem;
     margin-top: 0.5rem;
-    font-family: 'Garamond', serif;
+    font-family: 'Garamond';
     color: #374151;
     text-align: center;
 }
@@ -509,7 +509,7 @@ section {
     font-size: 0.65rem;
     margin-top: 1rem;
     line-height: 1.625;
-    font-family: 'Garamond', serif;
+    font-family: 'Garamond';
     color: #374151;
     text-align: center;
     width: 55ch;
@@ -525,7 +525,7 @@ section {
 .event-section-title {
     font-size: 1.875rem;
     margin-bottom: 2rem;
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Great Vibes';
     color: #cba979;
     text-align: center;
 }
@@ -561,7 +561,7 @@ section {
 /* Gaya untuk angka hitung mundur */
 .countdown-number {
     font-size: 2rem;
-    font-family: 'Garamond', serif;
+    font-family: 'Garamond';
     color: #cba979; /* Warna ungu */
 }
 /* Ukuran font responsif untuk angka hitung mundur */
@@ -580,7 +580,7 @@ section {
 .countdown-label {
     font-size: 1rem;
     margin-top: 0.5rem;
-    font-family: 'Garamond', serif;
+    font-family: 'Garamond';
     font-weight: bold;
     color: #cba979;
 }
@@ -594,7 +594,7 @@ section {
 .event-subtitle {
     font-size: 1.6rem;
     margin-top: 2rem;
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Great Vibes';
     color: #cba979;
     text-align: center;
 }
@@ -614,7 +614,7 @@ section {
 .event-detail {
     font-size: 0.65rem;
     margin-top: 1rem;
-    font-family: 'Garamond', serif;
+    font-family: 'Garamond';
     color: #374151;
     text-align: center;
 }
@@ -647,7 +647,7 @@ section {
 .rsvp-title {
     font-size: 1.6rem;
     margin-top: 2rem;
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Great Vibes';
     color: #cba979;
     text-align: center;
 }
@@ -686,7 +686,7 @@ section {
 .gallery-title {
     font-size: 1.875rem;
     margin-bottom: 2rem;
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Great Vibes';
     color: #cba979;
     text-align: center;
 }
@@ -769,7 +769,7 @@ section {
     font-size: 0.65rem;
     line-height: 1.625;
     margin-bottom: 2rem;
-    font-family: 'Garamond', serif;
+    font-family: 'Garamond';
     color: #374151;
     text-align: center;
 }
@@ -778,7 +778,7 @@ section {
 .closing-signature-intro {
     font-size: 0.65rem;
     margin-top: 1rem;
-    font-family: 'Garamond', serif;
+    font-family: 'Garamond';
     color: #374151;
     text-align: center;
 }
@@ -788,7 +788,7 @@ section {
     font-size: 1rem;
     line-height: 1.25;
     margin-top: 1rem;
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Great Vibes';
     text-align: center;
 }
 /* Ukuran font responsif untuk nama penutup */
@@ -809,7 +809,7 @@ section {
 .closing-name-ampersand {
     font-size: 0.65rem;
     margin-top: 1rem;
-    font-family: 'Garamond', serif;
+    font-family: 'Garamond';
     color: #4B5563;
     text-align: center;
 }
@@ -829,7 +829,7 @@ section {
 .closing-greeting-final {
     font-size: 1rem; /* Perbaikan: koma diganti titik */
     margin-top: 2rem;
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Great Vibes';
     color: #cba979;
     text-align: center;
 }
@@ -853,7 +853,7 @@ section {
 /* Gaya untuk teks promosi */
 .promotion-text {
     font-size: 1rem;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat';
     color: #4B5563;
     text-align: center;
 }
