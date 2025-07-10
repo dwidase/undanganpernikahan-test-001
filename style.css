@@ -67,7 +67,7 @@ section {
         linear-gradient(to bottom,
                         rgba(248, 240, 227, 0) 0%, /* Warna krem transparan */
                         rgba(248, 240, 227, 1) 100%), /* Warna krem solid */
-        url('...Assets/Foto.pengantin/Berdua jawa cream 0001-8.png'); /* Sesuaikan path gambar Anda */
+        url('Assets/Foto.pengantin/Berdua jawa cream 0001-8.png'); /* Sesuaikan path gambar Anda */
 
     background-size: cover; /* Foto menutupi area yang dialokasikan */
     background-position: center bottom; /* Fokuskan bagian bawah foto */
