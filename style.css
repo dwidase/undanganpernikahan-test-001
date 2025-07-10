@@ -51,28 +51,27 @@ section {
     width: 100%; /* Pastikan bagian mengambil lebar penuh */
 }
 
-/* Gaya khusus halaman sampul */
 #cover-page {
-    background-color: #F8F0E3; /* Latar belakang krem muda untuk sampul */
-    overflow: hidden; /* Sembunyikan overflow untuk animasi */
-    width: 100%; /* Pastikan halaman sampul mengambil lebar penuh */
-    display: flex; /* Gunakan flex untuk memusatkan konten */
-    align-items: center; /* Pusatkan secara vertikal */
-    justify-content: center; /* Pusatkan secara horizontal */
-    padding: 1rem; /* Tambahkan kembali padding untuk konten cover page */
+    background-color: #F8F0E3; /* Latar belakang krem muda untuk sampul */
+    overflow: hidden; /* Sembunyikan overflow untuk animasi */
+    width: 100%; /* Pastikan halaman sampul mengambil lebar penuh */
+    display: flex; /* Gunakan flex untuk memusatkan konten */
+    align-items: center; /* Pusatkan secara vertikal */
+    justify-content: center; /* Pusatkan secara horizontal */
+    padding: 1rem; /* Tambahkan kembali padding untuk konten cover page */
 
-    /* ----- Properti background baru untuk foto dan gradasi ----- */
-    /* Pastikan warna gradasi (rgba) sesuai dengan background-color #F8F0E3 */
-    background-image:
-        linear-gradient(to bottom,
-                        rgba(248, 240, 227, 0) 0%, /* Warna krem transparan */
-                        rgba(248, 240, 227, 1) 100%), /* Warna krem solid */
-        url('Assets/Foto.pengantin/Berdua jawa cream 0001-8.png'); /* Sesuaikan path gambar Anda */
+    /* ----- Properti background baru untuk foto dan gradasi ----- */
+    /* Pastikan warna gradasi (rgba) sesuai dengan background-color #F8F0E3 */
+    background-image:
+        linear-gradient(to bottom,
+                        rgba(248, 240, 227, 0) 0%, /* Warna krem transparan */
+                        rgba(248, 240, 227, 1) 100%), /* Warna krem solid */
+        url('Assets/Foto.pengantin/Berdua jawa cream 0001-8.png'); /* Sesuaikan path gambar Anda */
 
-    background-size: cover; /* Foto menutupi area yang dialokasikan */
-    background-position: center bottom; /* Fokuskan bagian bawah foto */
-    background-repeat: no-repeat; /* Mencegah pengulangan foto */
-    height: 90vh; /* Sesuaikan tinggi halaman cover sesuai keinginan, misalnya 90% dari tinggi viewport agar ada ruang untuk transisi */
+    background-size: cover; /* Foto menutupi area yang dialokasikan */
+    background-position: center bottom; /* Fokuskan bagian bawah foto */
+    background-repeat: no-repeat; /* Mencegah pengulangan foto */
+    height: 90vh; /* Sesuaikan tinggi halaman cover sesuai keinginan, misalnya 90% dari tinggi viewport agar ada ruang untuk transisi */
 }
 
 .cover-content {
