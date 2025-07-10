@@ -156,6 +156,7 @@ section {
     color: #b59669; /* Warna ungu gelap untuk Angga */
     text-align: center;
 }
+
 /* Ukuran font responsif untuk nama Angga */
 @media (min-width: 768px) {
     .name-angga {
@@ -192,7 +193,7 @@ section {
     color: white;
     font-weight: bold;
     border: solid;
-    border-weidth: 1rem;
+    border-width: 1rem;
     border-color: white;
     border-radius: 9999px; /* Sepenuhnya bulat */
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Bayangan */
