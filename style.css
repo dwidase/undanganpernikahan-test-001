@@ -183,12 +183,13 @@ section {
 /* Gaya untuk tombol "Buka Undangan" */
 .open-button {
     margin-top: 1rem;
-    padding: 1rem 2rem;
+    padding: 0.5rem 1rem;
     background-color: #b59669; /* Warna solid */
     color: white;
+    font-size: 0.8rem;
     font-weight: bold;
     border: solid;
-    border-width: 1rem;
+    border-width: 0;
     border-color: white;
     border-radius: 9999px; /* Sepenuhnya bulat */
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Bayangan */
