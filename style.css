@@ -369,7 +369,7 @@ section {
 }
 
 /* Gaya untuk placeholder gambar */
-.image-placeholder profile-placeholder {
+.image-placeholder {
     width: 80%; /* Lebar responsif */
     max-width: 12rem; /* Lebar maksimum untuk gambar */
     height: 10rem; /* Tinggi tetap */
@@ -385,20 +385,20 @@ section {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Bayangan */
 }
 
-/* Gaya untuk foto mempelai  */
-.dinda-image, angga-image {
-    width: 100%; /* Membuat gambar mengisi lebar wadahnya */
-    height: 100%; /* Atur tinggi tetap untuk konsistensi (sesuaikan) */
-    object-fit: cover; /* Penting: Memastikan gambar mengisi area tanpa terdistorsi */
-    display: block; /* Menghilangkan spasi ekstra di bawah gambar */
-}
-
 /* Gaya khusus untuk placeholder gambar profil */
 .profile-placeholder {
     margin-top: 2rem;
     margin-bottom: 2rem;
     margin-left: auto; /* Pusatkan */
     margin-right: auto; /* Pusatkan */
+}
+
+/* Gaya untuk foto mempelai  */
+.dinda-image, .angga-image {
+    width: 100%; /* Membuat gambar mengisi lebar wadahnya */
+    height: 100%; /* Atur tinggi tetap untuk konsistensi (sesuaikan) */
+    object-fit: cover; /* Penting: Memastikan gambar mengisi area tanpa terdistorsi */
+    display: block; /* Menghilangkan spasi ekstra di bawah gambar */
 }
 
 /* Gaya untuk nama lengkap */
