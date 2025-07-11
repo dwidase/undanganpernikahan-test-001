@@ -565,7 +565,7 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center; /* Sejajarkan teks ke tengah */
-    padding: 0.5rem; /* Padding internal untuk kotak */
+    padding: 0.9rem; /* Padding internal untuk kotak */
     border-radius: 0.5rem; /* Sudut membulat */
     background-color: #cba979; /* Warna latar belakang default (bisa ditimpa) */
     box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Bayangan default */
@@ -617,7 +617,7 @@ section {
 
 /* Gaya untuk angka hitung mundur */
 .countdown-number {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-family: 'Montserrat';
     color: white; /* Warna ungu */
 }
@@ -635,8 +635,8 @@ section {
 
 /* Gaya untuk label hitung mundur */
 .countdown-label {
-    font-size: 1rem;
-    margin-top: 0.3rem;
+    font-size: 0.7rem;
+    margin-top: 0.5rem;
     font-family: 'Garamond';
     font-weight: 500;
     color: white;
