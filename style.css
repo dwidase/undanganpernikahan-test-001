@@ -486,7 +486,7 @@ section {
 
 /* Gaya untuk subjudul cerita */
 .story-subtitle {
-    font-size: 1rem;
+    font-size: 1.5rem;
     margin-top: 2rem;
     font-family: 'Great Vibes';
     color: #cba979;
@@ -560,11 +560,58 @@ section {
     width: 100%;
 }
 
-/* Gaya untuk item hitung mundur individual */
+/* Gaya untuk item hitung mundur individual (umum) */
 .countdown-item {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Sejajarkan teks ke awal */
+    align-items: center; /* Sejajarkan teks ke tengah */
+    padding: 1rem; /* Padding internal untuk kotak */
+    border-radius: 0.5rem; /* Sudut membulat */
+    background-color: #f0f0f0; /* Warna latar belakang default (bisa ditimpa) */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Bayangan default */
+    min-width: 80px; /* Lebar minimum untuk kotak agar konsisten (sesuaikan) */
+    text-align: center; /* Pastikan teks di tengah */
+}
+
+/* Gaya unik untuk Hari */
+.countdown-days {
+    background-color: #CBA979; /* Warna krem/coklat muda */
+    color: white; /* Warna teks putih */
+}
+/* Menyesuaikan warna angka dan label jika defaultnya beda */
+.countdown-days .countdown-number,
+.countdown-days .countdown-label {
+    color: white;
+}
+
+/* Gaya unik untuk Jam */
+.countdown-hours {
+    background-color: #b59669; /* Warna sedikit lebih gelap dari Hari */
+    color: white;
+}
+.countdown-hours .countdown-number,
+.countdown-hours .countdown-label {
+    color: white;
+}
+
+/* Gaya unik untuk Menit */
+.countdown-minutes {
+    background-color: #8d7a60; /* Warna lebih gelap */
+    color: white;
+}
+.countdown-minutes .countdown-number,
+.countdown-minutes .countdown-label {
+    color: white;
+}
+
+/* Gaya unik untuk Detik */
+.countdown-seconds {
+    background-color: #6a5a40; /* Warna paling gelap, atau merah untuk urgensi */
+    color: white;
+}
+.countdown-seconds .countdown-number,
+.countdown-seconds .countdown-label {
+    color: white;
 }
 
 /* Gaya untuk angka hitung mundur */
