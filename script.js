@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // LOGIKA PENGHITUNG WAKTU MUNDUR       
     // ====================================
     // Tanggal acara Anda adalah 30 Mei 2025. Perbarui tanggal ini!
-    const countdownDate = new Date("May 30, 2025 10:00:00").getTime(); 
+    const countdownDate = new Date("Dec 30, 2026 10:00:00").getTime(); 
 
     // Pastikan elemen countdown ada sebelum mencoba memperbarui
     const daysElement = document.getElementById("days");
