@@ -1,4 +1,3 @@
-
 /* === FONT FAMILY === */
 
 /* --- Font: Great Vibes --- */
@@ -30,26 +29,29 @@
 
 /* Gaya body: latar belakang, warna teks, tata letak flex untuk tinggi penuh */
 body {
-    background-color: #f8f8f8; /* Latar belakang abu-abu muda */
-    color: #1F2937; /* Teks abu-abu gelap */
+    background-color: #f8f8f8; /* Latar belakang abu-abu muda default */
+    color: #1F2937; /* Teks abu-abu gelap default */
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Tinggi minimum viewport */
     font-family: 'Garamond'; /* Font default */
-    margin: 0; /* Tambahkan: Hapus margin default browser */
-    padding: 0; /* Tambahkan: Hapus padding default browser */
+    margin: 0; /* Hapus margin default browser */
+    padding: 0; /* Hapus padding default browser */
 }
 
-/* Gaya bagian: tata letak flex, perataan, padding */
+/* Gaya bagian umum: tata letak flex, perataan. Warna latar belakang & min-height spesifik di ID. */
 section {
     display: flex;
     flex-direction: column;
     align-items: center; /* Perataan konten ke tengah */
     justify-content: flex-start; /* Justifikasi konten ke atas */
-    min-height: 100vh; /* Setiap bagian mengambil setidaknya tinggi viewport penuh */
-    /* Hapus: padding: 1rem; */ /* Padding ini menyebabkan jarak di sisi */
+    min-height: 100vh; /* Setiap bagian mengambil setidaknya tinggi viewport penuh secara default */
     width: 100%; /* Pastikan bagian mengambil lebar penuh */
+    padding-top: 3rem; /* Tambahkan padding agar konten tidak terlalu mepet atas */
+    padding-bottom: 3rem; /* Tambahkan padding agar konten tidak terlalu mepet bawah */
 }
+
+/* === GAYA SPESIFIK UNTUK SETIAP SECTION ID === */
 
 #cover-page {
     background-color: #F8F0E3; /* Latar belakang krem muda untuk sampul */
@@ -84,23 +86,29 @@ section {
     padding-bottom: 50px; /* Jika Anda ingin padding bawah tambahan */
 }
 
-/* Tambahkan juga gaya untuk main-content yang sudah dibahas */
-#main-content {
-    /* ... gaya yang sudah ada ... */
-    margin-top: -90vh; /* Sesuaikan dengan tinggi cover-page untuk menumpuknya */
+/* Pembungkus utama untuk konten setelah cover */
+/* Ini menggantikan #main-invitation-page yang lama */
+#main-content-wrapper {
+    /* Gaya untuk transisi atau display saat JS mengaktifkannya */
+    transition: opacity 0.5s ease-in-out; /* Efek fade-in */
+    /* display: flex; /* Atau block, tergantung kebutuhan layout */
+    /* Tidak perlu margin-top negatif jika Anda hanya menyembunyikan cover-page */
 }
 
-#cover-page.slide-up {
-    transform: translateY(-100vh); /* Geser ke atas */
+/* #cover-page.slide-up {
+    transform: translateY(-100vh);
     opacity: 0;
     pointer-events: none;
-}
+} */
+/* Kelas .hidden di JS sudah cukup untuk menyembunyikan */
 
-#main-content.visible {
+/* #main-content.visible {
     opacity: 1;
     visibility: visible;
-    margin-top: 0; /* Kembalikan margin */
-}
+    margin-top: 0;
+} */
+/* Kelas .visible di JS sekarang akan menargetkan #main-content-wrapper */
+
 
 /* Gaya untuk nama Dinda di halaman sampul */
 .name-dinda {
@@ -166,20 +174,20 @@ section {
 
 /* Gaya untuk teks "Kepada yang terhormat bapak, ibu, saudara/i" */
 .kepada-tamu {
-  margin-top: 2rem;
-  color: #4B5563;
-  font-size: 0.8rem;
-  font-family: 'Garamond';
-  font-weight: 600;
-  }
+    margin-top: 2rem;
+    color: #4B5563;
+    font-size: 0.8rem;
+    font-family: 'Garamond';
+    font-weight: 600;
+}
 
 /* Gaya untuk teks "Nama Tamu" */
 .nama-tamu {
-  margin-top: 1rem;
-  color: #4B5563;
-  font-size: 1rem;
-  font-family: 'Garamond';
-  font-weight: 600;
+    margin-top: 1rem;
+    color: #4B5563;
+    font-size: 1rem;
+    font-family: 'Garamond';
+    font-weight: 600;
 }
 
 /* Gaya untuk tombol "Buka Undangan" */
@@ -194,7 +202,7 @@ section {
     border-width: 0;
     border-color: white;
     border-radius: 9999px; /* Sepenuhnya bulat */
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Bayangan */
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); /* Bayangan */
     transition: all 0.3s ease-in-out; /* Transisi halus */
     transform: scale(1);
 }
@@ -204,13 +212,51 @@ section {
     transform: scale(1.05); /* Sedikit membesar saat hover */
 }
 
-/* Gaya halaman undangan utama */
-#main-invitation-page {
-    background-color: #f5f0d5; /* Latar belakang putih untuk halaman utama */
-    width: 100%; /* Pastikan mengambil lebar penuh */
-    align-items: center; /* Pusatkan konten */
-    padding-bottom: 4rem; /* Tambahkan padding di bagian bawah */
+/* === GAYA SPESIFIK UNTUK SECTION UTAMA BARU === */
+
+/* Bagian Halaman Awal Undangan */
+#initial-invitation-section {
+    background-color: #f5f0d5; /* Latar belakang krem muda */
 }
+
+/* Bagian Kutipan */
+#quote-section {
+    background-color: #CBA979; /* Latar belakang coklat muda */
+    color: white; /* Warna teks default untuk bagian ini */
+}
+
+/* Bagian Pembuka & Profil Mempelai */
+#opening-greeting-and-profile-section {
+    background-color: #f5f0d5; /* Latar belakang krem muda */
+}
+
+/* Bagian Cerita Cinta */
+#love-story-section {
+    background-color: #f5f0d5; /* Latar belakang krem muda */
+}
+
+/* Bagian Detail Acara & RSVP */
+#event-rsvp-section {
+    background-color: #f5f0d5; /* Latar belakang krem muda */
+}
+
+/* Bagian Galeri */
+#gallery-section {
+    background-color: #f5f0d5; /* Latar belakang krem muda */
+}
+
+/* Bagian Penutup */
+#closing-section {
+    background-color: #f5f0d5; /* Latar belakang krem muda */
+    padding-bottom: 4rem; /* Padding ekstra di bagian bawah */
+}
+
+/* Bagian Promosi */
+#promotion-section {
+    background-color: #f5f0d5; /* Latar belakang krem muda */
+    padding-bottom: 2rem;
+}
+
 
 /* Pembungkus konten untuk bagian */
 .section-content {
@@ -277,7 +323,7 @@ section {
     font-family: 'Garamond';
     color: #374151;
     text-align: center;
-    width: 25ch; /* Sesuaikan nilai ini   untuk lebar teks */
+    width: 25ch; /* Sesuaikan nilai ini untuk lebar teks */
     margin: 2rem auto 0.5rem; /* 2rem untuk atas/bawah, auto untuk kiri/kanan */
 }
 @media (min-width: 768px) {
@@ -295,14 +341,15 @@ section {
     text-align: center;
 }
 
-/* Latar Belakang Halaman Awal */
+/* Latar Belakang Halaman Awal - Kini kelas ini digunakan di dalam section, 
+   jadi background-color-nya bisa dihapus jika sudah diatur di ID section. */
 .latarbelakang-halaman-awal {
-    background-color: #423901;
+    /* background-color: #423901; */ /* Hapus ini jika #initial-invitation-section sudah mengatur background */
     padding: 2rem; /* Tambahkan padding */
     border-radius: 0; /* Sudut membulat */
     margin-bottom: 2rem; /* Spasi di bawah */
     width: 100%; /* Pastikan lebar penuh */
-    min-height: 80vh;
+    min-height: 80vh; /* Pertahankan jika ingin efek lebih pendek dari 100vh */
 }
     
 
@@ -341,9 +388,10 @@ section {
     box-sizing: border-box; /* Pastikan padding tidak menambah lebar total */
 }
 
-/* Latar belakang quotes */
+/* Latar belakang quotes - Kini kelas ini digunakan di dalam section,
+   jadi background-color-nya bisa dihapus jika sudah diatur di ID section. */
 .latarbelakang-quotes {
-    background-color: #CBA979;
+    /* background-color: #CBA979; */ /* Hapus ini jika #quote-section sudah mengatur background */
     padding: 1rem 0.5rem; /* Tambahkan padding */
     border-radius: 0; /* Sudut membulat */
     margin-bottom: 2rem; /* Spasi di bawah */
@@ -469,9 +517,10 @@ section {
         font-size: 4.5rem;
     }
 }
-/* Warna latar belakang pembuka */
+/* Warna latar belakang pembuka - Kini kelas ini digunakan di dalam section,
+   jadi background-color-nya bisa dihapus jika sudah diatur di ID section. */
 .latarbelakang-pembuka {
-    background-color: #f5f0d5;
+    /* background-color: #f5f0d5; */ /* Hapus ini jika #opening-greeting-and-profile-section sudah mengatur background */
     padding: 2rem; /* Tambahkan padding */
     border-radius: 0; /* Sudut membulat */
     margin-bottom: 2rem; /* Spasi di bawah */
@@ -830,11 +879,6 @@ section {
     filter: brightness(0.9); /* Sedikit meredupkan gambar saat di-hover */
 }
 
-/* Gaya untuk bagian penutup */
-.closing-section {
-    padding-bottom: 4rem; /* Padding ekstra di bagian bawah */
-}
-
 /* Gaya untuk kutipan penutup */
 .closing-quote {
     font-size: 0.8rem;
@@ -914,11 +958,6 @@ section {
     .closing-greeting-final {
         font-size: 3.75rem;
     }
-}
-
-/* Gaya untuk bagian promosi */
-.promotion-section {
-    padding-bottom: 2rem;
 }
 
 /* Gaya untuk teks promosi */
@@ -1020,3 +1059,14 @@ section {
 .hidden {
     display: none !important;
 }
+
+/* Tambahan: Gaya untuk animasi on-scroll jika Anda menambahkannya */
+/* .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+} */
