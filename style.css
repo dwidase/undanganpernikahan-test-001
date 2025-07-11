@@ -71,7 +71,7 @@ section {
     background-size: cover; /* Foto menutupi area yang dialokasikan */
     background-position: center bottom; /* Fokuskan bagian bawah foto */
     background-repeat: no-repeat; /* Mencegah pengulangan foto */
-    height: 90vh; /* Sesuaikan tinggi halaman cover sesuai keinginan, misalnya 90% dari tinggi viewport agar ada ruang untuk transisi */
+    height: 80vh; /* Sesuaikan tinggi halaman cover sesuai keinginan, misalnya 90% dari tinggi viewport agar ada ruang untuk transisi */
 }
 
 .cover-content {
@@ -228,6 +228,7 @@ section {
 }
 
 /* Gaya untuk nama di halaman undangan utama */
+/* Halaman Awal */
 .main-name-dinda, .main-name-angga {
     font-size: 2rem;
     line-height: 1.25;
@@ -293,6 +294,17 @@ section {
     color: #cba979;
     text-align: center;
 }
+
+/* Latar Belakang Halaman Awal */
+.latarbelakang-halaman-awal {
+    background-color: #423901;
+    padding: 2rem; /* Tambahkan padding */
+    border-radius: 0; /* Sudut membulat */
+    margin-bottom: 2rem; /* Spasi di bawah */
+    width: 100%; /* Pastikan lebar penuh */
+    min-height: 80vh;
+}
+    
 
 /* Gaya untuk teks kutipan */
 .quote-text {
