@@ -108,7 +108,7 @@ section {
     line-height: 1.25;
     font-family: 'Great Vibes'; /* Font skrip */
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1); /* Bayangan teks halus */
-    color: #b59669; /* Warna teks untuk Dinda */
+    color: #cba979; /* Warna teks untuk Dinda */
     text-align: center;
 }
 /* Ukuran font responsif untuk nama Dinda */
@@ -148,7 +148,7 @@ section {
     line-height: 1.25;
     font-family: 'Great Vibes';
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-    color: #b59669; /* Warna ungu gelap untuk Angga */
+    color: #cba979; /* Warna ungu gelap untuk Angga */
     text-align: center;
 }
 
@@ -170,6 +170,7 @@ section {
   color: #4B5563;
   font-size: 0.8rem;
   font-family: 'Garamond';
+  font-weight: 600;
   }
 
 /* Gaya untuk teks "Nama Tamu" */
@@ -178,13 +179,14 @@ section {
   color: #4B5563;
   font-size: 1rem;
   font-family: 'Garamond';
+  font-weight: 600;
 }
 
 /* Gaya untuk tombol "Buka Undangan" */
 .open-button {
     margin-top: 1rem;
     padding: 0.5rem 1rem;
-    background-color: #b59669; /* Warna solid */
+    background-color: #cba979; /* Warna solid */
     color: white;
     font-size: 0.8rem;
     font-weight: bold;
@@ -198,7 +200,7 @@ section {
 }
 
 .open-button:hover {
-    background-color: #cba979; /* Warna solid saat hover */
+    background-color: #b59669; /* Warna solid saat hover */
     transform: scale(1.05); /* Sedikit membesar saat hover */
 }
 
@@ -685,7 +687,7 @@ section {
 /* Gaya untuk tombol aksi (misalnya, "Detail Lokasi") */
 .action-button {
     padding: 0.5rem 1rem;
-    background: #b59669; /* Warna Solid*/ /* Jika gradien gunakan ini: linear-gradient(to right, #3B82F6, #14B8A6); /* Gradien biru-hijau */
+    background: #cba979; /* Warna Solid*/ /* Jika gradien gunakan ini: linear-gradient(to right, #3B82F6, #14B8A6); /* Gradien biru-hijau */
     color: white;
     font-weight: bold;
     font-size: 0.7rem;
@@ -696,7 +698,7 @@ section {
     display: inline-block; /* Pastikan berperilaku seperti tombol */
 }
 .action-button:hover {
-    background: #cba979; /* jika gradien gunakan ini: linear-gradient(to right, #2563EB, #0D9488); /* Gradien lebih gelap saat hover */
+    background: #b59669; /* jika gradien gunakan ini: linear-gradient(to right, #2563EB, #0D9488); /* Gradien lebih gelap saat hover */
     transform: scale(1.05);
 }
 
@@ -723,7 +725,7 @@ section {
 /* Gaya untuk tombol RSVP */
 .rsvp-button {
     padding: 0.5rem 1.3rem;
-    background: #b59669; /* Jika gradien gunakan ini: linear-gradient(to right, #22C55E, #84CC16); /* Gradien hijau-lime */
+    background: #cba979; /* Jika gradien gunakan ini: linear-gradient(to right, #22C55E, #84CC16); /* Gradien hijau-lime */
     color: white;
     font-weight: bold;
     font-size: 0.7rem;
@@ -735,7 +737,7 @@ section {
     display: inline-block; /* Pastikan berperilaku seperti tombol */
 }
 .rsvp-button:hover {
-    background: #cba979; /* jika gradien gunakan ini: linear-gradient(to right, #16A34A, #65A30D); /* Gradien lebih gelap saat hover */
+    background: #b59669; /* jika gradien gunakan ini: linear-gradient(to right, #16A34A, #65A30D); /* Gradien lebih gelap saat hover */
     transform: scale(1.05);
 }
 
