@@ -523,7 +523,7 @@ section {
     font-family: 'Garamond';
     color: #374151;
     text-align: center;
-    width: 55ch;
+    width: 45ch;
     margin: 0.5rem auto 1.5rem; /* margin 1rem untuk atas, auto untuk kanan dan kiri, 1.5rem untuk bawah */
 }
 @media (min-width: 768px) {
@@ -943,7 +943,7 @@ section {
     margin-right: auto; /* Pusatkan */
 }
 
-/* === @KEYFRAMES === */
+/* === @KEYFRAMES ANIMASI === */
 
 /* Animasi keyframe untuk meluncur dari atas */
 @keyframes slideInFromTop {
