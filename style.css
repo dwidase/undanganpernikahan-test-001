@@ -487,7 +487,7 @@ section {
 /* Gaya untuk subjudul cerita */
 .story-subtitle {
     font-size: 1.5rem;
-    margin-top: 2rem;
+    margin-top: 3rem;
     font-family: 'Great Vibes';
     color: #cba979;
     text-align: center;
@@ -565,11 +565,12 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center; /* Sejajarkan teks ke tengah */
-    padding: 1rem; /* Padding internal untuk kotak */
+    padding: 0.5rem; /* Padding internal untuk kotak */
     border-radius: 0.5rem; /* Sudut membulat */
-    background-color: #f0f0f0; /* Warna latar belakang default (bisa ditimpa) */
+    background-color: #cba979; /* Warna latar belakang default (bisa ditimpa) */
     box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Bayangan default */
-    min-width: 80px; /* Lebar minimum untuk kotak agar konsisten (sesuaikan) */
+    min-width: 50px; /* Lebar minimum untuk kotak agar konsisten (sesuaikan) */
+    min-height: 70px; /* Tinggi minimum untuk kotak agar konsisten (sesuaikan) */
     text-align: center; /* Pastikan teks di tengah */
 }
 
@@ -616,9 +617,9 @@ section {
 
 /* Gaya untuk angka hitung mundur */
 .countdown-number {
-    font-size: 2rem;
-    font-family: 'Garamond';
-    color: #cba979; /* Warna ungu */
+    font-size: 1.2rem;
+    font-family: 'Montserrat';
+    color: white; /* Warna ungu */
 }
 /* Ukuran font responsif untuk angka hitung mundur */
 @media (min-width: 768px) {
@@ -635,10 +636,10 @@ section {
 /* Gaya untuk label hitung mundur */
 .countdown-label {
     font-size: 1rem;
-    margin-top: 0.5rem;
-    font-family: 'Garamond';
-    font-weight: bold;
-    color: #cba979;
+    margin-top: 0.3rem;
+    font-family: 'Montsserrat';
+    font-weight: 500;
+    color: white;
 }
 @media (min-width: 768px) {
     .countdown-label {
