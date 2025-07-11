@@ -4,62 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Undangan Pernikahan Dinda & Angga</title>
-    <!-- Tailwind CSS CDN untuk kelas utilitas -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Link ke file CSS eksternal -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Bagian Halaman Sampul -->
-    <section id="cover-page" class="flex flex-col items-center justify-center w-full">
+    <section id="cover-page">
         <div class="cover-content">
             <h1 class="name-dinda">Dinda</h1>
             <h1 class="name-ampersand">&</h1>
-            <h1 class="name-angga">Angga</h1><p class="kepada-tamu">Kepada yang terhormat bapak, ibu, saudara/i</p>
-          <p class="nama-tamu">"Nama Tamu"</p>
+            <h1 class="name-angga">Angga</h1>
+            <p class="kepada-tamu">Kepada yang terhormat bapak, ibu, saudara/i</p>
+            <p class="nama-tamu">"Nama Tamu"</p>
             <button id="open-invitation-button" class="open-button">Buka Undangan</button>
         </div>
     </section>
 
-    <!-- Bagian Halaman Undangan Utama (awalnya tersembunyi) -->
-    <section id="main-invitation-page" class="hidden flex-grow">
-        <div class="latarbelakang-halaman-awal">
-        <div class="section-content">
-            <h2 class="main-name-dinda">Dinda</h2>
-            <h2 class="main-name-ampersand">&</h2>
-            <h2 class="main-name-angga">Angga</h2>
-            <p class="invitation-text">Kami mengundang anda untuk berbagi kebahagiaan</p>
-            <p class="event-date">30 05 2025</p>
-        </div>
-        </div>
+    <main id="main-content-wrapper" class="hidden"> 
 
-        <hr class="section-divider">
-      <div class= "latarbelakang-quotes">
-        <div class="section-content">
-            <div class="quote-background-box">
-            <p class="quote-text">
-                “Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berpikir.”
-            </p>
-            <p class="quote-source">
-                QS. Ar-Rum: 21
-            </p>
+        <section id="initial-invitation-section">
+            <div class="latarbelakang-halaman-awal section-content"> <h2 class="main-name-dinda">Dinda</h2>
+                <h2 class="main-name-ampersand">&</h2>
+                <h2 class="main-name-angga">Angga</h2>
+                <p class="invitation-text">Kami mengundang anda untuk berbagi kebahagiaan</p>
+                <p class="event-date">30 05 2025</p>
             </div>
-            </div>
-        </div>
+        </section>
 
         <hr class="section-divider">
 
-        <!-- Perubahan di sini: latarbelakang-pembuka sekarang di luar section-content -->
-        <div class="latarbelakang-pembuka">
-            <div class="section-content">
-                <p class="opening-greeting">Assalamualaikum warahmatullahi wabarakatuh</p>
+        <section id="quote-section">
+            <div class="latarbelakang-quotes section-content"> <div class="quote-background-box">
+                    <p class="quote-text">
+                        “Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berpikir.”
+                    </p>
+                    <p class="quote-source">
+                        QS. Ar-Rum: 21
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <section id="opening-greeting-and-profile-section">
+            <div class="latarbelakang-pembuka section-content"> <p class="opening-greeting">Assalamualaikum warahmatullahi wabarakatuh</p>
                 <p class="opening-invitation">
                     Dengan penuh rasa syukur, kami mengundang bapak/ibu/saudara/i untuk menghadiri pernikahan kami.
                 </p>
 
-                <!-- Bagian Profil Dinda -->
                 <div class="image-placeholder profile-placeholder">
                     <img src="Assets/Foto.pengantin/Berdua jawa cream 0001-3.png" alt="Foto Berdua baju adat jawa cream" class="dinda-image">
                 </div>
@@ -68,162 +62,159 @@
 
                 <p class="ampersand-divider">&</p>
 
-                <!-- Bagian Profil Angga -->
                 <div class="image-placeholder profile-placeholder">
                     <img src="Assets/Foto.pengantin/Berdua jawa cream 0001-3.png" alt="Foto Berdua baju adat jawa cream" class="angga-image">
                 </div>
                 <p class="full-name-angga">Angga Pratama Putra</p>
                 <p class="parent-name">Putra bapak WXY dan ibu ZAA</p>
             </div>
-        </div>
-        <!-- Akhir perubahan -->
+        </section>
 
         <hr class="section-divider">
 
-        <!-- Bagian Cerita Cinta -->
-        <div class="section-content">
-            <h2 class="story-title">Cerita Cinta Kami</h2>
+        <section id="love-story-section">
+            <div class="section-content">
+                <h2 class="story-title">Cerita Cinta Kami</h2>
 
-            <h3 class="story-subtitle">Awal Pertemuan</h3>
-            <p class="story-date">Mei 2021</p>
-            <p class="story-paragraph">
-                Takdir mempertemukan kami secara daring di bulan Mei 2021. Dari sebuah percakapan acak anonim, obrolan berlanjut ke pesan pribadi. Saling bertukar kabar hingga akhirnya di tahun 2022, sepakat untuk bertemu. Setelahnya, pertemuan semakin sering terjadi, dan...
-            </p>
+                <h3 class="story-subtitle">Awal Pertemuan</h3>
+                <p class="story-date">Mei 2021</p>
+                <p class="story-paragraph">
+                    Takdir mempertemukan kami secara daring di bulan Mei 2021. Dari sebuah percakapan acak anonim, obrolan berlanjut ke pesan pribadi. Saling bertukar kabar hingga akhirnya di tahun 2022, sepakat untuk bertemu. Setelahnya, pertemuan semakin sering terjadi, dan...
+                </p>
 
-            <hr class="section-divider-large section-divider">
+                <hr class="section-divider-large section-divider">
 
-            <h3 class="story-subtitle">Perkenalan Lebih Dalam</h3>
-            <p class="story-date">Maret 2023</p>
-            <p class="story-paragraph">
-                ...di bulan Maret 2023, kami berdua sepakat untuk saling mengenal lebih jauh, menapaki perjalanan bersama tanpa status pacaran. Hingga...
-            </p>
+                <h3 class="story-subtitle">Perkenalan Lebih Dalam</h3>
+                <p class="story-date">Maret 2023</p>
+                <p class="story-paragraph">
+                    ...di bulan Maret 2023, kami berdua sepakat untuk saling mengenal lebih jauh, menapaki perjalanan bersama tanpa status pacaran. Hingga...
+                </p>
 
-            <hr class="section-divider-large section-divider">
+                <hr class="section-divider-large section-divider">
 
-            <h3 class="story-subtitle">Ikatan Janji</h3>
-            <p class="story-date">13 Agustus 2024</p>
-            <p class="story-paragraph">
-                ...tibalah bulan Agustus 2024. Tepat di tanggal 13 Agustus, yang juga bertepatan dengan ulang tahun Dinda, pertunangan kami resmi terlaksana.
-            </p>
+                <h3 class="story-subtitle">Ikatan Janji</h3>
+                <p class="story-date">13 Agustus 2024</p>
+                <p class="story-paragraph">
+                    ...tibalah bulan Agustus 2024. Tepat di tanggal 13 Agustus, yang juga bertepatan dengan ulang tahun Dinda, pertunangan kami resmi terlaksana.
+                </p>
 
-            <hr class="section-divider-large section-divider">
+                <hr class="section-divider-large section-divider">
 
-            <h3 class="story-subtitle">Pernikahan</h3>
-            <p class="story-date">30 Mei 2025</p>
-            <p class="story-paragraph">
-                Dan kini, tiba di hari yang paling bahagia, 30 Mei 2025. Kisah cinta kami "berakhir" sekaligus dimulai dengan langkah yang lebih serius, mengikat janji suci di hadapan Tuhan dan keluarga.
-            </p>
-        </div>
+                <h3 class="story-subtitle">Pernikahan</h3>
+                <p class="story-date">30 Mei 2025</p>
+                <p class="story-paragraph">
+                    Dan kini, tiba di hari yang paling bahagia, 30 Mei 2025. Kisah cinta kami "berakhir" sekaligus dimulai dengan langkah yang lebih serius, mengikat janji suci di hadapan Tuhan dan keluarga.
+                </p>
+            </div>
+        </section>
 
         <hr class="section-divider">
 
-        <!-- Bagian Detail Acara -->
-        <div class="section-content">
-            <h2 class="event-section-title">Menjelang Hari Bahagia</h2>
+        <section id="event-rsvp-section">
+            <div class="section-content">
+                <h2 class="event-section-title">Menjelang Hari Bahagia</h2>
 
-            <!-- Penghitung Waktu Mundur -->
-            <div class="countdown-container">
-                <div class="countdown-item">
-                    <span id="days" class="countdown-number">00</span>
-                    <span class="countdown-label">Hari</span>
+                <div class="countdown-container">
+                    <div class="countdown-item">
+                        <span id="days" class="countdown-number">00</span>
+                        <span class="countdown-label">Hari</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="hours" class="countdown-number">00</span>
+                        <span class="countdown-label">Jam</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="minutes" class="countdown-number">00</span>
+                        <span class="countdown-label">Menit</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="seconds" class="countdown-number">00</span>
+                        <span class="countdown-label">Detik</span>
+                    </div>
                 </div>
-                <div class="countdown-item">
-                    <span id="hours" class="countdown-number">00</span>
-                    <span class="countdown-label">Jam</span>
+
+                <hr class="section-divider-large section-divider">
+
+                <h3 class="event-subtitle">Akad Nikah</h3>
+                <p class="event-detail">Sabtu, 30 Mei 2025</p>
+                <p class="event-detail">Pukul 10.00 WIB</p>
+                <p class="event-detail">Jalan Mawar no.64 Kec.Teweh tengah Kab.Muara Teweh</p>
+                <div class="button-wrapper">
+                    <a href="https://maps.app.goo.gl/rvRPcHJjP3oDrgcK6" target="_blank" class="action-button">Detail Lokasi</a>
                 </div>
-                <div class="countdown-item">
-                    <span id="minutes" class="countdown-number">00</span>
-                    <span class="countdown-label">Menit</span>
+
+                <hr class="section-divider-large section-divider">
+
+                <h3 class="event-subtitle">Resepsi Pernikahan</h3>
+                <p class="event-detail">Minggu, 31 Mei 2025</p>
+                <p class="event-detail">Pukul 10.00 WIB</p>
+                <p class="event-detail">Jalan Mawar no.64 Kec.Teweh tengah Kab.Muara Teweh</p>
+                <div class="button-wrapper">
+                    <a href="https://maps.app.goo.gl/rvRPcHJjP3oDrgcK6" target="_blank" class="action-button">Detail Lokasi</a>
                 </div>
-                <div class="countdown-item">
-                    <span id="seconds" class="countdown-number">00</span>
-                    <span class="countdown-label">Detik</span>
+
+                <hr class="section-divider-large section-divider">
+
+                <h3 class="rsvp-title">Konfirmasi Kehadiran</h3>
+                <div class="button-wrapper">
+                    <a href="https://forms.gle/DKc8dLxuXcqDXvnT7" target="_blank" class="rsvp-button">RSVP</a>
                 </div>
             </div>
-
-            <hr class="section-divider-large section-divider">
-
-            <!-- Detail Akad Nikah -->
-            <h3 class="event-subtitle">Akad Nikah</h3>
-            <p class="event-detail">Sabtu, 30 Mei 2025</p>
-            <p class="event-detail">Pukul 10.00 WIB</p>
-            <p class="event-detail">Jalan Mawar no.64 Kec.Teweh tengah Kab.Muara Teweh</p>
-            <div class="button-wrapper">
-                <a href="https://maps.app.goo.gl/rvRPcHJjP3oDrgcK6" target="_blank" class="action-button">Detail Lokasi</a>
-            </div>
-
-            <hr class="section-divider-large section-divider">
-
-            <!-- Detail Resepsi Pernikahan -->
-            <h3 class="event-subtitle">Resepsi Pernikahan</h3>
-            <p class="event-detail">Minggu, 31 Mei 2025</p>
-            <p class="event-detail">Pukul 10.00 WIB</p>
-            <p class="event-detail">Jalan Mawar no.64 Kec.Teweh tengah Kab.Muara Teweh</p>
-            <div class="button-wrapper">
-                <a href="https://maps.app.goo.gl/rvRPcHJjP3oDrgcK6" target="_blank" class="action-button">Detail Lokasi</a>
-            </div>
-
-            <hr class="section-divider-large section-divider">
-
-            <!-- Bagian RSVP -->
-            <h3 class="rsvp-title">Konfirmasi Kehadiran</h3>
-            <div class="button-wrapper">
-                <a href="https://forms.gle/DKc8dLxuXcqDXvnT7" target="_blank" class="rsvp-button">RSVP</a>
-            </div>
-        </div>
+        </section>
 
         <hr class="section-divider">
 
-        <!-- Bagian Galeri -->
-        <div class="section-content">
-            <h2 class="gallery-title">Galeri</h2>
-            <div class="gallery-grid">
-                <div class="gallery-image-placeholder">
-                    <img src="Assets/Foto.pengantin/Berdua jawa cream 0001-1.png" alt="Foto Berdua baju adat jawa cream" class="gallery-image">
-                </div>
-                <div class="gallery-image-placeholder">
-                    <img src="Assets/Foto.pengantin/Berdua jawa cream 0001-2.png" alt="Foto Berdua baju adat jawa cream" class="gallery-image">
-                </div>
-                <div class="gallery-image-placeholder">
-                    <img src="Assets/Foto.pengantin/Berdua jawa cream 0001-3.png" alt="Foto Berdua baju adat jawa cream" class="gallery-image">
-                </div>
-                <div class="gallery-image-placeholder">
-                    <img src="Assets/Foto.pengantin/Berdua jawa cream 0001-4.png" alt="Foto Berdua baju adat jawa cream" class="gallery-image">
-                </div>
-                <div class="gallery-image-placeholder">
-                    <img src="Assets/Foto.pengantin/Berdua jawa cream 0001-5.png" alt="Foto Berdua baju adat jawa cream" class="gallery-image">
-                </div>
-                <div class="gallery-image-placeholder">
-                    <img src="Assets/Foto.pengantin/Berdua jawa cream 0001-6.png" alt="Foto Berdua baju adat jawa cream" class="gallery-image">
+        <section id="gallery-section">
+            <div class="section-content">
+                <h2 class="gallery-title">Galeri</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-image-placeholder">
+                        <img src="Assets/Foto.pengantin/Berdua jawa cream 0001-1.png" alt="Foto Berdua baju adat jawa cream" class="gallery-image">
+                    </div>
+                    <div class="gallery-image-placeholder">
+                        <img src="Assets/Foto.pengantin/Berdua jawa cream 0001-2.png" alt="Foto Berdua baju adat jawa cream" class="gallery-image">
+                    </div>
+                    <div class="gallery-image-placeholder">
+                        <img src="Assets/Foto.pengantin/Berdua jawa cream 0001-3.png" alt="Foto Berdua baju adat jawa cream" class="gallery-image">
+                    </div>
+                    <div class="gallery-image-placeholder">
+                        <img src="Assets/Foto.pengantin/Berdua jawa cream 0001-4.png" alt="Foto Berdua baju adat jawa cream" class="gallery-image">
+                    </div>
+                    <div class="gallery-image-placeholder">
+                        <img src="Assets/Foto.pengantin/Berdua jawa cream 0001-5.png" alt="Foto Berdua baju adat jawa cream" class="gallery-image">
+                    </div>
+                    <div class="gallery-image-placeholder">
+                        <img src="Assets/Foto.pengantin/Berdua jawa cream 0001-6.png" alt="Foto Berdua baju adat jawa cream" class="gallery-image">
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <hr class="section-divider">
 
-        <!-- Bagian Penutup -->
-        <div class="section-content closing-section">
-            <p class="closing-quote">
-                Kehadiran, doa, dan restu bapak/ibu/saudara/i<br>
-                adalah suatu kehormatan dan kebahagiaan yang tak ternilai.
-            </p>
-            <p class="closing-signature-intro">Kami yang berbahagia</p>
-            <h2 class="closing-name-dinda">Dinda</h2>
-            <h2 class="closing-name-ampersand">&</h2>
-            <h2 class="closing-name-angga">Angga</h2>
-            <p class="closing-greeting-final">Waalaikumussalam warahmatullahi wabarakatuh</p>
-        </div>
+        <section id="closing-section">
+            <div class="section-content">
+                <p class="closing-quote">
+                    Kehadiran, doa, dan restu bapak/ibu/saudara/i<br>
+                    adalah suatu kehormatan dan kebahagiaan yang tak ternilai.
+                </p>
+                <p class="closing-signature-intro">Kami yang berbahagia</p>
+                <h2 class="closing-name-dinda">Dinda</h2>
+                <h2 class="closing-name-ampersand">&</h2>
+                <h2 class="closing-name-angga">Angga</h2>
+                <p class="closing-greeting-final">Waalaikumussalam warahmatullahi wabarakatuh</p>
+            </div>
+        </section>
 
         <hr class="section-divider">
 
-        <!-- Bagian Promosi -->
-        <div class="section-content promotion-section">
-            <p class="promotion-text">Didesain oleh Niseja</p>
-        </div>
-    </section>
+        <section id="promotion-section">
+            <div class="section-content">
+                <p class="promotion-text">Didesain oleh Niseja</p>
+            </div>
+        </section>
 
-    <!-- Link ke file JavaScript eksternal -->
-    <script src="script.js"></script>
+    </main> <script src="script.js"></script>
 
 </body>
 </html>
