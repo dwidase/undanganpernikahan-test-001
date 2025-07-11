@@ -569,8 +569,8 @@ section {
     border-radius: 0.5rem; /* Sudut membulat */
     background-color: #cba979; /* Warna latar belakang default (bisa ditimpa) */
     box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Bayangan default */
-    min-width: 50px; /* Lebar minimum untuk kotak agar konsisten (sesuaikan) */
-    min-height: 70px; /* Tinggi minimum untuk kotak agar konsisten (sesuaikan) */
+    width: 50px; /* Lebar minimum untuk kotak agar konsisten (sesuaikan) */
+    height: 70px; /* Tinggi minimum untuk kotak agar konsisten (sesuaikan) */
     text-align: center; /* Pastikan teks di tengah */
 }
 
@@ -637,7 +637,7 @@ section {
 .countdown-label {
     font-size: 1rem;
     margin-top: 0.3rem;
-    font-family: 'Montsserrat';
+    font-family: 'Garamond';
     font-weight: 500;
     color: white;
 }
