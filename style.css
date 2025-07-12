@@ -217,14 +217,13 @@ section {
 /* Bagian Halaman Awal Undangan */
 #initial-invitation-section {
     background-color: #f5f0d5; /* Latar belakang krem muda */
-    min-height: 60vh;
 }
 
 /* Bagian Kutipan */
 #quote-section {
     background-color: #cba979; /* Latar belakang coklat muda */
     color: white; /* Warna teks default untuk bagian ini */
-    min-height: 15vh;
+    min-height: 15rem;
 }
 
 /* Bagian Pembuka & Profil Mempelai */
@@ -251,14 +250,12 @@ section {
 #closing-section {
     background-color: #f5f0d5; /* Latar belakang krem muda */
     padding-bottom: 4rem; /* Padding ekstra di bagian bawah */
-    min-height: 20vh;
 }
 
 /* Bagian Promosi */
 #promotion-section {
     background-color: #f5f0d5; /* Latar belakang krem muda */
     padding-bottom: 2rem;
-    min-height: 10vh;
 }
 
 
@@ -351,9 +348,9 @@ section {
     /* background-color: #423901; */ /* Hapus ini jika #initial-invitation-section sudah mengatur background */
     padding: 2rem; /* Tambahkan padding */
     border-radius: 0; /* Sudut membulat */
-    margin-bottom: 0; /* Spasi di bawah */
+    margin-bottom: 2rem; /* Spasi di bawah */
     width: 100%; /* Pastikan lebar penuh */
-    min-height: 60vh; /* Pertahankan jika ingin efek lebih pendek dari 100vh */
+    min-height: 80vh; /* Pertahankan jika ingin efek lebih pendek dari 100vh */
 }
     
 
@@ -891,7 +888,7 @@ section {
 /* === GAYA BARU UNTUK BAGIAN HADIAH === */
 #gift-section {
     background-color: #f5f0d5; /* Sesuaikan warna latar belakang jika perlu */
-    min-height: 20vh; /* Jika Anda ingin tinggi spesifik, bisa atur min-height di sini */
+    /* Jika Anda ingin tinggi spesifik, bisa atur min-height di sini */
 }
 
 .gift-title {
