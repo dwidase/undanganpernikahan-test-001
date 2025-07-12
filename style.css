@@ -221,7 +221,7 @@ section {
 
 /* Bagian Kutipan */
 #quote-section {
-    background-color: #423308; /* Latar belakang coklat muda */
+    background-color: #cba979; /* Latar belakang coklat muda */
     color: white; /* Warna teks default untuk bagian ini */
     min-height: 15rem;
 }
@@ -238,7 +238,7 @@ section {
 
 /* Bagian Detail Acara & RSVP */
 #event-rsvp-section {
-    background-color: #f5f0d5; /* Latar belakang krem muda */
+    background-color: #cba979; /* Latar belakang krem muda */
 }
 
 /* Bagian Galeri */
@@ -792,6 +792,17 @@ section {
 .rsvp-button:hover {
     background: #b59669; /* jika gradien gunakan ini: linear-gradient(to right, #16A34A, #65A30D); /* Gradien lebih gelap saat hover */
     transform: scale(1.05);
+}
+
+.box-event-rsvp {
+    background-color: #f5f0d5;
+    border: 2px solid white; /* Outline putih */
+    border-radius: 1rem; /* Sudut melingkar 1rem */
+    padding: 1.5rem; /* Padding internal agar teks tidak menempel outline */
+    margin: 0 auto; /* Memusatkan persegi panjang */
+    width: 95%; /* Mengisi sebagian besar lebar yang tersedia */
+    max-width: 40rem; /* Batasi lebar maksimum agar tidak terlalu lebar di layar besar */
+    box-sizing: border-box; /* Pastikan padding tidak menambah lebar total */
 }
 
 /* Gaya untuk judul galeri */
