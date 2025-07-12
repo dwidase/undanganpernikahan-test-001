@@ -388,15 +388,6 @@ section {
     box-sizing: border-box; /* Pastikan padding tidak menambah lebar total */
 }
 
-/* Latar belakang quotes - Kini kelas ini digunakan di dalam section,
-   jadi background-color-nya bisa dihapus jika sudah diatur di ID section. */
-.latarbelakang-quotes {
-    /* background-color: #CBA979; */ /* Hapus ini jika #quote-section sudah mengatur background */
-    padding: 1rem 0.5rem; /* Tambahkan padding */
-    border-radius: 0; /* Sudut membulat */
-    margin-bottom: 2rem; /* Spasi di bawah */
-    width: 100%; /* Pastikan lebar penuh */
-}
 /* Gaya untuk salam pembuka */
 .opening-greeting {
     font-size: 1rem;
