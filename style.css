@@ -802,6 +802,7 @@ section {
     margin: 0 auto; /* Memusatkan persegi panjang */
     width: 95%; /* Mengisi sebagian besar lebar yang tersedia */
     max-width: 40rem; /* Batasi lebar maksimum agar tidak terlalu lebar di layar besar */
+    min-height: 100vh;
     box-sizing: border-box; /* Pastikan padding tidak menambah lebar total */
 }
 
