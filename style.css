@@ -885,6 +885,47 @@ section {
     filter: brightness(0.9); /* Sedikit meredupkan gambar saat di-hover */
 }
 
+/* === GAYA BARU UNTUK BAGIAN HADIAH === */
+#gift-section {
+    background-color: #f5f0d5; /* Sesuaikan warna latar belakang jika perlu */
+    /* Jika Anda ingin tinggi spesifik, bisa atur min-height di sini */
+}
+
+.gift-title {
+    font-size: 1.875rem;
+    margin-bottom: 1rem;
+    font-family: 'Great Vibes';
+    color: #cba979;
+    text-align: center;
+}
+@media (min-width: 768px) {
+    .gift-title {
+        font-size: 4.5rem;
+    }
+}
+@media (min-width: 1024px) {
+    .gift-title {
+        font-size: 6rem;
+    }
+}
+
+.gift-description {
+    font-size: 0.8rem;
+    line-height: 1.625;
+    margin-bottom: 2rem;
+    font-family: 'Garamond';
+    color: #374151;
+    text-align: center;
+    max-width: 40ch; /* Batasi lebar teks agar mudah dibaca */
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (min-width: 768px) {
+    .gift-description {
+        font-size: 1.1rem;
+    }
+}
+
 /* Gaya untuk kutipan penutup */
 .closing-quote {
     font-size: 0.8rem;
@@ -998,6 +1039,168 @@ section {
     margin-bottom: 4rem;
     margin-left: auto; /* Pusatkan */
     margin-right: auto; /* Pusatkan */
+}
+
+/* === GAYA UNTUK POPUP (MODAL) === */
+.modal {
+    display: none; /* Sembunyikan secara default */
+    position: fixed; /* Tetap di viewport */
+    z-index: 1000; /* Di atas konten lain */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Aktifkan scroll jika konten terlalu panjang */
+    background-color: rgba(0,0,0,0.7); /* Latar belakang gelap transparan */
+    display: flex; /* Menggunakan flexbox untuk memusatkan modal-content */
+    justify-content: center;
+    align-items: center;
+    padding: 1rem; /* Padding agar modal tidak menempel tepi layar di mobile */
+}
+
+.modal-content {
+    background-color: #fefefe; /* Latar belakang putih untuk kotak modal */
+    margin: auto; /* Akan dipusatkan oleh flexbox dari .modal */
+    padding: 2rem;
+    border-radius: 1rem; /* Sudut membulat */
+    width: 90%; /* Lebar responsif */
+    max-width: 500px; /* Lebar maksimum agar tidak terlalu besar di desktop */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Bayangan */
+    position: relative; /* Untuk posisi tombol close */
+    animation: fadeInScale 0.3s ease-out forwards; /* Animasi muncul */
+    max-height: 90vh; /* Batasi tinggi modal agar bisa scroll jika konten banyak */
+    overflow-y: auto; /* Aktifkan scroll di dalam modal jika kontennya lebih dari max-height */
+}
+
+/* Animasi untuk modal muncul */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-title {
+    font-family: 'Great Vibes';
+    font-size: 2rem;
+    color: #cba979;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+@media (min-width: 768px) {
+    .modal-title {
+        font-size: 2.5rem;
+    }
+}
+
+.modal-section {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #eee; /* Garis pemisah antar section */
+    padding-bottom: 1.5rem;
+}
+.modal-section:last-child {
+    border-bottom: none; /* Hapus garis di section terakhir */
+}
+
+.modal-subtitle {
+    font-family: 'Garamond';
+    font-size: 1.2rem;
+    color: #4B5563;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.info-item {
+    display: flex;
+    flex-wrap: wrap; /* Izinkan wrapping di layar kecil */
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    border-radius: 0.5rem;
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.7rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.info-item .info-label {
+    font-family: 'Garamond';
+    font-size: 0.85rem;
+    color: #6B7280;
+    flex-basis: 30%; /* Ambil 30% lebar untuk label */
+    text-align: left;
+    margin-right: 0.5rem;
+}
+
+.info-item .info-value {
+    font-family: 'Montserrat';
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #333;
+    flex-basis: 55%; /* Ambil 55% lebar untuk nilai */
+    text-align: left;
+    word-break: break-all; /* Memastikan teks panjang pecah baris */
+}
+/* Untuk alamat, biarkan full width agar lebih rapi */
+.alamat-item .info-value {
+    flex-basis: 100%; /* Ambil 100% lebar */
+    margin-top: 0.5rem;
+    font-weight: normal; /* Kembali ke normal untuk alamat yang mungkin lebih panjang */
+}
+
+.info-item .copy-button {
+    background-color: #cba979;
+    color: white;
+    border: none;
+    padding: 0.4rem 0.7rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    font-size: 0.7rem;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    flex-basis: auto; /* Ukuran otomatis */
+    margin-left: auto; /* Dorong ke kanan */
+}
+
+.info-item .copy-button:hover {
+    background-color: #b59669;
+    transform: translateY(-1px);
+}
+
+.info-item .copy-button:active {
+    transform: translateY(0);
+}
+
+.modal-closing-note {
+    font-family: 'Garamond';
+    font-size: 0.85rem;
+    color: #6B7280;
+    text-align: center;
+    margin-top: 2rem;
+    font-style: italic;
 }
 
 /* === @KEYFRAMES ANIMASI === */
