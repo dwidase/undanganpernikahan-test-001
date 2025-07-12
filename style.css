@@ -354,10 +354,6 @@ section {
     margin-bottom: 0; /* Spasi di bawah */
     width: 100%; /* Pastikan lebar penuh */
     min-height: 60vh; /* Pertahankan jika ingin efek lebih pendek dari 100vh */
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
 }
     
 
