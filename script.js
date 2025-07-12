@@ -95,4 +95,91 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         console.warn("Elemen '#quote-section' tidak ditemukan. Animasi quote mungkin tidak berfungsi.");
     }
+
+    // ====================================
+    // LOGIKA POPUP HADIAH & FITUR SALIN    
+    // ====================================
+    const openGiftModalButton = document.getElementById('open-gift-modal-button');
+    const giftModal = document.getElementById('gift-modal');
+    const closeButton = giftModal ? giftModal.querySelector('.close-button') : null;
+    const copyButtons = document.querySelectorAll('.copy-button');
+
+    if (openGiftModalButton && giftModal && closeButton) {
+        // Buka popup saat tombol diklik
+        openGiftModalButton.addEventListener('click', () => {
+            giftModal.classList.remove('hidden');
+            // Menambahkan kelas untuk memicu animasi modal jika diperlukan (misalnya: fade-in)
+            // giftModal.classList.add('fade-in'); 
+        });
+
+        // Tutup popup saat tombol silang diklik
+        closeButton.addEventListener('click', () => {
+            giftModal.classList.add('hidden');
+        });
+
+        // Tutup popup saat mengklik di luar area modal content
+        giftModal.addEventListener('click', (event) => {
+            if (event.target === giftModal) {
+                giftModal.classList.add('hidden');
+            }
+        });
+    } else {
+        console.warn("Elemen untuk fitur popup Hadiah tidak ditemukan.");
+    }
+
+    // Logika untuk tombol salin
+    if (copyButtons.length > 0) {
+        copyButtons.forEach(button => {
+            button.addEventListener('click', (event) => {
+                const targetId = event.target.dataset.target;
+                const textToCopyElement = document.getElementById(targetId);
+                
+                if (textToCopyElement) {
+                    const textToCopy = textToCopyElement.innerText.trim();
+                    
+                    // Gunakan Clipboard API modern
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                        navigator.clipboard.writeText(textToCopy)
+                            .then(() => {
+                                // Feedback visual
+                                const originalText = button.innerText;
+                                button.innerText = 'Tersalin!';
+                                setTimeout(() => {
+                                    button.innerText = originalText;
+                                }, 1500);
+                            })
+                            .catch(err => {
+                                console.error('Gagal menyalin teks:', err);
+                                alert('Gagal menyalin teks. Silakan salin manual: ' + textToCopy);
+                            });
+                    } else {
+                        // Fallback untuk browser lama
+                        const textArea = document.createElement('textarea');
+                        textArea.value = textToCopy;
+                        textArea.style.position = 'fixed'; // Agar tidak mengganggu layout
+                        textArea.style.left = '-9999px';
+                        document.body.appendChild(textArea);
+                        textArea.focus();
+                        textArea.select();
+                        try {
+                            document.execCommand('copy');
+                            const originalText = button.innerText;
+                            button.innerText = 'Tersalin!';
+                            setTimeout(() => {
+                                button.innerText = originalText;
+                            }, 1500);
+                        } catch (err) {
+                            console.error('Gagal menyalin teks (fallback):', err);
+                            alert('Gagal menyalin teks. Browser Anda tidak mendukung penyalinan otomatis. Silakan salin manual: ' + textToCopy);
+                        }
+                        document.body.removeChild(textArea);
+                    }
+                } else {
+                    console.warn(`Elemen dengan ID '${targetId}' tidak ditemukan untuk disalin.`);
+                }
+            });
+        });
+    } else {
+        console.warn("Tidak ada tombol salin ditemukan.");
+    }
 });
