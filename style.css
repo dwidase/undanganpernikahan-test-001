@@ -589,6 +589,7 @@ section {
 .event-section-title {
     font-size: 1.875rem;
     margin-bottom: 2rem;
+    margin-top: 2rem;
     font-family: 'Great Vibes';
     color: #cba979;
     text-align: center;
@@ -705,7 +706,7 @@ section {
 /* Gaya untuk subjudul acara */
 .event-subtitle {
     font-size: 1.6rem;
-    margin-top: 2rem;
+    margin-top: 3rem;
     font-family: 'Great Vibes';
     color: #cba979;
     text-align: center;
@@ -804,6 +805,7 @@ section {
     max-width: 40rem; /* Batasi lebar maksimum agar tidak terlalu lebar di layar besar */
     min-height: 100vh;
     box-sizing: border-box; /* Pastikan padding tidak menambah lebar total */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 /* Gaya untuk judul galeri */
