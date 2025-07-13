@@ -251,7 +251,8 @@ section {
 #gift-section {
     background-color: #f5f0d5; /* Sesuaikan warna latar belakang jika perlu */
     min-height: 20vh; /* Jika Anda ingin tinggi spesifik, bisa atur min-height di sini */
-
+}
+    
 /* Bagian Penutup */
 #closing-section {
     background-color: #f5f0d5; /* Latar belakang krem muda */
@@ -897,11 +898,6 @@ section {
 }
 
 /* === GAYA BARU UNTUK BAGIAN HADIAH === */
-#gift-section {
-    background-color: #f5f0d5; /* Sesuaikan warna latar belakang jika perlu */
-    /* Jika Anda ingin tinggi spesifik, bisa atur min-height di sini */
-}
-
 .gift-title {
     font-size: 1.875rem;
     margin-bottom: 1rem;
