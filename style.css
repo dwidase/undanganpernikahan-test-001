@@ -1014,6 +1014,14 @@ section {
     }
 }
 
+.tekstur-closing-section {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  z-index: 1;
+}
+    
 /* Gaya untuk teks promosi */
 .promotion-text {
     font-size: 1rem;
