@@ -261,7 +261,7 @@ section {
     background-images: url("Assets/Hiasan/Spotting.webp"), url("Assets/Hiasan/kraft_paper.webp"); /* bercak.webp akan berada di atas tekstur.webp */
     background-position: center center, center center; /* Sesuaikan posisi */
     background-size: cover, cover; /* Sesuaikan ukuran */
-    background-repeat: no-repeat, repeat; /* Sesuaikan pengulangan */
+    background-repeat: no-repeat, no-repeat; /* Sesuaikan pengulangan */
     /* Properti background lain seperti background-attachment, background-origin, dll. */
 }
 
