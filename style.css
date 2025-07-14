@@ -258,7 +258,7 @@ section {
     /*background-color: #f5f0d5; /* Latar belakang krem muda */
     padding-bottom: 0; /* Padding ekstra di bagian bawah */
     min-height: 20vh;
-    background-image: opacity('0.5'), url('Assets/Hiasan/Spotting.webp'), url('Assets/Hiasan/kraft_paper.webp');
+    background-image: url('Assets/Hiasan/Spotting.webp'), url('Assets/Hiasan/kraft_paper.webp');
     background-position: center center, center center;
     background-size: auto 100%, cover;
     background-repeat: no-repeat, no-repeat;
