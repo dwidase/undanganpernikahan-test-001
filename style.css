@@ -830,7 +830,7 @@ section {
 /* ==== GALERI === */
 
 /* Hiasan Sudut Kiri Atas */
-#closing-section::before {
+#gallery-section::before {
     content: ''; /* Wajib */
     display: block; /* Agar bisa diberi dimensi */
     width: 102px; /* Lebar hiasan */
@@ -856,7 +856,7 @@ section {
 }
 
 /* Hiasan Sudut Kanan Atas */
-#closing-section::after {
+#gallery-section::after {
     content: ''; /* Wajib */
     display: block; /* Agar bisa diberi dimensi */
     width: 102px; /* Lebar hiasan */
