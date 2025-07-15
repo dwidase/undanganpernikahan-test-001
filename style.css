@@ -54,6 +54,7 @@ section {
 /* === GAYA SPESIFIK UNTUK SETIAP SECTION ID === */
 
 #cover-page {
+    opacity: 0;
     background-color: #F8F0E3; /* Latar belakang krem muda untuk sampul */
     overflow: hidden; /* Sembunyikan overflow untuk animasi */
     width: 100%; /* Pastikan halaman sampul mengambil lebar penuh */
@@ -1304,41 +1305,31 @@ section {
 /* --- PENERAPAN ANIMASI PADA ELEMEN/HALAMAN TERTENTU --- */
 
 /* Halaman sampul/cover */
-
-#cover-page .name-dinda {
-    animation: slideInFromTop 1s ease-out forwards; /* Animasi dari atas */
-    opacity: 0; /* Mulai tidak terlihat */
-}
-
-#cover-page .name-ampersand {
-    animation: slideInFromTop 1s ease-out 0.3s forwards;
-    opacity: 0;
-}
-
-#cover-page .name-angga {
+/* --- Kelas Efek Animasi (Modular) --- */
+.cover-element.slide-from-top {
     animation: slideInFromTop 1s ease-out forwards;
-    opacity: 0;
 }
 
-#cover-page .kepada-tamu {
-    animation: slideInFromBottom 1s ease-out 0.6s forwards;
-    opacity: 0;
+.cover-element.slide-from-bottom {
+    animation: slideInFromBottom 1s ease-out forwards;
 }
 
-#cover-page .nama-tamu {
-    animation: slideInFromBottom 1s ease-out 0.6s forwards;
-    opacity: 0;
-}
+/* --- Kelas Animation Delay (Utilitas) --- */
+/* Untuk slideInFromTop (sesuaikan durasi jika berbeda) */
+.fast-delay-1 { animation-delay: 0.1s; } /* Sesuaikan delay sesuai keinginan */
+.fast-delay-2 { animation-delay: 0.2s; }
+.fast-delay-3 { animation-delay: 0.3s; }
 
-#cover-page #open-invitation-button {
-    animation: slideInFromBottom 1s ease-out 0.8s forwards;
-    opacity: 0;
+/* Untuk slideInFromBottom (sesuaikan delay jika berbeda, biasanya lebih lambat) */
+.slow-delay-1 { animation-delay: 0.6s; }
+.slow-delay-2 { animation-delay: 0.8s; }
+.slow-delay-3 { animation-delay: 1.0s; } /* Contoh, sesuaikan angkanya */
+
+/* --- Aturan Khusus (jika benar-benar unik) --- */
+/* Misalnya, jika tombol butuh display: inline-block yang unik */
+#open-invitation-button {
     display: inline-block;
-}
-
-/* Definisi eksplisit untuk kelas 'hidden' */
-.hidden {
-    display: none !important;
+    /* Tidak perlu lagi opacity: 0 atau animasi di sini */
 }
 
 /* Tambahan: Gaya untuk animasi on-scroll jika Anda menambahkannya */
