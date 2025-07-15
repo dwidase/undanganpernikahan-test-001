@@ -77,7 +77,6 @@ section {
 }
 
 .cover-konten {
-    opacity: 0;
     text-align: center;
     color: #333;
     z-index: 2;
@@ -85,6 +84,9 @@ section {
     max-width: 48rem;
     padding: 2rem 1rem; /* Ini akan menjadi padding utama */
     padding-bottom: 50px; /* Jika Anda ingin padding bawah tambahan */
+}
+#cover-page .cover-konten > * {
+    opacity: 0;
 }
 
 /* Pembungkus utama untuk konten setelah cover */
