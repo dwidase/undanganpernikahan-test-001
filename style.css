@@ -443,11 +443,12 @@ section {
 
 /* Gaya untuk placeholder gambar */
 .image-placeholder {
-    width: 80%; /* Lebar responsif */
+    width: 12rem; /* Lebar responsif */
     max-width: 12rem; /* Lebar maksimum untuk gambar */
-    height: 10rem; /* Tinggi tetap */
+    height: 12rem; /* Tinggi tetap */
     background-color: #E5E7EB; /* Latar belakang abu-abu muda */
-    border-radius: 0.5rem; /* Sudut membulat */
+    border-radius: 50%; /* Sudut membulat */
+    border: solid 3px #cba979;
     overflow: hidden; /* Penting untuk memastikan gambar tidak keluar dari border-radius */
     display: flex;
     align-items: center;
