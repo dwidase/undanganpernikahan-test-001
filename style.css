@@ -76,7 +76,7 @@ section {
     height: 80vh; /* Sesuaikan tinggi halaman cover sesuai keinginan, misalnya 90% dari tinggi viewport agar ada ruang untuk transisi */
 }
 
-.cover-content {
+.cover-konten {
     text-align: center;
     color: #333;
     z-index: 2;
@@ -1326,10 +1326,10 @@ section {
 
 /* --- Aturan Khusus (jika benar-benar unik) --- */
 /* Misalnya, jika tombol butuh display: inline-block yang unik */
-#open-invitation-button {
+/*#open-invitation-button {
     display: inline-block;
     /* Tidak perlu lagi opacity: 0 atau animasi di sini */
-}
+} */
 
 /* Tambahan: Gaya untuk animasi on-scroll jika Anda menambahkannya */
 /* .animate-on-scroll {
