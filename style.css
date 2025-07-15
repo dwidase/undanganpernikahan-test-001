@@ -74,6 +74,7 @@ section {
     background-position: center bottom; /* Fokuskan bagian bawah foto */
     background-repeat: no-repeat; /* Mencegah pengulangan foto */
     height: 80vh; /* Sesuaikan tinggi halaman cover sesuai keinginan, misalnya 90% dari tinggi viewport agar ada ruang untuk transisi */
+    transition: opacity 0.5s ease-out; /* Tambahkan transisi ini */
 }
 
 .cover-konten {
