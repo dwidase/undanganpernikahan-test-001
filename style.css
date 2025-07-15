@@ -77,6 +77,7 @@ section {
 }
 
 .cover-konten {
+    opacity: 0;
     text-align: center;
     color: #333;
     z-index: 2;
