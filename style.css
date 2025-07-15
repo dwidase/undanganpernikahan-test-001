@@ -111,7 +111,7 @@ section {
 
 
 /* Gaya untuk nama Dinda di halaman sampul */
-.cover-element slide-from-top fast-delay-1 {
+.cover-element.slide-from-top.fast-delay-1 {
     font-size: 3rem; /* Ukuran font besar */
     line-height: 1.25;
     font-family: 'Great Vibes'; /* Font skrip */
@@ -121,18 +121,18 @@ section {
 }
 /* Ukuran font responsif untuk nama Dinda */
 @media (min-width: 768px) {
-    .cover-element slide-from-top fast-delay-1 {
+    .cover-element.slide-from-top.fast-delay-1 {
         font-size: 6rem;
     }
 }
 @media (min-width: 1024px) {
-    .cover-element slide-from-top fast-delay-1 {
+    .cover-element.slide-from-top.fast-delay-1 {
         font-size: 8rem;
     }
 }
 
 /* Gaya untuk ampersand (&) di halaman sampul */
-.cover-element slide-from-top fast-delay-2 {
+.cover-element.slide-from-top.fast-delay-2 {
     font-size: 1rem;
     font-family: 'Garamond'; /* Font serif */
     color: #4B5563; /* Warna abu-abu gelap untuk ampersand */
@@ -140,18 +140,18 @@ section {
 }
 /* Ukuran font responsif untuk ampersand */
 @media (min-width: 768px) {
-    .cover-element slide-from-top fast-delay-2 {
+    .cover-element.slide-from-top.fast-delay-2 {
         font-size: 5rem;
     }
 }
 @media (min-width: 1024px) {
-    .cover-element slide-from-top fast-delay-2 {
+    .cover-element.slide-from-top.fast-delay-2 {
         font-size: 6rem;
     }
 }
 
 /* Gaya untuk nama Angga di halaman sampul */
-.cover-element slide-from-top fast-delay-3 {
+.cover-element.slide-from-top.fast-delay-3 {
     font-size: 3rem;
     line-height: 1.25;
     font-family: 'Great Vibes';
@@ -162,18 +162,18 @@ section {
 
 /* Ukuran font responsif untuk nama Angga */
 @media (min-width: 768px) {
-    .cover-element slide-from-top fast-delay-3 {
+    .cover-element.slide-from-top.fast-delay-3 {
         font-size: 6rem;
     }
 }
 @media (min-width: 1024px) {
-    .cover-element slide-from-top fast-delay-3 {
+    .cover-element.slide-from-top.fast-delay-3 {
         font-size: 8rem;
     }
 }
 
 /* Gaya untuk teks "Kepada yang terhormat bapak, ibu, saudara/i" */
-.cover-element slide-from-bottom slow-delay-1 {
+.cover-element.slide-from-bottom.slow-delay-1 {
     margin-top: 2rem;
     color: #4B5563;
     font-size: 0.8rem;
@@ -182,7 +182,7 @@ section {
 }
 
 /* Gaya untuk teks "Nama Tamu" */
-.cover-element slide-from-bottom slow-delay-2 {
+.cover-element.slide-from-bottom.slow-delay-2 {
     margin-top: 1rem;
     color: #4B5563;
     font-size: 1rem;
@@ -191,7 +191,7 @@ section {
 }
 
 /* Gaya untuk tombol "Buka Undangan" */
-.cover-element slide-from-bottom slow-delay-3 {
+.cover-element.slide-from-bottom.slow-delay-3 {
     margin-top: 1rem;
     padding: 0.5rem 1rem;
     background-color: #cba979; /* Warna solid */
@@ -207,7 +207,7 @@ section {
     transform: scale(1);
 }
 
-.cover-element slide-from-bottom slow-delay-3:hover {
+.cover-element.slide-from-bottom.slow-delay-3:hover {
     background-color: #b59669; /* Warna solid saat hover */
     transform: scale(1.05); /* Sedikit membesar saat hover */
 }
