@@ -833,16 +833,17 @@ section {
 #gallery-section::before {
     content: ''; /* Wajib */
     display: block; /* Agar bisa diberi dimensi */
-    width: 102px; /* Lebar hiasan */
-    height: 102px; /* Tinggi hiasan */
-    background-image: url('Assets/Hiasan/Bunga.webp'); /* Path ke gambar hiasan kiri atas */
+    width: 182px; /* Lebar hiasan */
+    height: 182px; /* Tinggi hiasan */
+    background-image: url('Assets/Hiasan/bunga.webp'); /* Path ke gambar hiasan kiri atas */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    filter: drop-shadow(1px 1px 6px rgba(0,0,0,0.3)); /* x, y, blur, rgba (0,0,0,transparansi) */
     
     position: absolute; /* Posisikan relatif terhadap #closing-section */
-    top: 0; /* Posisikan di paling atas */
-    left: 0; /* Posisikan di paling kiri */
+    top: -50px; /* Posisikan di paling atas */
+    left: -40px; /* Posisikan di paling kiri */
     /* top: 10px; */ /* Opsional: sedikit offset */
     /* left: 10px; */ /* Opsional: sedikit offset */
 
@@ -859,16 +860,18 @@ section {
 #gallery-section::after {
     content: ''; /* Wajib */
     display: block; /* Agar bisa diberi dimensi */
-    width: 102px; /* Lebar hiasan */
-    height: 102px; /* Tinggi hiasan */
-    background-image: url('Assets/Hiasan/Bunga.webp'); /* Path ke gambar hiasan kanan atas */
+    width: 182px; /* Lebar hiasan */
+    height: 182px; /* Tinggi hiasan */
+    background-image: url('Assets/Hiasan/bunga.webp'); /* Path ke gambar hiasan kanan atas */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    filter: drop-shadow(1px 1px 6px rgba(0,0,0,0.3)); /* x, y, blur, rgba (0,0,0,transparansi) */
+    transform: scaleX(-1);
     
     position: absolute; /* Posisikan relatif terhadap #closing-section */
-    top: 0; /* Posisikan di paling atas */
-    right: 0; /* Posisikan di paling kanan */
+    top: -50px; /* Posisikan di paling atas */
+    right: -40px; /* Posisikan di paling kanan */
     /* top: 10px; */ /* Opsional: sedikit offset */
     /* right: 10px; */ /* Opsional: sedikit offset */
 
