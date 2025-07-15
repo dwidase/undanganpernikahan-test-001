@@ -54,7 +54,6 @@ section {
 /* === GAYA SPESIFIK UNTUK SETIAP SECTION ID === */
 
 #cover-page {
-    opacity: 0;
     background-color: #F8F0E3; /* Latar belakang krem muda untuk sampul */
     overflow: hidden; /* Sembunyikan overflow untuk animasi */
     width: 100%; /* Pastikan halaman sampul mengambil lebar penuh */
