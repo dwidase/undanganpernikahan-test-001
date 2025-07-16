@@ -883,40 +883,42 @@ section {
     background-image: url('Assets/Hiasan/bunga.webp');
     width: 182px;    /* Ukuran spesifik yang berbeda lagi */
     height: 182px;
-    top: -52%;
-    left: -50%;
-    transform: translate(30%, -30%);
-    transform-origin: top left;
+    top: -2.5rem;
+    left: -3.5rem;
+    /*transform: translate(30%, -30%);
+    transform-origin: top left;*/
 }
 
 #gallery-section .decoration-layer .deco-item.top-right {
     background-image: url('Assets/Hiasan/bunga.webp');
     width: 182px;    /* Ukuran spesifik yang berbeda lagi */
     height: 182px;
-    top: -52%;
-    right: -50%;
-    transform: translate(30%, -30%);
-    transform-origin: top right;
+    top: -2.5rem;
+    right: -3.5rem;
+    transform: scaleX(-1)
+    /*transform: translate(30%, -30%);
+    transform-origin: top right;*/
 }
 
 #gallery-section .decoration-layer .deco-item.top-left-overlay {
     background-image: url('Assets/Hiasan/bunga.webp');
-    width: 182px;    /* Ukuran spesifik yang berbeda lagi */
-    height: 182px;
-    top: -52%;
-    left: -50%;
-    transform: translate(30%, -30%);
-    transform-origin: top left;
+    width: 112px;    /* Ukuran spesifik yang berbeda lagi */
+    height: 112px;
+    top: -1rem;
+    left: -2rem;
+    /*transform: translate(30%, -30%);
+    transform-origin: top left;*/
 }
 
 #gallery-section .decoration-layer .deco-item.top-right-overlay {
     background-image: url('Assets/Hiasan/bunga.webp');
-    width: 182px;    /* Ukuran spesifik yang berbeda lagi */
-    height: 182px;
-    top: -52%;
-    left: -50%;
-    transform: translate(30%, -30%);
-    transform-origin: top left;
+    width: 112px;    /* Ukuran spesifik yang berbeda lagi */
+    height: 112px;
+    top: -1rem;
+    right: -2rem;
+    transform: scaleX(-1);
+    /*transform: translate(30%, -30%);
+    transform-origin: top left;*/
 }
 
 /* Gaya untuk judul galeri */    
