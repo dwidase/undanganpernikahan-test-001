@@ -262,13 +262,9 @@ section {
     
 /* Bagian Penutup */
 #closing-section {
-    /*background-color: #f5f0d5; /* Latar belakang krem muda */
+    background-color: #f5f0d5; /* Latar belakang krem muda */
     padding-bottom: 0; /* Padding ekstra di bagian bawah */
     min-height: 20vh;
-    background-image: url('Assets/Hiasan/Spotting.webp'), url('Assets/Hiasan/kraft_paper.webp');
-    background-position: center center, center center;
-    background-size: auto 100%, cover;
-    background-repeat: no-repeat, no-repeat;
 }
 
 /* Bagian Promosi */
@@ -295,6 +291,22 @@ section {
 
 /* Gaya untuk nama di halaman undangan utama */
 /* Halaman Awal */
+/* Gaya khusus untuk placeholder gambar profil */
+.halaman-awal-placeholder {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: auto; /* Pusatkan */
+    margin-right: auto; /* Pusatkan */
+}
+
+/* Gaya untuk foto mempelai  */
+.mempelai-awal-image {
+    width: 100%; /* Membuat gambar mengisi lebar wadahnya */
+    height: 100%; /* Atur tinggi tetap untuk konsistensi (sesuaikan) */
+    object-fit: cover; /* Penting: Memastikan gambar mengisi area tanpa terdistorsi */
+    display: block; /* Menghilangkan spasi ekstra di bawah gambar */
+}
+
 .main-name-dinda, .main-name-angga {
     font-size: 2rem;
     line-height: 1.25;
@@ -305,12 +317,12 @@ section {
 /* Ukuran font responsif untuk nama utama */
 @media (min-width: 768px) {
     .main-name-dinda, .main-name-angga {
-        font-size: 4.5rem;
+        font-size: 3rem;
     }
 }
 @media (min-width: 1024px) {
     .main-name-dinda, .main-name-angga {
-        font-size: 6rem;
+        font-size: 4rem;
     }
 }
 .main-name-dinda { color: #cba979; } /* Warna untuk Dinda */
@@ -326,12 +338,12 @@ section {
 /* Ukuran font responsif untuk ampersand utama */
 @media (min-width: 768px) {
     .main-name-ampersand {
-        font-size: 3.75rem;
+        font-size: 2.5rem;
     }
 }
 @media (min-width: 1024px) {
     .main-name-ampersand {
-        font-size: 4.5rem;
+        font-size: 2.5rem;
     }
 }
 
