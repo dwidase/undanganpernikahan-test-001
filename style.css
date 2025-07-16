@@ -227,6 +227,18 @@ section {
     z-index: 1;
 }
 
+/* --- Gaya Dasar untuk Setiap Item Hiasan (sebagai default) --- */
+.deco-item {
+    position: absolute;
+    width: 100px;  /* Default width */
+    height: 100px; /* Default height */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.4));
+    z-index: 1;
+}
+
 /* === GAYA SPESIFIK UNTUK SECTION UTAMA BARU === */
 
 /* Bagian Halaman Awal Undangan */
@@ -863,28 +875,48 @@ section {
     /* Gaya umum untuk semua hiasan di gallery (bisa beda filter atau animasi) */
     
     filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3)); /* Mungkin bayangan lebih tipis */
-    animation: none; /* Mungkin tidak ada animasi atau animasi yang berbeda */
+    /*animation: none; /* Mungkin tidak ada animasi atau animasi yang berbeda */
     
 }
 
 #gallery-section .decoration-layer .deco-item.top-left {
-    background-image: url('Assets/Hiasan/bunga.webp'); /* Gambar berbeda untuk galeri */
+    background-image: url('Assets/Hiasan/bunga.webp');
+    width: 182px;    /* Ukuran spesifik yang berbeda lagi */
+    height: 182px;
+    top: -52%;
+    left: -50%;
+    transform: translate(30%, -30%);
     transform-origin: top left;
 }
 
 #gallery-section .decoration-layer .deco-item.top-right {
     background-image: url('Assets/Hiasan/bunga.webp');
+    width: 182px;    /* Ukuran spesifik yang berbeda lagi */
+    height: 182px;
+    top: -52%;
+    right: -50%;
+    transform: translate(30%, -30%);
     transform-origin: top right;
 }
 
 #gallery-section .decoration-layer .deco-item.top-left-overlay {
-    background-image: url('Assets/Hiasan/bunga.webp'); /* Gambar berbeda untuk galeri */
+    background-image: url('Assets/Hiasan/bunga.webp');
+    width: 182px;    /* Ukuran spesifik yang berbeda lagi */
+    height: 182px;
+    top: -52%;
+    left: -50%;
+    transform: translate(30%, -30%);
     transform-origin: top left;
 }
 
 #gallery-section .decoration-layer .deco-item.top-right-overlay {
     background-image: url('Assets/Hiasan/bunga.webp');
-    transform-origin: top right;
+    width: 182px;    /* Ukuran spesifik yang berbeda lagi */
+    height: 182px;
+    top: -52%;
+    left: -50%;
+    transform: translate(30%, -30%);
+    transform-origin: top left;
 }
 
 /* Gaya untuk judul galeri */    
