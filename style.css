@@ -216,6 +216,17 @@ section {
     transform: scale(1.05); /* Sedikit membesar saat hover */
 }
 
+/* === Gaya DEKORASI SECARA GLOBAL === */
+.decoration-layer {
+    position: absolute; /* Ini akan diterapkan pada semua .decoration-layer */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
 /* === GAYA SPESIFIK UNTUK SECTION UTAMA BARU === */
 
 /* Bagian Halaman Awal Undangan */
@@ -846,59 +857,34 @@ section {
 
 /* ==== GALERI === */
 
-/* Hiasan Sudut Kiri Atas */
-#gallery-section::before {
-    content: ''; /* Wajib */
-    display: block; /* Agar bisa diberi dimensi */
-    width: 182px; /* Lebar hiasan */
-    height: 182px; /* Tinggi hiasan */
-    background-image: url('Assets/Hiasan/bunga.webp'); /* Path ke gambar hiasan kiri atas */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    filter: drop-shadow(1px 1px 6px rgba(0,0,0,0.3)); /* x, y, blur, rgba (0,0,0,transparansi) */
-    
-    position: absolute; /* Posisikan relatif terhadap #closing-section */
-    top: -50px; /* Posisikan di paling atas */
-    left: -40px; /* Posisikan di paling kiri */
-    /* top: 10px; */ /* Opsional: sedikit offset */
-    /* left: 10px; */ /* Opsional: sedikit offset */
+/* Gaya Hiasan galeri */
 
-    z-index: 10; /* Pastikan di atas konten lain */
+#gallery-section .decoration-layer .deco-item {
+    /* Gaya umum untuk semua hiasan di gallery (bisa beda filter atau animasi) */
     
-    /* Animasi (opsional) */
-    /*opacity: 0;
-    transform: scale(0.5);
-    animation: fadeInScale 1s ease-out forwards;
-    animation-delay: 0.3s;*/
+    filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3)); /* Mungkin bayangan lebih tipis */
+    animation: none; /* Mungkin tidak ada animasi atau animasi yang berbeda */
+    
 }
 
-/* Hiasan Sudut Kanan Atas */
-#gallery-section::after {
-    content: ''; /* Wajib */
-    display: block; /* Agar bisa diberi dimensi */
-    width: 182px; /* Lebar hiasan */
-    height: 182px; /* Tinggi hiasan */
-    background-image: url('Assets/Hiasan/bunga.webp'); /* Path ke gambar hiasan kanan atas */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    filter: drop-shadow(1px 1px 6px rgba(0,0,0,0.3)); /* x, y, blur, rgba (0,0,0,transparansi) */
-    transform: scaleX(-1);
-    
-    position: absolute; /* Posisikan relatif terhadap #closing-section */
-    top: -50px; /* Posisikan di paling atas */
-    right: -40px; /* Posisikan di paling kanan */
-    /* top: 10px; */ /* Opsional: sedikit offset */
-    /* right: 10px; */ /* Opsional: sedikit offset */
+#gallery-section .decoration-layer .deco-item.top-left {
+    background-image: url('Assets/Hiasan/bunga.webp'); /* Gambar berbeda untuk galeri */
+    transform-origin: top left;
+}
 
-    z-index: 10; /* Pastikan di atas konten lain */
-    
-    /* Animasi (opsional) */
-    /*opacity: 0;
-    transform: scale(0.5);
-    animation: fadeInScale 1s ease-out forwards;
-    animation-delay: 0.6s; /* Beri delay berbeda agar terlihat berurutan */
+#gallery-section .decoration-layer .deco-item.top-right {
+    background-image: url('Assets/Hiasan/bunga.webp');
+    transform-origin: top right;
+}
+
+#gallery-section .decoration-layer .deco-item.top-left-overlay {
+    background-image: url('Assets/Hiasan/bunga.webp'); /* Gambar berbeda untuk galeri */
+    transform-origin: top left;
+}
+
+#gallery-section .decoration-layer .deco-item.top-right-overlay {
+    background-image: url('Assets/Hiasan/bunga.webp');
+    transform-origin: top right;
 }
 
 /* Gaya untuk judul galeri */    
