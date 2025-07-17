@@ -328,7 +328,7 @@ section {
 /* Bagian Galeri */
 #gallery-section {
     position: relative;
-    background-color: #f5f0d5; /* Latar belakang krem muda */
+    /*background-color: #f5f0d5; /* Latar belakang krem muda */
     overflow: hidden;
     
 }
