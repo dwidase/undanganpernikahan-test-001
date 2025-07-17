@@ -216,6 +216,42 @@ section {
     transform: scale(1.05); /* Sedikit membesar saat hover */
 }
 
+/* === Gaya TEKSTUR & NODA REUSABLE (GLOBAL) === */
+.textured-background {
+    position: relative; /* Penting agar pseudo-element bisa diposisikan relatif terhadapnya */
+    background-color: #f5f0d5; /* Latar belakang krem muda */
+    overflow: hidden; /* Penting agar pseudo-element tidak keluar */
+    min-height: 400px; /* Contoh min-height agar section terlihat */
+    padding: 20px 0; /* Padding agar konten tidak terlalu mepet tepi */
+
+    /* LAPISAN 1: TEKSTUR KERTAS */
+    background-image: url("https://raw.githubusercontent.com/dwidase/undanganpernikahan-test-001/refs/heads/main/Assets/Hiasan/standar-paper-texture.webp");
+    background-repeat: repeat;
+    background-size: 60%;
+}
+
+.textured-background::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0; /* Paling belakang */
+
+    /* LAPISAN 2: BERCAK NODA (Properti umum) */
+    background-image: url("https://raw.githubusercontent.com/dwidase/undanganpernikahan-test-001/refs/heads/main/Assets/Hiasan/abstract-blur-spotting.webp");
+    background-repeat: no-repeat;
+    mix-blend-mode: multiply;
+    opacity: 1;
+    background-color: #f5f0d5; /* Penting untuk blending */
+
+    /* Default untuk noda jika tidak ada override spesifik */
+    background-position: center;
+    background-size: cover;
+}
+
 /* === Gaya DEKORASI SECARA GLOBAL === */
 .decoration-layer {
     position: absolute; /* Ini akan diterapkan pada semua .decoration-layer */
@@ -870,6 +906,13 @@ section {
 /* ==== GALERI === */
 
 /* Gaya Hiasan galeri */
+
+#gallery-section.textured-background::after {
+    /* Penyesuaian noda untuk bagian Galeri */
+    background-size: 90%; /* Noda agak lebih kecil, mungkin */
+    background-position: top 10% right 5%; /* Noda di kanan atas, sedikit bergeser dari center */
+    opacity: 0.8; /* Noda sedikit lebih transparan */
+}
 
 #gallery-section .decoration-layer .deco-item {
     /* Gaya umum untuk semua hiasan di gallery (bisa beda filter atau animasi) */
