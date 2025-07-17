@@ -217,39 +217,59 @@ section {
 }
 
 /* === Gaya TEKSTUR & NODA REUSABLE (GLOBAL) === */
+/* Kelas ini harus ditambahkan ke elemen HTML (misalnya, <section>) yang ingin Anda berikan tekstur dan noda. */
 .textured-background {
-    position: relative; /* Penting agar pseudo-element bisa diposisikan relatif terhadapnya */
-    background-color: #f5f0d5; /* Latar belakang krem muda */
-    overflow: hidden; /* Penting agar pseudo-element tidak keluar */
-    min-height: 400px; /* Contoh min-height agar section terlihat */
-    padding: 20px 0; /* Padding agar konten tidak terlalu mepet tepi */
-
-    /* LAPISAN 1: TEKSTUR KERTAS */
-    background-image: url("https://raw.githubusercontent.com/dwidase/undanganpernikahan-test-001/refs/heads/main/Assets/Hiasan/standar-paper-texture.webp");
-    background-repeat: repeat;
-    background-size: 60%;
+    position: relative; /* Penting! Memungkinkan pseudo-element diposisikan di dalamnya. */
+    overflow: hidden; /* Memastikan gambar background tidak keluar dari batas elemen. */
+    min-height: 400px; /* Contoh tinggi minimum agar efek latar belakang terlihat. */
+    
+    /* Ini adalah WARNA DASAR (krem muda) untuk seluruh area yang bertekstur. */
+    /* Gambar tekstur dan noda akan di-blend di atas warna ini. */
+    background-color: #f5f0d5; 
 }
 
-.textured-background::after {
-    content: "";
-    position: absolute;
+/* LAPISAN 1: GAMBAR TEKSTUR KERTAS */
+/* Ini adalah lapisan gambar tekstur yang akan berada di atas background-color .textured-background. */
+.textured-background::before {
+    content: ""; /* Wajib untuk pseudo-element. */
+    position: absolute; /* Penting! Memungkinkan elemen ini mengapung di atas induknya. */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;
-    z-index: 0; /* Paling belakang */
+    pointer-events: none; /* Penting! Memastikan elemen ini tidak menghalangi interaksi mouse dengan konten di atasnya. */
+    z-index: 0; /* Menempatkan lapisan ini di paling belakang (di antara elemen yang diposisikan). */
+    
+    background-image: url("https://raw.githubusercontent.com/dwidase/undanganpernikahan-test-001/refs/heads/main/Assets/Hiasan/standar-paper-texture.webp");
+    background-repeat: repeat; /* Mengulangi gambar tekstur agar mengisi seluruh area. */
+    background-size: 60%; /* Mengatur ukuran pengulangan tekstur. Sesuaikan jika perlu. */
+    background-position: center center; /* Memusatkan pola tekstur dalam elemen. */
+    
+    /* Opsi: Anda bisa menambahkan filter di sini jika gambar tekstur terlalu terang atau gelap secara umum. */
+    /* filter: brightness(0.9) contrast(1.1); */ 
+}
 
-    /* LAPISAN 2: BERCAK NODA (Properti umum) */
+/* LAPISAN 2: GAMBAR NODA */
+/* Ini adalah lapisan gambar noda yang akan berada di atas gambar tekstur kertas. */
+.textured-background::after {
+    content: ""; /* Wajib untuk pseudo-element. */
+    position: absolute; /* Penting! Memungkinkan elemen ini mengapung di atas induknya. */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Penting! Memastikan elemen ini tidak menghalangi interaksi mouse dengan konten di atasnya. */
+    z-index: 0; /* Z-index sama dengan ::before, tetapi karena didefinisikan setelahnya, ia akan berada di atas ::before. */
+    
     background-image: url("https://raw.githubusercontent.com/dwidase/undanganpernikahan-test-001/refs/heads/main/Assets/Hiasan/abstract-blur-spotting.webp");
-    background-repeat: no-repeat;
-    mix-blend-mode: multiply;
-    opacity: 1;
-    background-color: #f5f0d5; /* Penting untuk blending */
+    background-repeat: no-repeat; /* Noda biasanya tidak diulang. */
+    background-position: center; /* Posisi noda default (akan di tengah). */
+    background-size: cover; /* Noda akan diskalakan untuk menutupi seluruh area. */
+    
+    mix-blend-mode: multiply; /* Mode blending ini akan membuat noda berinteraksi (mengkali) dengan warna dasar dan tekstur di bawahnya. */
+    opacity: 1; /* Transparansi default noda. Sesuaikan jika perlu. */
 
-    /* Default untuk noda jika tidak ada override spesifik */
-    background-position: center;
-    background-size: cover;
+    /* Penting: Tidak ada background-color di sini. Noda akan 'mewarnai' lapisan di bawahnya. */
 }
 
 /* === Gaya DEKORASI SECARA GLOBAL === */
@@ -341,6 +361,7 @@ section {
     margin-left: auto; /* Pusatkan konten */
     margin-right: auto; /* Pusatkan konten */
     text-align: center; /* Pusatkan teks secara default */
+    z-index: 2;
 }
 @media (min-width: 768px) {
     .section-content {
@@ -908,10 +929,12 @@ section {
 /* Gaya Hiasan galeri */
 
 #gallery-section.textured-background::after {
-    /* Penyesuaian noda untuk bagian Galeri */
-    background-size: 90%; /* Noda agak lebih kecil, mungkin */
-    background-position: top 10% right 5%; /* Noda di kanan atas, sedikit bergeser dari center */
-    opacity: 0.8; /* Noda sedikit lebih transparan */
+    background-size: 90%; /* Contoh: Ukuran noda di galeri sedikit lebih kecil dari default global. */
+    background-position: top 10% right 5%; /* Contoh: Posisi noda di galeri digeser ke kanan atas. */
+    opacity: 0.8; /* Contoh: Noda di galeri sedikit lebih transparan. */
+    
+    /* Anda bisa menambahkan transformasi seperti rotasi atau skala di sini jika ingin noda bergerak. */
+    /* transform: rotate(15deg); */
 }
 
 #gallery-section .decoration-layer .deco-item {
