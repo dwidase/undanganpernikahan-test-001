@@ -49,6 +49,7 @@ section {
     width: 100%; /* Pastikan bagian mengambil lebar penuh */
     padding-top: 3rem; /* Tambahkan padding agar konten tidak terlalu mepet atas */
     padding-bottom: 3rem; /* Tambahkan padding agar konten tidak terlalu mepet bawah */
+    z-index: 3;
 }
 
 /* === GAYA SPESIFIK UNTUK SETIAP SECTION ID === */
@@ -236,7 +237,8 @@ section {
     background-repeat: no-repeat;
     background-position: center;
     filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.4));
-    z-index: 1;
+    background-image: url('Assets/Hiasan/bunga.webp');
+    z-index: 2;
 }
 
 /* === GAYA SPESIFIK UNTUK SECTION UTAMA BARU === */
@@ -967,7 +969,6 @@ section {
 }
 
 #gallery-section .decoration-layer .deco-item.top-left {
-    background-image: url('Assets/Hiasan/bunga.webp');
     width: 182px;    /* Ukuran spesifik yang berbeda lagi */
     height: 182px;
     top: -2.5rem;
@@ -977,7 +978,6 @@ section {
 }
 
 #gallery-section .decoration-layer .deco-item.top-right {
-    background-image: url('Assets/Hiasan/bunga.webp');
     width: 182px;    /* Ukuran spesifik yang berbeda lagi */
     height: 182px;
     top: -2.5rem;
@@ -988,7 +988,6 @@ section {
 }
 
 #gallery-section .decoration-layer .deco-item.top-left-overlay {
-    background-image: url('Assets/Hiasan/bunga.webp');
     width: 112px;    /* Ukuran spesifik yang berbeda lagi */
     height: 112px;
     top: -1rem;
@@ -998,7 +997,6 @@ section {
 }
 
 #gallery-section .decoration-layer .deco-item.top-right-overlay {
-    background-image: url('Assets/Hiasan/bunga.webp');
     width: 112px;    /* Ukuran spesifik yang berbeda lagi */
     height: 112px;
     top: -1rem;
