@@ -217,17 +217,6 @@ section {
 }
 
 /* === Gaya TEKSTUR & NODA REUSABLE (GLOBAL) === */
-/* Kelas ini harus ditambahkan ke elemen HTML (misalnya, <section>) yang ingin Anda berikan tekstur dan noda. */
-.textured-background {
-    position: relative; /* Penting! Memungkinkan pseudo-element diposisikan di dalamnya. */
-    overflow: hidden; /* Memastikan gambar background tidak keluar dari batas elemen. */
-    min-height: 400px; /* Contoh tinggi minimum agar efek latar belakang terlihat. */
-    
-    /* Ini adalah WARNA DASAR (krem muda) untuk seluruh area yang bertekstur. */
-    /* Gambar tekstur dan noda akan di-blend di atas warna ini. */
-    background-color: #f5f0d5; 
-}
-
 /* LAPISAN 1: GAMBAR TEKSTUR KERTAS */
 /* Ini adalah lapisan gambar tekstur yang akan berada di atas background-color .textured-background. *
 
