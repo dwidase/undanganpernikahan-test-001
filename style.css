@@ -1022,7 +1022,7 @@ section {
     
 }
 
-#gallery-section .decoration-layer .deco-item.top-left {
+#gallery-section .decoration-layer .deco-item.top-left-galllery.has-bunga-saja {
     width: 182px;    /* Ukuran spesifik yang berbeda lagi */
     height: 182px;
     top: -2.5rem;
@@ -1031,31 +1031,11 @@ section {
     transform-origin: top left;*/
 }
 
-#gallery-section .decoration-layer .deco-item.top-right {
-    width: 182px;    /* Ukuran spesifik yang berbeda lagi */
-    height: 182px;
-    top: -2.5rem;
-    right: -3.5rem;
-    transform: scaleX(-1)
-    /*transform: translate(30%, -30%);
-    transform-origin: top right;*/
-}
-
-#gallery-section .decoration-layer .deco-item.top-left-overlay {
+#gallery-section .decoration-layer .deco-item.top-left-overlay-gallery.has-bunga-saja {
     width: 112px;    /* Ukuran spesifik yang berbeda lagi */
     height: 112px;
     top: -1rem;
     left: -2rem;
-    /*transform: translate(30%, -30%);
-    transform-origin: top left;*/
-}
-
-#gallery-section .decoration-layer .deco-item.top-right-overlay {
-    width: 112px;    /* Ukuran spesifik yang berbeda lagi */
-    height: 112px;
-    top: -1rem;
-    right: -2rem;
-    transform: scaleX(-1);
     /*transform: translate(30%, -30%);
     transform-origin: top left;*/
 }
