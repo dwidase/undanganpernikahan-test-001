@@ -822,7 +822,7 @@ section {
 /* Gaya untuk subjudul acara */
 .event-subtitle {
     font-size: 1.6rem;
-    margin-top: 3rem;
+    margin-top: 1rem;
     font-family: 'Great Vibes';
     color: #cba979;
     text-align: center;
@@ -919,7 +919,7 @@ section {
     margin: 0 auto; /* Memusatkan persegi panjang */
     width: 95%; /* Mengisi sebagian besar lebar yang tersedia */
     max-width: 40rem; /* Batasi lebar maksimum agar tidak terlalu lebar di layar besar */
-    min-height: 100vh;
+    min-height: 40vh;
     box-sizing: border-box; /* Pastikan padding tidak menambah lebar total */
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
@@ -929,7 +929,7 @@ section {
     border: 2px solid white; /* Outline putih */
     border-radius: 1rem; /* Sudut melingkar 1rem */
     padding: 1.5rem; /* Padding internal agar teks tidak menempel outline */
-    margin: 0 auto; /* Memusatkan persegi panjang */
+    margin: 10px auto 0; /* Memusatkan persegi panjang */
     width: 95%; /* Mengisi sebagian besar lebar yang tersedia */
     max-width: 40rem; /* Batasi lebar maksimum agar tidak terlalu lebar di layar besar */
     min-height: 100vh;
