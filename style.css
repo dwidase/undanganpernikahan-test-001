@@ -216,10 +216,6 @@ section {
     transform: scale(1.05); /* Sedikit membesar saat hover */
 }
 
-/* === Gaya TEKSTUR & NODA REUSABLE (GLOBAL) === */
-/* LAPISAN 1: GAMBAR TEKSTUR KERTAS */
-/* Ini adalah lapisan gambar tekstur yang akan berada di atas background-color .textured-background. *
-
 /* === Gaya DEKORASI SECARA GLOBAL === */
 .decoration-layer {
     position: absolute; /* Ini akan diterapkan pada semua .decoration-layer */
@@ -276,7 +272,7 @@ section {
 /* Bagian Galeri */
 #gallery-section {
     position: relative;
-    background-color: #f5f0d5;
+    background-color: #f5f0d5; /* Latar belakang krem muda */
     overflow: hidden;
     
 }
@@ -309,7 +305,6 @@ section {
     margin-left: auto; /* Pusatkan konten */
     margin-right: auto; /* Pusatkan konten */
     text-align: center; /* Pusatkan teks secara default */
-    z-index: 2;
 }
 @media (min-width: 768px) {
     .section-content {
@@ -649,9 +644,6 @@ section {
     }
 }
 
-/* === GAYA UNTUK BAGIAN ACARA === */
-/* Hiasan */
-
 /* Gaya untuk judul bagian acara */
 .event-section-title {
     font-size: 1.875rem;
@@ -773,7 +765,7 @@ section {
 /* Gaya untuk subjudul acara */
 .event-subtitle {
     font-size: 1.6rem;
-    margin-top: 1rem;
+    margin-top: 3rem;
     font-family: 'Great Vibes';
     color: #cba979;
     text-align: center;
@@ -862,25 +854,12 @@ section {
     transform: scale(1.05);
 }
 
-.box-countdown {
+.box-event-rsvp {
     background-color: #f5f0d5;
     border: 2px solid white; /* Outline putih */
     border-radius: 1rem; /* Sudut melingkar 1rem */
     padding: 1.5rem; /* Padding internal agar teks tidak menempel outline */
     margin: 0 auto; /* Memusatkan persegi panjang */
-    width: 95%; /* Mengisi sebagian besar lebar yang tersedia */
-    max-width: 40rem; /* Batasi lebar maksimum agar tidak terlalu lebar di layar besar */
-    min-height: 30vh;
-    box-sizing: border-box; /* Pastikan padding tidak menambah lebar total */
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
-
-.box-event {
-    background-color: #f5f0d5;
-    border: 2px solid white; /* Outline putih */
-    border-radius: 1rem; /* Sudut melingkar 1rem */
-    padding: 1.5rem; /* Padding internal agar teks tidak menempel outline */
-    margin: 10px auto 0; /* Memusatkan persegi panjang */
     width: 95%; /* Mengisi sebagian besar lebar yang tersedia */
     max-width: 40rem; /* Batasi lebar maksimum agar tidak terlalu lebar di layar besar */
     min-height: 100vh;
