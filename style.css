@@ -229,48 +229,7 @@ section {
 }
 
 /* LAPISAN 1: GAMBAR TEKSTUR KERTAS */
-/* Ini adalah lapisan gambar tekstur yang akan berada di atas background-color .textured-background. */
-.textured-background::before {
-    content: ""; /* Wajib untuk pseudo-element. */
-    position: absolute; /* Penting! Memungkinkan elemen ini mengapung di atas induknya. */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none; /* Penting! Memastikan elemen ini tidak menghalangi interaksi mouse dengan konten di atasnya. */
-    z-index: 0; /* Menempatkan lapisan ini di paling belakang (di antara elemen yang diposisikan). */
-    
-    background-image: url("https://raw.githubusercontent.com/dwidase/undanganpernikahan-test-001/refs/heads/main/Assets/Hiasan/standar-paper-texture.webp");
-    background-repeat: repeat; /* Mengulangi gambar tekstur agar mengisi seluruh area. */
-    background-size: 60%; /* Mengatur ukuran pengulangan tekstur. Sesuaikan jika perlu. */
-    background-position: center center; /* Memusatkan pola tekstur dalam elemen. */
-    
-    /* Opsi: Anda bisa menambahkan filter di sini jika gambar tekstur terlalu terang atau gelap secara umum. */
-    /* filter: brightness(0.9) contrast(1.1); */ 
-}
-
-/* LAPISAN 2: GAMBAR NODA */
-/* Ini adalah lapisan gambar noda yang akan berada di atas gambar tekstur kertas. */
-.textured-background::after {
-    content: ""; /* Wajib untuk pseudo-element. */
-    position: absolute; /* Penting! Memungkinkan elemen ini mengapung di atas induknya. */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none; /* Penting! Memastikan elemen ini tidak menghalangi interaksi mouse dengan konten di atasnya. */
-    z-index: 0; /* Z-index sama dengan ::before, tetapi karena didefinisikan setelahnya, ia akan berada di atas ::before. */
-    
-    background-image: url("https://raw.githubusercontent.com/dwidase/undanganpernikahan-test-001/refs/heads/main/Assets/Hiasan/abstract-blur-spotting.webp");
-    background-repeat: no-repeat; /* Noda biasanya tidak diulang. */
-    background-position: center; /* Posisi noda default (akan di tengah). */
-    background-size: cover; /* Noda akan diskalakan untuk menutupi seluruh area. */
-    
-    mix-blend-mode: multiply; /* Mode blending ini akan membuat noda berinteraksi (mengkali) dengan warna dasar dan tekstur di bawahnya. */
-    opacity: 1; /* Transparansi default noda. Sesuaikan jika perlu. */
-
-    /* Penting: Tidak ada background-color di sini. Noda akan 'mewarnai' lapisan di bawahnya. */
-}
+/* Ini adalah lapisan gambar tekstur yang akan berada di atas background-color .textured-background. *
 
 /* === Gaya DEKORASI SECARA GLOBAL === */
 .decoration-layer {
@@ -328,7 +287,7 @@ section {
 /* Bagian Galeri */
 #gallery-section {
     position: relative;
-    /*background-color: #f5f0d5; /* Latar belakang krem muda */
+    background-color: #f5f0d5;
     overflow: hidden;
     
 }
@@ -703,98 +662,6 @@ section {
 
 /* === GAYA UNTUK BAGIAN ACARA === */
 /* Hiasan */
-#event-rsvp-section .decoration-layer .deco-item {
-    /* Gaya umum untuk semua hiasan di gallery (bisa beda filter atau animasi) */
-    
-    filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3)); /* Mungkin bayangan lebih tipis */
-    /*animation: none; /* Mungkin tidak ada animasi atau animasi yang berbeda */
-    
-}
-
-#event-rsvp-section .decoration-layer .deco-item.top-left {
-    background-image: url('Assets/Hiasan/bunga.webp');
-    width: 182px;    /* Ukuran spesifik yang berbeda lagi */
-    height: 182px;
-    top: -2.5rem;
-    left: -3.5rem;
-    /*transform: translate(30%, -30%);
-    transform-origin: top left;*/
-}
-
-#event-rsvp-section .decoration-layer .deco-item.top-right {
-    background-image: url('Assets/Hiasan/bunga.webp');
-    width: 182px;    /* Ukuran spesifik yang berbeda lagi */
-    height: 182px;
-    top: -2.5rem;
-    right: -3.5rem;
-    transform: scaleX(-1)
-    /*transform: translate(30%, -30%);
-    transform-origin: top right;*/
-}
-
-#event-rsvp-section .decoration-layer .deco-item.top-left-overlay {
-    background-image: url('Assets/Hiasan/bunga.webp');
-    width: 112px;    /* Ukuran spesifik yang berbeda lagi */
-    height: 112px;
-    top: -1rem;
-    left: -2rem;
-    /*transform: translate(30%, -30%);
-    transform-origin: top left;*/
-}
-
-#event-rsvp-section .decoration-layer .deco-item.top-right-overlay {
-    background-image: url('Assets/Hiasan/bunga.webp');
-    width: 112px;    /* Ukuran spesifik yang berbeda lagi */
-    height: 112px;
-    top: -1rem;
-    right: -2rem;
-    transform: scaleX(-1);
-    /*transform: translate(30%, -30%);
-    transform-origin: top left;*/
-}
-
-#event-rsvp-section .decoration-layer .deco-item.bottom-left {
-    background-image: url('Assets/Hiasan/bunga.webp');
-    width: 182px;    /* Ukuran spesifik yang berbeda lagi */
-    height: 182px;
-    top: -2.5rem;
-    left: -3.5rem;
-    /*transform: translate(30%, -30%);
-    transform-origin: top left;*/
-}
-
-#event-rsvp-section .decoration-layer .deco-item.bottom-right {
-    background-image: url('Assets/Hiasan/bunga.webp');
-    width: 182px;    /* Ukuran spesifik yang berbeda lagi */
-    height: 182px;
-    top: -2.5rem;
-    right: -3.5rem;
-    transform: scaleX(-1)
-    /*transform: translate(30%, -30%);
-    transform-origin: top right;*/
-}
-
-#event-rsvp-section .decoration-layer .deco-item.bottom-left-overlay {
-    background-image: url('Assets/Hiasan/bunga.webp');
-    width: 112px;    /* Ukuran spesifik yang berbeda lagi */
-    height: 112px;
-    top: -1rem;
-    left: -2rem;
-    /*transform: translate(30%, -30%);
-    transform-origin: top left;*/
-}
-
-#event-rsvp-section .decoration-layer .deco-item.bottom-right-overlay {
-    background-image: url('Assets/Hiasan/bunga.webp');
-    width: 112px;    /* Ukuran spesifik yang berbeda lagi */
-    height: 112px;
-    top: -1rem;
-    right: -2rem;
-    transform: scaleX(-1);
-    /*transform: translate(30%, -30%);
-    transform-origin: top left;*/
-}
-
 
 /* Gaya untuk judul bagian acara */
 .event-section-title {
@@ -1035,15 +902,6 @@ section {
 /* ==== GALERI === */
 
 /* Gaya Hiasan galeri */
-
-#gallery-section.textured-background::after {
-    background-size: 90%; /* Contoh: Ukuran noda di galeri sedikit lebih kecil dari default global. */
-    background-position: top 10% right 5%; /* Contoh: Posisi noda di galeri digeser ke kanan atas. */
-    opacity: 0.8; /* Contoh: Noda di galeri sedikit lebih transparan. */
-    
-    /* Anda bisa menambahkan transformasi seperti rotasi atau skala di sini jika ingin noda bergerak. */
-    /* transform: rotate(15deg); */
-}
 
 #gallery-section .decoration-layer .deco-item {
     /* Gaya umum untuk semua hiasan di gallery (bisa beda filter atau animasi) */
