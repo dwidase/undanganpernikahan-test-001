@@ -233,7 +233,6 @@ section {
     position: absolute;
     width: 100px;  /* Default width */
     height: 100px; /* Default height */
-    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.4));
@@ -241,19 +240,18 @@ section {
 }
 
 /* Kelas untuk variasi hiasan bunga */
+/* Variabel CSS untuk dinamisasi gambar bunga agar tidak perlu diulang */
 .deco-item.has-bunga-saja {
-    background-image: url('Assets/Hiasan/bunga.webp');
-    background-size: 182px 182px; /* Ukuran spesifik untuk bunga utama */
-    /* Jika Anda ingin bunga ini bisa lebih kecil/besar secara proporsional sesuai deco-item: */
-    background-size: contain;
-    
+    --bunga-image: url('Assets/Hiasan/bunga.webp');
+    --bunga-size: 100.1% 100.1%;
+    --bunga-position: center;
+    --bunga-repeat: no-repeat;
 }
-
 .deco-item.has-bunga-tangkai {
-    background-image: url('Assets/Hiasan/bunga&tangkai.webp');
-    background-size: 182px 182px; /* Sesuaikan ukuran jika bunga&tangkai berbeda */
-    /* Jika Anda ingin bunga ini bisa lebih kecil/besar secara proporsional sesuai deco-item: */
-    /* background-size: contain; */
+    --bunga-image: url('Assets/Hiasan/bunga&tangkai.webp');
+    --bunga-size: 100.1% 100.1%; /* Sesuaikan jika perlu */
+    --bunga-position: center;
+    --bunga-repeat: no-repeat;
 }
 
 /* Kelas untuk lapisan tekstur/noda (akan berada di bawah hiasan utama) */
@@ -261,7 +259,7 @@ section {
 .deco-item.has-tekstur {
     /* Tekstur akan jadi lapisan paling bawah, di bawah bunga */
     background-image: var(--bunga-image), url('Assets/Hiasan/standar-paper-texture.webp');
-    background-size: var(--bunga-size, contain), cover; /* Bunga di atas (contain), tekstur di bawah (cover) */
+    background-size: var(--bunga-size), cover; /* Bunga di atas (contain), tekstur di bawah (cover) */
     background-position: var(--bunga-position, center), center;
     background-repeat: var(--bunga-repeat, no-repeat), repeat; /* Bunga no-repeat, tekstur repeat */
 }
@@ -269,7 +267,7 @@ section {
 .deco-item.has-noda {
     /* Noda juga akan jadi lapisan paling bawah, di bawah bunga */
     background-image: var(--bunga-image), url('Assets/Hiasan/abstract-blur-spotting.webp');
-    background-size: var(--bunga-size, contain), contain; /* Bunga di atas, noda di bawah (contain) */
+    background-size: var(--bunga-size), contain; /* Bunga di atas, noda di bawah (contain) */
     background-position: var(--bunga-position, center), center;
     background-repeat: var(--bunga-repeat, no-repeat), no-repeat; /* Bunga no-repeat, noda no-repeat */
 }
@@ -282,18 +280,20 @@ section {
     background-repeat: var(--bunga-repeat, no-repeat), repeat, no-repeat;
 }
 
-/* Variabel CSS untuk dinamisasi gambar bunga agar tidak perlu diulang */
-.deco-item.has-bunga-saja {
-    --bunga-image: url('Assets/Hiasan/bunga.webp');
-    --bunga-size: 182px 182px;
-    --bunga-position: center;
-    --bunga-repeat: no-repeat;
+/* --- GAYA UNTUK HIASAN YANG HANYA MEMILIKI SATU GAMBAR (TANPA TEKSTUR/NODA) --- */
+/* Ini adalah penambahan penting untuk memastikan bunga muncul jika tidak ada kelas kombinasi */
+.deco-item.has-bunga-saja:not(.has-tekstur):not(.has-noda) {
+    background-image: var(--bunga-image);
+    background-size: var(--bunga-size);
+    background-position: var(--bunga-position);
+    background-repeat: var(--bunga-repeat);
 }
-.deco-item.has-bunga-tangkai {
-    --bunga-image: url('Assets/Hiasan/bunga&tangkai.webp');
-    --bunga-size: 182px 182px; /* Sesuaikan jika perlu */
-    --bunga-position: center;
-    --bunga-repeat: no-repeat;
+
+.deco-item.has-bunga-tangkai:not(.has-tekstur):not(.has-noda) {
+    background-image: var(--bunga-image);
+    background-size: var(--bunga-size);
+    background-position: var(--bunga-position);
+    background-repeat: var(--bunga-repeat);
 }
 
 /* === GAYA SPESIFIK UNTUK SECTION UTAMA BARU === */
