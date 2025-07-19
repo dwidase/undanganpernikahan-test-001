@@ -954,7 +954,7 @@ section {
     height: 462px;
     bottom: 470px; /* Gunakan bottom bukan top */
     left: -150px;
-    filter: sepia(100%) opacity(50%;
+    filter: sepia(100%) opacity(50%);
 }
 
 /* ==== GALERI === */
