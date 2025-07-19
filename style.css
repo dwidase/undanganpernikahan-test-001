@@ -1470,4 +1470,5 @@ section {
 }
 .no-scroll {
     overflow: hidden !important;
+    padding-right: 17px;
 }
