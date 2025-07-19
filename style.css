@@ -941,74 +941,16 @@ section {
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
-/* Gaya Spesifik untuk Hiasan di .box-countdown */
-.box-countdown .decoration-layer .deco-item {
-    filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3)); /* Filter umum untuk hiasan di countdown */
-}
-
-.box-countdown .decoration-layer .deco-item.top-left-countdown {
-    width: 182px;
-    height: 182px;
-    top: -2.5rem;
-    left: -3.5rem;
-}
-
-.box-countdown .decoration-layer .deco-item.top-left-overlay-countdown {
-    width: 112px;
-    height: 112px;
-    top: -1rem;
-    left: -2rem;
-}
-
-.box-countdown .decoration-layer .deco-item.top-right-countdown {
-    width: 182px;
-    height: 182px;
-    top: -2.5rem;
-    right: -3.5rem;
-    transform: scaleX(-1); /* Membalik gambar secara horizontal */
-}
-
-.box-countdown .decoration-layer .deco-item.top-right-overlay-countdown {
-    width: 112px;
-    height: 112px;
-    top: -1rem;
-    right: -2rem;
-    transform: scaleX(-1); /* Membalik gambar secara horizontal */
-}
-
 /* Gaya Spesifik untuk Hiasan di .box-event */
 .box-event .decoration-layer .deco-item {
     filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3)); /* Filter umum untuk hiasan di event */
 }
 
-.box-event .decoration-layer .deco-item.bottom-left-event {
+.box-event .decoration-layer .deco-item.deco-item.kotak-event.has-bunga-tangkai {
     width: 182px;
     height: 182px;
     bottom: -2.5rem; /* Gunakan bottom bukan top */
     left: -3.5rem;
-}
-
-.box-event .decoration-layer .deco-item.bottom-left-overlay-event {
-    width: 112px;
-    height: 112px;
-    bottom: -1rem;
-    left: -2rem;
-}
-
-.box-event .decoration-layer .deco-item.bottom-right-event {
-    width: 182px;
-    height: 182px;
-    bottom: -2.5rem; /* Gunakan bottom bukan top */
-    right: -3.5rem;
-    transform: scaleX(-1); /* Membalik gambar secara horizontal */
-}
-
-.box-event .decoration-layer .deco-item.bottom-right-overlay-event {
-    width: 112px;
-    height: 112px;
-    bottom: -1rem;
-    right: -2rem;
-    transform: scaleX(-1); /* Membalik gambar secara horizontal */
 }
 
 /* ==== GALERI === */
