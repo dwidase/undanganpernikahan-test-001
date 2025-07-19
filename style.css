@@ -245,7 +245,8 @@ section {
     background-image: url('Assets/Hiasan/bunga.webp');
     background-size: 182px 182px; /* Ukuran spesifik untuk bunga utama */
     /* Jika Anda ingin bunga ini bisa lebih kecil/besar secara proporsional sesuai deco-item: */
-    /* background-size: contain; */
+    background-size: contain;
+    
 }
 
 .deco-item.has-bunga-tangkai {
@@ -1048,6 +1049,7 @@ section {
     top: -2.5rem;
     right: -3.5rem;
     background-size: cover;
+    transform: scaleX(-1);
     /*transform: translate(30%, -30%);
     transform-origin: top left;*/
 }
@@ -1058,6 +1060,7 @@ section {
     top: -1rem;
     right: -2rem;
     background-size: cover;
+    transform: scaleX(-1);
     /*transform: translate(30%, -30%);
     transform-origin: top left;*/
 }
