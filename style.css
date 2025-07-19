@@ -950,10 +950,11 @@ section {
 }
 
 .box-event .decoration-layer .deco-item.deco-item.kotak-event.has-bunga-tangkai {
-    width: 182px;
-    height: 182px;
-    bottom: -2.5rem; /* Gunakan bottom bukan top */
-    left: -3.5rem;
+    width: 257px;
+    height: 462px;
+    bottom: 470px; /* Gunakan bottom bukan top */
+    left: -150px;
+    filter: sepia(100%) opacity(50%;
 }
 
 /* ==== GALERI === */
