@@ -1028,7 +1028,6 @@ section {
     height: 162px;
     top: -2.5rem;
     left: -3.5rem;
-    background-size: cover;
     /*transform: translate(30%, -30%);
     transform-origin: top left;*/
 }
@@ -1038,7 +1037,6 @@ section {
     height: 102px;
     top: -1rem;
     left: -2rem;
-    background-size: cover;
     /*transform: translate(30%, -30%);
     transform-origin: top left;*/
 }
@@ -1048,7 +1046,6 @@ section {
     height: 162px;
     top: -2.5rem;
     right: -3.5rem;
-    background-size: cover;
     transform: scaleX(-1);
     /*transform: translate(30%, -30%);
     transform-origin: top left;*/
@@ -1059,7 +1056,6 @@ section {
     height: 102px;
     top: -1rem;
     right: -2rem;
-    background-size: cover;
     transform: scaleX(-1);
     /*transform: translate(30%, -30%);
     transform-origin: top left;*/
