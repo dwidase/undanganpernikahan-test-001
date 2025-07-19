@@ -1023,19 +1023,41 @@ section {
 }
 
 #gallery-section .decoration-layer .deco-item.top-left-galllery.has-bunga-saja {
-    width: 182px;    /* Ukuran spesifik yang berbeda lagi */
-    height: 182px;
+    width: 162px;    /* Ukuran spesifik yang berbeda lagi */
+    height: 162px;
     top: -2.5rem;
     left: -3.5rem;
+    background-size: cover;
     /*transform: translate(30%, -30%);
     transform-origin: top left;*/
 }
 
 #gallery-section .decoration-layer .deco-item.top-left-overlay-gallery.has-bunga-saja {
-    width: 112px;    /* Ukuran spesifik yang berbeda lagi */
-    height: 112px;
+    width: 102px;    /* Ukuran spesifik yang berbeda lagi */
+    height: 102px;
     top: -1rem;
     left: -2rem;
+    background-size: cover;
+    /*transform: translate(30%, -30%);
+    transform-origin: top left;*/
+}
+
+#gallery-section .decoration-layer .deco-item.top-right-galllery.has-bunga-saja {
+    width: 162px;    /* Ukuran spesifik yang berbeda lagi */
+    height: 162px;
+    top: -2.5rem;
+    right: -3.5rem;
+    background-size: cover;
+    /*transform: translate(30%, -30%);
+    transform-origin: top left;*/
+}
+
+#gallery-section .decoration-layer .deco-item.top-right-overlay-gallery.has-bunga-saja {
+    width: 102px;    /* Ukuran spesifik yang berbeda lagi */
+    height: 102px;
+    top: -1rem;
+    right: -2rem;
+    background-size: cover;
     /*transform: translate(30%, -30%);
     transform-origin: top left;*/
 }
