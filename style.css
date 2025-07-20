@@ -470,7 +470,94 @@ section {
     justify-content: center;
     align-items: center;
 }
+
+/* Gaya Hiasan initial */
+
+##initial-invitation-section .decoration-layer .deco-item {
+    /* Gaya umum untuk semua hiasan di gallery (bisa beda filter atau animasi) */
     
+    filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3)); /* Mungkin bayangan lebih tipis */
+    /*animation: none; /* Mungkin tidak ada animasi atau animasi yang berbeda */
+    
+}
+
+/* Hiasan atas */
+#initial-invitation-section .decoration-layer .deco-item.top-left-initial.has-bunga-saja {
+    width: 162px;    /* Ukuran spesifik yang berbeda lagi */
+    height: 162px;
+    top: -2.5rem;
+    left: -3.5rem;
+    /*transform: translate(30%, -30%);
+    transform-origin: top left;*/
+}
+
+##initial-invitation-section .decoration-layer .deco-item.top-left-overlay-initial.has-bunga-saja {
+    width: 102px;    /* Ukuran spesifik yang berbeda lagi */
+    height: 102px;
+    top: -1rem;
+    left: -2rem;
+    /*transform: translate(30%, -30%);
+    transform-origin: top left;*/
+}
+
+##initial-invitation-section .decoration-layer .deco-item.top-right-initial.has-bunga-saja {
+    width: 162px;    /* Ukuran spesifik yang berbeda lagi */
+    height: 162px;
+    top: -2.5rem;
+    right: -3.5rem;
+    transform: scaleX(-1);
+    /*transform: translate(30%, -30%);
+    transform-origin: top left;*/
+}
+
+##initial-invitation-section .decoration-layer .deco-item.top-right-overlay-initial.has-bunga-saja {
+    width: 102px;    /* Ukuran spesifik yang berbeda lagi */
+    height: 102px;
+    top: -1rem;
+    right: -2rem;
+    transform: scaleX(-1);
+    /*transform: translate(30%, -30%);
+    transform-origin: top left;*/
+}
+
+/* Hiasan bawah */
+#initial-invitation-section .decoration-layer .deco-item.bottom-left-initial.has-bunga-saja {
+    width: 162px;    /* Ukuran spesifik yang berbeda lagi */
+    height: 162px;
+    bottom: -2.5rem;
+    left: -3.5rem;
+    /*transform: translate(30%, -30%);
+    transform-origin: top left;*/
+}
+
+##initial-invitation-section .decoration-layer .deco-item.bottom-left-overlay-initial.has-bunga-saja {
+    width: 102px;    /* Ukuran spesifik yang berbeda lagi */
+    height: 102px;
+    bottom: -1rem;
+    left: -2rem;
+    /*transform: translate(30%, -30%);
+    transform-origin: top left;*/
+}
+
+##initial-invitation-section .decoration-layer .deco-item.bottom-right-initial.has-bunga-saja {
+    width: 162px;    /* Ukuran spesifik yang berbeda lagi */
+    height: 162px;
+    bottom: -2.5rem;
+    right: -3.5rem;
+    transform: scaleX(-1);
+    /*transform: translate(30%, -30%);
+    transform-origin: top left;*/
+}
+
+##initial-invitation-section .decoration-layer .deco-item.bottom-right-overlay-initial.has-bunga-saja {
+    width: 102px;    /* Ukuran spesifik yang berbeda lagi */
+    height: 102px;
+    bottom: -1rem;
+    right: -2rem;
+    transform: scaleX(-1);
+    /*transform: translate(30%, -30%);
+    transform-origin: top left;*/
+}    
 
 /* Gaya untuk teks kutipan */
 .quote-text {
