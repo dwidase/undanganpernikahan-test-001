@@ -315,6 +315,7 @@ section {
 
 /* Bagian Pembuka & Profil Mempelai */
 #opening-greeting-and-profile-section {
+    position: relative;
     background-color: #f5f0d5; /* Latar belakang krem muda */
     overflow: hidden;
 }
@@ -728,6 +729,19 @@ section {
 }
 
 /* Hiasan halaman pembuka */
+
+/* Naikkan z-index decoration layer di section pembuka */
+#opening-greeting-and-profile-section .decoration-layer {
+  z-index: 4;    /* di atas .section-content (z-index:3) */
+}
+
+/* Pastikan setiap deco-item di sana lebih tinggi lagi */
+#opening-greeting-and-profile-section 
+  .decoration-layer 
+    .deco-item {
+  z-index: 5;
+}
+
 #opening-greeting-and-profile-section .decoration-layer .deco-item {
     /* Gaya umum untuk semua hiasan di gallery (bisa beda filter atau animasi) */
     
@@ -736,28 +750,28 @@ section {
 }
 
 #opening-greeting-and-profile-section .decoration-layer .deco-item.dinda-photos-pembuka.has-bunga-tangkai {
-    width: 102px;    /* Ukuran spesifik yang berbeda lagi */
-    height: 102px;
-    bottom: -1rem;
-    right: -2rem;
-    /*transform: translate(30%, -30%);
-    transform-origin: top left;*/
+    width: 75px;    /* Ukuran spesifik yang berbeda lagi */
+    height: 112px;
+    bottom: 220px;
+    right: 70px;
+    transform: scaleX(-1) rotate(335deg);
+    /*transform-origin: top left;*/
 } 
 
 #opening-greeting-and-profile-section .decoration-layer .deco-item.dinda-photos-pembuka.has-bunga-saja {
-    width: 102px;    /* Ukuran spesifik yang berbeda lagi */
-    height: 102px;
-    bottom: -1rem;
-    right: -2rem;
+    width: 70px;    /* Ukuran spesifik yang berbeda lagi */
+    height: 70px;
+    bottom: 280px;
+    right: 20px;
     /*transform: translate(30%, -30%);
     transform-origin: top left;*/
 }
 
 #opening-greeting-and-profile-section .decoration-layer .deco-item.angga-photos-pembuka.has-bunga-tangkai {
-    width: 102px;    /* Ukuran spesifik yang berbeda lagi */
-    height: 102px;
-    bottom: -1rem;
-    right: -2rem;
+    width: 75px;    /* Ukuran spesifik yang berbeda lagi */
+    height: 112px;
+    bottom: 220px;
+    left: 70px;
     transform: scaleX(-1);
     /*transform: translate(30%, -30%);
     transform-origin: top left;*/
@@ -767,7 +781,7 @@ section {
     width: 102px;    /* Ukuran spesifik yang berbeda lagi */
     height: 102px;
     bottom: -1rem;
-    right: -2rem;
+    left: -2rem;
     transform: scaleX(-1);
     /*transform: translate(30%, -30%);
     transform-origin: top left;*/
