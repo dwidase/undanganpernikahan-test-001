@@ -755,7 +755,6 @@ section {
     bottom: 220px;
     right: 70px;
     transform: scaleX(-1) rotate(335deg);
-    /*transform-origin: top left;*/
 } 
 
 #opening-greeting-and-profile-section .decoration-layer .deco-item.dinda-photos-pembuka.has-bunga-saja {
