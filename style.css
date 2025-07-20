@@ -303,6 +303,7 @@ section {
 #initial-invitation-section {
     background-color: #f5f0d5; /* Latar belakang krem muda */
     min-height: 70vh;
+    overflow: hidden;
 }
 
 /* Bagian Kutipan */
