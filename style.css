@@ -473,7 +473,7 @@ section {
 
 /* Gaya Hiasan initial */
 
-##initial-invitation-section .decoration-layer .deco-item {
+#initial-invitation-section .decoration-layer .deco-item {
     /* Gaya umum untuk semua hiasan di gallery (bisa beda filter atau animasi) */
     
     filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3)); /* Mungkin bayangan lebih tipis */
@@ -491,7 +491,7 @@ section {
     transform-origin: top left;*/
 }
 
-##initial-invitation-section .decoration-layer .deco-item.top-left-overlay-initial.has-bunga-saja {
+#initial-invitation-section .decoration-layer .deco-item.top-left-overlay-initial.has-bunga-saja {
     width: 102px;    /* Ukuran spesifik yang berbeda lagi */
     height: 102px;
     top: -1rem;
@@ -510,7 +510,7 @@ section {
     transform-origin: top left;*/
 }
 
-##initial-invitation-section .decoration-layer .deco-item.top-right-overlay-initial.has-bunga-saja {
+#initial-invitation-section .decoration-layer .deco-item.top-right-overlay-initial.has-bunga-saja {
     width: 102px;    /* Ukuran spesifik yang berbeda lagi */
     height: 102px;
     top: -1rem;
@@ -539,7 +539,7 @@ section {
     transform-origin: top left;*/
 }
 
-##initial-invitation-section .decoration-layer .deco-item.bottom-right-initial.has-bunga-saja {
+#initial-invitation-section .decoration-layer .deco-item.bottom-right-initial.has-bunga-saja {
     width: 162px;    /* Ukuran spesifik yang berbeda lagi */
     height: 162px;
     bottom: -2.5rem;
@@ -549,7 +549,7 @@ section {
     transform-origin: top left;*/
 }
 
-##initial-invitation-section .decoration-layer .deco-item.bottom-right-overlay-initial.has-bunga-saja {
+#initial-invitation-section .decoration-layer .deco-item.bottom-right-overlay-initial.has-bunga-saja {
     width: 102px;    /* Ukuran spesifik yang berbeda lagi */
     height: 102px;
     bottom: -1rem;
