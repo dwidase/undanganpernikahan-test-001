@@ -316,6 +316,7 @@ section {
 /* Bagian Pembuka & Profil Mempelai */
 #opening-greeting-and-profile-section {
     background-color: #f5f0d5; /* Latar belakang krem muda */
+    overflow: hidden;
 }
 
 /* Bagian Cerita Cinta */
@@ -726,6 +727,53 @@ section {
     width: 100%; /* Pastikan lebar penuh */
 }
 
+/* Hiasan halaman pembuka */
+#opening-greeting-and-profile-section .decoration-layer .deco-item {
+    /* Gaya umum untuk semua hiasan di gallery (bisa beda filter atau animasi) */
+    
+    filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3)); /* Mungkin bayangan lebih tipis */
+    /*animation: none; /* Mungkin tidak ada animasi atau animasi yang berbeda */
+}
+
+#opening-greeting-and-profile-section .decoration-layer .deco-item.dinda-photos-pembuka.has-bunga-tangkai {
+    width: 102px;    /* Ukuran spesifik yang berbeda lagi */
+    height: 102px;
+    bottom: -1rem;
+    right: -2rem;
+    /*transform: translate(30%, -30%);
+    transform-origin: top left;*/
+} 
+
+#opening-greeting-and-profile-section .decoration-layer .deco-item.dinda-photos-pembuka.has-bunga-saja {
+    width: 102px;    /* Ukuran spesifik yang berbeda lagi */
+    height: 102px;
+    bottom: -1rem;
+    right: -2rem;
+    /*transform: translate(30%, -30%);
+    transform-origin: top left;*/
+}
+
+#opening-greeting-and-profile-section .decoration-layer .deco-item.angga-photos-pembuka.has-bunga-tangkai {
+    width: 102px;    /* Ukuran spesifik yang berbeda lagi */
+    height: 102px;
+    bottom: -1rem;
+    right: -2rem;
+    transform: scaleX(-1);
+    /*transform: translate(30%, -30%);
+    transform-origin: top left;*/
+} 
+
+#opening-greeting-and-profile-section .decoration-layer .deco-item.angga-photos-pembuka.has-bunga-saja {
+    width: 102px;    /* Ukuran spesifik yang berbeda lagi */
+    height: 102px;
+    bottom: -1rem;
+    right: -2rem;
+    transform: scaleX(-1);
+    /*transform: translate(30%, -30%);
+    transform-origin: top left;*/
+}
+
+/* === CERITA CINTA KAMI === */
 /* Gaya untuk judul cerita */
 .story-title {
     font-size: 1.875rem;
