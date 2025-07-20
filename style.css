@@ -949,12 +949,22 @@ section {
     filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3)); /* Filter umum untuk hiasan di event */
 }
 
-.box-event .decoration-layer .deco-item.deco-item.kotak-event.has-bunga-tangkai {
-    width: 257px;
-    height: 462px;
-    bottom: 470px; /* Gunakan bottom bukan top */
-    left: -150px;
-    filter: sepia(100%) opacity(50%);
+.box-event .decoration-layer .deco-item.kotak-event-left.has-bunga-tangkai {
+    width: 207px;
+    height: 402px;
+    top: 10px; /* Gunakan bottom bukan top */
+    left: -140px;
+    filter: sepia(100%) opacity(40%);
+    transform: rotate(15deg);
+}
+
+.box-event .decoration-layer .deco-item.kotak-event-right.has-bunga-tangkai {
+    width: 207px;
+    height: 402px;
+    bottom: 10px; /* Gunakan bottom bukan top */
+    right: -140px;
+    filter: sepia(100%) opacity(40%);
+    transform: scaleX(-1) rotate(15deg);
 }
 
 /* ==== GALERI === */
