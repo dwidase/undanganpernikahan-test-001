@@ -500,7 +500,7 @@ section {
     transform-origin: top left;*/
 }
 
-##initial-invitation-section .decoration-layer .deco-item.top-right-initial.has-bunga-saja {
+#initial-invitation-section .decoration-layer .deco-item.top-right-initial.has-bunga-saja {
     width: 162px;    /* Ukuran spesifik yang berbeda lagi */
     height: 162px;
     top: -2.5rem;
@@ -530,7 +530,7 @@ section {
     transform-origin: top left;*/
 }
 
-##initial-invitation-section .decoration-layer .deco-item.bottom-left-overlay-initial.has-bunga-saja {
+#initial-invitation-section .decoration-layer .deco-item.bottom-left-overlay-initial.has-bunga-saja {
     width: 102px;    /* Ukuran spesifik yang berbeda lagi */
     height: 102px;
     bottom: -1rem;
