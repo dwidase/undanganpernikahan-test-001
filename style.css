@@ -218,8 +218,7 @@ section {
     transform: scale(1.05); /* Sedikit membesar saat hover */
 }
 
-/* === Gaya DEKORASI SECARA GLOBAL === */
-/* === Gaya DEKORASI GLOBAL === */
+/* === Gaya Dekorasi Global === */
 .decoration-layer {
   position: absolute;
   top: 0;
@@ -240,7 +239,7 @@ section {
   z-index: 2;
 }
 
-/* Variabel untuk gambar bunga */
+/* Variabel Gambar Bunga */
 .deco-item.has-bunga-saja {
   --bunga-image: url('Assets/Hiasan/bunga.webp');
   --bunga-size: 100.1% 100.1%;
@@ -255,29 +254,13 @@ section {
   --bunga-repeat: no-repeat;
 }
 
-/* Jika hanya ada satu layer bunga (tanpa tekstur/noda) */
+/* Jika hanya 1 layer bunga (tanpa tekstur/noda) */
 .deco-item.has-bunga-saja:not(.has-tekstur):not(.has-noda),
 .deco-item.has-bunga-tangkai:not(.has-tekstur):not(.has-noda) {
-  background-image: var(--bunga-image);
-  background-size: var(--bunga-size);
+  background-image:  var(--bunga-image);
+  background-size:   var(--bunga-size);
   background-position: var(--bunga-position);
-  background-repeat: var(--bunga-repeat);
-}
-
-/* --- GAYA UNTUK HIASAN YANG HANYA MEMILIKI SATU GAMBAR (TANPA TEKSTUR/NODA) --- */
-/* Ini adalah penambahan penting untuk memastikan bunga muncul jika tidak ada kelas kombinasi */
-.deco-item.has-bunga-saja:not(.has-tekstur):not(.has-noda) {
-    background-image: var(--bunga-image);
-    background-size: var(--bunga-size);
-    background-position: var(--bunga-position);
-    background-repeat: var(--bunga-repeat);
-}
-
-.deco-item.has-bunga-tangkai:not(.has-tekstur):not(.has-noda) {
-    background-image: var(--bunga-image);
-    background-size: var(--bunga-size);
-    background-position: var(--bunga-position);
-    background-repeat: var(--bunga-repeat);
+  background-repeat:  var(--bunga-repeat);
 }
 
 /* === GAYA SPESIFIK UNTUK SECTION UTAMA BARU === */
@@ -580,7 +563,9 @@ section {
     box-sizing: border-box; /* Pastikan padding tidak menambah lebar total */
 }
 
-/* Gaya untuk salam pembuka */
+/* =================================================
+   Section Pembuka & Profil Mempelai
+   ================================================= */
 #opening-greeting-and-profile-section .latarbelakang-pembuka.section-content {
   position: relative;
   z-index: 3;
@@ -629,26 +614,25 @@ section {
   background-color: #E5E7EB;
 }
 
-/* Pastikan background‐image di-apply di dalam wrapper */
+/* Deco-item di dalam image-wrapper (background di-handle di aturan global) */
 #opening-greeting-and-profile-section
   .image-wrapper .deco-item {
   position: absolute;
   z-index: 5;
   filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.3));
-  /* background-image dsb. diambil dari var(--bunga-*) */
 }
 
-/* Posisi Hiasan Dinda */
-.image-wrapper.dinda-wrapper
+/* Posisi Hiasan Dinda (tanpa butuh .dinda-wrapper) */
+#opening-greeting-and-profile-section .image-wrapper.profile-placeholder
   .dinda-photos-pembuka.has-bunga-tangkai {
   width: 75px;
   height: 112px;
-  top: 5%;
+  top: 5%;      /* tweak di inspector lalu salin nilai pasti */
   right: 5%;
   transform: scaleX(-1) rotate(335deg);
 }
 
-.image-wrapper.dinda-wrapper
+#opening-greeting-and-profile-section .image-wrapper.profile-placeholder
   .dinda-photos-pembuka.has-bunga-saja {
   width: 70px;
   height: 70px;
@@ -657,7 +641,7 @@ section {
 }
 
 /* Posisi Hiasan Angga */
-.image-wrapper.angga-wrapper
+#opening-greeting-and-profile-section .image-wrapper.profile-placeholder
   .angga-photos-pembuka.has-bunga-tangkai {
   width: 75px;
   height: 112px;
@@ -666,7 +650,7 @@ section {
   transform: rotate(25deg);
 }
 
-.image-wrapper.angga-wrapper
+#opening-greeting-and-profile-section .image-wrapper.profile-placeholder
   .angga-photos-pembuka.has-bunga-saja {
   width: 70px;
   height: 70px;
@@ -685,15 +669,11 @@ section {
 }
 @media (min-width: 768px) {
   .full-name-dinda,
-  .full-name-angga {
-    font-size: 3rem;
-  }
+  .full-name-angga { font-size: 3rem; }
 }
 @media (min-width: 1024px) {
   .full-name-dinda,
-  .full-name-angga {
-    font-size: 3.75rem;
-  }
+  .full-name-angga { font-size: 3.75rem; }
 }
 
 .parent-name {
