@@ -718,73 +718,150 @@ section {
         font-size: 4.5rem;
     }
 }
-/* Warna latar belakang pembuka - Kini kelas ini digunakan di dalam section,
-   jadi background-color-nya bisa dihapus jika sudah diatur di ID section. */
-.latarbelakang-pembuka {
-    /* background-color: #f5f0d5; */ /* Hapus ini jika #opening-greeting-and-profile-section sudah mengatur background */
-    padding: 2rem; /* Tambahkan padding */
-    border-radius: 0; /* Sudut membulat */
-    margin-bottom: 2rem; /* Spasi di bawah */
-    width: 100%; /* Pastikan lebar penuh */
+/* 2. Konten utama (tetap di bawah hiasan) */
+#opening-greeting-and-profile-section .latarbelakang-pembuka.section-content {
+  position: relative;
+  z-index: 3;
+  padding: 2rem;
 }
 
-/* Hiasan halaman pembuka */
-
-/* Naikkan z-index decoration layer di section pembuka */
-#opening-greeting-and-profile-section .decoration-layer {
-  z-index: 4;    /* di atas .section-content (z-index:3) */
+/* 3. Salam Pembuka */
+.opening-greeting {
+  font-size: 1rem;
+  font-family: 'Great Vibes';
+  color: #cba979;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .opening-greeting { font-size: 3rem; }
+}
+@media (min-width: 1024px) {
+  .opening-greeting { font-size: 3.75rem; }
 }
 
-/* Pastikan setiap deco-item di sana lebih tinggi lagi */
-#opening-greeting-and-profile-section 
-  .decoration-layer 
-    .deco-item {
+/* 4. Teks Undangan Pembuka */
+.opening-invitation {
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  font-family: 'Garamond';
+  color: #374151;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .opening-invitation { font-size: 1.25rem; }
+}
+
+/* 5. Wrapper Foto: anchoring deco-item */
+#opening-greeting-and-profile-section .image-wrapper {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  margin: 2rem auto;
+  z-index: 4;
+}
+
+/* 6. Gaya Foto di dalam Wrapper */
+#opening-greeting-and-profile-section .image-wrapper img {
+  width: 12rem;
+  max-width: 100%;
+  height: 12rem;
+  object-fit: cover;
+  display: block;
+  border-radius: 50%;
+  border: 3px solid #cba979;
+  box-shadow:
+    0 4px 6px -1px rgba(0,0,0,0.1),
+    0 2px 4px -1px rgba(0,0,0,0.06);
+  background-color: #E5E7EB;
+}
+
+/* 7. Deco-item di dalam Wrapper */
+#opening-greeting-and-profile-section .image-wrapper .deco-item {
+  position: absolute;
   z-index: 5;
+  filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.3));
 }
 
-#opening-greeting-and-profile-section .decoration-layer .deco-item {
-    /* Gaya umum untuk semua hiasan di gallery (bisa beda filter atau animasi) */
-    
-    filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3)); /* Mungkin bayangan lebih tipis */
-    /*animation: none; /* Mungkin tidak ada animasi atau animasi yang berbeda */
+/* 8. Hiasan untuk Foto Dinda */
+.image-wrapper.dinda-wrapper 
+  .dinda-photos-pembuka.has-bunga-tangkai {
+  width: 75px;
+  height: 112px;
+  top: 5%;      /* sesuaikan via inspector */
+  right: 5%;    /* sesuaikan via inspector */
+  transform: scaleX(-1) rotate(335deg);
+}
+.image-wrapper.dinda-wrapper 
+  .dinda-photos-pembuka.has-bunga-saja {
+  width: 70px;
+  height: 70px;
+  bottom: 5%;   /* sesuaikan via inspector */
+  right: 10%;   /* sesuaikan via inspector */
 }
 
-#opening-greeting-and-profile-section .decoration-layer .deco-item.dinda-photos-pembuka.has-bunga-tangkai {
-    width: 38px;    /* Ukuran spesifik yang berbeda lagi */
-    height: 56px;
-    top: 240px;
-    right: 78px;
-    transform: scaleX(-1) rotate(15deg);
-} 
-
-#opening-greeting-and-profile-section .decoration-layer .deco-item.dinda-photos-pembuka.has-bunga-saja {
-    width: 60px;    /* Ukuran spesifik yang berbeda lagi */
-    height: 60px;
-    top: 270px;
-    right: 64px;
-    /*transform: translate(30%, -30%);
-    transform-origin: top left;*/
+/* 9. Hiasan untuk Foto Angga */
+.image-wrapper.angga-wrapper 
+  .angga-photos-pembuka.has-bunga-tangkai {
+  width: 75px;
+  height: 112px;
+  top: 5%;      /* sesuaikan via inspector */
+  left: 5%;     /* sesuaikan via inspector */
+  transform: rotate(25deg);
+}
+.image-wrapper.angga-wrapper 
+  .angga-photos-pembuka.has-bunga-saja {
+  width: 70px;
+  height: 70px;
+  bottom: 5%;   /* sesuaikan via inspector */
+  left: 10%;    /* sesuaikan via inspector */
 }
 
-#opening-greeting-and-profile-section .decoration-layer .deco-item.angga-photos-pembuka.has-bunga-tangkai {
-    width: 38px;    /* Ukuran spesifik yang berbeda lagi */
-    height: 56px;
-    bottom: 280px;
-    left: 78px;
-    transform: rotate(15deg);
-    /*transform: translate(30%, -30%);
-    transform-origin: top left;*/
-} 
-
-#opening-greeting-and-profile-section .decoration-layer .deco-item.angga-photos-pembuka.has-bunga-saja {
-    width: 60px;    /* Ukuran spesifik yang berbeda lagi */
-    height: 60px;
-    bottom: 250px;
-    left: 64px;
-    transform: scaleX(-1);
-    /*transform: translate(30%, -30%);
-    transform-origin: top left;*/
+/* 10. Nama dan Profil Text */
+.full-name-dinda,
+.full-name-angga {
+  font-size: 1.6rem;
+  margin-top: 1rem;
+  font-family: 'Great Vibes';
+  text-align: center;
+  color: #cba979;
 }
+@media (min-width: 768px) {
+  .full-name-dinda,
+  .full-name-angga {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 1024px) {
+  .full-name-dinda,
+  .full-name-angga {
+    font-size: 3.75rem;
+  }
+}
+
+.parent-name {
+  font-size: 0.8rem;
+  font-family: 'Garamond';
+  color: #374151;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .parent-name { font-size: 1.25rem; }
+}
+
+.ampersand-divider {
+  font-size: 0.875rem;
+  margin: 2rem 0;
+  font-family: 'Garamond';
+  color: #4B5563;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .ampersand-divider { font-size: 3.75rem; }
+}
+@media (min-width: 1024px) {
+  .ampersand-divider { font-size: 4.5rem; }
+}
+
 
 /* === CERITA CINTA KAMI === */
 /* Gaya untuk judul cerita */
