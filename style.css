@@ -219,66 +219,49 @@ section {
 }
 
 /* === Gaya DEKORASI SECARA GLOBAL === */
+/* === Gaya DEKORASI GLOBAL === */
 .decoration-layer {
-    position: absolute; /* Ini akan diterapkan pada semua .decoration-layer */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
 }
 
-/* --- Gaya Dasar untuk Setiap Item Hiasan (sebagai default) --- */
 .deco-item {
-    position: absolute;
-    width: 100px;  /* Default width */
-    height: 100px; /* Default height */
-    background-repeat: no-repeat;
-    background-position: center;
-    filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.4));
-    z-index: 2;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.4));
+  z-index: 2;
 }
 
-/* Kelas untuk variasi hiasan bunga */
-/* Variabel CSS untuk dinamisasi gambar bunga agar tidak perlu diulang */
+/* Variabel untuk gambar bunga */
 .deco-item.has-bunga-saja {
-    --bunga-image: url('Assets/Hiasan/bunga.webp');
-    --bunga-size: 100.1% 100.1%;
-    --bunga-position: center;
-    --bunga-repeat: no-repeat;
+  --bunga-image: url('Assets/Hiasan/bunga.webp');
+  --bunga-size: 100.1% 100.1%;
+  --bunga-position: center;
+  --bunga-repeat: no-repeat;
 }
+
 .deco-item.has-bunga-tangkai {
-    --bunga-image: url('Assets/Hiasan/bunga&tangkai.webp');
-    --bunga-size: 100.1% 100.1%; /* Sesuaikan jika perlu */
-    --bunga-position: center;
-    --bunga-repeat: no-repeat;
+  --bunga-image: url('Assets/Hiasan/bunga&tangkai.webp');
+  --bunga-size: 100.1% 100.1%;
+  --bunga-position: center;
+  --bunga-repeat: no-repeat;
 }
 
-/* Kelas untuk lapisan tekstur/noda (akan berada di bawah hiasan utama) */
-
-.deco-item.has-tekstur {
-    /* Tekstur akan jadi lapisan paling bawah, di bawah bunga */
-    background-image: var(--bunga-image), url('Assets/Hiasan/standar-paper-texture.webp');
-    background-size: var(--bunga-size), cover; /* Bunga di atas (contain), tekstur di bawah (cover) */
-    background-position: var(--bunga-position, center), center;
-    background-repeat: var(--bunga-repeat, no-repeat), repeat; /* Bunga no-repeat, tekstur repeat */
-}
-
-.deco-item.has-noda {
-    /* Noda juga akan jadi lapisan paling bawah, di bawah bunga */
-    background-image: var(--bunga-image), url('Assets/Hiasan/abstract-blur-spotting.webp');
-    background-size: var(--bunga-size), contain; /* Bunga di atas, noda di bawah (contain) */
-    background-position: var(--bunga-position, center), center;
-    background-repeat: var(--bunga-repeat, no-repeat), no-repeat; /* Bunga no-repeat, noda no-repeat */
-}
-
-/* Jika Anda ingin kombinasi Tekstur DAN Noda dengan Bunga */
-.deco-item.has-tekstur.has-noda {
-    background-image: var(--bunga-image), url('Assets/Hiasan/standar-paper-texture.webp'), url('Assets/Hiasan/abstract-blur-spotting.webp');
-    background-size: var(--bunga-size, contain), cover, contain;
-    background-position: var(--bunga-position, center), center, center;
-    background-repeat: var(--bunga-repeat, no-repeat), repeat, no-repeat;
+/* Jika hanya ada satu layer bunga (tanpa tekstur/noda) */
+.deco-item.has-bunga-saja:not(.has-tekstur):not(.has-noda),
+.deco-item.has-bunga-tangkai:not(.has-tekstur):not(.has-noda) {
+  background-image: var(--bunga-image);
+  background-size: var(--bunga-size);
+  background-position: var(--bunga-position);
+  background-repeat: var(--bunga-repeat);
 }
 
 /* --- GAYA UNTUK HIASAN YANG HANYA MEMILIKI SATU GAMBAR (TANPA TEKSTUR/NODA) --- */
