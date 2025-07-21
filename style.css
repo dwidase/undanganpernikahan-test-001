@@ -750,37 +750,37 @@ section {
 }
 
 #opening-greeting-and-profile-section .decoration-layer .deco-item.dinda-photos-pembuka.has-bunga-tangkai {
-    width: 75px;    /* Ukuran spesifik yang berbeda lagi */
-    height: 112px;
-    bottom: 220px;
-    right: 70px;
-    transform: scaleX(-1) rotate(335deg);
+    width: 38px;    /* Ukuran spesifik yang berbeda lagi */
+    height: 56px;
+    top: 240px;
+    right: 78px;
+    transform: scaleX(-1) rotate(15deg);
 } 
 
 #opening-greeting-and-profile-section .decoration-layer .deco-item.dinda-photos-pembuka.has-bunga-saja {
-    width: 70px;    /* Ukuran spesifik yang berbeda lagi */
-    height: 70px;
-    bottom: 280px;
-    right: 20px;
+    width: 60px;    /* Ukuran spesifik yang berbeda lagi */
+    height: 60px;
+    top: 270px;
+    right: 64px;
     /*transform: translate(30%, -30%);
     transform-origin: top left;*/
 }
 
 #opening-greeting-and-profile-section .decoration-layer .deco-item.angga-photos-pembuka.has-bunga-tangkai {
-    width: 75px;    /* Ukuran spesifik yang berbeda lagi */
-    height: 112px;
-    bottom: 220px;
-    left: 70px;
-    transform: scaleX(-1);
+    width: 38px;    /* Ukuran spesifik yang berbeda lagi */
+    height: 56px;
+    bottom: 280px;
+    left: 78px;
+    transform: rotate(15deg);
     /*transform: translate(30%, -30%);
     transform-origin: top left;*/
 } 
 
 #opening-greeting-and-profile-section .decoration-layer .deco-item.angga-photos-pembuka.has-bunga-saja {
-    width: 102px;    /* Ukuran spesifik yang berbeda lagi */
-    height: 102px;
-    bottom: -1rem;
-    left: -2rem;
+    width: 60px;    /* Ukuran spesifik yang berbeda lagi */
+    height: 60px;
+    bottom: 250px;
+    left: 64px;
     transform: scaleX(-1);
     /*transform: translate(30%, -30%);
     transform-origin: top left;*/
