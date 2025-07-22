@@ -56,6 +56,8 @@ section {
 /* === GAYA SPESIFIK UNTUK SETIAP SECTION ID === */
 
 #cover-page {
+    position: fixed;
+    z-index: 9999;
     background-color: #F8F0E3; /* Latar belakang krem muda untuk sampul */
     overflow: hidden; /* Sembunyikan overflow untuk animasi */
     width: 100%; /* Pastikan halaman sampul mengambil lebar penuh */
