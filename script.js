@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 1. Pastikan body tidak bisa discroll saat halaman cover aktif
     // Ini harus dieksekusi DI AWAL, begitu DOM siap
-    bodyElement.classList.add('no-scroll');
+    // bodyElement.classList.add('no-scroll');
 
     if (openInvitationButton && coverPage && mainContentWrapper) {
         openInvitationButton.addEventListener('click', () => {
@@ -16,10 +16,10 @@ document.addEventListener('DOMContentLoaded', function() {
             mainContentWrapper.classList.remove('hidden'); // Tampilkan main content wrapper
 
             // 2. Izinkan body untuk discroll kembali
-            bodyElement.classList.remove('no-scroll');
+            // bodyElement.classList.remove('no-scroll');
 
             // Scroll ke bagian awal konten utama setelah cover disembunyikan
-            mainContentWrapper.scrollIntoView({ behavior: 'smooth' });
+            // mainContentWrapper.scrollIntoView({ behavior: 'smooth' });
         });
     } else {
         console.warn("Elemen Cover Page, Tombol, atau Main Content Wrapper tidak ditemukan. Fitur navigasi mungkin tidak berfungsi.");
