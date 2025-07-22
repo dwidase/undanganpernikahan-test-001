@@ -56,8 +56,8 @@ section {
 /* === GAYA SPESIFIK UNTUK SETIAP SECTION ID === */
 
 #cover-page {
-    position: fixed;
-    z-index: 9999;
+	position: fixed;
+	z-index: 9999;
     background-color: #F8F0E3; /* Latar belakang krem muda untuk sampul */
     overflow: hidden; /* Sembunyikan overflow untuk animasi */
     width: 100%; /* Pastikan halaman sampul mengambil lebar penuh */
@@ -1013,6 +1013,7 @@ section {
 }
 
 .box-event {
+	z-index:0;
     position: relative;
     overflow: hidden;
     background-color: #f5f0d5;
@@ -1028,26 +1029,39 @@ section {
 }
 
 /* Gaya Spesifik untuk Hiasan di .box-event */
+
+/* Turunkan decoration-layer di bawah konten */
+.box-event > .decoration-layer {
+  position: absolute; /* sudah sesuai */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;        /* di sini */
+}
+
+
 .box-event .decoration-layer .deco-item {
     filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3)); /* Filter umum untuk hiasan di event */
 }
 
 .box-event .decoration-layer .deco-item.kotak-event-left.has-bunga-tangkai {
-    width: 207px;
-    height: 402px;
+    width: 338px;
+    height: 506px;
     top: 10px; /* Gunakan bottom bukan top */
-    left: -140px;
-    filter: sepia(100%) opacity(40%);
+    left: -150px;
+    filter: sepia(100%) opacity(20%);
     transform: rotate(15deg);
 }
 
 .box-event .decoration-layer .deco-item.kotak-event-right.has-bunga-tangkai {
-    width: 207px;
-    height: 402px;
-    bottom: 10px; /* Gunakan bottom bukan top */
-    right: -140px;
-    filter: sepia(100%) opacity(40%);
-    transform: scaleX(-1) rotate(15deg);
+    width: 338px;
+    height: 506px;
+    bottom: -180px; /* Gunakan bottom bukan top */
+    right: -150px;
+    filter: sepia(100%) opacity(20%);
+    transform: scaleX(-1);
 }
 
 /* ==== GALERI === */
