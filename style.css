@@ -341,22 +341,35 @@ section {
     }
 }
 
-/* Gaya untuk nama di halaman undangan utama */
-/* Halaman Awal */
+
+/* === HALAMAN AWAL === */
+
 /* Gaya khusus untuk placeholder gambar profil */
-.halaman-awal-placeholder {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    margin-left: auto; /* Pusatkan */
-    margin-right: auto; /* Pusatkan */
+/* Gaya untuk placeholder gambar galeri */
+.awal-image-placeholder {
+    width: 12rem;
+    height: 12rem; /* Tinggi tetap */
+    background-color: #E5E7EB;
+    border-radius: 50%;
+	border: 3px solid #cba979;
+    overflow: hidden; /* Penting untuk memastikan gambar tidak keluar dari border-radius */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6B7280;
+    font-size: 0.875rem;
+    font-style: italic;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+	margin: 0 auto 2rem;
 }
 
-/* Gaya untuk foto mempelai  */
-.mempelai-awal-image {
+/* Gaya untuk foto di galeri */
+.awal-mempelai-image {
     width: 100%; /* Membuat gambar mengisi lebar wadahnya */
     height: 100%; /* Atur tinggi tetap untuk konsistensi (sesuaikan) */
     object-fit: cover; /* Penting: Memastikan gambar mengisi area tanpa terdistorsi */
     display: block; /* Menghilangkan spasi ekstra di bawah gambar */
+    transition: transform 0.3s ease-in-out; /* Efek transisi saat hover */
 }
 
 .main-name-dinda, .main-name-angga {
@@ -418,9 +431,10 @@ section {
 
 /* Gaya untuk tanggal acara */
 .event-date {
-    font-size: 1rem;
+    font-size: 1.2rem;
+	font-weight: 600;
     margin-top: 1rem;
-    font-family: 'Garamond';
+    font-family: ui-monospace;
     color: #cba979;
     text-align: center;
 }
@@ -595,7 +609,7 @@ section {
 #opening-greeting-and-profile-section .image-wrapper {
   position: relative;
   display: inline-block;
-  overflow: hidden;
+  /*overflow: hidden;*/
   margin: 2rem auto;
   z-index: 4;
 }
@@ -625,37 +639,39 @@ section {
 /* Posisi Hiasan Dinda (tanpa butuh .dinda-wrapper) */
 #opening-greeting-and-profile-section .image-wrapper.profile-placeholder
   .dinda-photos-pembuka.has-bunga-tangkai {
-  width: 75px;
-  height: 112px;
-  top: 5%;      /* tweak di inspector lalu salin nilai pasti */
-  right: 5%;
-  transform: scaleX(-1) rotate(335deg);
+  width: 56.25px;
+  height: 84.30px;
+  top: 20%; /* tweak di inspector lalu salin nilai pasti */
+  right: -11%;
+  transform: scaleX(-1) rotate(14deg);
 }
 
 #opening-greeting-and-profile-section .image-wrapper.profile-placeholder
   .dinda-photos-pembuka.has-bunga-saja {
-  width: 70px;
-  height: 70px;
-  bottom: 5%;
-  right: 10%;
+  width: 60px;
+  height: 60px;
+  top: 44%;
+  right: -15%;
+  transform: rotate(312deg);
 }
 
 /* Posisi Hiasan Angga */
 #opening-greeting-and-profile-section .image-wrapper.profile-placeholder
   .angga-photos-pembuka.has-bunga-tangkai {
-  width: 75px;
-  height: 112px;
-  top: 5%;
-  left: 5%;
-  transform: rotate(25deg);
+  width: 56.25px;
+  height: 84.30px;
+  top: 20%; /* tweak di inspector lalu salin nilai pasti */
+  left: -11%;
+  transform: rotate(14deg);
 }
 
 #opening-greeting-and-profile-section .image-wrapper.profile-placeholder
   .angga-photos-pembuka.has-bunga-saja {
-  width: 70px;
-  height: 70px;
-  bottom: 5%;
-  left: 10%;
+  width: 60px;
+  height: 60px;
+  top: 44%;
+  left: -15%;
+  transform: rotate(312deg);
 }
 
 /* Nama & Keterangan */
@@ -1139,6 +1155,7 @@ section {
     font-style: italic;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
+
 @media (min-width: 768px) {
     .gallery-image-placeholder {
         height: 16rem;
