@@ -23,10 +23,10 @@
         <button id="open-invitation-button" class="cover-element slide-from-bottom slow-delay-3">Buka Undangan</button>
     </div>
     </section>
-
+	
     <main id="main-content-wrapper" class="hidden"> 
 
-        <section id="initial-invitation-section">
+        <section id="initial-invitation-section" class="has-texture">
                 <div class="decoration-layer"> <!-- baiknya ditaruh di atas/di luar class="section-content" -->
                 <div class="deco-item top-left-initial has-bunga-saja"></div> <!-- hiasan kiri-atas -->
                 <div class="deco-item top-left-overlay-initial has-bunga-saja"></div> <!-- hiasan kiri-atas-2 -->
@@ -37,7 +37,12 @@
                 <div class="deco-item bottom-left-overlay-initial has-bunga-saja"></div> <!-- hiasan kiri-atas-2 -->
                 <div class="deco-item bottom-right-initial has-bunga-saja"></div> <!-- hiasan kanan-atas -->
                 <div class="deco-item bottom-right-overlay-initial has-bunga-saja"></div> <!-- hiasan kanan-atas-2 -->
-            </div>
+				
+				<div class="deco-item section-texture"></div>
+			</div>	
+			
+				<div class="deco-item blotch-initial-invitation"></div>
+            
             <div class="latarbelakang-halaman-awal section-content">
                 <div class="awal-image-placeholder">
                         <img src="Assets/Foto.pengantin/Berdua jawa cream 0001-1.png" alt="Foto Berdua baju adat jawa cream" class="awal-mempelai-image">
@@ -65,8 +70,13 @@
 
         <!--hr class="section-divider"-->
 
-        <section id="opening-greeting-and-profile-section">
-  <div class="latarbelakang-pembuka section-content">
+        <section id="opening-greeting-and-profile-section" class="has-texture">
+			<div class="decoration-layer">
+				<div class="deco-item section-texture"></div>
+				</div>
+				<div class="deco-item blotch-opening-greeting"></div>
+				
+	<div class="latarbelakang-pembuka section-content">
     <p class="opening-greeting">Assalamualaikum warahmatullahi wabarakatuh</p>
     <p class="opening-invitation">
       Dengan penuh rasa syukur, kami mengundang bapak/ibu/saudara/i untuk menghadiri pernikahan kami.
@@ -104,7 +114,14 @@
 
         <!--hr class="section-divider"-->
 
-        <section id="love-story-section">
+        <section id="love-story-section" class="has-texture">
+			<div class="decoration-layer">
+				<div class="deco-item section-texture"></div>
+				</div>
+				
+				<div class="deco-item blotch-love-story"></div>
+				
+			<div class="love-story-background-box">
             <div class="section-content">
                 <h2 class="story-title">Cerita Cinta Kami</h2>
 
@@ -138,6 +155,7 @@
                     Dan kini, tiba di hari yang paling bahagia, 30 Mei 2025. Kisah cinta kami "berakhir" sekaligus dimulai dengan langkah yang lebih serius, mengikat janji suci di hadapan Tuhan dan keluarga.
                 </p>
             </div>
+			</div>
         </section>
 
         <!--hr class="section-divider"-->
@@ -201,9 +219,9 @@
 
         <section id="gallery-section">
             <div class="decoration-layer"> <!-- baiknya ditaruh di atas/di luar class="section-content" -->
-                <div class="deco-item top-left-galllery has-bunga-saja"></div> <!-- hiasan kiri-atas -->
+                <div class="deco-item top-left-gallery has-bunga-saja"></div> <!-- hiasan kiri-atas -->
                 <div class="deco-item top-left-overlay-gallery has-bunga-saja"></div> <!-- hiasan kiri-atas-2 -->
-                <div class="deco-item top-right-galllery has-bunga-saja"></div> <!-- hiasan kanan-atas -->
+                <div class="deco-item top-right-gallery has-bunga-saja"></div> <!-- hiasan kanan-atas -->
                 <div class="deco-item top-right-overlay-gallery has-bunga-saja"></div> <!-- hiasan kanan-atas-2 -->
             </div>
             
@@ -235,7 +253,10 @@
         <!--hr class="section-divider"-->
 
         <section id="gift-section">
-            <div class="section-content">
+			<div class="gift-section-background-box section-content">
+            <div class="decoration-layer"> <!-- baiknya ditaruh di atas/di luar class="section-content" -->
+                <div class="deco-item kotak-gift-left has-bunga-tangkai"></div>
+			</div>	
                 <h2 class="gift-title">Hadiah Cinta </h2>
                 <p class="gift-description">
                     Doa restu Anda adalah kado terbaik bagi kami. Namun, jika Anda ingin memberikan tanda cinta kasih, Anda bisa melakukannya melalui informasi di bawah ini.
@@ -244,11 +265,16 @@
                     <button id="open-gift-modal-button" class="action-button">Kirim Hadiah</button>
                 </div>
             </div>
+			</div>
         </section>
         
         <!--hr class="section-divider"--> 
         <section id="closing-section">
-            <div class="section-content">
+			<div class="closing-background-box section-content">
+			<div class="decoration-layer"> <!-- baiknya ditaruh di atas/di luar class="section-content" -->
+                <div class="deco-item kotak-penutup-right has-bunga-tangkai"></div>
+			</div>
+            
                 <p class="closing-quote">
                     Kehadiran, doa, dan restu bapak/ibu/saudara/i<br>
                     adalah suatu kehormatan dan kebahagiaan yang tak ternilai.
@@ -259,6 +285,7 @@
                 <h2 class="closing-name-angga">Angga</h2>
                 <p class="closing-greeting-final">Waalaikumussalam warahmatullahi wabarakatuh</p>
             </div>
+			</div>
         </section>
 
         <!--hr class="section-divider"-->
@@ -269,8 +296,17 @@
             </div>
         </section>
 
-    </main> 
+    </main>
 
+	<!--Popup Lightbox foto galeri-->
+	<div id="gallery-lightbox" class="gallery-lightbox hidden">
+		<button class="lightbox-close" aria-label="Tutup">×</button>
+		<button class="lightbox-prev" aria-label="Sebelumnya">←</button>
+		<img class="lightbox-image" src="" alt="">
+		<button class="lightbox-next" aria-label="Berikutnya">→</button>
+	</div>	
+	
+	<!--Popup Gift-->
     <div id="gift-modal" class="modal hidden">
         <div class="modal-content">
             <span class="close-button">×</span>
@@ -349,8 +385,10 @@
             <p class="modal-closing-note">Terima kasih atas perhatian dan doa restu Anda!</p>
         </div>
     </div>
+	
+	<script src="script.js"></script>
+	<script src="set-cover-height.js" defer></script>
 
-    <script src="script.js"></script>
 
 </body>
 </html>
