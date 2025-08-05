@@ -1,29 +1,26 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // ... kode untuk mengisi nama tamu ...
+    // Lock scroll selama cover aktif
+    document.body.classList.add('cover-active');
 
     const openInvitationButton = document.getElementById('open-invitation-button');
     const coverPage = document.getElementById('cover-page');
     const mainContentWrapper = document.getElementById('main-content-wrapper');
-    const bodyElement = document.body; // Referensi ke elemen body
-
-    // 1. Pastikan body tidak bisa discroll saat halaman cover aktif
-    // Ini harus dieksekusi DI AWAL, begitu DOM siap
-    // bodyElement.classList.add('no-scroll');
 
     if (openInvitationButton && coverPage && mainContentWrapper) {
         openInvitationButton.addEventListener('click', () => {
-            coverPage.classList.add('hidden'); // Sembunyikan cover
-            mainContentWrapper.classList.remove('hidden'); // Tampilkan main content wrapper
+            // Tampilkan isi dan aktifkan scroll
+            coverPage.classList.add('hidden');
+            mainContentWrapper.classList.remove('hidden');
+            document.body.classList.remove('cover-active');
 
-            // 2. Izinkan body untuk discroll kembali
-            // bodyElement.classList.remove('no-scroll');
-
-            // Scroll ke bagian awal konten utama setelah cover disembunyikan
-            // mainContentWrapper.scrollIntoView({ behavior: 'smooth' });
+            // Opsional: scroll ke atas
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     } else {
-        console.warn("Elemen Cover Page, Tombol, atau Main Content Wrapper tidak ditemukan. Fitur navigasi mungkin tidak berfungsi.");
+        console.warn("Pastikan semua ID dan class sudah sesuai.");
     }
+});
+
 
 
     // ====================================
@@ -102,7 +99,60 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         console.warn("Elemen '#quote-section' tidak ditemukan. Animasi quote mungkin tidak berfungsi.");
     }
+	
+	//=====================================
+	// LOGIKA POPUP FOTO GALERI
+	//=====================================
 
+  const lightbox = document.getElementById('gallery-lightbox');
+  const lightboxImage = document.querySelector('.lightbox-image');
+  const galleryImages = document.querySelectorAll('.gallery-image');
+  let currentIndex = 0;
+
+  function showImage(index) {
+    const img = galleryImages[index];
+    lightboxImage.src = img.src;
+    lightboxImage.alt = img.alt;
+    lightbox.classList.remove('hidden');
+    currentIndex = index;
+  }
+
+  galleryImages.forEach((img, i) => {
+    img.addEventListener('click', () => showImage(i));
+  });
+
+  document.querySelector('.lightbox-close').addEventListener('click', () => {
+    lightbox.classList.add('hidden');
+    lightboxImage.src = '';
+  });
+
+  document.querySelector('.lightbox-prev').addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+    showImage(currentIndex);
+  });
+
+  document.querySelector('.lightbox-next').addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % galleryImages.length;
+    showImage(currentIndex);
+  });
+
+  // Swipe support
+  let startX = 0;
+  lightbox.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+  });
+  lightbox.addEventListener('touchend', (e) => {
+    let endX = e.changedTouches[0].clientX;
+    let diffX = endX - startX;
+    if (Math.abs(diffX) > 50) {
+      if (diffX > 0) {
+        document.querySelector('.lightbox-prev').click();
+      } else {
+        document.querySelector('.lightbox-next').click();
+      }
+    }
+
+	
     // ====================================
     // LOGIKA POPUP HADIAH & FITUR SALIN    
     // ====================================
