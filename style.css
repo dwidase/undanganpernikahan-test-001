@@ -28,8 +28,26 @@
 }
 
 /* Gaya body: latar belakang, warna teks, tata letak flex untuk tinggi penuh */
+
+.hidden {
+  display: none !important;
+}
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body.cover-active {
+  overflow: hidden;
+  height: 100vh;
+}
+
+
 body {
-    background-color: #f8f8f8; /* Latar belakang abu-abu muda default */
+    background-color: #F8F0E3; /* Latar belakang abu-abu muda default */
     color: #1F2937; /* Teks abu-abu gelap default */
     display: flex;
     flex-direction: column;
@@ -56,42 +74,115 @@ section {
 /* === GAYA SPESIFIK UNTUK SETIAP SECTION ID === */
 
 #cover-page {
-	position: fixed;
-	z-index: 9999;
+	will-change: background-position;
+	min-height: var(--cover-height, 100dvh); /* fallback jika JS belum sempat jalan */
+	position: relative;
+	top: 0;
+	left: 0;
+	z-index: 0;
     background-color: #F8F0E3; /* Latar belakang krem muda untuk sampul */
-    overflow: hidden; /* Sembunyikan overflow untuk animasi */
+    overflow: visible; /* Sembunyikan overflow untuk animasi */
     width: 100%; /* Pastikan halaman sampul mengambil lebar penuh */
     display: flex; /* Gunakan flex untuk memusatkan konten */
     align-items: center; /* Pusatkan secara vertikal */
+	flex-direction: column;
     justify-content: center; /* Pusatkan secara horizontal */
     padding: 1rem; /* Tambahkan kembali padding untuk konten cover page */
 
     /* ----- Properti background baru untuk foto dan gradasi ----- */
     /* Pastikan warna gradasi (rgba) sesuai dengan background-color #F8F0E3 */
-    background-image:
-        linear-gradient(to bottom,
-                        rgba(248, 240, 227, 0) 0%, /* Warna krem transparan */
-                        rgba(248, 240, 227, 1) 90%), /* Warna krem solid */
-        url('Assets/Foto.pengantin/Berdua jawa cream 0001-8.png'); /* Sesuaikan path gambar Anda */
+    background-image: url('Assets/Foto.pengantin/Berdua jawa cream 0001-8.png'); /* Sesuaikan path gambar Anda */
 
     background-size: cover; /* Foto menutupi area yang dialokasikan */
-    background-position: center -9rem; /* Fokuskan bagian bawah foto */
+    background-position: center -20rem; /* Fokuskan bagian bawah foto */
     background-repeat: no-repeat; /* Mencegah pengulangan foto */
-    height: 60vh; /* Sesuaikan tinggi halaman cover sesuai keinginan, misalnya 90% dari tinggi viewport agar ada ruang untuk transisi */
     transition: opacity 0.5s ease-out; /* Tambahkan transisi ini */
 }
 
+/* Misal untuk mobile: geser foto sedikit lebih ke atas */
+@media screen and (max-width: 767px) {
+  #cover-page {
+    background-position: center -8rem;
+  }
+}
+
+/* Untuk desktop besar: kembalikan atau sesuaikan ulang */
+@media screen and (min-width: 1024px) {
+  #cover-page {
+    background-position: center -14rem;
+  }
+}
+
+
+#cover-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom,
+    rgba(248, 240, 227, 0) 0%,
+    rgba(248, 240, 227, 1) 90%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+/* Mobile: ubah titik berhenti gradient saja */
+@media screen and (max-width: 767px) {
+  #cover-page::before {
+    background: linear-gradient(
+      to bottom,
+      rgba(248, 240, 227, 0) 0%,
+	  rgba(248, 240, 227, 0) 10%,
+      rgba(248, 240, 227, 1) 60%
+    );
+  }
+}
+
+/* Desktop besar: perpanjang gradasi tanpa menimpa gambar */
+@media screen and (min-width: 1024px) {
+  #cover-page::before {
+    background: linear-gradient(
+      to bottom,
+      rgba(248, 240, 227, 0) 0%,
+      rgba(248, 240, 227, 1) 120%
+    );
+  }
+}
+
+
+
 .cover-konten {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+	position: relative;
     text-align: center;
     color: #333;
     z-index: 2;
     width: 100%;
     max-width: 48rem;
-    padding: 2rem 1rem; /* Ini akan menjadi padding utama */
-    padding-bottom: 50px; /* Jika Anda ingin padding bawah tambahan */
+	margin-top: auto;
+	margin-bottom: auto;
+	padding: 0 1rem;
+}
+
+    padding: 1rem; /* Ini akan menjadi padding utama */
+    padding-bottom: 1rem; /* Jika Anda ingin padding bawah tambahan */
 }
 #cover-page .cover-konten > * {
     opacity: 0;
+}
+
+/* Media query untuk layar desktop */
+@media screen and (min-width: 1024px) {
+  .cover-konten {
+    /* Geser ke bawah dengan menambah translate Y atau margin */
+    /*transform: translate(-50%, -40%); /* 10% ke bawah dari center */
+    /* Atau alternatif: */
+    top: 10%;
+  }
 }
 
 /* Pembungkus utama untuk konten setelah cover */
@@ -118,66 +209,32 @@ section {
 /* Kelas .visible di JS sekarang akan menargetkan #main-content-wrapper */
 
 
-/* Gaya untuk nama Dinda di halaman sampul */
-.cover-element.slide-from-top.fast-delay-1 {
-    font-size: 3rem; /* Ukuran font besar */
+/* Gaya untuk nama DINDA di halaman sampul */
+.cover-element.slide-from-top.fast-delay-1 { 
+    font-size: clamp(3rem, 6vw, 5rem);
     line-height: 1.25;
     font-family: 'Great Vibes'; /* Font skrip */
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1); /* Bayangan teks halus */
     color: #cba979; /* Warna teks untuk Dinda */
     text-align: center;
 }
-/* Ukuran font responsif untuk nama Dinda */
-@media (min-width: 768px) {
-    .cover-element.slide-from-top.fast-delay-1 {
-        font-size: 6rem;
-    }
-}
-@media (min-width: 1024px) {
-    .cover-element.slide-from-top.fast-delay-1 {
-        font-size: 8rem;
-    }
-}
 
 /* Gaya untuk ampersand (&) di halaman sampul */
 .cover-element.slide-from-top.fast-delay-2 {
-    font-size: 1rem;
+    font-size: clamp(1rem, 6vw, 1rem);
     font-family: 'Garamond'; /* Font serif */
     color: #4B5563; /* Warna abu-abu gelap untuk ampersand */
     text-align: center;
 }
-/* Ukuran font responsif untuk ampersand */
-@media (min-width: 768px) {
-    .cover-element.slide-from-top.fast-delay-2 {
-        font-size: 5rem;
-    }
-}
-@media (min-width: 1024px) {
-    .cover-element.slide-from-top.fast-delay-2 {
-        font-size: 6rem;
-    }
-}
 
-/* Gaya untuk nama Angga di halaman sampul */
+/* Gaya untuk nama ANGGA di halaman sampul */
 .cover-element.slide-from-top.fast-delay-3 {
-    font-size: 3rem;
+    font-size: clamp(3rem, 6vw, 5rem);
     line-height: 1.25;
     font-family: 'Great Vibes';
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
     color: #cba979; /* Warna ungu gelap untuk Angga */
     text-align: center;
-}
-
-/* Ukuran font responsif untuk nama Angga */
-@media (min-width: 768px) {
-    .cover-element.slide-from-top.fast-delay-3 {
-        font-size: 6rem;
-    }
-}
-@media (min-width: 1024px) {
-    .cover-element.slide-from-top.fast-delay-3 {
-        font-size: 8rem;
-    }
 }
 
 /* Gaya untuk teks "Kepada yang terhormat bapak, ibu, saudara/i" */
@@ -272,6 +329,98 @@ section {
     background-color: #f5f0d5; /* Latar belakang krem muda */
     min-height: 70vh;
     overflow: hidden;
+	
+  /* Ukuran foto */	
+  --image-size-default: clamp(12rem, 20vw, 18rem);
+
+	
+  /* Ukuran hiasan utama atas */
+  --deco-initial-invitation-size-top-main: clamp(182px, 30vw, 242px);
+  --deco-initial-invitation-top-top-main: -3rem;
+  --deco-initial-invitation-left-top-main: -3.5rem;
+  --deco-initial-invitation-right-top-main: -3.5rem;
+
+  /* Ukuran hiasan overlay atas*/
+  --deco-initial-invitation-size-top-overlay: clamp(122px, 30vw, 162px);
+  --deco-initial-invitation-top-top-overlay: -2rem;
+  --deco-initial-invitation-left-top-overlay: -2.5rem;
+  --deco-initial-invitation-right-top-overlay: -2.5rem;
+  
+  /* Ukuran hiasan utama bawah */
+  --deco-initial-invitation-size-bottom-main: clamp(162px, 25vw, 202px);
+  --deco-initial-invitation-bottom-bottom-main: -2.5rem;
+  --deco-initial-invitation-left-bottom-main: -3.5rem;
+  --deco-initial-invitation-right-bottom-main: -3.5rem;
+
+  /* Ukuran hiasan overlay bawah*/
+  --deco-initial-invitation-size-bottom-overlay: clamp(102px, 25vw, 132px);
+  --deco-initial-invitation-bottom-bottom-overlay: -1rem;
+  --deco-initial-invitation-left-bottom-overlay: -2rem;
+  --deco-initial-invitation-right-bottom-overlay: -2rem;
+}
+
+@media (min-width: 768px) {
+  #initial-invitation-section {
+	  
+	/* Ukuran foto */  
+	--image-size-default: clamp(11rem, 15vw, 14rem);
+	
+	/* Ukuran hiasan utama atas */
+    --deco-initial-invitation-size-top-main: clamp(202px, 40vw, 262px);
+    --deco-initial-invitation-top-top-main: -4.5rem;
+    --deco-initial-invitation-left-top-main: -4rem;
+    --deco-initial-invitation-right-top-main: -4rem;
+	
+	/* Ukuran hiasan overlay atas*/
+	--deco-initial-invitation-size-top-overlay: clamp(132px, 40vw, 192px);
+	--deco-initial-invitation-top-top-overlay: -3.5rem;
+	--deco-initial-invitation-left-top-overlay: -3rem;
+	--deco-initial-invitation-right-top-overlay: -3rem;
+	
+	/* Ukuran hiasan utama bawah */
+    --deco-initial-invitation-size-bottom-main: clamp(182px, 35vw, 242px);
+    --deco-initial-invitation-bottom-bottom-main: -3.5rem;
+    --deco-initial-invitation-left-bottom-main: -3rem;
+    --deco-initial-invitation-right-bottom-main: -3rem;
+	
+	/* Ukuran hiasan overlay bawah*/
+	--deco-initial-invitation-size-bottom-overlay: clamp(122px, 35vw, 172px);
+	--deco-initial-invitation-bottom-bottom-overlay: -2rem;
+	--deco-initial-invitation-left-bottom-overlay: -1.5rem;
+	--deco-initial-invitation-right-bottom-overlay: -1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  #initial-invitation-section {
+	  
+	/* Ukuran foto */  
+	--image-size-default: clamp(13rem, 15vw, 16rem);
+	
+	/* Ukuran hiasan utama atas */
+    --deco-initial-invitation-size-top-main: clamp(222px, 50vw, 282px);
+    --deco-initial-invitation-top-top-main: -5rem;
+    --deco-initial-invitation-left-top-main: -4rem;
+    --deco-initial-invitation-right-top-main: -4rem;
+	
+	/* Ukuran hiasan overlay atas*/
+	--deco-initial-invitation-size-top-overlay: clamp(152px, 50vw, 212px);
+	--deco-initial-invitation-top-top-overlay: -4rem;
+	--deco-initial-invitation-left-top-overlay: -3rem;
+	--deco-initial-invitation-right-top-overlay: -3rem;
+	
+	/* Ukuran hiasan utama bawah */
+    --deco-initial-invitation-size-bottom-main: clamp(202px, 45vw, 262px);
+    --deco-initial-invitation-bottom-bottom-main: -4rem;
+    --deco-initial-invitation-left-bottom-main: -3.5rem;
+    --deco-initial-invitation-right-bottom-main: -3.5rem;
+	
+	/* Ukuran hiasan overlay bawah*/
+	--deco-initial-invitation-size-bottom-overlay: clamp(142px, 45vw, 192px);
+	--deco-initial-invitation-bottom-bottom-overlay: -2.5rem;
+	--deco-initial-invitation-left-bottom-overlay: -2rem;
+	--deco-initial-invitation-right-bottom-overlay: -2rem;
+  }
 }
 
 /* Bagian Kutipan */
@@ -291,6 +440,7 @@ section {
 /* Bagian Cerita Cinta */
 #love-story-section {
     background-color: #f5f0d5; /* Latar belakang krem muda */
+	overflow: hidden;
 }
 
 /* Bagian Detail Acara & RSVP */
@@ -303,8 +453,54 @@ section {
     position: relative;
     background-color: #f5f0d5; /* Latar belakang krem muda */
     overflow: hidden;
-    
+	
+  /* Ukuran hiasan utama */
+  --deco-gallery-size-main: clamp(162px, 25vw, 202px);
+  --deco-gallery-top-main: -2.5rem;
+  --deco-gallery-left-main: -3.5rem;
+  --deco-gallery-right-main: -3.5rem;
+
+  /* Ukuran hiasan overlay */
+  --deco-gallery-size-overlay: clamp(102px, 25vw, 132px);
+  --deco-gallery-top-overlay: -1rem;
+  --deco-gallery-left-overlay: -2rem;
+  --deco-gallery-right-overlay: -2rem;
 }
+
+/* === MEDIA QUERY TABLET (>=768px) === */
+@media (min-width: 768px) {
+  #gallery-section {
+    /* Ukuran hiasan utama */
+    --deco-gallery-size-main: clamp(180px, 22vw, 240px);
+    --deco-gallery-top-main: -3rem;
+    --deco-gallery-left-main: -4rem;
+    --deco-gallery-right-main: -4rem;
+
+    /* Ukuran hiasan overlay */
+    --deco-gallery-size-overlay: clamp(90px, 20vw, 120px);
+    --deco-gallery-top-overlay: -1.2rem;
+    --deco-gallery-left-overlay: -2.5rem;
+    --deco-gallery-right-overlay: -2.5rem;
+  }
+}
+
+/* === MEDIA QUERY DESKTOP (>=1024px) === */
+@media (min-width: 1024px) {
+  #gallery-section {
+    /* Ukuran hiasan utama */
+    --deco-gallery-size-main: clamp(200px, 20vw, 260px);
+    --deco-gallery-top-main: -3.2rem;
+    --deco-gallery-left-main: -5rem;
+    --deco-gallery-right-main: -5rem;
+
+    /* Ukuran hiasan overlay */
+    --deco-gallery-size-overlay: clamp(110px, 18vw, 150px);
+    --deco-gallery-top-overlay: -1.5rem;
+    --deco-gallery-left-overlay: -3rem;
+    --deco-gallery-right-overlay: -3rem;
+  }
+}
+
 
 /* Bagian Hadiah */
 #gift-section {
@@ -343,14 +539,28 @@ section {
     }
 }
 
+/* ————— CSS Spesifik Texture & Blotch ————— */
+.has-texture .decoration-layer .deco-item.section-texture {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('Assets/Hiasan/tekstur-2-kompress.png');
+  background-size: 600px auto;
+  background-repeat: repeat;
+  opacity: 0.3;
+  z-index: 0;
+  filter: none !important;
+}
+
 
 /* === HALAMAN AWAL === */
 
 /* Gaya khusus untuk placeholder gambar profil */
-/* Gaya untuk placeholder gambar galeri */
+/* Gaya untuk placeholder gambar Halaman awal */
 .awal-image-placeholder {
-    width: 12rem;
-    height: 12rem; /* Tinggi tetap */
+    width: var(--image-size-default);
+	height: var(--image-size-default); /* Tinggi tetap */
     background-color: #E5E7EB;
     border-radius: 50%;
 	border: 3px solid #cba979;
@@ -365,7 +575,7 @@ section {
 	margin: 0 auto 2rem;
 }
 
-/* Gaya untuk foto di galeri */
+/* Gaya untuk foto di awal */
 .awal-mempelai-image {
     width: 100%; /* Membuat gambar mengisi lebar wadahnya */
     height: 100%; /* Atur tinggi tetap untuk konsistensi (sesuaikan) */
@@ -375,48 +585,27 @@ section {
 }
 
 .main-name-dinda, .main-name-angga {
-    font-size: 2rem;
+    font-size: clamp(2rem, 6vw, 3rem);
     line-height: 1.25;
     font-family: 'Great Vibes';
     text-align: center;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1); /* Bayangan teks halus */
 }
-/* Ukuran font responsif untuk nama utama */
-@media (min-width: 768px) {
-    .main-name-dinda, .main-name-angga {
-        font-size: 3rem;
-    }
-}
-@media (min-width: 1024px) {
-    .main-name-dinda, .main-name-angga {
-        font-size: 4rem;
-    }
-}
+
 .main-name-dinda { color: #cba979; } /* Warna untuk Dinda */
 .main-name-angga { color: #cba979; } /* Warna untuk Angga */
 
 /* Gaya untuk ampersand di halaman utama */
 .main-name-ampersand {
-    font-size: 1rem;
+    font-size: clamp(1rem, 6vw, 1rem);
     font-family: 'Garamond';
     color: #4B5563;
     text-align: center;
 }
-/* Ukuran font responsif untuk ampersand utama */
-@media (min-width: 768px) {
-    .main-name-ampersand {
-        font-size: 2.5rem;
-    }
-}
-@media (min-width: 1024px) {
-    .main-name-ampersand {
-        font-size: 2.5rem;
-    }
-}
 
 /* Gaya untuk teks undangan */
 .invitation-text {
-    font-size: 0.8rem;
+    font-size: clamp(0.8rem, 3.5vw, 1rem);
     margin-top: 1rem;
     line-height: 1.625;
     font-family: 'Garamond';
@@ -425,15 +614,10 @@ section {
     width: 25ch; /* Sesuaikan nilai ini untuk lebar teks */
     margin: 2rem auto 0.5rem; /* 2rem untuk atas/bawah, auto untuk kiri/kanan */
 }
-@media (min-width: 768px) {
-    .invitation-text {
-        font-size: 1.25rem;
-    }
-}
 
 /* Gaya untuk tanggal acara */
 .event-date {
-    font-size: 1.2rem;
+    font-size: clamp(1.2rem, 3.5vw, 2rem);
 	font-weight: 600;
     margin-top: 1rem;
     font-family: ui-monospace;
@@ -466,107 +650,121 @@ section {
     
 }
 
-/* Hiasan atas */
+/* = Hiasan Atas = */
+/* Hiasan kiri atas utama */
 #initial-invitation-section .decoration-layer .deco-item.top-left-initial.has-bunga-saja {
-    width: 162px;    /* Ukuran spesifik yang berbeda lagi */
-    height: 162px;
-    top: -2.5rem;
-    left: -3.5rem;
-    /*transform: translate(30%, -30%);
-    transform-origin: top left;*/
+  width: var(--deco-initial-invitation-size-top-main);
+  height: var(--deco-initial-invitation-size-top-main);
+  top: var(--deco-initial-invitation-top-top-main);
+  left: var(--deco-initial-invitation-left-top-main);
 }
 
-#initial-invitation-section .decoration-layer .deco-item.top-left-overlay-initial.has-bunga-saja {
-    width: 102px;    /* Ukuran spesifik yang berbeda lagi */
-    height: 102px;
-    top: -1rem;
-    left: -2rem;
-    /*transform: translate(30%, -30%);
-    transform-origin: top left;*/
-}
-
+/* Hiasan kanan Atas utama */
 #initial-invitation-section .decoration-layer .deco-item.top-right-initial.has-bunga-saja {
-    width: 162px;    /* Ukuran spesifik yang berbeda lagi */
-    height: 162px;
-    top: -2.5rem;
-    right: -3.5rem;
-    transform: scaleX(-1);
-    /*transform: translate(30%, -30%);
-    transform-origin: top left;*/
+  width: var(--deco-initial-invitation-size-top-main);
+  height: var(--deco-initial-invitation-size-top-main);
+  top: var(--deco-initial-invitation-top-top-main);
+  right: var(--deco-initial-invitation-right-top-main);
+  transform: scaleX(-1);
 }
 
+/* Overlay kiri atas */
+#initial-invitation-section .decoration-layer .deco-item.top-left-overlay-initial.has-bunga-saja {
+  width: var(--deco-initial-invitation-size-top-overlay);
+  height: var(--deco-initial-invitation-size-top-overlay);
+  top: var(--deco-initial-invitation-top-top-overlay);
+  left: var(--deco-initial-invitation-left-top-overlay);
+}
+
+/* Overlay kanan atas */
 #initial-invitation-section .decoration-layer .deco-item.top-right-overlay-initial.has-bunga-saja {
-    width: 102px;    /* Ukuran spesifik yang berbeda lagi */
-    height: 102px;
-    top: -1rem;
-    right: -2rem;
-    transform: scaleX(-1);
-    /*transform: translate(30%, -30%);
-    transform-origin: top left;*/
-}
-
-/* Hiasan bawah */
-#initial-invitation-section .decoration-layer .deco-item.bottom-left-initial.has-bunga-saja {
-    width: 162px;    /* Ukuran spesifik yang berbeda lagi */
-    height: 162px;
-    bottom: -2.5rem;
-    left: -3.5rem;
-    /*transform: translate(30%, -30%);
-    transform-origin: top left;*/
-}
-
-#initial-invitation-section .decoration-layer .deco-item.bottom-left-overlay-initial.has-bunga-saja {
-    width: 102px;    /* Ukuran spesifik yang berbeda lagi */
-    height: 102px;
-    bottom: -1rem;
-    left: -2rem;
-    /*transform: translate(30%, -30%);
-    transform-origin: top left;*/
-}
-
-#initial-invitation-section .decoration-layer .deco-item.bottom-right-initial.has-bunga-saja {
-    width: 162px;    /* Ukuran spesifik yang berbeda lagi */
-    height: 162px;
-    bottom: -2.5rem;
-    right: -3.5rem;
-    transform: scaleX(-1);
-    /*transform: translate(30%, -30%);
-    transform-origin: top left;*/
-}
-
-#initial-invitation-section .decoration-layer .deco-item.bottom-right-overlay-initial.has-bunga-saja {
-    width: 102px;    /* Ukuran spesifik yang berbeda lagi */
-    height: 102px;
-    bottom: -1rem;
-    right: -2rem;
-    transform: scaleX(-1);
-    /*transform: translate(30%, -30%);
-    transform-origin: top left;*/
+  width: var(--deco-initial-invitation-size-top-overlay);
+  height: var(--deco-initial-invitation-size-top-overlay);
+  top: var(--deco-initial-invitation-top-top-overlay);
+  right: var(--deco-initial-invitation-right-top-overlay);
+  transform: scaleX(-1);
 }    
 
+/* = Hiasan bawah = */
+/* Hiasan kiri Bawah utama */
+#initial-invitation-section .decoration-layer .deco-item.bottom-left-initial.has-bunga-saja {
+  width: var(--deco-initial-invitation-size-bottom-main);
+  height: var(--deco-initial-invitation-size-bottom-main);
+  bottom: var(--deco-initial-invitation-bottom-bottom-main);
+  left: var(--deco-initial-invitation-left-bottom-main);
+}
+
+/* Hiasan kanan bawah utama */
+#initial-invitation-section .decoration-layer .deco-item.bottom-right-initial.has-bunga-saja {
+  width: var(--deco-initial-invitation-size-bottom-main);
+  height: var(--deco-initial-invitation-size-bottom-main);
+  bottom: var(--deco-initial-invitation-bottom-bottom-main);
+  right: var(--deco-initial-invitation-right-bottom-main);
+  transform: scaleX(-1);
+}
+
+/* Overlay kiri atas */
+#initial-invitation-section .decoration-layer .deco-item.bottom-left-overlay-initial.has-bunga-saja {
+  width: var(--deco-initial-invitation-size-bottom-overlay);
+  height: var(--deco-initial-invitation-size-bottom-overlay);
+  bottom: var(--deco-initial-invitation-bottom-bottom-overlay);
+  left: var(--deco-initial-invitation-left-bottom-overlay);
+}
+
+/* Overlay kanan atas */
+#initial-invitation-section .decoration-layer .deco-item.bottom-right-overlay-initial.has-bunga-saja {
+  width: var(--deco-initial-invitation-size-bottom-overlay);
+  height: var(--deco-initial-invitation-size-bottom-overlay);
+  bottom: var(--deco-initial-invitation-bottom-bottom-overlay);
+  right: var(--deco-initial-invitation-right-bottom-overlay);
+  transform: scaleX(-1);
+}
+
+/* Noda Initial Invitation */
+.blotch-initial-invitation {
+  position: absolute;
+  background: url('Assets/Hiasan/abstract-blur-spotting.webp') center/contain no-repeat;
+  width: 424px;
+  height: 424px;
+  top: 20%;
+  left: -5%;
+  opacity: 0.1;
+  z-index: 1;
+  transform: rotate(340deg);
+}
+
+/* Responsif: blotch size */
+@media (min-width: 768px) {
+  .blotch-initial-invitation {
+    width: 768px; height: 768px;
+  }
+}
+@media (min-width: 1024px) {
+  .blotch-initial-invitation {
+    width: 1024px; height: 1024px;
+  }
+}
+
+/* === PENATAAN QUOTES === */
 /* Gaya untuk teks kutipan */
 .quote-text {
-    font-size: 0.8rem;
+    font-size: clamp(0.8rem, 3vw, 1rem);
     font-style: italic;
     line-height: 1.625;
     font-family: 'Garamond';
     color: #ffffff;
     text-align: center;
 }
-@media (min-width: 768px) {
-    .quote-text {
-        font-size: 1.25rem;
-    }
-}
 
 /* Gaya untuk sumber kutipan */
 .quote-source {
-    font-size: 0.8rem;
+    font-size: clamp(0.8rem, 3vw, 1rem);
     margin-top: 1rem;
     font-family: 'Garamond';
     color: #ffffff;
     text-align: center;
 }
+
 /* Bentuk latar .quote dan source */
 .quote-background-box {
     background-color: rgba(255, 255, 255, 0); /* Transparan */
@@ -593,19 +791,16 @@ section {
   font-family: 'Great Vibes';
   color: #cba979;
   text-align: center;
-  font-size: 1rem;
+  font-size: clamp(1rem, 3.5vw, 2rem);
 }
-@media (min-width: 768px) { .opening-greeting { font-size: 3rem; } }
-@media (min-width: 1024px) { .opening-greeting { font-size: 3.75rem; } }
 
 .opening-invitation {
   font-family: 'Garamond';
   color: #374151;
   text-align: center;
   margin-top: 1rem;
-  font-size: 0.8rem;
+  font-size: clamp(0.8rem, 3.5vw, 1.25rem);
 }
-@media (min-width: 768px) { .opening-invitation { font-size: 1.25rem; } }
 
 /* Wrapper Foto & Deco-Item */
 #opening-greeting-and-profile-section .image-wrapper {
@@ -683,39 +878,47 @@ section {
   color: #cba979;
   text-align: center;
   margin-top: 1rem;
-  font-size: 1.6rem;
-}
-@media (min-width: 768px) {
-  .full-name-dinda,
-  .full-name-angga { font-size: 3rem; }
-}
-@media (min-width: 1024px) {
-  .full-name-dinda,
-  .full-name-angga { font-size: 3.75rem; }
+  font-size: clamp(1.6rem, 6vw, 2rem);
 }
 
 .parent-name {
   font-family: 'Garamond';
   color: #374151;
   text-align: center;
-  font-size: 0.8rem;
-}
-@media (min-width: 768px) {
-  .parent-name { font-size: 1.25rem; }
+  font-size: clamp(0.8rem, 3.5vw, 1.25rem);
 }
 
 .ampersand-divider {
   font-family: 'Garamond';
   color: #4B5563;
   text-align: center;
-  font-size: 0.875rem;
+  font-size: clamp(0.875rem, 3.5vw, 1.5rem);
   margin: 2rem 0;
 }
+
+/* Noda Opening Greeting */
+.blotch-opening-greeting {
+  position: absolute;
+  background: url('Assets/Hiasan/abstract-blur-spotting.webp') center/contain no-repeat;
+  width: 424px;
+  height: 424px;
+  top: 30%;
+  left: -5%;
+  opacity: 0.1;
+  z-index: 1;
+  transform: rotate(30deg);
+}
+
+/* Responsif: blotch size */
 @media (min-width: 768px) {
-  .ampersand-divider { font-size: 3.75rem; }
+  .blotch-opening-greeting {
+    width: 120px; height: 120px;
+  }
 }
 @media (min-width: 1024px) {
-  .ampersand-divider { font-size: 4.5rem; }
+  .blotch-opening-greeting {
+    width: 1024px; height: 1024px;
+  }
 }
 
 
@@ -723,47 +926,25 @@ section {
 /* === CERITA CINTA KAMI === */
 /* Gaya untuk judul cerita */
 .story-title {
-    font-size: 1.875rem;
+    font-size: clamp(1.875rem, 4vw, 3rem);
     margin-bottom: 2rem;
     font-family: 'Great Vibes';
     color: #cba979;
     text-align: center;
 }
-/* Ukuran font responsif untuk judul cerita */
-@media (min-width: 768px) {
-    .story-title {
-        font-size: 4.5rem;
-    }
-}
-@media (min-width: 1024px) {
-    .story-title {
-        font-size: 6rem;
-    }
-}
 
 /* Gaya untuk subjudul cerita */
 .story-subtitle {
-    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
     margin-top: 3rem;
     font-family: 'Great Vibes';
     color: #cba979;
     text-align: center;
 }
-/* Ukuran font responsif untuk subjudul cerita */
-@media (min-width: 768px) {
-    .story-subtitle {
-        font-size: 2.25rem;
-    }
-}
-@media (min-width: 1024px) {
-    .story-subtitle {
-        font-size: 2.5rem;
-    }
-}
 
 /* Gaya untuk tanggal cerita */
 .story-date {
-    font-size: 0.8rem;
+    font-size: clamp(0.8rem, 3.5vw, 1.25rem);
     margin-top: 0.5rem;
     font-family: 'Garamond';
     color: #374151;
@@ -772,7 +953,7 @@ section {
 
 /* Gaya untuk paragraf cerita */
 .story-paragraph {
-    font-size: 0.8rem;
+    font-size: clamp(0.8rem, 3.5vw, 1.25rem);
     margin-top: 1rem;
     line-height: 1.625;
     font-family: 'Garamond';
@@ -781,31 +962,54 @@ section {
     width: 45ch;
     margin: 0.5rem auto 1.5rem; /* margin 1rem untuk atas, auto untuk kanan dan kiri, 1.5rem untuk bawah */
 }
-@media (min-width: 768px) {
-    .story-paragraph {
-        font-size: 1.25rem;
-    }
+
+/* Bentuk latar love story */
+.love-story-background-box {
+    background-color: rgba(203, 169, 121, 0); /* Transparan */
+    border: 2px solid #cba979; /* Outline putih */
+    border-radius: 1rem; /* Sudut melingkar 1rem */
+    padding: 1.5rem; /* Padding internal agar teks tidak menempel outline */
+    margin: 0 auto; /* Memusatkan persegi panjang */
+    width: 95%; /* Mengisi sebagian besar lebar yang tersedia */
+    max-width: 40rem; /* Batasi lebar maksimum agar tidak terlalu lebar di layar besar */
+    box-sizing: border-box; /* Pastikan padding tidak menambah lebar total */
 }
+
+/* Noda Love Story */
+.blotch-love-story {
+  position: absolute;
+  background: url('Assets/Hiasan/abstract-blur-spotting.webp') center/contain no-repeat;
+  width: 424px;
+  height: 424px;
+  top: 30%;
+  left: -5%;
+  opacity: 0.1;
+  z-index: 1;
+  transform: rotate(15deg);
+}
+
+/* Responsif: blotch size */
+@media (min-width: 768px) {
+  .blotch-love-story {
+    width: 120px; height: 120px;
+  }
+}
+@media (min-width: 1024px) {
+  .blotch-love-story {
+    width: 1024px; height: 1024px;
+  }
+}
+
+/* === GAYA COUNTDOWN DAN ACARA === */
 
 /* Gaya untuk judul bagian acara */
 .event-section-title {
-    font-size: 1.875rem;
+    font-size: clamp(1.875rem, 4vw, 3rem);
     margin-bottom: 2rem;
     margin-top: 2rem;
     font-family: 'Great Vibes';
     color: #cba979;
     text-align: center;
-}
-/* Ukuran font responsif untuk judul bagian acara */
-@media (min-width: 768px) {
-    .event-section-title {
-        font-size: 4.5rem;
-    }
-}
-@media (min-width: 1024px) {
-    .event-section-title {
-        font-size: 6rem;
-    }
 }
 
 /* Gaya untuk container hitung mundur */
@@ -830,6 +1034,38 @@ section {
     width: 50px; /* Lebar minimum untuk kotak agar konsisten (sesuaikan) */
     height: 70px; /* Tinggi minimum untuk kotak agar konsisten (sesuaikan) */
     text-align: center; /* Pastikan teks di tengah */
+}
+
+@media (min-width: 768px) {
+  .countdown-container {
+    gap: 1.5rem; /* Tambah spasi antar kotak untuk layar tablet */
+  }
+
+  .countdown-item {
+    width: 70px;
+    height: 90px;
+    padding: 1rem;
+  }
+
+  .countdown-label {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .countdown-container {
+    gap: 2rem; /* Lebih lega untuk desktop */
+  }
+
+  .countdown-item {
+    width: 90px;
+    height: 110px;
+    padding: 1.4rem;
+  }
+
+  .countdown-label {
+    font-size: 1.1rem;
+  }
 }
 
 /* Gaya unik untuk Hari */
@@ -875,59 +1111,32 @@ section {
 
 /* Gaya untuk angka hitung mundur */
 .countdown-number {
-    font-size: 1rem;
+    font-size: clamp(1rem, 4vw, 1.3rem);
     font-family: 'Montserrat';
     color: white; /* Warna ungu */
-}
-/* Ukuran font responsif untuk angka hitung mundur */
-@media (min-width: 768px) {
-    .countdown-number {
-        font-size: 3.75rem;
-    }
-}
-@media (min-width: 1024px) {
-    .countdown-number {
-        font-size: 4.5rem;
-    }
 }
 
 /* Gaya untuk label hitung mundur */
 .countdown-label {
-    font-size: 0.7rem;
+    font-size: clamp(0.7rem, 3vw, 1rem);
     margin-top: 0.5rem;
     font-family: 'Garamond';
     font-weight: 500;
     color: white;
 }
-@media (min-width: 768px) {
-    .countdown-label {
-        font-size: 1.125rem;
-    }
-}
 
 /* Gaya untuk subjudul acara */
 .event-subtitle {
-    font-size: 1.6rem;
+    font-size: clamp(1.6rem, 4vw, 2.5rem);
     margin-top: 1rem;
     font-family: 'Great Vibes';
     color: #cba979;
     text-align: center;
 }
-/* Ukuran font responsif untuk subjudul acara */
-@media (min-width: 768px) {
-    .event-subtitle {
-        font-size: 2.25rem;
-    }
-}
-@media (min-width: 1024px) {
-    .event-subtitle {
-        font-size: 2.5rem;
-    }
-}
 
 /* Gaya untuk detail acara */
 .event-detail {
-    font-size: 0.8rem;
+    font-size: clamp(0.8rem, 3.5vw, 1.25rem);
     margin-top: 1rem;
     font-family: 'Garamond';
     color: #374151;
@@ -960,22 +1169,11 @@ section {
 
 /* Gaya untuk judul RSVP */
 .rsvp-title {
-    font-size: 1.6rem;
+    font-size: clamp(1.6rem, 4vw, 2.5rem);
     margin-top: 2rem;
     font-family: 'Great Vibes';
     color: #cba979;
     text-align: center;
-}
-/* Ukuran font responsif untuk judul RSVP */
-@media (min-width: 768px) {
-    .rsvp-title {
-        font-size: 2.25rem;
-    }
-}
-@media (min-width: 1024px) {
-    .rsvp-title {
-        font-size: 2.5rem;
-    }
 }
 
 /* Gaya untuk tombol RSVP */
@@ -1076,68 +1274,54 @@ section {
     
 }
 
-#gallery-section .decoration-layer .deco-item.top-left-galllery.has-bunga-saja {
-    width: 162px;    /* Ukuran spesifik yang berbeda lagi */
-    height: 162px;
-    top: -2.5rem;
-    left: -3.5rem;
-    /*transform: translate(30%, -30%);
-    transform-origin: top left;*/
+/* Hiasan kiri utama */
+#gallery-section .decoration-layer .deco-item.top-left-gallery.has-bunga-saja {
+  width: var(--deco-gallery-size-main);
+  height: var(--deco-gallery-size-main);
+  top: var(--deco-gallery-top-main);
+  left: var(--deco-gallery-left-main);
 }
 
+/* Hiasan kanan utama */
+#gallery-section .decoration-layer .deco-item.top-right-gallery.has-bunga-saja {
+  width: var(--deco-gallery-size-main);
+  height: var(--deco-gallery-size-main);
+  top: var(--deco-gallery-top-main);
+  right: var(--deco-gallery-right-main);
+  transform: scaleX(-1);
+}
+
+/* Overlay kiri */
 #gallery-section .decoration-layer .deco-item.top-left-overlay-gallery.has-bunga-saja {
-    width: 102px;    /* Ukuran spesifik yang berbeda lagi */
-    height: 102px;
-    top: -1rem;
-    left: -2rem;
-    /*transform: translate(30%, -30%);
-    transform-origin: top left;*/
+  width: var(--deco-gallery-size-overlay);
+  height: var(--deco-gallery-size-overlay);
+  top: var(--deco-gallery-top-overlay);
+  left: var(--deco-gallery-left-overlay);
 }
 
-#gallery-section .decoration-layer .deco-item.top-right-galllery.has-bunga-saja {
-    width: 162px;    /* Ukuran spesifik yang berbeda lagi */
-    height: 162px;
-    top: -2.5rem;
-    right: -3.5rem;
-    transform: scaleX(-1);
-    /*transform: translate(30%, -30%);
-    transform-origin: top left;*/
-}
-
+/* Overlay kanan */
 #gallery-section .decoration-layer .deco-item.top-right-overlay-gallery.has-bunga-saja {
-    width: 102px;    /* Ukuran spesifik yang berbeda lagi */
-    height: 102px;
-    top: -1rem;
-    right: -2rem;
-    transform: scaleX(-1);
-    /*transform: translate(30%, -30%);
-    transform-origin: top left;*/
+  width: var(--deco-gallery-size-overlay);
+  height: var(--deco-gallery-size-overlay);
+  top: var(--deco-gallery-top-overlay);
+  right: var(--deco-gallery-right-overlay);
+  transform: scaleX(-1);
 }
+
 
 /* Gaya untuk judul galeri */    
 .gallery-title {
-    font-size: 1.875rem;
+    font-size: clamp(1.875rem, 5vw, 4rem);
     margin-bottom: 2rem;
     font-family: 'Great Vibes';
     color: #cba979;
     text-align: center;
 }
-/* Ukuran font responsif untuk judul galeri */
-@media (min-width: 768px) {
-    .gallery-title {
-        font-size: 4.5rem;
-    }
-}
-@media (min-width: 1024px) {
-    .gallery-title {
-        font-size: 6rem;
-    }
-}
 
 /* Gaya untuk tata letak grid galeri */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(1, minmax(0, 1fr)); /* Kolom tunggal di layar kecil */
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* Kolom tunggal di layar kecil */
     gap: 1.5rem; /* Jarak antar item grid */
     margin-left: auto; /* Pusatkan */
     margin-right: auto; /* Pusatkan */
@@ -1152,14 +1336,14 @@ section {
 /* Tiga kolom di layar besar */
 @media (min-width: 1024px) {
     .gallery-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
 /* Gaya untuk placeholder gambar galeri */
 .gallery-image-placeholder {
     width: 100%;
-    height: 24rem; /* Tinggi tetap */
+    height: clamp(16rem, 30vw, 24rem); /* Tinggi tetap */
     background-color: #E5E7EB;
     border-radius: 0.5rem;
     overflow: hidden; /* Penting untuk memastikan gambar tidak keluar dari border-radius */
@@ -1172,11 +1356,12 @@ section {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-@media (min-width: 768px) {
-    .gallery-image-placeholder {
-        height: 16rem;
-    }
+@media (min-width: 768px) and (max-width: 1023px) {
+  .gallery-image-placeholder {
+    height: 20rem; /* Sedikit lebih tinggi dari default 16rem */
+  }
 }
+
 
 /* Gaya untuk foto di galeri */
 .gallery-image {
@@ -1193,26 +1378,58 @@ section {
 }
 
 /* === GAYA BARU UNTUK BAGIAN HADIAH === */
+
+/* container gift (copy pola .box-event) */
+.gift-section-background-box {
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(203,169,121,0);
+  border: 2px solid #cba979;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin: 10px auto 0;
+  width: 95%;
+  max-width: 40rem;
+  box-sizing: border-box;
+}
+
+/* layer dekorasi full-cover */
+.gift-section-background-box > .decoration-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* filter umum untuk deco-item */
+.gift-section-background-box .decoration-layer .deco-item {
+  position: absolute;
+  filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.3));
+}
+
+/* bunga-tangkai kiri */
+.gift-section-background-box .decoration-layer .deco-item.kotak-gift-left.has-bunga-tangkai {
+  width: 338px;
+  height: 506px;
+  top: 10px;
+  left: -150px;
+  filter: sepia(100%) opacity(0.3);
+  transform: rotate(15deg);
+}
+
 .gift-title {
-    font-size: 1.875rem;
+    font-size: clamp(1.875rem, 4vw, 3rem);
     margin-bottom: 1rem;
     font-family: 'Great Vibes';
     color: #cba979;
     text-align: center;
 }
-@media (min-width: 768px) {
-    .gift-title {
-        font-size: 4.5rem;
-    }
-}
-@media (min-width: 1024px) {
-    .gift-title {
-        font-size: 6rem;
-    }
-}
 
 .gift-description {
-    font-size: 0.8rem;
+    font-size: clamp(0.8rem, 3.5vw, 1.25rem);
     line-height: 1.625;
     margin-bottom: 2rem;
     font-family: 'Garamond';
@@ -1222,15 +1439,53 @@ section {
     margin-left: auto;
     margin-right: auto;
 }
-@media (min-width: 768px) {
-    .gift-description {
-        font-size: 1.1rem;
-    }
+
+/* === GAYA PENUTUP === */
+
+/* container gift (copy pola .box-event) */
+.closing-background-box {
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(203,169,121,0);
+  border: 2px solid #cba979;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin: 10px auto 0;
+  width: 95%;
+  max-width: 40rem;
+  box-sizing: border-box;
+}
+
+/* layer dekorasi full-cover */
+.closing-background-box > .decoration-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* filter umum untuk deco-item */
+.closing-background-box .decoration-layer .deco-item {
+  position: absolute;
+  filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.3));
+}
+
+/* bunga-tangkai kiri */
+.closing-background-box .decoration-layer .deco-item.kotak-penutup-right.has-bunga-tangkai {
+  width: 300px;
+  height: 449.6px;
+  bottom: -180px;
+  right: -150px;
+  filter: sepia(100%) opacity(0.3);
+  transform: scaleX(-1);
 }
 
 /* Gaya untuk kutipan penutup */
 .closing-quote {
-    font-size: 0.8rem;
+    font-size: clamp(0.8rem, 3.5vw, 1.25rem);
     line-height: 1.625;
     margin-bottom: 2rem;
     font-family: 'Garamond';
@@ -1240,7 +1495,7 @@ section {
 
 /* Gaya untuk intro tanda tangan penutup */
 .closing-signature-intro {
-    font-size: 0.8rem;
+    font-size: clamp(0.8rem, 3.5vw, 1.25rem);
     margin-top: 1rem;
     font-family: 'Garamond';
     color: #374151;
@@ -1249,66 +1504,47 @@ section {
 
 /* Gaya untuk nama di bagian penutup */
 .closing-name-dinda, .closing-name-angga {
-    font-size: 1.5rem;
+    font-size: clamp(2rem, 6vw, 3rem);
     line-height: 1.25;
     margin-top: 1rem;
     font-family: 'Great Vibes';
     text-align: center;
 }
-/* Ukuran font responsif untuk nama penutup */
-@media (min-width: 768px) {
-    .closing-name-dinda, .closing-name-angga {
-        font-size: 4.5rem;
-    }
-}
-@media (min-width: 1024px) {
-    .closing-name-dinda, .closing-name-angga {
-        font-size: 6rem;
-    }
-}
+
 .closing-name-dinda { color: #cba979; }
 .closing-name-angga { color: #cba979; }
 
 /* Gaya untuk ampersand di bagian penutup */
 .closing-name-ampersand {
-    font-size: 0.65rem;
+    font-size: 1rem;
     margin-top: 1rem;
     font-family: 'Garamond';
     color: #4B5563;
     text-align: center;
 }
-/* Ukuran font responsif untuk ampersand penutup */
-@media (min-width: 768px) {
-    .closing-name-ampersand {
-        font-size: 3.75rem;
-    }
-}
-@media (min-width: 1024px) {
-    .closing-name-ampersand {
-        font-size: 4.5rem;
-    }
-}
 
 /* Gaya untuk salam penutup akhir */
 .closing-greeting-final {
-    font-size: 1rem; /* Perbaikan: koma diganti titik */
+    font-size: clamp(1rem, 3.5vw, 2rem);
     margin-top: 2rem;
     font-family: 'Great Vibes';
     color: #cba979;
     text-align: center;
 }
-/* Ukuran font responsif untuk salam penutup akhir */
-@media (min-width: 768px) {
-    .closing-greeting-final {
-        font-size: 3rem;
-    }
-}
-@media (min-width: 1024px) {
-    .closing-greeting-final {
-        font-size: 3.75rem;
-    }
+
+/* Bentuk latar closing */
+.closing-background-box {
+    background-color: rgba(203, 169, 121, 0); /* Transparan */
+    border: 2px solid #cba979; /* Outline putih */
+    border-radius: 1rem; /* Sudut melingkar 1rem */
+    padding: 1.5rem; /* Padding internal agar teks tidak menempel outline */
+    margin: 0 auto; /* Memusatkan persegi panjang */
+    width: 95%; /* Mengisi sebagian besar lebar yang tersedia */
+    max-width: 40rem; /* Batasi lebar maksimum agar tidak terlalu lebar di layar besar */
+    box-sizing: border-box; /* Pastikan padding tidak menambah lebar total */
 }
 
+/* GAYA PROMOSI */
 /* Gaya untuk teks promosi */
 .promotion-text {
     font-size: 1rem;
@@ -1317,6 +1553,7 @@ section {
     text-align: center;
 }
 
+/* === PEMISAH === */
 /* Gaya untuk pemisah bagian */
 .section-divider {
     width: 50%; /* Setengah lebar di layar kecil */
@@ -1342,6 +1579,60 @@ section {
     margin-left: auto; /* Pusatkan */
     margin-right: auto; /* Pusatkan */
 }
+
+/* === GAYA UNTUK POPUP FOTO GALERI === */
+#gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+  transition: opacity 0.3s ease;
+}
+
+#gallery-lightbox.hidden {
+  display: none;
+}
+
+.lightbox-image {
+  max-width: 90%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.lightbox-close {
+  top: 1rem;
+  right: 1rem;
+}
+
+.lightbox-prev {
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lightbox-next {
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 
 /* === GAYA UNTUK POPUP (MODAL) === */
 .modal {
