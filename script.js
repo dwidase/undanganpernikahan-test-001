@@ -21,8 +21,47 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+	//=====================================
+	//PEMANGGIL DAFTAR_NAMA_TAMU.JSON
+	//=====================================
 
+	// Ganti URL ini dengan URL mentah (raw) dari file JSON kamu di GitHub
+const jsonURL = 'https://raw.githubusercontent.com/dwidase/undanganpernikahan-test-001/refs/heads/main/daftar_nama_tamu.json';
 
+// Ambil parameter slug dari URL, misalnya ?guest=budi-santoso
+const params = new URLSearchParams(window.location.search);
+const slug = params.get('guest');
+
+fetch(jsonURL)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Gagal mengambil data tamu');
+    }
+    return response.json();
+  })
+  .then(data => {
+    // Nanti kita akan tambahkan slug di sini, tapi untuk sekarang kita cari berdasarkan nama
+    const tamu = data.find(item => {
+      const generatedSlug = item.nama.toLowerCase().replace(/\s+/g, '-');
+      return generatedSlug === slug;
+    });
+
+    if (tamu) {
+      // Tampilkan nama tamu di elemen HTML tertentu
+      const namaTamuEl = document.querySelector('#nama-tamu');
+      if (namaTamuEl) {
+        namaTamuEl.textContent = tamu.nama;
+      }
+
+      // Kamu bisa lanjut inject alamat, jumlah tamu, atau status RSVP di sini
+    } else {
+      console.warn('Tamu tidak ditemukan');
+    }
+  })
+  .catch(error => {
+    console.error('Terjadi kesalahan saat memuat data tamu:', error);
+  });
+	
     // ====================================
     // LOGIKA PENGHITUNG WAKTU MUNDUR       
     // ====================================
@@ -240,3 +279,4 @@ document.addEventListener('DOMContentLoaded', function() {
         console.warn("Tidak ada tombol salin ditemukan.");
     }
 });
+
