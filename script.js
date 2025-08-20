@@ -21,16 +21,26 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-	//=====================================
-	//PEMANGGIL DAFTAR_NAMA_TAMU.JSON
-	//=====================================
 
-	// Ganti URL ini dengan URL mentah (raw) dari file JSON kamu di GitHub
+//=====================================
+// PEMANGGIL DAFTAR_NAMA_TAMU.JSON
+//=====================================
+
+// Ganti URL ini dengan URL mentah (raw) dari file JSON kamu di GitHub
 const jsonURL = 'https://raw.githubusercontent.com/dwidase/undanganpernikahan-test-001/refs/heads/main/daftar_nama_tamu.json';
 
 // Ambil parameter slug dari URL, misalnya ?guest=budi-santoso
 const params = new URLSearchParams(window.location.search);
 const slug = params.get('guest');
+
+// Fungsi normalisasi slug agar tahan terhadap karakter non-alfabet
+function generateSlug(nama) {
+  return nama
+    .toLowerCase()
+    .trim()
+    .replace(/[^\w\s-]/g, '') // hapus karakter non-alfabet
+    .replace(/\s+/g, '-');    // ganti spasi dengan tanda hubung
+}
 
 fetch(jsonURL)
   .then(response => {
@@ -40,27 +50,29 @@ fetch(jsonURL)
     return response.json();
   })
   .then(data => {
-    // Nanti kita akan tambahkan slug di sini, tapi untuk sekarang kita cari berdasarkan nama
-    const tamu = data.find(item => {
-      const generatedSlug = item.nama.toLowerCase().replace(/\s+/g, '-');
-      return generatedSlug === slug;
-    });
+    if (!slug) {
+      console.warn('Slug tidak ditemukan di URL');
+      return;
+    }
+
+    // Cari tamu berdasarkan slug yang sudah dinormalisasi
+    const tamu = data.find(item => generateSlug(item.nama) === slug);
 
     if (tamu) {
-      // Tampilkan nama tamu di elemen HTML tertentu
-      const namaTamuEl = document.querySelector('#nama-tamu');
+      const namaTamuEl = document.querySelector('.guest-name-line');
       if (namaTamuEl) {
         namaTamuEl.textContent = tamu.nama;
+      } else {
+        console.warn('Elemen .guest-name-line tidak ditemukan di HTML');
       }
-
-      // Kamu bisa lanjut inject alamat, jumlah tamu, atau status RSVP di sini
     } else {
-      console.warn('Tamu tidak ditemukan');
+      console.warn(`Tamu dengan slug "${slug}" tidak ditemukan`);
     }
   })
   .catch(error => {
     console.error('Terjadi kesalahan saat memuat data tamu:', error);
   });
+
 	
     // ====================================
     // LOGIKA PENGHITUNG WAKTU MUNDUR       
@@ -279,4 +291,5 @@ fetch(jsonURL)
         console.warn("Tidak ada tombol salin ditemukan.");
     }
 });
+
 
