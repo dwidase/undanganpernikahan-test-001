@@ -66,11 +66,18 @@ fetch(jsonURL)
         console.warn('Elemen .guest-name-line tidak ditemukan di HTML');
       }
     } else {
-      console.warn(`Tamu dengan slug "${slug}" tidak ditemukan`);
-    }
-  })
-  .catch(error => {
-    console.error('Terjadi kesalahan saat memuat data tamu:', error);
+  console.warn(`Tamu dengan slug "${slug}" tidak ditemukan`);
+
+  const namaTamuEl = document.querySelector('.guest-name-line');
+  if (namaTamuEl) {
+    namaTamuEl.textContent = "Tamu Undangan"; // fallback default
+  }
+
+  // Optional: redirect atau alert
+  // alert("Data tamu tidak ditemukan. Silakan cek tautan undangan Anda.");
+  // window.location.href = "index.html";
+}
+
   });
 
 	
@@ -291,6 +298,7 @@ fetch(jsonURL)
         console.warn("Tidak ada tombol salin ditemukan.");
     }
 });
+
 
 
 
