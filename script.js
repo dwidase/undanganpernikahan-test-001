@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
 //=====================================
 
 // Ganti URL ini dengan URL mentah (raw) dari file JSON kamu di GitHub
-const jsonURL = 'https://raw.githubusercontent.com/dwidase/undanganpernikahan-test-001/refs/heads/main/daftar_nama_tamu.json';
+const jsonURL = 'https://raw.githubusercontent.com/dwidase/undanganpernikahan-test-001/refs/heads/main/rsvp/daftar_nama_tamu.json';
 
 // Ambil parameter slug dari URL, misalnya ?guest=budi-santoso
 const params = new URLSearchParams(window.location.search);
@@ -291,6 +291,7 @@ fetch(jsonURL)
         console.warn("Tidak ada tombol salin ditemukan.");
     }
 });
+
 
 
 
