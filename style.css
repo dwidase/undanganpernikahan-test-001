@@ -40,9 +40,14 @@ html, body {
     height: 100%;
 }
 
+:root {
+  --cover-height: 100svh;
+}
+
+
 body.cover-active {
   overflow: hidden;
-  height: 100vh;
+  height: 100svh;
 }
 
 
@@ -75,7 +80,7 @@ section {
 
 #cover-page {
 	will-change: background-position;
-	min-height: var(--cover-height, 100dvh); /* fallback jika JS belum sempat jalan */
+	height: var(--cover-height, 100dvh); /* fallback jika JS belum sempat jalan */
 	position: relative;
 	top: 0;
 	left: 0;
@@ -163,14 +168,11 @@ section {
     z-index: 2;
     width: 100%;
     max-width: 48rem;
-	margin-top: auto;
+	margin-top: 10vh;
 	margin-bottom: auto;
-	padding: 0 1rem;
+	padding: 0.1rem;
 }
 
-    padding: 1rem; /* Ini akan menjadi padding utama */
-    padding-bottom: 1rem; /* Jika Anda ingin padding bawah tambahan */
-}
 #cover-page .cover-konten > * {
     opacity: 0;
 }
@@ -181,7 +183,7 @@ section {
     /* Geser ke bawah dengan menambah translate Y atau margin */
     /*transform: translate(-50%, -40%); /* 10% ke bawah dari center */
     /* Atau alternatif: */
-    top: 10%;
+    margin-top: 12vh;
   }
 }
 
@@ -1579,6 +1581,33 @@ section {
     margin-left: auto; /* Pusatkan */
     margin-right: auto; /* Pusatkan */
 }
+
+	/* ==== Musik Kontrol SVG ==== */
+	
+#media-toggle {
+  background: #f5f0d5;
+  color: #CBA979; /* warna isi ikon */
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(0,0,0,0.2);
+  padding: 4px;
+}
+
+#media-toggle:hover {
+  box-shadow: 0 0 12px rgba(0,0,0,0.3);
+}
+
+
+#media-toggle.playing svg {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
+
 
 /* === GAYA UNTUK POPUP FOTO GALERI === */
 #gallery-lightbox {
