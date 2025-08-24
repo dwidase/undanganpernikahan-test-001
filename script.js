@@ -1,25 +1,96 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Lock scroll selama cover aktif
-    document.body.classList.add('cover-active');
+document.addEventListener('DOMContentLoaded', function () {
+  // === Lock scroll saat cover aktif ===
+  document.body.classList.add('cover-active');
 
-    const openInvitationButton = document.getElementById('open-invitation-button');
-    const coverPage = document.getElementById('cover-page');
-    const mainContentWrapper = document.getElementById('main-content-wrapper');
+  // === Tombol buka undangan ===
+  const openInvitationButton = document.getElementById('open-invitation-button');
+  const coverPage = document.getElementById('cover-page');
+  const mainContentWrapper = document.getElementById('main-content-wrapper');
 
-    if (openInvitationButton && coverPage && mainContentWrapper) {
-        openInvitationButton.addEventListener('click', () => {
-            // Tampilkan isi dan aktifkan scroll
-            coverPage.classList.add('hidden');
-            mainContentWrapper.classList.remove('hidden');
-            document.body.classList.remove('cover-active');
+  if (openInvitationButton && coverPage && mainContentWrapper) {
+    openInvitationButton.addEventListener('click', () => {
+      coverPage.classList.add('hidden');
+      mainContentWrapper.classList.remove('hidden');
+      document.body.classList.remove('cover-active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  } else {
+    console.warn("Pastikan semua ID dan class sudah sesuai.");
+  }
 
-            // Opsional: scroll ke atas
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    } else {
-        console.warn("Pastikan semua ID dan class sudah sesuai.");
+  // === Modal Hadiah ===
+  const openGiftModalButton = document.getElementById('open-gift-modal-button');
+  const giftModal = document.getElementById('gift-modal');
+  const closeButton = giftModal?.querySelector('.close-button');
+
+  if (openGiftModalButton && giftModal && closeButton) {
+    openGiftModalButton.addEventListener('click', () => {
+      giftModal.classList.remove('hidden');
+    });
+
+    closeButton.addEventListener('click', () => {
+      giftModal.classList.add('hidden');
+    });
+
+    giftModal.addEventListener('click', (event) => {
+      if (event.target === giftModal) {
+        giftModal.classList.add('hidden');
+      }
+    });
+  } else {
+    console.warn("Modal hadiah tidak ditemukan.");
+  }
+
+  // === Tombol Salin ===
+  const copyButtons = document.querySelectorAll('.copy-button');
+
+  copyButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const targetId = button.dataset.target;
+      const textEl = document.getElementById(targetId);
+      if (!textEl) return;
+
+      const text = textEl.innerText.trim();
+
+      if (navigator.clipboard?.writeText) {
+        navigator.clipboard.writeText(text)
+          .then(() => showCopyFeedback(button))
+          .catch(() => fallbackCopy(text, button));
+      } else {
+        fallbackCopy(text, button);
+      }
+    });
+  });
+
+  function showCopyFeedback(button) {
+    const original = button.innerText;
+    button.innerText = 'Tersalin!';
+    setTimeout(() => button.innerText = original, 1500);
+  }
+
+  function fallbackCopy(text, button) {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.style.position = 'fixed';
+    textarea.style.left = '-9999px';
+    document.body.appendChild(textarea);
+    textarea.focus();
+    textarea.select();
+    try {
+      document.execCommand('copy');
+      showCopyFeedback(button);
+    } catch {
+      alert('Gagal menyalin. Silakan salin manual: ' + text);
     }
+    document.body.removeChild(textarea);
+  }
+
+  // === Tambahkan fitur lain di bawah ini jika perlu ===
+  // initCountdown();
+  // initQuoteAnimation();
+  // initGalleryLightbox();
 });
+
 
 
 //=====================================
@@ -298,6 +369,49 @@ fetch(jsonURL)
         console.warn("Tidak ada tombol salin ditemukan.");
     }
 });
+
+//======================
+// MUSIK INTERAKTIF
+//======================
+
+const audio = document.getElementById('bg-music');
+const playIcon = document.getElementById('play-icon');
+const pauseIcon = document.getElementById('pause-icon');
+const mediaToggle = document.getElementById('media-toggle');
+const openBtn = document.getElementById('open-invitation-button');
+
+openBtn.addEventListener('click', () => {
+  audio.muted = false;
+  audio.play().then(() => {
+    playIcon.style.display = 'none';
+    pauseIcon.style.display = 'block';
+    mediaToggle.classList.add('playing');
+  }).catch(err => {
+    console.warn('Autoplay gagal:', err);
+  });
+});
+
+mediaToggle.addEventListener('click', () => {
+  if (audio.paused || audio.muted) {
+    audio.muted = false;
+    audio.play();
+    playIcon.style.display = 'none';
+    pauseIcon.style.display = 'block';
+    mediaToggle.classList.add('playing');
+  } else {
+    audio.muted = true;
+    audio.pause();
+    playIcon.style.display = 'block';
+    pauseIcon.style.display = 'none';
+    mediaToggle.classList.remove('playing');
+  }
+});
+
+
+
+
+
+
 
 
 
