@@ -24,7 +24,29 @@
     </div>
     </section>
 	
-    <main id="main-content-wrapper" class="hidden"> 
+    <main id="main-content-wrapper" class="hidden">
+	
+		<!-- Kontrol Musik -->
+<div id="music-control">
+  <audio id="bg-music" src="Assets/audio/you_are_the_reason.mp3" preload="auto" autoplay loop muted>
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+
+<!-- Ikon Musik Interaktif -->
+<div id="media-toggle" style="position: fixed; bottom: 24px; right: 24px; z-index: 999; cursor: pointer;">
+  <svg id="play-icon" viewBox="0 0 100 100" width="36" height="36">
+    <circle cx="50" cy="50" r="48" fill="#f5f0d5" stroke="currentColor" stroke-width="4"/>
+    <polygon points="40,30 70,50 40,70" fill="currentColor"/>
+  </svg>
+
+  <svg id="pause-icon" viewBox="0 0 100 100" width="36" height="36" style="display: none;">
+    <circle cx="50" cy="50" r="48" fill="#f5f0d5" stroke="currentColor" stroke-width="4"/>
+    <rect x="35" y="30" width="10" height="40" fill="currentColor"/>
+    <rect x="55" y="30" width="10" height="40" fill="currentColor"/>
+  </svg>
+</div>
 
         <section id="initial-invitation-section" class="has-texture">
                 <div class="decoration-layer"> <!-- baiknya ditaruh di atas/di luar class="section-content" -->
