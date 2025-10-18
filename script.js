@@ -407,6 +407,52 @@ mediaToggle.addEventListener('click', () => {
   }
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const openButton = document.getElementById("open-invitation-button");
+  const coverPage = document.getElementById("cover-page");
+  const invitationSection = document.getElementById("initial-invitation-section");
+  const fadeElements = document.querySelectorAll(".fade-up-on-scroll, .slide-left-on-scroll"); // Tambahkan animasi baru disini
+
+  // Fungsi untuk slide-up cover dan tampilkan section
+  openButton.addEventListener("click", () => {
+    // Tambahkan animasi slide-up ke cover
+    coverPage.classList.add("cover-slide-up");
+
+    // Tampilkan section undangan awal
+    invitationSection.style.display = "block";
+
+    // Scroll ke section undangan awal
+    invitationSection.scrollIntoView({ behavior: "smooth" });
+
+    // Sembunyikan cover setelah animasi selesai
+    setTimeout(() => {
+      coverPage.style.display = "none";
+    }, 800); // waktu sesuai durasi animasi
+  });
+
+  // Intersection Observer untuk animasi fade-in saat scroll
+  const observerOptions = {
+    threshold: 0.3
+  };
+
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const el = entry.target;
+      if (entry.isIntersecting) {
+        el.classList.add("visible");
+      } else {
+        el.classList.remove("visible"); // agar animasi bisa dipicu ulang
+      }
+    });
+  }, observerOptions);
+
+  // Observe semua elemen yang punya class fade-on-scroll
+  fadeElements.forEach(el => {
+    fadeObserver.observe(el);
+  });
+});
+
+
 
 
 
