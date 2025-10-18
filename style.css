@@ -76,6 +76,40 @@ section {
     z-index: 3;
 }
 
+
+/* ======== ANIMASI ===== */
+/* Kode Semua Animasi ada disini */
+
+/* Utility Animasi */
+.fade-up-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+.fade-up-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-left-on-scroll {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.slide-left-on-scroll.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+.cover-slide-up {
+  animation: slide-up-cover 0.8s ease-out forwards;
+  position: relative !important; 
+  z-index: 10 !important;
+}
+
 /* === GAYA SPESIFIK UNTUK SETIAP SECTION ID === */
 
 #cover-page {
@@ -1549,7 +1583,7 @@ section {
 /* GAYA PROMOSI */
 /* Gaya untuk teks promosi */
 .promotion-text {
-    font-size: 1rem;
+    font-size: 0.5rem;
     font-family: 'Montserrat';
     color: #4B5563;
     text-align: center;
@@ -1899,3 +1933,4 @@ section {
 .no-scroll {
     overflow: hidden !important;
 }
+
