@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
 //=====================================
 
 // Ganti URL ini dengan URL mentah (raw) dari file JSON kamu di GitHub
-const jsonURL = 'https://raw.githubusercontent.com/dwidase/undanganpernikahan-test-001/refs/heads/main/rsvp/daftar_nama_tamu.json';
+const jsonURL = 'https://script.google.com/macros/s/AKfycbyukaBokpS9p52DwqAibL74xDoyBarzBPPxTONl1pq30YZPnKD6wKVvodBOAgjRc2jj/exec';
 
 // Ambil parameter slug dari URL, misalnya ?guest=budi-santoso
 const params = new URLSearchParams(window.location.search);
@@ -451,6 +451,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fadeObserver.observe(el);
   });
 });
+
 
 
 
