@@ -127,22 +127,39 @@ fetch(jsonURL)
     }
 
     // Cari tamu berdasarkan slug yang sudah dinormalisasi
-    const tamu = data.find(item => generateSlug(item.nama) === slug);
+const tamu = data.find(item => generateSlug(item.nama) === slug);
 
-    if (tamu) {
-      const namaTamuEl = document.querySelector('.guest-name-line');
-      if (namaTamuEl) {
-        namaTamuEl.textContent = tamu.nama;
-      } else {
-        console.warn('Elemen .guest-name-line tidak ditemukan di HTML');
-      }
-    } else {
+const namaTamuEl = document.querySelector('.guest-name-line');
+if (tamu && namaTamuEl) {
+  namaTamuEl.textContent = tamu.nama;
+} else {
   console.warn(`Tamu dengan slug "${slug}" tidak ditemukan`);
-
-  const namaTamuEl = document.querySelector('.guest-name-line');
   if (namaTamuEl) {
     namaTamuEl.textContent = "Tamu Undangan"; // fallback default
   }
+}
+
+// ✅ Inject slug ke Google Form iframe (selalu dijalankan)
+const iframe = document.querySelector("iframe");
+if (iframe) {
+  iframe.onload = () => {
+    try {
+      const input = iframe.contentDocument.querySelector('input[name="entry.545196053"]');
+      if (input) {
+        input.value = slug;
+        input.readOnly = true; // opsional: kunci agar tidak bisa diubah
+        input.style.display = "none"; // opsional: sembunyikan field
+      } else {
+        console.warn("Field SLUG tidak ditemukan di dalam formulir.");
+      }
+    } catch (e) {
+      console.warn("Gagal inject slug ke formulir:", e);
+    }
+  };
+} else {
+  console.warn("Iframe Google Form tidak ditemukan.");
+}
+
 
   // Optional: redirect atau alert
   // alert("Data tamu tidak ditemukan. Silakan cek tautan undangan Anda.");
@@ -451,6 +468,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fadeObserver.observe(el);
   });
 });
+
 
 
 
